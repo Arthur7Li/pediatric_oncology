@@ -28,6 +28,12 @@ The sole facility in British Columbia devoted exclusively to the health of child
     **[BC Children's Oncology Resources](http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt)**
     Provides family support, clinical trial information, and comprehensive guides for families entering the oncology system in Western Canada.
 
+### 4. Stollery Children's Hospital (Edmonton, AB)
+A premier pediatric facility in Western Canada, renowned for its multidisciplinary approach to pediatric oncology and state-of-the-art care.
+*   **Family Education & Resource Website:**
+    **[Stollery Children's Hospital Resources](https://www.albertahealthservices.ca/stollery/stollery.aspx)**
+    Provides essential regional resources, patient guides, and access to child life specialists and family-centered care programs.
+
 ## Specialized US Hospitals & Resources
 
 While our focus is Canadian, the following US institutions offer invaluable general information and world-class educational platforms available to all families affected by pediatric oncology.
