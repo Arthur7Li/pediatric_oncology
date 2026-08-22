@@ -1,9 +1,43 @@
-# Pediatric Oncology Educational Resource
+# Astro Starter Kit: Minimal
 
-## Mission
-To provide a comprehensive, unified, and easy-to-understand educational platform for families facing a pediatric oncology diagnosis, with a special focus on rare conditions such as Pineal Gland tumors. The platform aims to bridge the gap between dense medical jargon and fragmented foundation resources, specifically tailored to the North American (and Canadian) healthcare context.
+```sh
+npm create astro@latest -- --template minimal
+```
 
-## Structure
-- `docs/`: Documentation, research reports, and educational content drafts.
-- `.agents/`: Antigravity agentic workflow harness, containing rules for AI assistance (fact-checking, tone guidelines) to maintain medical accuracy and empathy.
-- `src/`: (Future) Source code for the web platform deployment.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
