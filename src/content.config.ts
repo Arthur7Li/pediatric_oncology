@@ -1,7 +1,8 @@
 import { z, defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const journeyCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: "**/*.md", base: "./src/content/journey" }),
   schema: z.object({
     title: z.string(),
     step: z.number(),
@@ -13,7 +14,7 @@ const journeyCollection = defineCollection({
 });
 
 const tumorsCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: "**/*.md", base: "./src/content/tumors" }),
   schema: z.object({
     title: z.string(),
     incidence: z.string(),

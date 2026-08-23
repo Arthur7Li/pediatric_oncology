@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "step": {
+      "type": "number"
+    },
+    "author": {
+      "default": "Medical Review Team",
+      "type": "string"
+    },
+    "last_medically_reviewed_date": {
+      "type": "string"
+    },
+    "authoritative_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lang": {
+      "type": "string",
+      "enum": [
+        "en",
+        "fr",
+        "zh"
+      ]
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "step",
+    "last_medically_reviewed_date",
+    "lang"
+  ]
+}

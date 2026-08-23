@@ -16,3 +16,4 @@ The following rules enforce our quality standards. (These are automatically disc
 - `.agents/rules/fact-checking.md`
 - `.agents/rules/tone-guidelines.md`
 - `.agents/rules/session-documentation.md`
+- `.agents/rules/build-verification.md`
