@@ -88,4 +88,4 @@ Canadian pediatric oncology centers utilize protocols informed by the **Children
 - [CHU Sainte-Justine Oncology Centre](https://www.chusj.org/)
 - [C17 Council for Pediatric Hematology/Oncology](https://www.c17.ca/)
 - [Children's Oncology Group (COG) Renal Tumor Committee](https://www.childrensoncologygroup.org)
-- [National Cancer Institute (NCI) - Childhood Renal Tumors](https://www.cancer.gov/types/kidney/patient/child-wilms-treatment-pdq)
+- [National Cancer Institute (NCI) - Childhood Renal Tumors](https://www.cancer.gov/types/kidney/patient/wilms-treatment-pdq)

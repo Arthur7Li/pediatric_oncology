@@ -29,7 +29,7 @@ Taking time off work to care for your child is a priority for many parents. The 
 - **Flexibility:** These 35 weeks can be taken consecutively or split up over a 52-week period. They can also be shared among multiple eligible caregivers (e.g., both parents).
 - **Eligibility:** You must demonstrate a reduction of more than 40% in your regular weekly earnings and have accumulated at least 600 insurable hours of work in the 52 weeks prior to your claim. A medical doctor or nurse practitioner must certify the child's condition.
 
-_For detailed eligibility and application steps, visit the official [Government of Canada EI Caregiving Benefits page](https://www.canada.ca/en/services/benefits/ei/ei-caregiving.html)._
+_For detailed eligibility and application steps, visit the official [Government of Canada EI Caregiving Benefits page](https://www.canada.ca/en/services/benefits/ei/caregiving.html)._
 
 ## 3. Provincial Drug Coverage for Out-of-Hospital Medications
 

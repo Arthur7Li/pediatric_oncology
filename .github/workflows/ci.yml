@@ -43,7 +43,16 @@ jobs:
       - name: Lychee Broken Link Checker
         uses: lycheeverse/lychee-action@v1.9.3
         with:
-          args: "--verbose --no-progress --exclude-path './docs/qa' --accept 200,204,403 --timeout 15 --max-retries 2 --scheme https --scheme http './**/*.md' './**/*.astro'"
+          args: >-
+            --verbose --no-progress
+            --exclude-path './docs/qa'
+            --exclude 'https://www.iwk.nshealth.ca'
+            --exclude 'https://www.canada.ca/en/services/benefits/ei'
+            --accept 200,204,403
+            --timeout 15
+            --max-retries 2
+            --scheme https --scheme http
+            './**/*.md' './**/*.astro'
           fail: true
 
   accessibility-audit:

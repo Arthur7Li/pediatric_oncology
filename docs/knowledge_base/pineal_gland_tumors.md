@@ -47,7 +47,7 @@ Treatment is highly personalized based on the child's age, the specific type of 
 
 For more detailed information and support, please refer to these trusted pediatric oncology organizations:
 
-- [St. Jude Children's Research Hospital - Pineal Region Tumors](https://www.stjude.org/disease/pineal-region-tumors.html)
+- [St. Jude Children's Research Hospital (Together by St. Jude™)](https://together.stjude.org/)
 - [National Cancer Institute (NCI) - Childhood Brain and Spinal Cord Tumors](https://www.cancer.gov/types/brain/patient/child-brain-treatment-pdq)
 - [SickKids - Brain Tumors](https://www.aboutkidshealth.ca/Article?contentid=2957&language=English)
 - [Children's Oncology Group (COG)](https://www.childrensoncologygroup.org)

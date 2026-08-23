@@ -46,7 +46,7 @@ Le Canada est un chef de file mondial dans la création de maisons de soins pall
 - **Québec :** [Le Phare Enfants et Familles / Maison André-Gratton](https://phare-lighthouse.com/) (Montréal) — La première maison de soins palliatifs pédiatriques au Québec.
 - **Ontario :**
   - [Maison Roger Neilson](https://rogerneilsonhouse.ca/) (Ottawa, adossée au CHEO)
-  - [Emily's House / Philip Aziz Centre](https://www.emilyshouse.ca/) (Toronto)
+  - [Emily's House / Philip Aziz Centre](https://philipazizcentre.ca/emilys-house/) (Toronto)
   - [Réseau de soins palliatifs de SickKids](https://www.sickkids.ca/)
 - **Colombie-Britannique :** [Canuck Place Children's Hospice](https://www.canuckplace.org/) (Vancouver et Abbotsford) — La première maison de soins palliatifs pédiatriques en Amérique du Nord.
 - **Alberta :** [Rotary Flames House](https://www.albertahealthservices.ca/) (Calgary).

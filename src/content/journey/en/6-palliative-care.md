@@ -47,7 +47,7 @@ Canada is a global pioneer in dedicated, freestanding pediatric hospices. These 
 - **Alberta:** [Rotary Flames House](https://www.albertahealthservices.ca/) (Calgary) — Alberta's dedicated pediatric respite and palliative hospice.
 - **Ontario:**
   - [Roger Neilson House](https://rogerneilsonhouse.ca/) (Ottawa, adjacent to CHEO)
-  - [Emily's House / Philip Aziz Centre](https://www.emilyshouse.ca/) (Toronto)
+  - [Emily's House / Philip Aziz Centre](https://philipazizcentre.ca/emilys-house/) (Toronto)
   - [Kepler House / Pediatric Palliative Network](https://www.sickkids.ca/) (SickKids / Temmy Latner Centre)
 - **Quebec:** [Le Phare Enfants et Familles / Maison André-Gratton](https://phare-lighthouse.com/) (Montreal) — Quebec's premier pediatric palliative and respite center.
 - **Nova Scotia & Atlantic Provinces:** [IWK Health Centre Pediatric Palliative Care Service](https://www.iwk.nshealth.ca/) (Halifax).

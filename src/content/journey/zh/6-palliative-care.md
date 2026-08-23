@@ -47,7 +47,7 @@ lang: "zh"
 - **阿尔伯塔省 (AB)：** [Rotary Flames House](https://www.albertahealthservices.ca/)（卡尔加里）——专设的儿童安宁与喘息关怀之家。
 - **安大略省 (ON)：**
   - [Roger Neilson House](https://rogerneilsonhouse.ca/)（渥太华，紧邻 CHEO）
-  - [Emily's House / Philip Aziz Centre](https://www.emilyshouse.ca/)（多伦多）
+  - [Emily's House / Philip Aziz Centre](https://philipazizcentre.ca/emilys-house/)（多伦多）
   - [病童医院姑息关怀网络](https://www.sickkids.ca/)（SickKids / Temmy Latner Centre）
 - **魁北克省 (QC)：** [Le Phare Enfants et Familles / Maison André-Gratton](https://phare-lighthouse.com/)（蒙特利尔）——魁省首家儿童安宁与喘息照护中心。
 - **大西洋省份：** [IWK Health Centre 儿童姑息关怀中心](https://www.iwk.nshealth.ca/)（哈利法克斯）。
