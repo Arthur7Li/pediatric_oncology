@@ -2,43 +2,77 @@
   {
     "province": "British Columbia",
     "hospitals": ["BC Children's Hospital"],
-    "financial": ["PharmaCare", "BC Childhood Cancer Parents Association (BCCCPA) Family Support Fund"],
+    "financial": [
+      "PharmaCare",
+      "BC Childhood Cancer Parents Association (BCCCPA) Family Support Fund"
+    ],
     "notes": "Premier care provided in Vancouver, serving BC and the Yukon."
   },
   {
     "province": "Alberta",
-    "hospitals": ["Stollery Children's Hospital", "Alberta Children's Hospital"],
-    "financial": ["Kids with Cancer Society", "Alberta Child Health Benefit", "Helping Families Handle Cancer"],
+    "hospitals": [
+      "Stollery Children's Hospital",
+      "Alberta Children's Hospital"
+    ],
+    "financial": [
+      "Kids with Cancer Society",
+      "Alberta Child Health Benefit",
+      "Helping Families Handle Cancer"
+    ],
     "notes": "Comprehensive care located in Edmonton and Calgary. Edmonton frequently supports Northwest Territories patients."
   },
   {
     "province": "Saskatchewan",
     "hospitals": ["Jim Pattison Children's Hospital"],
-    "financial": ["Saskatchewan Family Health Benefits", "CIBC Pediatric Oncology Family Comfort Fund"],
+    "financial": [
+      "Saskatchewan Family Health Benefits",
+      "CIBC Pediatric Oncology Family Comfort Fund"
+    ],
     "notes": "Strong in-province care localized in Saskatoon."
   },
   {
     "province": "Manitoba",
     "hospitals": ["Children's Hospital of Winnipeg (CancerCare Manitoba)"],
-    "financial": ["Manitoba Pharmacare", "Manitoba Candlelighters Benevolent Fund", "Variety Manitoba"],
+    "financial": [
+      "Manitoba Pharmacare",
+      "Manitoba Candlelighters Benevolent Fund",
+      "Variety Manitoba"
+    ],
     "notes": "Primary center in Winnipeg, which also provides care for portions of Nunavut."
   },
   {
     "province": "Ontario",
-    "hospitals": ["SickKids", "CHEO", "McMaster Children's Hospital", "Children's Hospital at London Health Sciences Centre"],
-    "financial": ["OHIP+", "Trillium Drug Program", "POGO Financial Assistance Program"],
+    "hospitals": [
+      "SickKids",
+      "CHEO",
+      "McMaster Children's Hospital",
+      "Children's Hospital at London Health Sciences Centre"
+    ],
+    "financial": [
+      "OHIP+",
+      "Trillium Drug Program",
+      "POGO Financial Assistance Program"
+    ],
     "notes": "Excellent localized support with multiple world-class facilities. CHEO in Ottawa also heavily supports Nunavut patients."
   },
   {
     "province": "Quebec",
-    "hospitals": ["CHU Sainte-Justine", "Montreal Children's Hospital", "CHU de Québec-Université Laval"],
+    "hospitals": [
+      "CHU Sainte-Justine",
+      "Montreal Children's Hospital",
+      "CHU de Québec-Université Laval"
+    ],
     "financial": ["RAMQ", "Leucan"],
     "notes": "Comprehensive care and robust financial support primarily driven by Leucan."
   },
   {
     "province": "New Brunswick",
     "hospitals": ["Dr. Georges-L.-Dumont UHC", "Saint John Regional Hospital"],
-    "financial": ["New Brunswick Prescription Drug Program", "Fuel the Care", "Canadian Cancer Society Travel Fund"],
+    "financial": [
+      "New Brunswick Prescription Drug Program",
+      "Fuel the Care",
+      "Canadian Cancer Society Travel Fund"
+    ],
     "notes": "Lacks major specialized pediatric oncology center; families are typically referred to the IWK Health Centre in Halifax, Nova Scotia for comprehensive treatment."
   },
   {
@@ -56,7 +90,11 @@
   {
     "province": "Newfoundland and Labrador",
     "hospitals": ["Janeway Children's Health and Rehabilitation Centre"],
-    "financial": ["NLPDP", "Candlelighters NL", "Dr. Jack Hand Legacy Foundation"],
+    "financial": [
+      "NLPDP",
+      "Candlelighters NL",
+      "Dr. Jack Hand Legacy Foundation"
+    ],
     "notes": "Janeway handles the majority of cases in St. John's, but complex cases may be referred to IWK in Halifax."
   },
   {
@@ -68,13 +106,20 @@
   {
     "province": "Northwest Territories",
     "hospitals": ["Stanton Territorial Hospital (limited)"],
-    "financial": ["NWT Medical Travel Service", "Non-Insured Health Benefits (NIHB)", "Kids with Cancer Society"],
+    "financial": [
+      "NWT Medical Travel Service",
+      "Non-Insured Health Benefits (NIHB)",
+      "Kids with Cancer Society"
+    ],
     "notes": "Lacks specialized pediatric oncology care; patients are sent to the Stollery Children's Hospital in Edmonton, Alberta."
   },
   {
     "province": "Nunavut",
     "hospitals": ["Qikiqtani General Hospital (limited)"],
-    "financial": ["Nunavut Medical Travel", "Non-Insured Health Benefits (NIHB)"],
+    "financial": [
+      "Nunavut Medical Travel",
+      "Non-Insured Health Benefits (NIHB)"
+    ],
     "notes": "Lacks specialized resources; patients are referred to CHEO in Ottawa or CancerCare Manitoba in Winnipeg depending on the region."
   }
 ]

@@ -1,16 +1,16 @@
 ---
 import { getCollection, render } from "astro:content";
-import Layout from '../../../layouts/Layout.astro';
+import Layout from "../../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const allJourneySteps = await getCollection('journey');
-  
+  const allJourneySteps = await getCollection("journey");
+
   return allJourneySteps.map((step) => {
     // Slugify the id to get a clean url
     // id looks like: "en/1-diagnosis.md"
-    const [lang, filename] = step.id.split('/');
-    const slug = filename.replace('.md', '');
-    
+    const [lang, filename] = step.id.split("/");
+    const slug = filename.replace(".md", "");
+
     return {
       params: { lang, slug },
       props: { step },
@@ -22,26 +22,37 @@ const { step } = Astro.props;
 const { Content } = await render(step);
 
 // To figure out next and previous, we query the same language collection
-const allStepsInLang = await getCollection('journey', (s) => s.id.startsWith(`${step.data.lang}/`));
+const allStepsInLang = await getCollection("journey", (s) =>
+  s.id.startsWith(`${step.data.lang}/`),
+);
 allStepsInLang.sort((a, b) => a.data.step - b.data.step);
 
-const currentIndex = allStepsInLang.findIndex(s => s.id === step.id);
+const currentIndex = allStepsInLang.findIndex((s) => s.id === step.id);
 const prevStep = currentIndex > 0 ? allStepsInLang[currentIndex - 1] : null;
-const nextStep = currentIndex < allStepsInLang.length - 1 ? allStepsInLang[currentIndex + 1] : null;
+const nextStep =
+  currentIndex < allStepsInLang.length - 1
+    ? allStepsInLang[currentIndex + 1]
+    : null;
 
 // Helper to construct URLs
 const getUrl = (s: any) => {
-  const [lang, filename] = s.id.split('/');
-  return `/${lang}/journey/${filename.replace('.md', '')}`;
+  const [lang, filename] = s.id.split("/");
+  return `/${lang}/journey/${filename.replace(".md", "")}`;
 };
 ---
 
 <Layout title={step.data.title}>
   <div class="mb-8">
-    <span class="text-sm font-semibold text-primary uppercase tracking-wider">Step {step.data.step} of {allStepsInLang.length}</span>
-    <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{step.data.title}</h1>
+    <span class="text-sm font-semibold text-primary uppercase tracking-wider"
+      >Step {step.data.step} of {allStepsInLang.length}</span
+    >
+    <h1
+      class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+    >
+      {step.data.title}
+    </h1>
   </div>
-  
+
   <article class="prose max-w-none mb-12">
     <Content />
   </article>
@@ -49,23 +60,36 @@ const getUrl = (s: any) => {
   <!-- Wizard Navigation -->
   <div class="border-t border-gray-200 pt-8 flex justify-between items-center">
     <div>
-      {prevStep ? (
-        <a href={getUrl(prevStep)} class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">
-          &larr; Previous Phase
-        </a>
-      ) : (
-        <a href="/" class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">
-          &larr; Back to Home
-        </a>
-      )}
+      {
+        prevStep ? (
+          <a
+            href={getUrl(prevStep)}
+            class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
+          >
+            &larr; Previous Phase
+          </a>
+        ) : (
+          <a
+            href="/"
+            class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
+          >
+            &larr; Back to Home
+          </a>
+        )
+      }
     </div>
-    
+
     <div>
-      {nextStep && (
-        <a href={getUrl(nextStep)} class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark transition-colors">
-          Next Phase &rarr;
-        </a>
-      )}
+      {
+        nextStep && (
+          <a
+            href={getUrl(nextStep)}
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark transition-colors"
+          >
+            Next Phase &rarr;
+          </a>
+        )
+      }
     </div>
   </div>
 </Layout>

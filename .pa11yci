@@ -1,0 +1,13 @@
+{
+  "urls": [
+    "http://localhost:3000/",
+    "http://localhost:3000/en/journey/1-diagnosis",
+    "http://localhost:3000/symptoms",
+    "http://localhost:3000/financial"
+  ],
+  "defaults": {
+    "standard": "WCAG2AA",
+    "timeout": 30000,
+    "wait": 2000
+  }
+}

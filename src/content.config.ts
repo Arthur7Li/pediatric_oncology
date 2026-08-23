@@ -1,16 +1,16 @@
-import { z, defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { z, defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 
 const journeyCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/journey" }),
   schema: z.object({
     title: z.string(),
     step: z.number(),
-    author: z.string().default('Medical Review Team'),
+    author: z.string().default("Medical Review Team"),
     last_medically_reviewed_date: z.string(),
     authoritative_sources: z.array(z.string()).optional(),
-    lang: z.enum(['en', 'fr', 'zh'])
-  })
+    lang: z.enum(["en", "fr", "zh"]),
+  }),
 });
 
 const tumorsCollection = defineCollection({
@@ -18,11 +18,11 @@ const tumorsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     incidence: z.string(),
-    author: z.string().default('Medical Review Team'),
+    author: z.string().default("Medical Review Team"),
     last_medically_reviewed_date: z.string(),
     authoritative_sources: z.array(z.string()).optional(),
-    lang: z.enum(['en', 'fr', 'zh'])
-  })
+    lang: z.enum(["en", "fr", "zh"]),
+  }),
 });
 
 const symptomsCollection = defineCollection({
@@ -30,15 +30,15 @@ const symptomsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     severity: z.string(),
-    author: z.string().default('Medical Review Team'),
+    author: z.string().default("Medical Review Team"),
     last_medically_reviewed_date: z.string(),
     authoritative_sources: z.array(z.string()).optional(),
-    lang: z.enum(['en', 'fr', 'zh'])
-  })
+    lang: z.enum(["en", "fr", "zh"]),
+  }),
 });
 
 export const collections = {
-  'journey': journeyCollection,
-  'tumors': tumorsCollection,
-  'symptoms': symptomsCollection,
+  journey: journeyCollection,
+  tumors: tumorsCollection,
+  symptoms: symptomsCollection,
 };

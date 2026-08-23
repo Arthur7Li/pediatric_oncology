@@ -1,14 +1,14 @@
 ---
-import { getCollection, render } from 'astro:content';
-import Layout from '../../../layouts/Layout.astro';
+import { getCollection, render } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const allSymptoms = await getCollection('symptoms');
-  
+  const allSymptoms = await getCollection("symptoms");
+
   return allSymptoms.map((step) => {
-    const [lang, filename] = step.id.split('/');
-    const slug = filename.replace('.md', '');
-    
+    const [lang, filename] = step.id.split("/");
+    const slug = filename.replace(".md", "");
+
     return {
       params: { lang, slug },
       props: { step },
@@ -23,20 +23,31 @@ const { Content } = await render(step);
 <Layout title={step.data.title}>
   <div class="mb-8 border-b pb-6">
     <div class="flex items-center gap-3 mb-2">
-      <span class="text-sm font-semibold text-primary uppercase tracking-wider">Symptom Management</span>
-      <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${step.data.severity.toLowerCase().includes('high') || step.data.severity.toLowerCase().includes('emergency') ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'}`}>
+      <span class="text-sm font-semibold text-primary uppercase tracking-wider"
+        >Symptom Management</span
+      >
+      <span
+        class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${step.data.severity.toLowerCase().includes("high") || step.data.severity.toLowerCase().includes("emergency") ? "bg-red-100 text-red-800" : "bg-yellow-100 text-yellow-800"}`}
+      >
         Severity: {step.data.severity}
       </span>
     </div>
-    <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">{step.data.title}</h1>
+    <h1
+      class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+    >
+      {step.data.title}
+    </h1>
   </div>
-  
+
   <article class="prose max-w-none mb-12">
     <Content />
   </article>
 
   <div class="mt-8">
-    <a href="/" class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors">
+    <a
+      href="/"
+      class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
+    >
       &larr; Back to Home
     </a>
   </div>

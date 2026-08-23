@@ -1,0 +1,73 @@
+name: CI & QA Pipeline
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  quality-assurance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci || npm install --legacy-peer-deps
+
+      - name: Format Check (Prettier)
+        run: npm run format:check
+
+      - name: Type & Component Check (Astro Check)
+        run: npm run check
+
+      - name: Build Platform
+        run: npm run build
+
+      - name: Check Medical Expiry
+        run: node scripts/check-medical-expiry.cjs
+
+  link-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Lychee Broken Link Checker
+        uses: lycheeverse/lychee-action@v1.9.3
+        with:
+          args: "--verbose --no-progress './**/*.md' './**/*.astro'"
+          fail: true
+
+  accessibility-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies & Build
+        run: |
+          npm ci || npm install --legacy-peer-deps
+          npm run build
+
+      - name: Install Pa11y
+        run: npm install -g pa11y pa11y-ci
+
+      - name: Run Accessibility Audit
+        run: |
+          npx serve dist -l 3000 &
+          sleep 3
+          pa11y-ci http://localhost:3000/

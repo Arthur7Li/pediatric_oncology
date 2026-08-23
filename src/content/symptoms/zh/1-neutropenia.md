@@ -3,7 +3,12 @@ title: "中性粒细胞减少症与发热"
 severity: "高/紧急"
 author: "医学审查团队"
 last_medically_reviewed_date: "2026-08-22"
-authoritative_sources: ["https://www.childrensoncologygroup.org/", "https://www.stjude.org/", "https://www.cancer.gov/"]
+authoritative_sources:
+  [
+    "https://www.childrensoncologygroup.org/",
+    "https://www.stjude.org/",
+    "https://www.cancer.gov/",
+  ]
 lang: "zh"
 ---
 
@@ -14,9 +19,11 @@ lang: "zh"
 如果患有中性粒细胞减少症的孩子出现发热（通常定义为单次口腔温度达到 101°F / 38.3°C 或更高，或者温度持续在 100.4°F / 38.0°C 以上超过一小时），这被视为**医疗紧急情况**。
 
 ## 切勿在家中自行处理
+
 与常见的儿童发热不同，**中性粒细胞减少性发热绝对不能也不应在家中自行处理**。因为孩子的免疫系统已经受损，感染可能会在短时间内演变为危及生命的情况。
 
 ### 应立即采取的步骤：
+
 1. **立即寻求急诊护理：** 严格按照医疗团队的指示，立即联系您孩子的肿瘤科团队或前往最近的急诊室。
 2. **不要等待：** 即使发热温度看起来不高，或者孩子看起来状态相对稳定，也不要等待发热自行消退。切勿等到下一个工作日再行处理。
 3. **不要给予退烧药：** 除非肿瘤科团队明确指示，否则切勿给孩子服用对乙酰氨基酚（泰诺 Tylenol）、布洛芬（雅维 Advil/美林 Motrin）或任何其他退烧药。这些药物可能会掩盖发热症状，从而延误挽救生命的治疗。
@@ -24,4 +31,4 @@ lang: "zh"
 
 > **请始终牢记：** 接受癌症治疗的儿童一旦发热，就需要紧急的专业医疗护理。
 
-*资料来源：圣裘德儿童研究医院 (St. Jude Children's Research Hospital)，美国国家癌症研究所 (NCI)*
+_资料来源：圣裘德儿童研究医院 (St. Jude Children's Research Hospital)，美国国家癌症研究所 (NCI)_
