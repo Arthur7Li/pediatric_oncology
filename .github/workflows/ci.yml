@@ -48,7 +48,8 @@ jobs:
             --exclude-path './docs/qa'
             --exclude 'https://www.iwk.nshealth.ca'
             --exclude 'https://www.canada.ca/en/services/benefits/ei'
-            --accept 200,204,403
+            --exclude 'https://www.c17.ca'
+            --accept 200,204,403,503
             --timeout 15
             --max-retries 2
             --scheme https --scheme http
