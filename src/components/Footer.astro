@@ -1,15 +1,110 @@
 ---
+import { translations, type Locale } from "../i18n/translations";
 
+const pathname = Astro.url.pathname;
+const langMatch = pathname.match(/^\/(en|fr|zh)(\/.*)?$/);
+const currentLang: Locale = (langMatch ? langMatch[1] : "en") as Locale;
+
+const t = translations[currentLang] || translations.en;
+const langPrefix = `/${currentLang}`;
 ---
 
-<footer class="bg-gray-100 border-t border-gray-200 mt-12">
-  <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
-    <p>
-      This platform is for educational purposes and is not a substitute for
-      professional medical advice.
-    </p>
-    <p class="mt-2">
-      Created for families navigating the Canadian pediatric oncology system.
-    </p>
+<footer class="bg-gray-100 border-t border-gray-200 mt-16 text-gray-700">
+  <div class="max-w-5xl mx-auto px-6 py-12">
+    <!-- Emergency Banner inside Footer -->
+    <div
+      class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg mb-8 text-sm"
+      role="region"
+      aria-label={t.footer.emergencyTitle}
+    >
+      <div class="flex items-start gap-3">
+        <span class="text-red-600 font-bold text-lg" aria-hidden="true">🚨</span
+        >
+        <div>
+          <h4 class="font-bold text-red-900 text-sm">
+            {t.footer.emergencyTitle}
+          </h4>
+          <p class="text-red-800 mt-1 leading-relaxed">
+            {t.footer.emergencyBody}
+          </p>
+          <div
+            class="mt-2 text-xs sm:text-sm text-red-800 flex flex-wrap gap-x-4 gap-y-1"
+          >
+            <span>📞 <strong>{t.footer.kidsHelpPhone}</strong></span>
+            <span>📞 <strong>{t.footer.suicideHelpline}</strong></span>
+            <span>📞 <strong>{t.footer.cancerSociety}</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-sm">
+      <div>
+        <h5 class="font-bold text-gray-900 mb-3">{t.footer.aboutTitle}</h5>
+        <p class="text-gray-600 text-xs leading-relaxed">
+          {t.footer.aboutBody}
+        </p>
+      </div>
+
+      <div>
+        <h5 class="font-bold text-gray-900 mb-3">{t.footer.quickNav}</h5>
+        <ul class="space-y-2 text-xs text-gray-600">
+          <li>
+            <a
+              href={`${langPrefix}/journey/1-diagnosis`}
+              class="hover:text-primary transition-colors">{t.nav.journey}</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${langPrefix}/tumors`}
+              class="hover:text-primary transition-colors">{t.nav.tumors}</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${langPrefix}/symptoms`}
+              class="hover:text-primary transition-colors">{t.nav.symptoms}</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${langPrefix}/financial`}
+              class="hover:text-primary transition-colors">{t.nav.financial}</a
+            >
+          </li>
+          <li>
+            <a
+              href={`${langPrefix}/resources`}
+              class="hover:text-primary transition-colors">{t.nav.hospitals}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold text-gray-900 mb-3">{t.footer.partnersTitle}</h5>
+        <ul class="space-y-1 text-xs text-gray-600">
+          <li>• The Hospital for Sick Children (SickKids)</li>
+          <li>• CHU Sainte-Justine / Centre Charles-Bruneau</li>
+          <li>• BC Children's Hospital</li>
+          <li>• Stollery Children's Hospital</li>
+          <li>• Conseil C17 / C17 Council</li>
+          <li>• Pediatric Oncology Group of Ontario (POGO)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="pt-8 border-t border-gray-200 text-center text-xs text-gray-500 space-y-2"
+    >
+      <p>
+        {t.footer.disclaimer}
+      </p>
+      <p>
+        © {new Date().getFullYear()}
+        {t.footer.copyright}
+      </p>
+    </div>
   </div>
 </footer>

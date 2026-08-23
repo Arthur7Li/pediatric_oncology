@@ -4,9 +4,11 @@ step: 4
 author: Medical Researcher Agent
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - SuperSibs (Alex's Lemonade Stand Foundation)
-  - Dana-Farber Sibling Program
-  - Association of Child Life Professionals
+  - "The Hospital for Sick Children (SickKids) - Child Life Services & Sibling Support"
+  - "CHU Sainte-Justine - Psychosocial & Sibling Support Program"
+  - "Children's Hospital of Eastern Ontario (CHEO) - Child Life"
+  - "SuperSibs (Alex's Lemonade Stand Foundation)"
+  - "Association of Child Life Professionals (ACLP)"
 lang: "en"
 ---
 

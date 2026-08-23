@@ -4,11 +4,11 @@ severity: "Moyenne"
 author: "Équipe de révision médicale"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  [
-    "https://www.childrensoncologygroup.org/",
-    "https://www.stjude.org/",
-    "https://www.cancer.gov/",
-  ]
+  - "Pediatric Oncology Group of Ontario (POGO) - Directives cliniques sur les nausées"
+  - "The Hospital for Sick Children (SickKids) - Directives de soins"
+  - "CHU Sainte-Justine - Gestion des nausées et vomissements"
+  - "Children's Oncology Group (COG)"
+  - "Institut national du cancer (NCI)"
 lang: "fr"
 ---
 

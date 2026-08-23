@@ -1,31 +1,64 @@
 ---
-title: "Tumeurs de la glande pinéale"
-incidence: "Rares (3-8% des tumeurs cérébrales pédiatriques)"
+title: "Tumeurs de la région pinéale"
+incidence: "Rare (3 à 8 % des tumeurs cérébrales pédiatriques)"
 author: "Medical Review Team"
-last_medically_reviewed_date: "2026-08-22"
+last_medically_reviewed_date: "2026-08-23"
 authoritative_sources:
-  - "https://www.stjude.org/"
+  - "CHU Sainte-Justine - Centre de cancérologie Charles-Bruneau"
+  - "The Hospital for Sick Children (SickKids) - Programme de neuro-oncologie"
+  - "Conseil C17 - Réseau canadien de recherche en oncologie pédiatrique"
+  - "Children's Oncology Group (COG)"
+  - "National Cancer Institute (NCI)"
+  - "Hôpital de recherche pour enfants St. Jude"
 lang: "fr"
 ---
 
-## Aperçu
+# Comprendre les tumeurs pédiatriques de la glande pinéale
 
-Les tumeurs de la région pinéale sont rares, ne représentant que 3 à 8 % des tumeurs cérébrales pédiatriques. Elles se développent dans ou autour de la glande pinéale, un petit organe situé au centre du cerveau.
+Apprendre que votre enfant est atteint d'une tumeur cérébrale est une épreuve bouleversante. Ce guide a été conçu pour vous aider à comprendre les tumeurs de la glande pinéale, en traduisant les termes médicaux complexes en explications claires et bienveillantes.
 
-## Types Spécifiques
+## Qu'est-ce que la glande pinéale ?
 
-- **Germinome :** Le type le plus courant de tumeur de la région pinéale et très sensible aux traitements par radiothérapie et chimiothérapie.
-- **Pinéoblastome :** Une tumeur rare, agressive et à croissance rapide.
-- **Pinéocytome :** Rare chez les enfants, il s'agit généralement d'une tumeur (bénigne) à croissance lente.
+La glande pinéale est une minuscule structure de la taille d'un petit pois, située profondément au centre du cerveau. Connue principalement pour produire la mélatonine (l'hormone qui régule le sommeil), des tumeurs peuvent parfois se développer dans cette région.
 
-## Symptômes Spécifiques
+## Fréquence (Sont-elles rares ?)
 
-En raison de leur emplacement, ces tumeurs bloquent souvent la circulation du liquide céphalorachidien (LCR), entraînant :
+Les tumeurs de la région pinéale sont rares et représentent environ 3 % à 8 % des tumeurs cérébrales chez l'enfant. En raison de cette rareté, il est fortement recommandé d'être suivi dans un centre universitaire pédiatrique spécialisé (comme le CHU Sainte-Justine, SickKids ou BC Children's) disposant d'une équipe de neuro-oncologie expérimentée.
 
-- **Hydrocéphalie :** Accumulation de liquide dans le cerveau provoquant de graves maux de tête, des nausées et des vomissements.
-- **Syndrome de Parinaud :** Difficulté à regarder vers le haut et mouvements oculaires inhabituels.
+## Types de tumeurs de la région pinéale
 
-## Diagnostic et Traitement Standard
+Plusieurs types distincts de tumeurs peuvent se développer dans cette zone :
 
-- **Diagnostic :** Implique souvent des IRM pour voir la tumeur, une ponction lombaire pour rechercher des marqueurs tumoraux dans le liquide céphalo-rachidien, et potentiellement une biopsie.
-- **Traitement :** Une combinaison de chirurgie (pour soulager l'accumulation de liquide et retirer la tumeur si possible), de radiothérapie et de chimiothérapie.
+- **Germinome :** La tumeur la plus fréquente de la région pinéale. Il s'agit d'une tumeur germinale très sensible et qui répond particulièrement bien à la radiothérapie et à la chimiothérapie.
+- **Pinéoblastome :** Une tumeur maligne rare, agressive et à croissance rapide (haut grade), prenant naissance directement dans les cellules de la glande pinéale et nécessitant un traitement intensif coordonné.
+- **Pinéocytome :** Une tumeur à croissance lente (bas grade), beaucoup plus rare chez le jeune enfant et d'évolution moins agressive.
+
+## Symptômes à surveiller
+
+En raison de la position centrale de la glande pinéale, la tumeur peut gêner la circulation du liquide céphalorachidien (LCR) ou comprimer les structures voisines :
+
+- **Hydrocéphalie :** Pression accrue dans la boîte crânienne par accumulation de LCR, provoquant des maux de tête matinaux, des nausées, des vomissements et une grande fatigue.
+- **Syndrome de Parinaud :** Difficulté à lever les yeux vers le haut, mouvements saccadés involontaires des yeux (nystagmus) ou anomalies de réaction des pupilles à la lumière.
+- **Troubles endocriniens (hormonaux) :** Soif excessive et mictions fréquentes (diabète insipide) ou puberté précoce.
+
+## Démarche diagnostique
+
+1. **Examen neurologique complet :** Évaluation des réflexes, de la vision et de l'équilibre.
+2. **Imagerie par résonance magnétique (IRM) :** IRM du cerveau et de la moelle épinière pour visualiser précisément la tumeur.
+3. **Ponction lombaire :** Analyse du liquide céphalorachidien à la recherche de cellules tumorales et de marqueurs spécifiques (ex. AFP, bêta-hCG pour les tumeurs germinales).
+4. **Biopsie :** Prélèvement minutieux par un neurochirurgien si les marqueurs sanguins/LCR ne suffisent pas à poser le diagnostic.
+
+## Protocoles de traitement
+
+Le traitement est personnalisé en fonction de l'âge de l'enfant et du type exact de tumeur :
+
+- **Chirurgie :** Pose d'une dérivation ou ventriculocisternostomie (VCS) pour soulager la pression du LCR, et exérèse maximale sécuritaire de la tumeur.
+- **Radiothérapie :** Traitement de référence pour les germinomes et élément clé pour les pinéoblastomes, optimisé pour préserver au maximum les fonctions cognitives futures.
+- **Chimiothérapie :** Médicaments ciblés utilisés pour détruire les cellules cancéreuses et permettre de réduire les doses de radiation nécessaires.
+
+## Références faisant autorité
+
+- [CHU Sainte-Justine - Centre Charles-Bruneau](https://www.chusj.org/)
+- [AboutKidsHealth - Tumeurs cérébrales pédiatriques (SickKids)](https://www.aboutkidshealth.ca/)
+- [Conseil C17 pour la recherche en oncologie pédiatrique](https://www.c17.ca/)
+- [Children's Oncology Group (COG)](https://www.childrensoncologygroup.org)

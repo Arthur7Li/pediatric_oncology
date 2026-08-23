@@ -4,7 +4,10 @@ step: 2
 author: "医学审查团队"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - "https://www.childrensoncologygroup.org/"
+  - "多伦多病童医院 (SickKids) - 儿童临床肿瘤科"
+  - "加拿大C17儿童肿瘤理事会 (C17 Council) 临床指南"
+  - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine)"
+  - "北美儿童肿瘤协作组 (COG)"
 lang: "zh"
 ---
 

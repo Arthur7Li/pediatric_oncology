@@ -57,8 +57,28 @@ A strong network of charities across Canada offers targeted financial and logist
 **Provincial Support:**
 
 - **Ontario - POGO (Pediatric Oncology Group of Ontario):** POGO’s Financial Assistance Program (POFAP) is an incredible resource. It reimburses eligible families for out-of-pocket costs related to the child's treatment, such as food during hospital stays, accommodation, and childcare for siblings under 12.
-- **Quebec - Leucan:** Leucan provides extensive support for families in Quebec, including direct financial assistance, emergency funds, massage therapy at the hospital, and school reintegration support.
-- **Alberta - Kids Cancer Care:** Offers a range of family support programs, funding for research, and scholarships for survivors. They also provide camps and community programs to support the psychological well-being of the whole family.
-- **Regional Charities:** Organizations like **Childcan** (Southwestern Ontario) offer parking passes, meal vouchers, and direct financial support for families treated at specific hospitals like London Health Sciences Centre.
 
-_Disclaimer: Programs and coverages can change. Always consult your oncology social worker for the most up-to-date and personalized guidance._
+## 5. First Nations, Inuit, and Métis Health Support & NIHB
+
+Indigenous families navigating pediatric cancer have access to specialized federal, provincial, and community programs designed to ensure equitable and culturally safe care.
+
+### Non-Insured Health Benefits (NIHB) Program
+
+Administered by **Indigenous Services Canada (ISC)**, the NIHB program provides eligible First Nations and recognized Inuit children with comprehensive coverage for medically necessary goods and services not covered by provincial plans or private insurance:
+
+- **Medical Transportation & Accommodation:** Fully covers airfare, emergency medical evacuations, meals, and hotel or boarding home lodging for the child and an **authorized non-medical escort (parent/guardian)** when traveling outside their home community for specialized pediatric oncology care.
+- **Prescription Drug Coverage:** Comprehensive 100% coverage (with no deductibles or co-payments) for eligible cancer therapies, anti-emetics, antibiotics, and pain management medications listed on the NIHB Drug Benefit List.
+- **Medical Supplies & Equipment:** Covers dressings, infusion supplies, ambulatory pumps, and specialized pediatric nutritional supplements.
+
+### Indigenous Patient Navigators & Hospital Support
+
+Major Canadian pediatric cancer centers provide dedicated Indigenous Health Teams to assist with translation, travel coordination, and traditional healing:
+
+- **Ontario (CHEO & SickKids):** CHEO's dedicated _Inuit and Indigenous Navigators_ support families traveling from Nunavut and Northern Ontario. SickKids partners with the _Indigenous Cancer Care Unit_ at Ontario Health.
+- **Alberta (Stollery & Alberta Children's):** The _Awasisak Indigenous Health Program_ at Stollery offers 24/7 dedicated social work and cultural liaison support for families from Northern Alberta and the NWT.
+- **British Columbia (BC Children's):** The _Indigenous Health Team_ coordinates with the First Nations Health Authority (FNHA) for seamless community-to-hospital transitions.
+- **Manitoba (CancerCare Manitoba):** The _Indigenous Patient Navigator Program_ provides culturally safe navigation for Manitoba, Northwestern Ontario, and Kivalliq (Nunavut) patients.
+
+---
+
+_Disclaimer: Healthcare coverage and charity grant criteria can change. Always connect directly with your hospital's oncology social worker or Indigenous patient navigator for personalized, up-to-date guidance._

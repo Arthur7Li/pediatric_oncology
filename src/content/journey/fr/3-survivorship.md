@@ -4,7 +4,10 @@ step: 3
 author: "Medical Review Team"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - "https://survivorshipguidelines.org/"
+  - "Pediatric Oncology Group of Ontario (POGO) - Cliniques de suivi à long terme"
+  - "The Hospital for Sick Children (SickKids) - Programme de survie au cancer"
+  - "CHU Sainte-Justine - Clinique de suivi à long terme"
+  - "Children's Oncology Group (COG) - Lignes directrices de suivi"
 lang: "fr"
 ---
 

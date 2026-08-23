@@ -6,24 +6,38 @@ import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
+  lang?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  lang = "en",
+  description = "A step-by-step educational roadmap and resource hub for families navigating pediatric cancer within the Canadian healthcare system.",
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="antialiased text-gray-900 bg-gray-50">
+<html lang={lang} class="antialiased text-gray-900 bg-gray-50">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
     <title>{title} | Canadian Pediatric Oncology Resource</title>
     <ClientRouter />
   </head>
   <body class="min-h-screen flex flex-col">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-dark"
+    >
+      Skip to main content
+    </a>
     <Header />
     <main
-      class="flex-grow max-w-4xl mx-auto w-full px-6 py-12 prose animate-fade-in"
+      id="main-content"
+      class="flex-grow max-w-4xl mx-auto w-full px-6 py-12"
     >
       <slot />
     </main>

@@ -4,11 +4,11 @@ severity: "高/紧急"
 author: "医学审查团队"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  [
-    "https://www.childrensoncologygroup.org/",
-    "https://www.stjude.org/",
-    "https://www.cancer.gov/",
-  ]
+  - "多伦多病童医院 (SickKids) - 发热性中性粒细胞减少临床指南"
+  - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine) - 肿瘤急诊指南"
+  - "加拿大C17儿童肿瘤理事会 (C17 Council) 支持治疗委员会"
+  - "北美儿童肿瘤协作组 (COG)"
+  - "美国国家癌症研究所 (NCI)"
 lang: "zh"
 ---
 

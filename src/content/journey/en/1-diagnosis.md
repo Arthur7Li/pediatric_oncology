@@ -4,7 +4,10 @@ step: 1
 author: "Medical Review Team"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - "https://www.cancer.gov/types/childhood-cancers"
+  - "AboutKidsHealth - SickKids Cancer Diagnostic Pathway"
+  - "CHU Sainte-Justine - Diagnostic Imaging & Pathology"
+  - "C17 Council - Pediatric Oncology Research Network"
+  - "National Cancer Institute (NCI) - Childhood Cancers Overview"
 lang: "en"
 ---
 

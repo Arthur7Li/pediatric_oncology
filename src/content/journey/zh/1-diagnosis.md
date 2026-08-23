@@ -4,7 +4,10 @@ step: 1
 author: "医学审查团队"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - "https://www.cancer.gov/types/childhood-cancers"
+  - "AboutKidsHealth - 多伦多病童医院 (SickKids) 癌症诊断路径"
+  - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine) - 诊断与影像中心"
+  - "加拿大C17儿童肿瘤理事会 (C17 Council)"
+  - "美国国家癌症研究所 (NCI)"
 lang: "zh"
 ---
 

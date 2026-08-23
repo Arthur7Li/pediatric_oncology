@@ -4,9 +4,12 @@ incidence: Tumeur cérébrale maligne fréquente
 author: Agent Chercheur Médical
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - Hôpital de recherche pour enfants St. Jude
-  - Institut national du cancer (NCI)
-  - Children's Oncology Group (COG)
+  - "CHU Sainte-Justine - Centre Charles-Bruneau"
+  - "The Hospital for Sick Children (SickKids) - Centre de recherche sur les tumeurs cérébrales"
+  - "Conseil C17 - Réseau canadien de recherche en oncologie pédiatrique"
+  - "Children's Oncology Group (COG)"
+  - "Hôpital de recherche pour enfants St. Jude"
+  - "Institut national du cancer (NCI)"
 lang: "fr"
 ---
 

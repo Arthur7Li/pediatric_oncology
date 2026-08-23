@@ -4,11 +4,11 @@ severity: "Medium"
 author: "Medical Review Team"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  [
-    "https://www.childrensoncologygroup.org/",
-    "https://www.stjude.org/",
-    "https://www.cancer.gov/",
-  ]
+  - "AboutKidsHealth - SickKids Oral Care & Mucositis Protocol"
+  - "CHU Sainte-Justine - Soins buccaux pédiatriques"
+  - "Children's Oncology Group (COG) - Supportive Care"
+  - "Multinational Association of Supportive Care in Cancer (MASCC/ISOO)"
+  - "National Cancer Institute (NCI)"
 lang: "en"
 ---
 

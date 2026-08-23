@@ -1,4 +1,5 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 
 const journeyCollection = defineCollection({
@@ -9,6 +10,8 @@ const journeyCollection = defineCollection({
     author: z.string().default("Medical Review Team"),
     last_medically_reviewed_date: z.string(),
     authoritative_sources: z.array(z.string()).optional(),
+    canadian_sources: z.array(z.string()).optional(),
+    medical_disclaimer: z.boolean().default(true),
     lang: z.enum(["en", "fr", "zh"]),
   }),
 });
@@ -21,6 +24,8 @@ const tumorsCollection = defineCollection({
     author: z.string().default("Medical Review Team"),
     last_medically_reviewed_date: z.string(),
     authoritative_sources: z.array(z.string()).optional(),
+    canadian_sources: z.array(z.string()).optional(),
+    medical_disclaimer: z.boolean().default(true),
     lang: z.enum(["en", "fr", "zh"]),
   }),
 });
@@ -33,6 +38,8 @@ const symptomsCollection = defineCollection({
     author: z.string().default("Medical Review Team"),
     last_medically_reviewed_date: z.string(),
     authoritative_sources: z.array(z.string()).optional(),
+    canadian_sources: z.array(z.string()).optional(),
+    medical_disclaimer: z.boolean().default(true),
     lang: z.enum(["en", "fr", "zh"]),
   }),
 });

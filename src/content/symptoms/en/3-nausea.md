@@ -4,11 +4,11 @@ severity: "Medium"
 author: "Medical Review Team"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  [
-    "https://www.childrensoncologygroup.org/",
-    "https://www.stjude.org/",
-    "https://www.cancer.gov/",
-  ]
+  - "Pediatric Oncology Group of Ontario (POGO) - Pediatric CINV Guidelines"
+  - "The Hospital for Sick Children (SickKids) - Clinical Practice Guidelines"
+  - "CHU Sainte-Justine - Gestion des nausées et vomissements"
+  - "Children's Oncology Group (COG) - Supportive Care Committee"
+  - "National Cancer Institute (NCI)"
 lang: "en"
 ---
 

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0284c7;
-  --color-primary-dark: #0369a1;
+  --color-primary: #026aa2;
+  --color-primary-dark: #004e7c;
   --animate-fade-in: fadeIn 0.5s ease-out;
 }
 
@@ -14,6 +14,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -32,6 +43,15 @@
 .prose ul {
   @apply list-disc pl-6 mb-4 space-y-2 text-gray-700;
 }
-.prose a {
+.prose ol {
+  @apply list-decimal pl-6 mb-4 space-y-2 text-gray-700;
+}
+.prose strong {
+  @apply font-semibold text-gray-900;
+}
+.prose blockquote {
+  @apply border-l-4 border-primary/40 pl-4 italic text-gray-700 my-4;
+}
+.prose a:not([class*="text-"]) {
   @apply text-primary hover:text-primary-dark underline;
 }

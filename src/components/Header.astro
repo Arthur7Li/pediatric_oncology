@@ -1,59 +1,256 @@
 ---
+import { translations, type Locale } from "../i18n/translations";
 
+const pathname = Astro.url.pathname;
+
+// Detect current language from URL prefix
+const langMatch = pathname.match(/^\/(en|fr|zh)(\/.*)?$/);
+const currentLang: Locale = (langMatch ? langMatch[1] : "en") as Locale;
+const remainingPath = langMatch ? langMatch[2] || "" : pathname;
+
+const t = translations[currentLang] || translations.en;
+
+// Generate language toggle URLs that strictly preserve the current page
+function getLangUrl(targetLang: Locale) {
+  if (
+    pathname.startsWith("/en/") ||
+    pathname.startsWith("/fr/") ||
+    pathname.startsWith("/zh/")
+  ) {
+    return `/${targetLang}${remainingPath}`;
+  }
+  if (pathname === "/en" || pathname === "/fr" || pathname === "/zh") {
+    return targetLang === "en" ? "/" : `/${targetLang}`;
+  }
+  if (pathname === "/" || pathname === "") {
+    return targetLang === "en" ? "/" : `/${targetLang}`;
+  }
+  // For unprefixed top-level routes like /tumors, /symptoms, /financial, /resources
+  return `/${targetLang}${pathname}`;
+}
+
+const langPrefix = `/${currentLang}`;
+const homeUrl = currentLang === "en" ? "/" : `/${currentLang}`;
+
+const isJourney = pathname.includes("/journey");
+const isTumors = pathname.includes("/tumors");
+const isSymptoms = pathname.includes("/symptoms");
+const isResources = pathname.includes("/resources");
+const isFinancial = pathname.includes("/financial");
+
+const navItems = [
+  {
+    name: t.nav.journey,
+    href: `${langPrefix}/journey/1-diagnosis`,
+    active: isJourney,
+  },
+  {
+    name: t.nav.tumors,
+    href: `${langPrefix}/tumors`,
+    active: isTumors,
+  },
+  {
+    name: t.nav.symptoms,
+    href: `${langPrefix}/symptoms`,
+    active: isSymptoms,
+  },
+  {
+    name: t.nav.hospitals,
+    href: `${langPrefix}/resources`,
+    active: isResources,
+  },
+  {
+    name: t.nav.financial,
+    href: `${langPrefix}/financial`,
+    active: isFinancial,
+  },
+];
 ---
 
-<header class="bg-white border-b border-gray-200">
-  <div
-    class="max-w-5xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4"
-  >
-    <a href="/" class="text-xl font-bold text-gray-900"
-      >Canadian Pediatric Oncology Resource</a
-    >
-    <nav
-      class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium"
-    >
+<header class="bg-white border-b border-gray-200 sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3">
+    <div class="flex items-center justify-between gap-4">
       <a
-        href="/en/journey/1-diagnosis"
-        class="text-gray-600 hover:text-gray-900 transition-colors"
-        >The Journey</a
+        href={homeUrl}
+        class="text-lg sm:text-xl font-bold text-gray-900 hover:text-primary transition-colors flex items-center gap-2 no-underline"
       >
-      <a
-        href="/tumors"
-        class="text-gray-600 hover:text-gray-900 transition-colors"
-        >Rare Tumors</a
-      >
-      <a
-        href="/symptoms"
-        class="text-gray-600 hover:text-gray-900 transition-colors">Symptoms</a
-      >
-      <a
-        href="/resources"
-        class="text-gray-600 hover:text-gray-900 transition-colors">Hospitals</a
-      >
-      <a
-        href="/financial"
-        class="text-gray-600 hover:text-gray-900 transition-colors"
-        >Financial Support</a
-      >
+        <span class="text-primary text-2xl" aria-hidden="true">🍁</span>
+        <span>{t.brandName}</span>
+      </a>
 
-      <!-- Language Toggle -->
-      <div class="pl-4 border-l border-gray-300 flex space-x-3">
-        <a
-          href="/en/journey/1-diagnosis"
-          class="text-gray-400 hover:text-primary transition-colors font-bold"
-          aria-label="English">EN</a
+      <!-- Desktop Navigation -->
+      <nav
+        class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium"
+        aria-label="Main Navigation"
+      >
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`px-3 py-2 min-h-[44px] inline-flex items-center rounded-md transition-colors no-underline ${
+                item.active
+                  ? "text-primary font-bold bg-sky-50 border-b-2 border-primary"
+                  : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              }`}
+              aria-current={item.active ? "page" : undefined}
+            >
+              {item.name}
+            </a>
+          ))
+        }
+
+        <!-- Language Switcher -->
+        <div
+          class="ml-3 pl-3 border-l border-gray-200 flex items-center gap-1"
+          aria-label="Language Selector"
         >
-        <a
-          href="/fr/journey/1-diagnosis"
-          class="text-gray-400 hover:text-primary transition-colors font-bold"
-          aria-label="Français">FR</a
+          <a
+            href={getLangUrl("en")}
+            hreflang="en"
+            class={`px-2.5 py-1.5 min-h-[40px] inline-flex items-center rounded text-xs font-bold transition-colors no-underline ${
+              currentLang === "en"
+                ? "bg-primary text-white"
+                : "text-gray-700 hover:text-primary hover:bg-gray-100"
+            }`}
+            aria-current={currentLang === "en" ? "page" : undefined}
+            aria-label="English">EN</a
+          >
+          <a
+            href={getLangUrl("fr")}
+            hreflang="fr"
+            class={`px-2.5 py-1.5 min-h-[40px] inline-flex items-center rounded text-xs font-bold transition-colors no-underline ${
+              currentLang === "fr"
+                ? "bg-primary text-white"
+                : "text-gray-700 hover:text-primary hover:bg-gray-100"
+            }`}
+            aria-current={currentLang === "fr" ? "page" : undefined}
+            aria-label="Français">FR</a
+          >
+          <a
+            href={getLangUrl("zh")}
+            hreflang="zh"
+            class={`px-2.5 py-1.5 min-h-[40px] inline-flex items-center rounded text-xs font-bold transition-colors no-underline ${
+              currentLang === "zh"
+                ? "bg-primary text-white"
+                : "text-gray-700 hover:text-primary hover:bg-gray-100"
+            }`}
+            aria-current={currentLang === "zh" ? "page" : undefined}
+            aria-label="中文 (Chinese)">中文</a
+          >
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Button & Mobile Language Toggle -->
+      <div class="flex items-center gap-2 md:hidden">
+        <div class="flex items-center gap-1">
+          <a
+            href={getLangUrl("en")}
+            hreflang="en"
+            class={`px-2 py-1 text-xs font-bold rounded ${currentLang === "en" ? "bg-primary text-white" : "text-gray-700 bg-gray-100"}`}
+            aria-label="EN">EN</a
+          >
+          <a
+            href={getLangUrl("fr")}
+            hreflang="fr"
+            class={`px-2 py-1 text-xs font-bold rounded ${currentLang === "fr" ? "bg-primary text-white" : "text-gray-700 bg-gray-100"}`}
+            aria-label="FR">FR</a
+          >
+          <a
+            href={getLangUrl("zh")}
+            hreflang="zh"
+            class={`px-2 py-1 text-xs font-bold rounded ${currentLang === "zh" ? "bg-primary text-white" : "text-gray-700 bg-gray-100"}`}
+            aria-label="中文">中</a
+          >
+        </div>
+
+        <button
+          id="mobile-menu-button"
+          type="button"
+          class="p-2 min-h-[44px] min-w-[44px] rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle Navigation Menu"
         >
-        <a
-          href="/zh/journey/1-diagnosis"
-          class="text-gray-400 hover:text-primary transition-colors font-bold"
-          aria-label="中文">中文</a
-        >
+          <svg
+            id="menu-open-icon"
+            class="h-6 w-6 block"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg
+            id="menu-close-icon"
+            class="h-6 w-6 hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
       </div>
-    </nav>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden pt-4 pb-3 border-t border-gray-200 mt-3 space-y-1"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`block px-3 py-2.5 rounded-md text-base font-medium transition-colors no-underline ${
+              item.active
+                ? "bg-sky-50 text-primary font-bold"
+                : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            }`}
+            aria-current={item.active ? "page" : undefined}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
   </div>
 </header>
+
+<script is:inline>
+  function setupMobileMenu() {
+    const button = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    const openIcon = document.getElementById("menu-open-icon");
+    const closeIcon = document.getElementById("menu-close-icon");
+
+    if (!button || !menu) return;
+
+    button.onclick = () => {
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!isExpanded));
+      menu.classList.toggle("hidden");
+      if (openIcon && closeIcon) {
+        openIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      }
+    };
+  }
+
+  document.addEventListener("astro:page-load", setupMobileMenu);
+  if (document.readyState !== "loading") {
+    setupMobileMenu();
+  } else {
+    document.addEventListener("DOMContentLoaded", setupMobileMenu);
+  }
+</script>

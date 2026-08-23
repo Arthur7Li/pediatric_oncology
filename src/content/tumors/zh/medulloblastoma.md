@@ -4,9 +4,12 @@ incidence: "常见的恶性脑肿瘤"
 author: "医学研究员智能体"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - "圣裘德儿童研究医院 (St. Jude Children's Research Hospital)"
+  - "多伦多病童医院 (SickKids) - 脑肿瘤研究中心"
+  - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine) - 查尔斯·布鲁诺中心"
+  - "加拿大C17儿童肿瘤理事会 (C17 Council)"
+  - "北美儿童肿瘤协作组 (COG)"
+  - "圣裘德儿童研究医院 (St. Jude)"
   - "美国国家癌症研究所 (NCI)"
-  - "儿童肿瘤协作组 (COG)"
 lang: "zh"
 ---
 

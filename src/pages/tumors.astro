@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { translations } from "../i18n/translations";
+
+const t = translations.en;
+const allTumors = await getCollection("tumors", (t) => t.id.startsWith("en/"));
+---
+
+<Layout title={t.tumors.title} lang="en">
+  <div class="mb-8 border-b pb-6">
+    <h1
+      class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
+    >
+      {t.tumors.title}
+    </h1>
+    <p class="mt-4 text-lg text-gray-600">
+      {t.tumors.subtitle}
+    </p>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      allTumors.map((tumor) => {
+        const slug = tumor.id.split("/")[1].replace(".md", "");
+        return (
+          <a
+            href={`/en/tumors/${slug}`}
+            class="block p-6 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow no-underline"
+          >
+            <div class="flex items-center gap-2 mb-2">
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-900">
+                {tumor.data.incidence}
+              </span>
+            </div>
+            <h2 class="text-xl font-bold text-gray-900 mt-2">
+              {tumor.data.title}
+            </h2>
+            <p class="text-sm text-primary mt-4 font-medium">
+              {t.tumors.readGuide}
+            </p>
+          </a>
+        );
+      })
+    }
+  </div>
+</Layout>

@@ -2,22 +2,32 @@
 interface Props {
   term: string;
   definition: string;
+  id?: string;
 }
 
-const { term, definition } = Astro.props;
+const { term, definition, id } = Astro.props;
+const tooltipId =
+  id ||
+  `tooltip-${term.toLowerCase().replace(/[^a-z0-9]/g, "-")}-${Math.random().toString(36).substring(2, 7)}`;
 ---
 
 <span
-  class="group relative inline-block cursor-help border-b border-dashed border-primary text-primary"
+  class="group relative inline-block cursor-help border-b border-dashed border-primary text-primary focus-within:outline-none"
+  tabindex="0"
+  role="button"
+  aria-describedby={tooltipId}
+  aria-label={`Definition of ${term}`}
 >
   {term}
   <span
-    class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 w-64 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gray-900 text-white text-sm rounded-md px-3 py-2 text-center shadow-lg"
+    id={tooltipId}
+    role="tooltip"
+    class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 w-64 max-w-[calc(100vw-2rem)] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100 group-focus-within:opacity-100 bg-gray-900 text-white text-xs sm:text-sm rounded-md px-3 py-2 text-center shadow-lg leading-snug"
   >
     {definition}
     <!-- Arrow -->
     <span
       class="absolute top-full left-1/2 -ml-1 border-[5px] border-transparent border-t-gray-900"
-    ></span>
+      aria-hidden="true"></span>
   </span>
 </span>

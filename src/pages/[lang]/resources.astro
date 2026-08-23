@@ -1,0 +1,228 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { translations, type Locale } from "../../i18n/translations";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "zh" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = (lang as Locale) || "en";
+const t = translations[currentLang] || translations.en;
+
+const canadianHospitals = [
+  {
+    name:
+      currentLang === "fr"
+        ? "The Hospital for Sick Children (SickKids) (Toronto, ON)"
+        : currentLang === "zh"
+          ? "多伦多病童医院 (SickKids - 多伦多, 安大略省)"
+          : "The Hospital for Sick Children (SickKids) (Toronto, ON)",
+    desc:
+      currentLang === "fr"
+        ? "L'hôpital de recherche pédiatrique le plus réputé au Canada et chef de file mondial en thérapies géniques et cellulaires."
+        : currentLang === "zh"
+          ? "加拿大科研实力最雄厚、规模最大的顶尖儿童医院，在白血病、神经肿瘤和 CAR-T 细胞疗法领域处于国际领先地位。"
+          : "Canada's most research-intensive hospital and the premier destination for pediatric oncology and CAR-T cellular therapies.",
+    linkText: "AboutKidsHealth - Cancer Hub",
+    linkUrl: "https://www.aboutkidshealth.ca/cancer",
+  },
+  {
+    name:
+      currentLang === "fr"
+        ? "CHU Sainte-Justine / Centre de cancérologie Charles-Bruneau (Montréal, QC)"
+        : currentLang === "zh"
+          ? "圣朱斯蒂娜大学医院中心 / 查尔斯-布鲁诺癌症中心 (CHU Sainte-Justine - 蒙特利尔, 魁北克省)"
+          : "CHU Sainte-Justine / Charles-Bruneau Oncology Center (Montreal, QC)",
+    desc:
+      currentLang === "fr"
+        ? "Le plus grand centre mère-enfant au Canada et pôle d'excellence en oncologie pédiatrique pour toute la francophonie canadienne."
+        : currentLang === "zh"
+          ? "加拿大最大的母婴健康中心，魁北克省乃至全加法语区儿童肿瘤临床、移植与精准医学的领头羊。"
+          : "The largest mother-child center in Canada and premier pediatric cancer treatment institution for Francophone families.",
+    linkText: "Sainte-Justine - Charles-Bruneau",
+    linkUrl: "https://www.chusj.org/",
+  },
+  {
+    name:
+      currentLang === "fr"
+        ? "BC Children's Hospital (Vancouver, C.-B.)"
+        : currentLang === "zh"
+          ? "卑诗省儿童医院 (BC Children's Hospital - 温哥华, 卑诗省)"
+          : "BC Children's Hospital (Vancouver, BC)",
+    desc:
+      currentLang === "fr"
+        ? "Centre quaternaire de référence pour la Colombie-Britannique et le Yukon, pionnier de la médecine personnalisée pédiatrique."
+        : currentLang === "zh"
+          ? "卑诗省与育空地区唯一的儿童肿瘤专科中心，在实体瘤个体化靶向治疗及原住民健康支持方面经验丰富。"
+          : "The primary tertiary and quaternary care center serving British Columbia and the Yukon, pioneering genomic medicine.",
+    linkText: "BC Children's Oncology/BMT",
+    linkUrl:
+      "http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt",
+  },
+  {
+    name:
+      currentLang === "fr"
+        ? "Stollery Children's Hospital (Edmonton, AB)"
+        : currentLang === "zh"
+          ? "斯托勒里儿童医院 (Stollery Children's Hospital - 埃德蒙顿, 阿尔伯塔省)"
+          : "Stollery Children's Hospital (Edmonton, AB)",
+    desc:
+      currentLang === "fr"
+        ? "Centre d'excellence pour l'Alberta du Nord et les Territoires du Nord-Ouest, hébergeant le programme de santé autochtone Awasisak."
+        : currentLang === "zh"
+          ? "加拿大西部主要的儿童实体瘤与神经肿瘤转诊中心，长期承担西北地区的重症转诊与原住民家庭支持。"
+          : "Premier quaternary referral center for Northern Alberta and the Northwest Territories, home to the Awasisak Indigenous program.",
+    linkText: "Stollery Pediatric Oncology Care",
+    linkUrl: "https://www.albertahealthservices.ca/stollery/stollery.aspx",
+  },
+  {
+    name:
+      currentLang === "fr"
+        ? "Children's Hospital of Eastern Ontario (CHEO) (Ottawa, ON)"
+        : currentLang === "zh"
+          ? "东安大略儿童医院 (CHEO - 渥太华, 安大略省)"
+          : "Children's Hospital of Eastern Ontario (CHEO) (Ottawa, ON)",
+    desc:
+      currentLang === "fr"
+        ? "Centre spécialisé bilingue desservant l'Est de l'Ontario, l'Outaouais et les familles inuites du Nunavut avec des navigateurs dédiés."
+        : currentLang === "zh"
+          ? "双语儿童肿瘤中心，重点服务安省东部、魁省部分地区及努纳武特地区的因纽特患儿家庭。"
+          : "Bilingual pediatric center providing specialized care for Eastern Ontario and dedicated Inuit patient navigation for Nunavut.",
+    linkText: "CHEO Oncology & Hematology",
+    linkUrl: "https://www.cheo.on.ca/",
+  },
+  {
+    name:
+      currentLang === "fr"
+        ? "IWK Health Centre (Halifax, N.-É.)"
+        : currentLang === "zh"
+          ? "IWK 健康中心 (IWK Health Centre - 哈利法克斯, 新斯科舍省)"
+          : "IWK Health Centre (Halifax, NS)",
+    desc:
+      currentLang === "fr"
+        ? "L'institution de référence en oncologie pédiatrique pour l'ensemble des provinces de l'Atlantique (N.-É., N.-B., Î.-P.-É.)."
+        : currentLang === "zh"
+          ? "大西洋四省（新斯科舍、新不伦瑞克、爱德华王子岛、纽芬兰）的最高级别儿童肿瘤中心。"
+          : "The primary tertiary pediatric oncology institution serving all Maritime provinces in Atlantic Canada.",
+    linkText: "IWK Health Oncology Program",
+    linkUrl: "https://www.iwk.nshealth.ca/",
+  },
+];
+
+const usHospitals = [
+  {
+    name: "St. Jude Children's Research Hospital (Memphis, TN)",
+    desc:
+      currentLang === "fr"
+        ? "Hôpital de renommée mondiale dédié aux maladies infantiles catastrophiques et auteur de Together by St. Jude™."
+        : currentLang === "zh"
+          ? "全球公认的儿童恶性肿瘤顶级科研与治疗机构，开发了享誉全球的 Together by St. Jude™ 患儿家庭教育平台。"
+          : "Globally recognized leader in catastrophic childhood disease research and creators of Together by St. Jude™.",
+    linkText: "Together by St. Jude™ Education Hub",
+    linkUrl: "https://together.stjude.org/",
+  },
+  {
+    name: "Children's Hospital of Philadelphia (CHOP) (Philadelphia, PA)",
+    desc:
+      currentLang === "fr"
+        ? "Pionnier mondial des thérapies cellulaires et du soutien psychosocial des familles."
+        : currentLang === "zh"
+          ? "在儿童白血病免疫治疗、细胞疗法和家庭心理健康支持领域享誉国际。"
+          : "World leader in cellular immunotherapy clinical trials and holistic family psychosocial support.",
+    linkText: "CHOP Cancer Center Resources",
+    linkUrl: "https://www.chop.edu/cancer",
+  },
+];
+---
+
+<Layout title={t.resources.title} lang={currentLang}>
+  <div class="mb-8 border-b pb-6">
+    <h1
+      class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
+    >
+      {t.resources.title}
+    </h1>
+    <p class="mt-4 text-lg text-gray-600">
+      {t.resources.subtitle}
+    </p>
+  </div>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">
+      {t.resources.canadianTitle}
+    </h2>
+    <p class="text-gray-600 mb-6 text-sm sm:text-base">
+      {t.resources.canadianSubtitle}
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        canadianHospitals.map((hospital) => (
+          <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">
+                {hospital.name}
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                {hospital.desc}
+              </p>
+            </div>
+            <div>
+              <a
+                href={hospital.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
+              >
+                <span>{hospital.linkText}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="pt-8 border-t border-gray-200">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">
+      {t.resources.usTitle}
+    </h2>
+    <p class="text-gray-600 mb-6 text-sm sm:text-base">
+      {t.resources.usSubtitle}
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        usHospitals.map((hospital) => (
+          <div class="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">
+                {hospital.name}
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                {hospital.desc}
+              </p>
+            </div>
+            <div>
+              <a
+                href={hospital.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
+              >
+                <span>{hospital.linkText}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

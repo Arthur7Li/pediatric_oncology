@@ -4,11 +4,11 @@ severity: "Moyenne"
 author: "Équipe de révision médicale"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  [
-    "https://www.childrensoncologygroup.org/",
-    "https://www.stjude.org/",
-    "https://www.cancer.gov/",
-  ]
+  - "AboutKidsHealth - Protocole de soins buccaux et mucite (SickKids)"
+  - "CHU Sainte-Justine - Soins buccaux pédiatriques"
+  - "Conseil C17 - Soins de soutien pédiatriques"
+  - "Children's Oncology Group (COG)"
+  - "Institut national du cancer (NCI)"
 lang: "fr"
 ---
 

@@ -1,0 +1,148 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { translations } from "../i18n/translations";
+
+const t = translations.en;
+
+const canadianHospitals = [
+  {
+    name: "The Hospital for Sick Children (SickKids) (Toronto, ON)",
+    desc: "Canada's most research-intensive hospital and the premier destination for pediatric oncology and CAR-T cellular therapies.",
+    linkText: "AboutKidsHealth - Cancer Hub",
+    linkUrl: "https://www.aboutkidshealth.ca/cancer",
+  },
+  {
+    name: "CHU Sainte-Justine / Charles-Bruneau Oncology Center (Montreal, QC)",
+    desc: "The largest mother-child center in Canada and premier pediatric cancer treatment institution for Francophone families.",
+    linkText: "Sainte-Justine - Charles-Bruneau",
+    linkUrl: "https://www.chusj.org/",
+  },
+  {
+    name: "BC Children's Hospital (Vancouver, BC)",
+    desc: "The primary tertiary and quaternary care center serving British Columbia and the Yukon, pioneering genomic medicine.",
+    linkText: "BC Children's Oncology/BMT",
+    linkUrl:
+      "http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt",
+  },
+  {
+    name: "Stollery Children's Hospital (Edmonton, AB)",
+    desc: "Premier quaternary referral center for Northern Alberta and the Northwest Territories, home to the Awasisak Indigenous program.",
+    linkText: "Stollery Pediatric Oncology Care",
+    linkUrl: "https://www.albertahealthservices.ca/stollery/stollery.aspx",
+  },
+  {
+    name: "Children's Hospital of Eastern Ontario (CHEO) (Ottawa, ON)",
+    desc: "Bilingual pediatric center providing specialized care for Eastern Ontario and dedicated Inuit patient navigation for Nunavut.",
+    linkText: "CHEO Oncology & Hematology",
+    linkUrl: "https://www.cheo.on.ca/",
+  },
+  {
+    name: "IWK Health Centre (Halifax, NS)",
+    desc: "The primary tertiary pediatric oncology institution serving all Maritime provinces in Atlantic Canada.",
+    linkText: "IWK Health Oncology Program",
+    linkUrl: "https://www.iwk.nshealth.ca/",
+  },
+];
+
+const usHospitals = [
+  {
+    name: "St. Jude Children's Research Hospital (Memphis, TN)",
+    desc: "Globally recognized leader in catastrophic childhood disease research and creators of Together by St. Jude™.",
+    linkText: "Together by St. Jude™ Education Hub",
+    linkUrl: "https://together.stjude.org/",
+  },
+  {
+    name: "Children's Hospital of Philadelphia (CHOP) (Philadelphia, PA)",
+    desc: "World leader in cellular immunotherapy clinical trials and holistic family psychosocial support.",
+    linkText: "CHOP Cancer Center Resources",
+    linkUrl: "https://www.chop.edu/cancer",
+  },
+];
+---
+
+<Layout title={t.resources.title} lang="en">
+  <div class="mb-8 border-b pb-6">
+    <h1
+      class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
+    >
+      {t.resources.title}
+    </h1>
+    <p class="mt-4 text-lg text-gray-600">
+      {t.resources.subtitle}
+    </p>
+  </div>
+
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">
+      {t.resources.canadianTitle}
+    </h2>
+    <p class="text-gray-600 mb-6 text-sm sm:text-base">
+      {t.resources.canadianSubtitle}
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        canadianHospitals.map((hospital) => (
+          <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">
+                {hospital.name}
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                {hospital.desc}
+              </p>
+            </div>
+            <div>
+              <a
+                href={hospital.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
+              >
+                <span>{hospital.linkText}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="pt-8 border-t border-gray-200">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2">
+      {t.resources.usTitle}
+    </h2>
+    <p class="text-gray-600 mb-6 text-sm sm:text-base">
+      {t.resources.usSubtitle}
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        usHospitals.map((hospital) => (
+          <div class="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="text-lg font-bold text-gray-900 mb-2">
+                {hospital.name}
+              </h3>
+              <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                {hospital.desc}
+              </p>
+            </div>
+            <div>
+              <a
+                href={hospital.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
+              >
+                <span>{hospital.linkText}</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

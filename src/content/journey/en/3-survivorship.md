@@ -4,7 +4,10 @@ step: 3
 author: "Medical Review Team"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - "https://survivorshipguidelines.org/"
+  - "Pediatric Oncology Group of Ontario (POGO) - AfterCare Clinics"
+  - "The Hospital for Sick Children (SickKids) - Cancer Survivorship Program"
+  - "BC Children's Hospital - Long-Term Follow-Up Program"
+  - "Children's Oncology Group (COG) - Long-Term Follow-Up Guidelines"
 lang: "en"
 ---
 

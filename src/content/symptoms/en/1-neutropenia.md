@@ -4,11 +4,11 @@ severity: "High/Emergency"
 author: "Medical Review Team"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  [
-    "https://www.childrensoncologygroup.org/",
-    "https://www.stjude.org/",
-    "https://www.cancer.gov/",
-  ]
+  - "The Hospital for Sick Children (SickKids) - Clinical Practice Guidelines for Febrile Neutropenia"
+  - "CHU Sainte-Justine - Directives cliniques d'urgence en oncologie"
+  - "C17 Council - Supportive Care Committee"
+  - "Children's Oncology Group (COG) - Supportive Care Guidelines"
+  - "National Cancer Institute (NCI)"
 lang: "en"
 ---
 

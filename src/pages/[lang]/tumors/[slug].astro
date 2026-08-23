@@ -1,0 +1,84 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import MedicalDisclaimer from "../../../components/MedicalDisclaimer.astro";
+
+export async function getStaticPaths() {
+  const allTumors = await getCollection("tumors");
+
+  return allTumors.map((tumor) => {
+    const [lang, filename] = tumor.id.split("/");
+    const slug = filename.replace(".md", "");
+
+    return {
+      params: { lang, slug },
+      props: { tumor },
+    };
+  });
+}
+
+const { tumor } = Astro.props;
+const { Content } = await render(tumor);
+---
+
+<Layout title={tumor.data.title} lang={tumor.data.lang}>
+  <div class="mb-8 border-b pb-6">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="text-sm font-semibold text-primary uppercase tracking-wider"
+        >Pediatric Oncology Guide</span
+      >
+      <span
+        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-800"
+      >
+        Incidence: {tumor.data.incidence}
+      </span>
+    </div>
+    <h1
+      class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+    >
+      {tumor.data.title}
+    </h1>
+    <div class="mt-3 text-xs text-gray-500 flex flex-wrap items-center gap-4">
+      <span>Reviewed by: {tumor.data.author}</span>
+      <span>•</span>
+      <span>Last Reviewed: {tumor.data.last_medically_reviewed_date}</span>
+    </div>
+  </div>
+
+  <article class="prose max-w-none mb-8">
+    <Content />
+  </article>
+
+  {
+    tumor.data.authoritative_sources &&
+      tumor.data.authoritative_sources.length > 0 && (
+        <div class="my-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
+          <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">
+            Authoritative & Clinical Sources
+          </h3>
+          <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+            {tumor.data.authoritative_sources.map((source: string) => (
+              <li>{source}</li>
+            ))}
+          </ul>
+        </div>
+      )
+  }
+
+  <MedicalDisclaimer lang={tumor.data.lang} />
+
+  <div class="mt-8 pt-6 border-t border-gray-200">
+    <a
+      href={`/${tumor.data.lang}/tumors`}
+      class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+    >
+      &larr; {
+        tumor.data.lang === "fr"
+          ? "Retour aux guides des tumeurs"
+          : tumor.data.lang === "zh"
+            ? "返回肿瘤指南列表"
+            : "Back to Tumor Guides"
+      }
+    </a>
+  </div>
+</Layout>

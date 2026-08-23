@@ -1,5 +1,14 @@
 ---
 import resources from "../data/provincial_resources.json";
+import { translations, type Locale } from "../i18n/translations";
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+const currentLang = (lang as Locale) || "en";
+const t = translations[currentLang] || translations.en;
 ---
 
 <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 my-8">
@@ -7,13 +16,13 @@ import resources from "../data/provincial_resources.json";
     for="province-select"
     class="block text-lg font-bold text-gray-900 mb-4"
   >
-    Select your Province or Territory to see localized support:
+    {t.filter.label}
   </label>
   <select
     id="province-select"
     class="block w-full max-w-sm pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md bg-gray-50 border"
   >
-    <option value="" disabled selected>-- Choose Province/Territory --</option>
+    <option value="" disabled selected>{t.filter.placeholder}</option>
     {
       resources.map((res: any) => (
         <option value={res.province}>{res.province}</option>
@@ -21,12 +30,19 @@ import resources from "../data/provincial_resources.json";
     }
   </select>
 
-  <div id="resource-display" class="mt-6 hidden animate-fade-in">
-    <h3 id="display-province" class="text-xl font-bold text-primary mb-3"></h3>
+  <div
+    id="resource-display"
+    class="mt-6 hidden"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    <h3 id="display-province" class="text-xl font-bold text-primary mb-3">
+      {t.filter.selectedHeading}
+    </h3>
 
     <div class="mb-4">
       <h4 class="font-semibold text-gray-800 border-b pb-1 mb-2">
-        Top Hospitals & Care Centers
+        {t.filter.hospitalsHeading}
       </h4>
       <ul id="display-hospitals" class="list-disc pl-5 text-gray-700 space-y-1">
       </ul>
@@ -34,7 +50,7 @@ import resources from "../data/provincial_resources.json";
 
     <div class="mb-4">
       <h4 class="font-semibold text-gray-800 border-b pb-1 mb-2">
-        Financial & Drug Coverage Programs
+        {t.filter.financialHeading}
       </h4>
       <ul id="display-financial" class="list-disc pl-5 text-gray-700 space-y-1">
       </ul>
@@ -50,37 +66,49 @@ import resources from "../data/provincial_resources.json";
 </div>
 
 <script is:inline define:vars={{ resources }}>
-  const select = document.getElementById("province-select");
-  const display = document.getElementById("resource-display");
-  const displayProvince = document.getElementById("display-province");
-  const displayHospitals = document.getElementById("display-hospitals");
-  const displayFinancial = document.getElementById("display-financial");
-  const displayNotesContainer = document.getElementById(
-    "display-notes-container",
-  );
-  const displayNotes = document.getElementById("display-notes");
+  function initProvincialFilter() {
+    const select = document.getElementById("province-select");
+    const display = document.getElementById("resource-display");
+    const displayProvince = document.getElementById("display-province");
+    const displayHospitals = document.getElementById("display-hospitals");
+    const displayFinancial = document.getElementById("display-financial");
+    const displayNotesContainer = document.getElementById(
+      "display-notes-container",
+    );
+    const displayNotes = document.getElementById("display-notes");
 
-  select.addEventListener("change", (e) => {
-    const selectedProv = e.target.value;
-    const data = resources.find((r) => r.province === selectedProv);
+    if (!select || !display) return;
 
-    if (data) {
-      display.classList.remove("hidden");
-      displayProvince.textContent = data.province + " Resources";
+    select.addEventListener("change", (e) => {
+      const selectedProv = e.target.value;
+      const data = resources.find((r) => r.province === selectedProv);
 
-      displayHospitals.innerHTML = data.hospitals
-        .map((h) => `<li>${h}</li>`)
-        .join("");
-      displayFinancial.innerHTML = data.financial
-        .map((f) => `<li>${f}</li>`)
-        .join("");
+      if (data) {
+        display.classList.remove("hidden");
+        displayProvince.textContent = data.province + " Resources";
 
-      if (data.notes && data.notes.trim() !== "") {
-        displayNotesContainer.classList.remove("hidden");
-        displayNotes.innerHTML = `<strong>Note on Out-of-Province Care:</strong> ${data.notes}`;
-      } else {
-        displayNotesContainer.classList.add("hidden");
+        displayHospitals.innerHTML = data.hospitals
+          .map((h) => `<li>${h}</li>`)
+          .join("");
+        displayFinancial.innerHTML = data.financial
+          .map((f) => `<li>${f}</li>`)
+          .join("");
+
+        if (data.notes && data.notes.trim() !== "") {
+          displayNotesContainer.classList.remove("hidden");
+          displayNotes.innerHTML = `<strong>Note on Care Coordination:</strong> ${data.notes}`;
+        } else {
+          displayNotesContainer.classList.add("hidden");
+        }
       }
-    }
-  });
+    });
+  }
+
+  // Support direct load and Astro View Transitions (ClientRouter)
+  document.addEventListener("astro:page-load", initProvincialFilter);
+  if (document.readyState !== "loading") {
+    initProvincialFilter();
+  } else {
+    document.addEventListener("DOMContentLoaded", initProvincialFilter);
+  }
 </script>

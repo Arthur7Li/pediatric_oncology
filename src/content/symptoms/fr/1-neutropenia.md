@@ -4,11 +4,11 @@ severity: "Élevée/Urgence"
 author: "Équipe de révision médicale"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  [
-    "https://www.childrensoncologygroup.org/",
-    "https://www.stjude.org/",
-    "https://www.cancer.gov/",
-  ]
+  - "The Hospital for Sick Children (SickKids) - Lignes directrices sur la neutropénie fébrile"
+  - "CHU Sainte-Justine - Directives cliniques d'urgence en oncologie"
+  - "Conseil C17 - Comité des soins de soutien"
+  - "Children's Oncology Group (COG)"
+  - "Institut national du cancer (NCI)"
 lang: "fr"
 ---
 

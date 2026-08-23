@@ -1,22 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { translations } from "../i18n/translations";
 
+const t = translations.en;
 const allSymptoms = await getCollection("symptoms", (s) =>
   s.id.startsWith("en/"),
 );
 ---
 
-<Layout title="Symptom Management">
+<Layout title={t.symptoms.title} lang="en">
   <div class="mb-8 border-b pb-6">
     <h1
       class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
     >
-      At-Home Symptom Management
+      {t.symptoms.title}
     </h1>
     <p class="mt-4 text-lg text-gray-600">
-      Actionable, medically-verified guidance for managing common side effects
-      during treatment.
+      {t.symptoms.subtitle}
     </p>
   </div>
 
@@ -40,7 +41,7 @@ const allSymptoms = await getCollection("symptoms", (s) =>
               {symptom.data.title}
             </h3>
             <p class="text-sm text-primary mt-4 font-medium">
-              Read guide &rarr;
+              {t.symptoms.readGuide}
             </p>
           </a>
         );

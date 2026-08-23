@@ -27,6 +27,7 @@ produces a dated report in `docs/qa/`.
 Spin up **three specialized subagents** to run concurrently:
 
 ### 1a. Medical Content Reviewer
+
 - **Scope:** All files in `src/content/` (journey, tumors, symptoms) across
   all three languages (en/fr/zh), plus `src/pages/tumors.md`,
   `src/pages/resources.md`, `docs/knowledge_base/`, and
@@ -39,6 +40,7 @@ Spin up **three specialized subagents** to run concurrently:
   NCI, COG, SickKids, and C17 Council.
 
 ### 1b. UI/UX Design Auditor
+
 - **Scope:** All files in `src/layouts/`, `src/components/`, `src/pages/`,
   and `src/styles/`.
 - **Checks:** Visual hierarchy, Tailwind design-system consistency, mobile
@@ -46,6 +48,7 @@ Spin up **three specialized subagents** to run concurrently:
   component polish, micro-interactions, emotional design for parents in crisis.
 
 ### 1c. Accessibility (WCAG 2.1 AA) Auditor
+
 - **Scope:** All Astro components, layouts, pages, global CSS, generated HTML
   in `dist/`, Pa11y config (`.pa11yci`), and CI pipeline
   (`.github/workflows/ci.yml`).
@@ -55,6 +58,7 @@ Spin up **three specialized subagents** to run concurrently:
   CI test coverage.
 
 ### 1d. Visual Site Inspector (Optional)
+
 - If browser tools are available, also spin up a browser subagent to serve
   the built site (`npx serve dist -l 4321`) and visually inspect key pages
   with screenshots.
@@ -90,6 +94,7 @@ If actionable issues are found:
 ## Verification
 
 After the audit is complete:
+
 - Confirm the report is saved in `docs/qa/`.
 - Confirm the build still passes: `npm run build`.
 - Update `docs/SESSION_LOG.md` with the audit timestamp and summary.

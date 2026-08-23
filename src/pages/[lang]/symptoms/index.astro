@@ -1,0 +1,62 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { translations, type Locale } from "../../../i18n/translations";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "zh" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = (lang as Locale) || "en";
+const t = translations[currentLang] || translations.en;
+
+const allSymptoms = await getCollection("symptoms", (s) =>
+  s.id.startsWith(`${currentLang}/`),
+);
+---
+
+<Layout title={t.symptoms.title} lang={currentLang}>
+  <div class="mb-8 border-b pb-6">
+    <h1
+      class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
+    >
+      {t.symptoms.title}
+    </h1>
+    <p class="mt-4 text-lg text-gray-600">
+      {t.symptoms.subtitle}
+    </p>
+  </div>
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      allSymptoms.map((symptom) => {
+        const slug = symptom.id.split("/")[1].replace(".md", "");
+        return (
+          <a
+            href={`/${currentLang}/symptoms/${slug}`}
+            class="block p-6 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow no-underline"
+          >
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${symptom.data.severity.toLowerCase().includes("high") || symptom.data.severity.toLowerCase().includes("élevée") || symptom.data.severity.toLowerCase().includes("高") ? "bg-red-100 text-red-800" : "bg-yellow-100 text-yellow-800"}`}
+              >
+                {symptom.data.severity}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">
+              {symptom.data.title}
+            </h3>
+            <p class="text-sm text-primary mt-4 font-medium">
+              {t.symptoms.readGuide}
+            </p>
+          </a>
+        );
+      })
+    }
+  </div>
+</Layout>

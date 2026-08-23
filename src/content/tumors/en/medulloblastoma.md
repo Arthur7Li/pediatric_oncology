@@ -4,9 +4,12 @@ incidence: Common malignant brain tumor
 author: Medical Researcher Agent
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - St. Jude Children's Research Hospital
-  - National Cancer Institute (NCI)
-  - Children's Oncology Group (COG)
+  - "The Hospital for Sick Children (SickKids) - Arthur and Sonia Labatt Brain Tumour Research Centre"
+  - "CHU Sainte-Justine - Charles-Bruneau Oncology Centre"
+  - "C17 Council - Canadian Pediatric Oncology Network"
+  - "Children's Oncology Group (COG)"
+  - "National Cancer Institute (NCI)"
+  - "St. Jude Children's Research Hospital"
 lang: "en"
 ---
 

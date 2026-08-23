@@ -4,7 +4,10 @@ step: 2
 author: "Medical Review Team"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - "https://www.childrensoncologygroup.org/"
+  - "The Hospital for Sick Children (SickKids) - Soins cliniques"
+  - "Conseil C17 - Protocoles et lignes directrices de traitement"
+  - "CHU Sainte-Justine - Centre Charles-Bruneau"
+  - "Children's Oncology Group (COG)"
 lang: "fr"
 ---
 

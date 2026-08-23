@@ -4,11 +4,11 @@ severity: "中等"
 author: "医学审查团队"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  [
-    "https://www.childrensoncologygroup.org/",
-    "https://www.stjude.org/",
-    "https://www.cancer.gov/",
-  ]
+  - "AboutKidsHealth - 多伦多病童医院 (SickKids) 口腔护理与黏膜炎指南"
+  - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine) - 口腔护理专栏"
+  - "加拿大C17儿童肿瘤理事会 (C17 Council)"
+  - "北美儿童肿瘤协作组 (COG)"
+  - "美国国家癌症研究所 (NCI)"
 lang: "zh"
 ---
 

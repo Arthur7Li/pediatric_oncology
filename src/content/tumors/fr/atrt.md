@@ -4,9 +4,12 @@ incidence: Extrêmement Rare/Agressive
 author: Agent Chercheur Médical
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - Hôpital de recherche pour enfants St. Jude
-  - Institut national du cancer (NCI)
-  - Children's Oncology Group (COG)
+  - "CHU Sainte-Justine - Centre de cancérologie Charles-Bruneau"
+  - "The Hospital for Sick Children (SickKids) - Programme de neuro-oncologie"
+  - "Conseil C17 - Réseau canadien de recherche en oncologie pédiatrique"
+  - "Children's Oncology Group (COG)"
+  - "Hôpital de recherche pour enfants St. Jude"
+  - "Institut national du cancer (NCI)"
 lang: "fr"
 ---
 

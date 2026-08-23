@@ -4,7 +4,10 @@ step: 3
 author: "医学审查团队"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
-  - "https://survivorshipguidelines.org/"
+  - "安省儿童肿瘤协作组 (POGO) - 远期生存随访门诊"
+  - "多伦多病童医院 (SickKids) - 癌症生存期关爱项目"
+  - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine) 随访门诊"
+  - "北美儿童肿瘤协作组 (COG) - 远期效应随访指南"
 lang: "zh"
 ---
 

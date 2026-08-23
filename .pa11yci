@@ -1,9 +1,29 @@
 {
   "urls": [
     "http://localhost:3000/",
-    "http://localhost:3000/en/journey/1-diagnosis",
+    "http://localhost:3000/fr",
+    "http://localhost:3000/zh",
+    "http://localhost:3000/tumors",
+    "http://localhost:3000/fr/tumors",
+    "http://localhost:3000/zh/tumors",
     "http://localhost:3000/symptoms",
-    "http://localhost:3000/financial"
+    "http://localhost:3000/fr/symptoms",
+    "http://localhost:3000/zh/symptoms",
+    "http://localhost:3000/financial",
+    "http://localhost:3000/fr/financial",
+    "http://localhost:3000/zh/financial",
+    "http://localhost:3000/resources",
+    "http://localhost:3000/fr/resources",
+    "http://localhost:3000/zh/resources",
+    "http://localhost:3000/en/journey/1-diagnosis",
+    "http://localhost:3000/fr/journey/1-diagnosis",
+    "http://localhost:3000/zh/journey/1-diagnosis",
+    "http://localhost:3000/en/tumors/all",
+    "http://localhost:3000/fr/tumors/all",
+    "http://localhost:3000/zh/tumors/all",
+    "http://localhost:3000/en/symptoms/1-neutropenia",
+    "http://localhost:3000/fr/symptoms/1-neutropenia",
+    "http://localhost:3000/zh/symptoms/1-neutropenia"
   ],
   "defaults": {
     "standard": "WCAG2AA",

@@ -4,9 +4,11 @@ step: 4
 author: "医学研究员智能体"
 last_medically_reviewed_date: "2026-08-22"
 authoritative_sources:
+  - "多伦多病童医院 (SickKids) - 儿童医疗辅导与同胞支持中心"
+  - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine) - 心理社会支持部"
+  - "东安大略儿童医院 (CHEO) - 儿童生活服务部"
   - "SuperSibs (Alex's Lemonade Stand Foundation)"
-  - "Dana-Farber Sibling Program"
-  - "Association of Child Life Professionals"
+  - "儿童医疗辅导师协会 (ACLP)"
 lang: "zh"
 ---
 

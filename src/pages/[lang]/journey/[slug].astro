@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
+import MedicalDisclaimer from "../../../components/MedicalDisclaimer.astro";
 
 export async function getStaticPaths() {
   const allJourneySteps = await getCollection("journey");
@@ -41,7 +42,7 @@ const getUrl = (s: any) => {
 };
 ---
 
-<Layout title={step.data.title}>
+<Layout title={step.data.title} lang={step.data.lang}>
   <div class="mb-8">
     <span class="text-sm font-semibold text-primary uppercase tracking-wider"
       >Step {step.data.step} of {allStepsInLang.length}</span
@@ -53,9 +54,11 @@ const getUrl = (s: any) => {
     </h1>
   </div>
 
-  <article class="prose max-w-none mb-12">
+  <article class="prose max-w-none mb-8">
     <Content />
   </article>
+
+  <MedicalDisclaimer lang={step.data.lang} />
 
   <!-- Wizard Navigation -->
   <div class="border-t border-gray-200 pt-8 flex justify-between items-center">
@@ -64,16 +67,26 @@ const getUrl = (s: any) => {
         prevStep ? (
           <a
             href={getUrl(prevStep)}
-            class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
+            class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
           >
-            &larr; Previous Phase
+            &larr;{" "}
+            {step.data.lang === "fr"
+              ? "Étape précédente"
+              : step.data.lang === "zh"
+                ? "上一阶段"
+                : "Previous Phase"}
           </a>
         ) : (
           <a
-            href="/"
-            class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition-colors"
+            href={step.data.lang === "en" ? "/" : `/${step.data.lang}`}
+            class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
           >
-            &larr; Back to Home
+            &larr;{" "}
+            {step.data.lang === "fr"
+              ? "Retour à l'accueil"
+              : step.data.lang === "zh"
+                ? "返回首页"
+                : "Back to Home"}
           </a>
         )
       }
@@ -86,7 +99,11 @@ const getUrl = (s: any) => {
             href={getUrl(nextStep)}
             class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark transition-colors"
           >
-            Next Phase &rarr;
+            {step.data.lang === "fr"
+              ? "Étape suivante →"
+              : step.data.lang === "zh"
+                ? "下一阶段 →"
+                : "Next Phase →"}
           </a>
         )
       }
