@@ -25,7 +25,20 @@ const tumorsCollection = defineCollection({
   })
 });
 
+const symptomsCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/symptoms" }),
+  schema: z.object({
+    title: z.string(),
+    severity: z.string(),
+    author: z.string().default('Medical Review Team'),
+    last_medically_reviewed_date: z.string(),
+    authoritative_sources: z.array(z.string()).optional(),
+    lang: z.enum(['en', 'fr', 'zh'])
+  })
+});
+
 export const collections = {
   'journey': journeyCollection,
   'tumors': tumorsCollection,
+  'symptoms': symptomsCollection,
 };

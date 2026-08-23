@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProvincialFilter from '../components/ProvincialFilter.astro';
+import { Content as FinancialContent } from '../../docs/knowledge_base/financial_logistics.md';
+---
+
+<Layout title="Financial & Logistical Support">
+  <div class="mb-8">
+    <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">Financial & Logistical Support</h1>
+    <p class="mt-4 text-lg text-gray-600">
+      Verified information on provincial healthcare, government benefits, and charity grants across Canada.
+    </p>
+  </div>
+
+  <ProvincialFilter />
+
+  <article class="prose max-w-none mt-12 pt-8 border-t border-gray-200">
+    <FinancialContent />
+  </article>
+</Layout>
