@@ -2,11 +2,18 @@
 import { translations, type Locale } from "../i18n/translations";
 
 const pathname = Astro.url.pathname;
-const langMatch = pathname.match(/^\/(en|fr|zh)(\/.*)?$/);
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const cleanPath =
+  basePath && pathname.startsWith(basePath)
+    ? pathname.slice(basePath.length) || "/"
+    : pathname;
+
+const langMatch = cleanPath.match(/^\/(en|fr|zh)(\/.*)?$/);
 const currentLang: Locale = (langMatch ? langMatch[1] : "en") as Locale;
 
 const t = translations[currentLang] || translations.en;
-const langPrefix = `/${currentLang}`;
+const langPrefix = `${basePath}/${currentLang}`;
 ---
 
 <footer class="bg-gray-100 border-t border-gray-200 mt-16 text-gray-700">

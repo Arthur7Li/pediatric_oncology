@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { translations } from "../i18n/translations";
 
 const t = translations.en;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout title={t.home.title} lang="en">
@@ -37,13 +38,13 @@ const t = translations.en;
     </p>
     <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
       <a
-        href="/en/journey/1-diagnosis"
+        href={`${basePath}/en/journey/1-diagnosis`}
         class="rounded-md bg-primary px-8 py-4 text-lg font-semibold text-white shadow-md hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary no-underline transition-colors"
       >
         {t.home.startJourneyBtn}
       </a>
       <a
-        href="/en/financial"
+        href={`${basePath}/en/financial`}
         class="rounded-md bg-white px-8 py-4 text-lg font-semibold text-gray-900 shadow-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary no-underline transition-colors"
       >
         {t.home.financialBtn}

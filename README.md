@@ -1,8 +1,13 @@
 # Canadian Pediatric Oncology Educational Platform
 
+[![Deploy to GitHub Pages](https://github.com/Arthur7Li/pediatric_oncology/actions/workflows/deploy.yml/badge.svg)](https://github.com/Arthur7Li/pediatric_oncology/actions/workflows/deploy.yml)
 [![CI & QA Pipeline](https://github.com/Arthur7Li/pediatric_oncology/actions/workflows/ci.yml/badge.svg)](https://github.com/Arthur7Li/pediatric_oncology/actions/workflows/ci.yml)
 [![Accessibility: WCAG 2.1 AA](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA%20Pass-success)](https://www.w3.org/WAI/WCAG21/quickref/)
 [![Languages: EN | FR | ZH](https://img.shields.io/badge/Languages-EN%20%7C%20FR%20%7C%20ZH-blue)](https://astro.build/config)
+
+🌐 **Live Website:** [https://arthur7li.github.io/pediatric_oncology/](https://arthur7li.github.io/pediatric_oncology/)
+
+---
 
 ## Mission
 
@@ -64,7 +69,7 @@ To provide a compassionate, medically verified, and trilingual (English, French,
 │   ├── AGENTS.md               # Core configuration and directives
 │   ├── rules/                  # Mandatory quality rules (fact-checking, tone, logging, build verification)
 │   └── skills/qa-audit/        # Reusable QA audit automation skill
-├── .github/workflows/          # CI/CD pipelines (QA, Broken link check, Pa11y accessibility audit)
+├── .github/workflows/          # CI/CD pipelines (QA, Broken link check, Pa11y accessibility audit, Deployment)
 ├── docs/                       # Feasibility, session logs, and knowledge base
 │   ├── SESSION_LOG.md          # Chronological working log of all changes and audits
 │   ├── qa/                     # Holistic QA audit reports and implementation plans
@@ -96,6 +101,7 @@ All commands are run from the repository root:
 | `npm run format`                        | Auto-format codebase using Prettier                                     |
 | `npm run format:check`                  | Verify code formatting compliance                                       |
 | `npm run qa`                            | Run full QA suite (`check`, `format:check`, and `check-medical-expiry`) |
+| `npm test`                              | Alias to `npm run qa`                                                   |
 | `node scripts/check-medical-expiry.cjs` | Validate that all medical content is within the 1-year review window    |
 
 ---

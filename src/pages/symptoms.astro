@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import { translations } from "../i18n/translations";
 
 const t = translations.en;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 const allSymptoms = await getCollection("symptoms", (s) =>
   s.id.startsWith("en/"),
 );
@@ -27,7 +28,7 @@ const allSymptoms = await getCollection("symptoms", (s) =>
         const slug = symptom.id.split("/")[1].replace(".md", "");
         return (
           <a
-            href={`/en/symptoms/${slug}`}
+            href={`${basePath}/en/symptoms/${slug}`}
             class="block p-6 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow no-underline"
           >
             <div class="flex items-center gap-2 mb-2">

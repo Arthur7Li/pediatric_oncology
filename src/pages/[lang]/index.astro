@@ -13,7 +13,8 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;
-const langPrefix = `/${currentLang}`;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const langPrefix = `${basePath}/${currentLang}`;
 ---
 
 <Layout title={t.home.title} lang={currentLang}>

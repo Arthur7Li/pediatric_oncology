@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 
 const { tumor } = Astro.props;
 const { Content } = await render(tumor);
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout title={tumor.data.title} lang={tumor.data.lang}>
@@ -69,7 +70,7 @@ const { Content } = await render(tumor);
 
   <div class="mt-8 pt-6 border-t border-gray-200">
     <a
-      href={`/${tumor.data.lang}/tumors`}
+      href={`${basePath}/${tumor.data.lang}/tumors`}
       class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
     >
       &larr; {

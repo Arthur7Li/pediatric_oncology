@@ -2,41 +2,52 @@
 import { translations, type Locale } from "../i18n/translations";
 
 const pathname = Astro.url.pathname;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+// Normalize clean path without basePath prefix for language parsing
+const cleanPath =
+  basePath && pathname.startsWith(basePath)
+    ? pathname.slice(basePath.length) || "/"
+    : pathname;
 
 // Detect current language from URL prefix
-const langMatch = pathname.match(/^\/(en|fr|zh)(\/.*)?$/);
+const langMatch = cleanPath.match(/^\/(en|fr|zh)(\/.*)?$/);
 const currentLang: Locale = (langMatch ? langMatch[1] : "en") as Locale;
-const remainingPath = langMatch ? langMatch[2] || "" : pathname;
+const remainingPath = langMatch ? langMatch[2] || "" : cleanPath;
 
 const t = translations[currentLang] || translations.en;
 
 // Generate language toggle URLs that strictly preserve the current page
 function getLangUrl(targetLang: Locale) {
   if (
-    pathname.startsWith("/en/") ||
-    pathname.startsWith("/fr/") ||
-    pathname.startsWith("/zh/")
+    cleanPath.startsWith("/en/") ||
+    cleanPath.startsWith("/fr/") ||
+    cleanPath.startsWith("/zh/")
   ) {
-    return `/${targetLang}${remainingPath}`;
+    return `${basePath}/${targetLang}${remainingPath}`;
   }
-  if (pathname === "/en" || pathname === "/fr" || pathname === "/zh") {
-    return targetLang === "en" ? "/" : `/${targetLang}`;
-  }
-  if (pathname === "/" || pathname === "") {
-    return targetLang === "en" ? "/" : `/${targetLang}`;
+  if (
+    cleanPath === "/en" ||
+    cleanPath === "/fr" ||
+    cleanPath === "/zh" ||
+    cleanPath === "/" ||
+    cleanPath === ""
+  ) {
+    return targetLang === "en" ? `${basePath}/` : `${basePath}/${targetLang}`;
   }
   // For unprefixed top-level routes like /tumors, /symptoms, /financial, /resources
-  return `/${targetLang}${pathname}`;
+  return `${basePath}/${targetLang}${cleanPath}`;
 }
 
-const langPrefix = `/${currentLang}`;
-const homeUrl = currentLang === "en" ? "/" : `/${currentLang}`;
+const langPrefix = `${basePath}/${currentLang}`;
+const homeUrl =
+  currentLang === "en" ? `${basePath}/` : `${basePath}/${currentLang}`;
 
-const isJourney = pathname.includes("/journey");
-const isTumors = pathname.includes("/tumors");
-const isSymptoms = pathname.includes("/symptoms");
-const isResources = pathname.includes("/resources");
-const isFinancial = pathname.includes("/financial");
+const isJourney = cleanPath.includes("/journey");
+const isTumors = cleanPath.includes("/tumors");
+const isSymptoms = cleanPath.includes("/symptoms");
+const isResources = cleanPath.includes("/resources");
+const isFinancial = cleanPath.includes("/financial");
 
 const navItems = [
   {

@@ -21,6 +21,7 @@ export async function getStaticPaths() {
 
 const { step } = Astro.props;
 const { Content } = await render(step);
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 // To figure out next and previous, we query the same language collection
 const allStepsInLang = await getCollection("journey", (s) =>
@@ -38,7 +39,7 @@ const nextStep =
 // Helper to construct URLs
 const getUrl = (s: any) => {
   const [lang, filename] = s.id.split("/");
-  return `/${lang}/journey/${filename.replace(".md", "")}`;
+  return `${basePath}/${lang}/journey/${filename.replace(".md", "")}`;
 };
 ---
 
@@ -78,7 +79,11 @@ const getUrl = (s: any) => {
           </a>
         ) : (
           <a
-            href={step.data.lang === "en" ? "/" : `/${step.data.lang}`}
+            href={
+              step.data.lang === "en"
+                ? `${basePath}/`
+                : `${basePath}/${step.data.lang}`
+            }
             class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
           >
             &larr;{" "}

@@ -75,6 +75,6 @@ jobs:
 
       - name: Run Accessibility Audit
         run: |
-          npx serve dist -l 3000 &
-          npx wait-on http://localhost:3000 --timeout 15000
+          npx astro preview --port 3000 &
+          npx wait-on http://localhost:3000/pediatric_oncology/ --timeout 15000
           npx pa11y-ci --config .pa11yci
