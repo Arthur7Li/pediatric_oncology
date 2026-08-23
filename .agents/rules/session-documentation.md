@@ -1,3 +1,9 @@
+---
+name: session-documentation
+description: Enforces that the agent logs all work in docs/SESSION_LOG.md.
+trigger: always_on
+---
+
 # Rule: Mandatory Session Documentation
 
 1. **Continuous Record:** To ensure full transparency and prevent hidden inconsistencies, all agents must document significant changes, decisions, or new feature implementations in `docs/SESSION_LOG.md`.

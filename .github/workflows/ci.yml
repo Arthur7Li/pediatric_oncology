@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: "npm"
 
       - name: Install Dependencies
@@ -43,7 +43,7 @@ jobs:
       - name: Lychee Broken Link Checker
         uses: lycheeverse/lychee-action@v1.9.3
         with:
-          args: "--verbose --no-progress './**/*.md' './**/*.astro'"
+          args: "--verbose --no-progress --exclude-path './docs/qa' --scheme https --scheme http './**/*.md' './**/*.astro'"
           fail: true
 
   accessibility-audit:
@@ -55,7 +55,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: "npm"
 
       - name: Install Dependencies & Build

@@ -6,10 +6,11 @@ To provide a comprehensive, unified, and easy-to-understand educational platform
 
 ## Project Structure
 
-- `docs/`: Documentation, research reports, and knowledge base (`knowledge_base/`).
+- `docs/`: Documentation, research reports, quality assurance audits (`qa/`), and knowledge base (`knowledge_base/`).
   - `docs/SESSION_LOG.md`: Mandatory working document logging all workflow changes.
-- `.agents/`: Antigravity agentic workflow harness, containing rules for AI assistance (fact-checking, tone guidelines, session logging, and strict Canadian context).
-- `src/`: The Astro 5 source code for the web platform.
+- `.agents/`: Antigravity agentic workflow harness. Contains the main `AGENTS.md` configuration, agent `rules/` (fact-checking, tone guidelines, session logging, build verification), and reusable `skills/` (like QA auditing).
+- `src/`: The Astro 5 (Content Collections, ViewTransitions) and Tailwind CSS v4 source code for the web platform.
+- `scripts/`: Custom scripts for CI/CD and QA (e.g., medical expiry checks).
 
 ## Development Commands
 
