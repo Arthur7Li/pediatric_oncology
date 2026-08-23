@@ -1,0 +1,16 @@
+---
+interface Props {
+  term: string;
+  definition: string;
+}
+
+const { term, definition } = Astro.props;
+---
+<span class="group relative inline-block cursor-help border-b border-dashed border-primary text-primary">
+  {term}
+  <span class="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 w-64 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gray-900 text-white text-sm rounded-md px-3 py-2 text-center shadow-lg">
+    {definition}
+    <!-- Arrow -->
+    <span class="absolute top-full left-1/2 -ml-1 border-[5px] border-transparent border-t-gray-900"></span>
+  </span>
+</span>

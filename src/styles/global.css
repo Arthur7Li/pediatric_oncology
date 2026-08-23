@@ -3,6 +3,18 @@
 @theme {
   --color-primary: #0284c7;
   --color-primary-dark: #0369a1;
+  --animate-fade-in: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .prose h1 { @apply text-3xl font-bold text-gray-900 mb-6; }
