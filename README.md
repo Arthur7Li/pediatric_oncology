@@ -72,6 +72,8 @@ To provide a compassionate, medically verified, and trilingual (English, French,
 ├── .github/workflows/          # CI/CD pipelines (QA, Broken link check, Pa11y accessibility audit, Deployment)
 ├── docs/                       # Feasibility, session logs, and knowledge base
 │   ├── SESSION_LOG.md          # Chronological working log of all changes and audits
+│   ├── INDUSTRY_BENCHMARK.md   # Living comparison vs. NHS, SickKids, St. Jude (update after each release)
+│   ├── STRATEGIC_ROADMAP.md    # Prioritized improvement areas with ready-to-use agent prompts
 │   ├── qa/                     # Holistic QA audit reports and implementation plans
 │   └── knowledge_base/         # Verified medical, financial, and institutional references
 ├── scripts/                    # Build scripts (check-medical-expiry.cjs)
