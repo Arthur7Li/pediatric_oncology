@@ -1,11 +1,11 @@
 # Canadian Pediatric Oncology Educational Platform
 
-[![Deploy to GitHub Pages](https://github.com/Arthur7Li/pediatric_oncology/actions/workflows/deploy.yml/badge.svg)](https://github.com/Arthur7Li/pediatric_oncology/actions/workflows/deploy.yml)
-[![CI & QA Pipeline](https://github.com/Arthur7Li/pediatric_oncology/actions/workflows/ci.yml/badge.svg)](https://github.com/Arthur7Li/pediatric_oncology/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://github.com/canadian-pediatric-oncology/pediatric_oncology/actions/workflows/deploy.yml/badge.svg)](https://github.com/canadian-pediatric-oncology/pediatric_oncology/actions/workflows/deploy.yml)
+[![CI & QA Pipeline](https://github.com/canadian-pediatric-oncology/pediatric_oncology/actions/workflows/ci.yml/badge.svg)](https://github.com/canadian-pediatric-oncology/pediatric_oncology/actions/workflows/ci.yml)
 [![Accessibility: WCAG 2.1 AA](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA%20Pass-success)](https://www.w3.org/WAI/WCAG21/quickref/)
 [![Languages: EN | FR | ZH](https://img.shields.io/badge/Languages-EN%20%7C%20FR%20%7C%20ZH-blue)](https://astro.build/config)
 
-🌐 **Live Website:** [https://arthur7li.github.io/pediatric_oncology/](https://arthur7li.github.io/pediatric_oncology/)
+🌐 **Live Website:** [https://canadian-pediatric-oncology.github.io/pediatric_oncology/](https://canadian-pediatric-oncology.github.io/pediatric_oncology/)
 
 ---
 
