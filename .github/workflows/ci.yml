@@ -49,9 +49,13 @@ jobs:
             --exclude 'https://www.iwk.nshealth.ca'
             --exclude 'https://www.canada.ca/en/services/benefits/ei'
             --exclude 'https://www.c17.ca'
+            --exclude 'https://www.childrensoncologygroup.org'
+            --exclude 'https://childrensoncologygroup.org'
+            --exclude 'https://www.survivorshipguidelines.org'
+            --exclude 'https://survivorshipguidelines.org'
             --accept 200,204,403,503
-            --timeout 15
-            --max-retries 2
+            --timeout 30
+            --max-retries 3
             --scheme https --scheme http
             './**/*.md' './**/*.astro'
           fail: true
