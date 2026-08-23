@@ -32,3 +32,17 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Implemented persistent locale-aware navigation across `Header.astro` and `Footer.astro` so that selecting a language locks all subsequent links, wizard steps, and back buttons to that locale (`/${lang}/...`).
   - Created localized static index routes for `/fr` and `/zh` homepages, `/[lang]/tumors/index.astro`, `/[lang]/symptoms/index.astro`, `/[lang]/financial.astro`, and `/[lang]/resources.astro`.
   - Expanded automated `.pa11yci` suite to 24 multi-lingual routes and verified 100% pass rate (`24/24 URLs passed with 0 errors`). Platform build expanded to 65 static pages. All QA checks green.
+- **[11:08]**: Initiated CI Repair Plan (`docs/qa/ci-repair-plan.md`) and executed **Phase 1: CI Pipeline Hardening & Headless Sandbox Resilience**:
+  - Configured `.pa11yci` defaults with explicit headless Linux Chrome flags (`--no-sandbox`, `--disable-setuid-sandbox`, `--disable-dev-shm-usage`, `--disable-gpu`) preventing sandbox crashes on `ubuntu-latest`.
+  - Replaced brittle `sleep 3` in `.github/workflows/ci.yml` with `npx wait-on http://localhost:3000 --timeout 15000` to eliminate race conditions during background server startup.
+  - Hardened Lychee broken link checker with `--accept 200,204,403 --timeout 15 --max-retries 2` to prevent CI pipeline failures caused by anti-bot firewalls on external hospital portals.
+  - Ran full build and QA verification (`npm run build && npm run qa`): 65 static pages built cleanly, 0 type errors, 100% Prettier compliance, and all 45 medical content files valid.
+- **[11:11]**: Executed **Phase 2: Test Script Harmonization & Package Scripts**:
+  - Added `pa11y-ci`, `wait-on`, and `serve` into `devDependencies` in `package.json`, eliminating dependencies on global package installations.
+  - Added unified NPM test scripts in `package.json`: `"test"` (runs full QA suite), `"test:a11y"` (runs Pa11y against 24 multi-lingual routes), and `"ci"` (runs QA + production build).
+  - Streamlined `.github/workflows/ci.yml` accessibility-audit job to invoke local devDependencies (`npx pa11y-ci`, `npx wait-on`).
+  - Verified local execution of `npm test` and `npm run ci`: 100% pass across Astro diagnostics, Prettier, medical expiry validation, and production build generation.
+- **[11:17]**: Executed **Phase 3: GitHub Pages Deployment & Release Verification**:
+  - Audited `.github/workflows/deploy.yml` configuration (Node 22, npm cache, actions/upload-pages-artifact@v3, actions/deploy-pages@v4 with concurrency management).
+  - Verified production distribution directory structure (`./dist`) containing all 65 static pages.
+  - Formatted, verified, staged, committed, and pushed complete CI repair suite to GitHub. All phases in `docs/qa/ci-repair-plan.md` 100% complete.
