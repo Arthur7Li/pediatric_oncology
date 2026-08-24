@@ -139,3 +139,14 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Formatted Chinese navigation labels in `src/components/Header.astro` into atomic compound spans (`<span class="inline-block">治疗</span><span class="inline-block">旅程</span>`, etc.) so narrow viewports break cleanly into balanced 2+2 character lines ("治疗" on line 1, "旅程" on line 2) rather than 3+1 ("治疗旅" + "程").
   - Formatted Chinese branding in `Header.astro` with balanced inline-block segments (`加拿大儿童肿瘤` / `教育与支持平台`).
 - **Status:** Verified locally (`npm run test:e2e` passing 5/5, `npm run ci` passing 100%).
+
+**[10:15] Round 2 Holistic QA Audit**
+
+- **Action:** Conducted full parallel QA audit following strategic roadmap completion (81 pages, 60 content modules, Pagefind search, breadcrumbs, 404, E2E tests, visual upgrade).
+- **Methodology:** Dispatched 3 specialized subagents — Medical Content Reviewer (Gemini 3.1 Pro), UI/UX Design Auditor (Flash), WCAG 2.1 AA Accessibility Auditor (Flash).
+- **Results:** 29 raw findings → **25 unique issues after deduplication**. 0 Critical, 5 High, 9 Medium, 11 Low.
+- **Key Patterns:**
+  1. **i18n incompleteness** — 7 issues: hardcoded English strings in ARIA labels, page badges, ProvincialFilter script, and severity badge color checks on FR/ZH pages.
+  2. **Heading hierarchy violations** — 3 issues: dual `<h1>` in markdown + template (51 pages), skipped levels in symptom index and footer/filter components.
+  3. **Root vs `[lang]` page divergence** — root English pages missed the visual design upgrade.
+- **Report:** Saved to `docs/qa/qa_audit_report_2026-08-24.md` with 4 prioritized remediation sprints.
