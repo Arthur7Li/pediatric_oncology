@@ -31,7 +31,7 @@ const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;
 const siteUrl = Astro.site
   ? Astro.site.toString().replace(/\/$/, "")
-  : "https://canadian-pediatric-oncology.github.io";
+  : "https://canadian-pediatric-oncology.github.io/pediatric_oncology";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
 const ogImageURL = new URL(image, siteUrl).toString();
 
