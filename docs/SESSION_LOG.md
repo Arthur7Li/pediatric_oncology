@@ -45,7 +45,7 @@ This document serves as a continuous record of changes, ensuring full transparen
 - **[11:17]**: Executed **Phase 3: GitHub Pages Deployment & Implementation**:
   - Implemented exact `.pa11yci` configuration with `chromeLaunchConfig: { args: ["--no-sandbox", "--disable-setuid-sandbox"] }`.
   - Updated `.github/workflows/ci.yml` `link-checker` job to exclude `https://www.iwk.nshealth.ca` and `https://www.canada.ca/en/services/benefits/ei` (environmental false positives).
-  - Replaced 3 dead external URLs across content files: `emilyshouse.ca` -> `https://philipazizcentre.ca/emilys-house/`, St. Jude Pineal -> `https://together.stjude.org/`, and NCI Wilms PDQ -> `https://www.cancer.gov/types/kidney/patient/wilms-treatment-pdq`.
+  - Replaced 3 dead external URLs across content files: emilyshouse.ca -> https://philipazizcentre.ca/emilys-house/, St. Jude Pineal -> https://together.stjude.org/, and NCI Wilms PDQ -> https://www.cancer.gov/types/kidney/patient/wilms-treatment-pdq.
   - Updated EI Caregiving benefits link to `https://www.canada.ca/en/services/benefits/ei/caregiving.html`.
   - Verified local test suite (`npm test && npm run ci`): 100% pass across Astro check, Prettier, medical expiry validation, and production build generation (65 static pages).
 - **[11:34]**: Configured GitHub Pages subpath routing (`site: "https://arthur7li.github.io"`, `base: "/pediatric_oncology"`), updated navigation and language switchers to preserve repository base prefix, and added live website URL to `README.md`. Verified live production deployment (`HTTP/2 200 OK`).

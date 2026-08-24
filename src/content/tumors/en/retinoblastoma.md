@@ -105,7 +105,7 @@ For advanced retinoblastoma (Group E) where the tumor has destroyed vision or po
 ## Authoritative References
 
 - [The Hospital for Sick Children (SickKids) - Retinoblastoma Program](https://www.sickkids.ca/)
-- [Canadian Retinoblastoma Research Advisory Board (CRRAB)](https://www.crrab.ca/)
+- [CHU Sainte-Justine](https://www.chusj.org/)
 - [C17 Council for Pediatric Oncology](https://www.c17.ca/)
 - [Children's Oncology Group (COG)](https://www.childrensoncologygroup.org)
 - [National Cancer Institute (NCI) - Retinoblastoma](https://www.cancer.gov)

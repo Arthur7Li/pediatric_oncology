@@ -104,7 +104,8 @@ medical_disclaimer: true
 
 ## 权威参考资料
 
-- [病童医院 (SickKids) - 视网膜母细胞瘤项目](https://www.sickkids.ca/)
-- [加拿大视网膜母细胞瘤研究咨询委员会 (CRRAB)](https://www.crrab.ca/)
-- [加拿大C17儿童肿瘤理事会](https://www.c17.ca/)
+- [病童医院 (SickKids) 国家视网膜母细胞瘤项目](https://www.sickkids.ca/)
+- [圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine)](https://www.chusj.org/)
+- [加拿大C17理事会](https://www.c17.ca/)
 - [儿童肿瘤协作组 (COG)](https://www.childrensoncologygroup.org)
+- [美国国家癌症研究所 (NCI)](https://www.cancer.gov)

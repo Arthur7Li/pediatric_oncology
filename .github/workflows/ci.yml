@@ -45,7 +45,7 @@ jobs:
         with:
           args: >-
             --verbose --no-progress
-            --exclude-path './docs/qa'
+            --exclude-path './docs'
             --exclude 'https://www.iwk.nshealth.ca'
             --exclude 'https://www.canada.ca/en/services/benefits/ei'
             --exclude 'https://www.c17.ca'
