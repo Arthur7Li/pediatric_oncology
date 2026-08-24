@@ -77,6 +77,16 @@ const navItems = [
     active: isFinancial,
   },
 ];
+
+function formatNavName(name: string, lang: Locale) {
+  if (lang !== "zh") return name;
+  if (name === "治疗旅程") return { parts: ["治疗", "旅程"] };
+  if (name === "肿瘤指南") return { parts: ["肿瘤", "指南"] };
+  if (name === "症状管理") return { parts: ["症状", "管理"] };
+  if (name === "专科医院") return { parts: ["专科", "医院"] };
+  if (name === "财务与福利") return { parts: ["财务与", "福利"] };
+  return { parts: [name] };
+}
 ---
 
 <header
@@ -90,7 +100,18 @@ const navItems = [
         class="text-lg sm:text-xl font-bold text-gray-900 hover:text-primary transition-colors flex items-center gap-2 no-underline shrink-0"
       >
         <span class="text-primary text-2xl" aria-hidden="true">🍁</span>
-        <span class="hidden sm:inline">{t.brandName}</span>
+        <span class="hidden sm:inline">
+          {
+            currentLang === "zh" ? (
+              <span>
+                <span class="inline-block">加拿大儿童肿瘤</span>
+                <span class="inline-block">教育与支持平台</span>
+              </span>
+            ) : (
+              t.brandName
+            )
+          }
+        </span>
         <span class="sm:hidden font-extrabold text-primary">PedOnc</span>
       </a>
 
@@ -100,19 +121,30 @@ const navItems = [
         aria-label="Main Navigation"
       >
         {
-          navItems.map((item) => (
-            <a
-              href={item.href}
-              class={`px-3 py-2 min-h-[44px] inline-flex items-center rounded-md transition-colors no-underline ${
-                item.active
-                  ? "text-primary font-bold bg-sky-50 border-b-2 border-primary"
-                  : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-              }`}
-              aria-current={item.active ? "page" : undefined}
-            >
-              {item.name}
-            </a>
-          ))
+          navItems.map((item) => {
+            const formatted = formatNavName(item.name, currentLang);
+            return (
+              <a
+                href={item.href}
+                class={`px-2.5 py-1.5 min-h-[44px] inline-flex items-center text-center justify-center rounded-md transition-colors no-underline ${
+                  item.active
+                    ? "text-primary font-bold bg-sky-50 border-b-2 border-primary"
+                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                }`}
+                aria-current={item.active ? "page" : undefined}
+              >
+                {typeof formatted === "string" ? (
+                  formatted
+                ) : (
+                  <span>
+                    {formatted.parts.map((part) => (
+                      <span class="inline-block">{part}</span>
+                    ))}
+                  </span>
+                )}
+              </a>
+            );
+          })
         }
       </nav>
 

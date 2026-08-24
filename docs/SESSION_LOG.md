@@ -130,3 +130,12 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Added `"content-status": "node scripts/generate-content-status.cjs"` script to `package.json`.
   - Updated `.agents/skills/qa-audit/SKILL.md` to invoke `npm run content-status` and review `docs/CONTENT_STATUS.md` during audits.
 - **Status:** Verified locally (`npm run content-status`, `npm run test:e2e`, and `npm run ci` all passing).
+
+**[09:59] Chinese Typography & Header Line-Breaking Optimization**
+
+- **Action:** Optimized Chinese navigation and header line-breaking typography to prevent awkward single-character orphan wrapping.
+- **Details:**
+  - Added `:lang(zh), [lang="zh"] { word-break: keep-all; overflow-wrap: break-word; }` to `src/styles/global.css` to prevent unnatural mid-compound character breaks.
+  - Formatted Chinese navigation labels in `src/components/Header.astro` into atomic compound spans (`<span class="inline-block">治疗</span><span class="inline-block">旅程</span>`, etc.) so narrow viewports break cleanly into balanced 2+2 character lines ("治疗" on line 1, "旅程" on line 2) rather than 3+1 ("治疗旅" + "程").
+  - Formatted Chinese branding in `Header.astro` with balanced inline-block segments (`加拿大儿童肿瘤` / `教育与支持平台`).
+- **Status:** Verified locally (`npm run test:e2e` passing 5/5, `npm run ci` passing 100%).

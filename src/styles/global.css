@@ -30,6 +30,12 @@
   }
 }
 
+:lang(zh),
+[lang="zh"] {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 .prose h1 {
   @apply text-3xl font-bold text-gray-900 mb-6;
 }
