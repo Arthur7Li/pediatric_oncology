@@ -11,26 +11,26 @@ Our platform's unique value proposition is the **combination** of trilingual Can
 
 ## Feature Comparison Matrix
 
-| Benchmark Feature | NHS Children's Cancer | AboutKidsHealth (SickKids) | Together by St. Jude | **Our Platform** | Notes |
-|---|---|---|---|---|---|
-| **Multilingual** | ✅ 20+ langs | ❌ EN only | ⚠️ EN/ES | ✅ **EN/FR/ZH** | We cover Canada's two official languages + Mandarin Chinese |
-| **Step-by-step Journey** | ❌ | Partial | ✅ | ✅ **6 phases** | Diagnosis → Treatment → Survivorship → Sibling Support → Relapse → Palliative Care |
-| **Cancer Type Coverage** | ✅ Extensive (30+) | ✅ Extensive (30+) | ✅ Extensive (30+) | ⚠️ **6 types** | ALL, ATRT, Medulloblastoma, Neuroblastoma, Pineal Gland, Wilms |
-| **Symptom Management** | ✅ 10+ guides | ✅ 10+ guides | ✅ 10+ guides | ⚠️ **3 guides** | Neutropenia, Mucositis, Nausea |
-| **Provincial/Regional Guide** | N/A (UK) | ❌ | N/A (US) | ✅ **13 provinces** | **Unique — no competitor offers this** |
-| **Financial Support Guide** | ❌ | ❌ | ❌ | ✅ **Comprehensive** | **Unique — EI benefits, provincial pharmacare, charity grants, NIHB** |
-| **Indigenous Health Resources** | ❌ | ❌ | ❌ | ✅ **NIHB + navigators** | **Unique — CHEO Inuit navigators, Stollery Awasisak program** |
-| **Emergency Guidance** | ✅ | ✅ | ✅ | ✅ | 911, Kids Help Phone, 988, CCS in footer |
-| **Accessibility (WCAG AA)** | ✅ | ✅ | ✅ | ✅ | 24-route Pa11y CI suite, skip links, ARIA, keyboard nav |
-| **Search / Site Map** | ✅ | ✅ | ✅ | ❌ Missing | Priority improvement |
-| **Print-Friendly / PDF** | ✅ | ✅ | ✅ | ❌ Missing | Important for caregivers |
-| **Dark Mode** | ❌ | ❌ | ❌ | ❌ | Low priority — no competitor has this either |
-| **Clinical Trial Finder** | ❌ | ❌ | ✅ | ❌ Missing | Could link to C17/COG trial registries |
-| **User Personalization** | ❌ | ❌ | Partial | ❌ | Future consideration |
-| **SEO / Open Graph** | ✅ | ✅ | ✅ | ⚠️ Basic | Has meta description but no OG tags or JSON-LD |
-| **404 Error Page** | ✅ | ✅ | ✅ | ❌ Missing | Quick win |
-| **Breadcrumb Navigation** | ✅ | ✅ | ✅ | ❌ Missing | Important for deep pages |
-| **E2E Testing** | ✅ (internal) | ✅ (internal) | ✅ (internal) | ❌ Missing | Important for regression prevention |
+| Benchmark Feature               | NHS Children's Cancer | AboutKidsHealth (SickKids) | Together by St. Jude | **Our Platform**           | Notes                                                                              |
+| ------------------------------- | --------------------- | -------------------------- | -------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
+| **Multilingual**                | ✅ 20+ langs          | ❌ EN only                 | ⚠️ EN/ES             | ✅ **EN/FR/ZH**            | We cover Canada's two official languages + Mandarin Chinese                        |
+| **Step-by-step Journey**        | ❌                    | Partial                    | ✅                   | ✅ **6 phases**            | Diagnosis → Treatment → Survivorship → Sibling Support → Relapse → Palliative Care |
+| **Cancer Type Coverage**        | ✅ Extensive (30+)    | ✅ Extensive (30+)         | ✅ Extensive (30+)   | ⚠️ **6 types**             | ALL, ATRT, Medulloblastoma, Neuroblastoma, Pineal Gland, Wilms                     |
+| **Symptom Management**          | ✅ 10+ guides         | ✅ 10+ guides              | ✅ 10+ guides        | ⚠️ **3 guides**            | Neutropenia, Mucositis, Nausea                                                     |
+| **Provincial/Regional Guide**   | N/A (UK)              | ❌                         | N/A (US)             | ✅ **13 provinces**        | **Unique — no competitor offers this**                                             |
+| **Financial Support Guide**     | ❌                    | ❌                         | ❌                   | ✅ **Comprehensive**       | **Unique — EI benefits, provincial pharmacare, charity grants, NIHB**              |
+| **Indigenous Health Resources** | ❌                    | ❌                         | ❌                   | ✅ **NIHB + navigators**   | **Unique — CHEO Inuit navigators, Stollery Awasisak program**                      |
+| **Emergency Guidance**          | ✅                    | ✅                         | ✅                   | ✅                         | 911, Kids Help Phone, 988, CCS in footer                                           |
+| **Accessibility (WCAG AA)**     | ✅                    | ✅                         | ✅                   | ✅                         | 24-route Pa11y CI suite, skip links, ARIA, keyboard nav                            |
+| **Search / Site Map**           | ✅                    | ✅                         | ✅                   | ✅ **Pagefind + Sitemap**  | Client-side search with modal (Cmd+K) + automated sitemap-index.xml                |
+| **Print-Friendly / PDF**        | ✅                    | ✅                         | ✅                   | ❌ Missing                 | Important for caregivers                                                           |
+| **Dark Mode**                   | ❌                    | ❌                         | ❌                   | ❌                         | Low priority — no competitor has this either                                       |
+| **Clinical Trial Finder**       | ❌                    | ❌                         | ✅                   | ❌ Missing                 | Could link to C17/COG trial registries                                             |
+| **User Personalization**        | ❌                    | ❌                         | Partial              | ❌                         | Future consideration                                                               |
+| **SEO / Open Graph**            | ✅                    | ✅                         | ✅                   | ✅ **OG, Cards & JSON-LD** | Dynamic Open Graph, Twitter cards, and MedicalWebPage schema.org structured data   |
+| **404 Error Page**              | ✅                    | ✅                         | ✅                   | ❌ Missing                 | Quick win                                                                          |
+| **Breadcrumb Navigation**       | ✅                    | ✅                         | ✅                   | ❌ Missing                 | Important for deep pages                                                           |
+| **E2E Testing**                 | ✅ (internal)         | ✅ (internal)              | ✅ (internal)        | ❌ Missing                 | Important for regression prevention                                                |
 
 ## Our Unique Strengths 🍁
 
@@ -47,7 +47,7 @@ These are features where **we lead the industry** — no other pediatric oncolog
 
 After implementing a significant feature:
 
-1. Change the corresponding row from ❌/⚠️ to ✅ 
+1. Change the corresponding row from ❌/⚠️ to ✅
 2. Update the **Notes** column with specifics
 3. Update the **Last Updated** date at the top
 4. If a new benchmark feature emerges from competitor analysis, add a new row

@@ -1,5 +1,6 @@
 ---
 import { translations, type Locale } from "../i18n/translations";
+import SearchBar from "./SearchBar.astro";
 
 const pathname = Astro.url.pathname;
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -78,15 +79,19 @@ const navItems = [
 ];
 ---
 
-<header class="bg-white border-b border-gray-200 sticky top-0 z-40">
+<header
+  class="bg-white border-b border-gray-200 sticky top-0 z-40"
+  data-pagefind-ignore
+>
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3">
-    <div class="flex items-center justify-between gap-4">
+    <div class="flex items-center justify-between gap-2 lg:gap-4">
       <a
         href={homeUrl}
-        class="text-lg sm:text-xl font-bold text-gray-900 hover:text-primary transition-colors flex items-center gap-2 no-underline"
+        class="text-lg sm:text-xl font-bold text-gray-900 hover:text-primary transition-colors flex items-center gap-2 no-underline shrink-0"
       >
         <span class="text-primary text-2xl" aria-hidden="true">🍁</span>
-        <span>{t.brandName}</span>
+        <span class="hidden sm:inline">{t.brandName}</span>
+        <span class="sm:hidden font-extrabold text-primary">PedOnc</span>
       </a>
 
       <!-- Desktop Navigation -->
@@ -109,10 +114,16 @@ const navItems = [
             </a>
           ))
         }
+      </nav>
 
-        <!-- Language Switcher -->
+      <!-- Right Header Controls (Search + Language + Mobile Menu) -->
+      <div class="flex items-center gap-2">
+        <!-- Single Responsive Search Bar Instance -->
+        <SearchBar lang={currentLang} />
+
+        <!-- Desktop Language Switcher -->
         <div
-          class="ml-3 pl-3 border-l border-gray-200 flex items-center gap-1"
+          class="hidden md:flex ml-2 pl-2 border-l border-gray-200 items-center gap-1"
           aria-label="Language Selector"
         >
           <a
@@ -149,11 +160,9 @@ const navItems = [
             aria-label="中文 (Chinese)">中文</a
           >
         </div>
-      </nav>
 
-      <!-- Mobile Hamburger Button & Mobile Language Toggle -->
-      <div class="flex items-center gap-2 md:hidden">
-        <div class="flex items-center gap-1">
+        <!-- Mobile Language Toggle and Hamburger Button -->
+        <div class="flex items-center gap-1 md:hidden">
           <a
             href={getLangUrl("en")}
             hreflang="en"
@@ -172,45 +181,45 @@ const navItems = [
             class={`px-2 py-1 text-xs font-bold rounded ${currentLang === "zh" ? "bg-primary text-white" : "text-gray-700 bg-gray-100"}`}
             aria-label="中文">中</a
           >
-        </div>
 
-        <button
-          id="mobile-menu-button"
-          type="button"
-          class="p-2 min-h-[44px] min-w-[44px] rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-          aria-label="Toggle Navigation Menu"
-        >
-          <svg
-            id="menu-open-icon"
-            class="h-6 w-6 block"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
+          <button
+            id="mobile-menu-button"
+            type="button"
+            class="p-2 min-h-[44px] min-w-[44px] rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Toggle Navigation Menu"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-          <svg
-            id="menu-close-icon"
-            class="h-6 w-6 hidden"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
+            <svg
+              id="menu-open-icon"
+              class="h-6 w-6 block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg
+              id="menu-close-icon"
+              class="h-6 w-6 hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
 

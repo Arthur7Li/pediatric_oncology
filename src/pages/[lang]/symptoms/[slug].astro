@@ -20,16 +20,46 @@ export async function getStaticPaths() {
 const { step } = Astro.props;
 const { Content } = await render(step);
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: step.data.title,
+  description: `At-home pediatric symptom management guide for ${step.data.title} (Severity: ${step.data.severity}).`,
+  inLanguage: step.data.lang,
+  dateModified: step.data.last_medically_reviewed_date || "2026-08-23",
+  lastReviewed: step.data.last_medically_reviewed_date || "2026-08-23",
+  reviewedBy: {
+    "@type": "MedicalOrganization",
+    name: "Canadian Pediatric Oncology Medical Review Team",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Canadian Pediatric Oncology Educational Platform",
+    url: "https://canadian-pediatric-oncology.github.io/pediatric_oncology/",
+  },
+  about: {
+    "@type": "MedicalSignOrSymptom",
+    name: step.data.title,
+  },
+};
 ---
 
-<Layout title={step.data.title} lang={step.data.lang}>
+<Layout
+  title={step.data.title}
+  lang={step.data.lang}
+  type="article"
+  description={`At-home symptom management guide: ${step.data.title}. Severity: ${step.data.severity}. Clear clinical protocols for parents.`}
+  modifiedTime={step.data.last_medically_reviewed_date}
+  structuredData={structuredData}
+>
   <div class="mb-8 border-b pb-6">
     <div class="flex items-center gap-3 mb-2">
       <span class="text-sm font-semibold text-primary uppercase tracking-wider"
         >Symptom Management</span
       >
       <span
-        class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${step.data.severity.toLowerCase().includes("high") || step.data.severity.toLowerCase().includes("emergency") ? "bg-red-100 text-red-800" : "bg-yellow-100 text-yellow-800"}`}
+        class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${step.data.severity.toLowerCase().includes("high") || step.data.severity.toLowerCase().includes("emergency") || step.data.severity.toLowerCase().includes("urgent") ? "bg-red-100 text-red-800" : "bg-yellow-100 text-yellow-800"}`}
       >
         Severity: {step.data.severity}
       </span>
@@ -39,6 +69,11 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
     >
       {step.data.title}
     </h1>
+    <div class="mt-3 text-xs text-gray-500 flex flex-wrap items-center gap-4">
+      <span>Reviewed by: {step.data.author}</span>
+      <span>•</span>
+      <span>Last Reviewed: {step.data.last_medically_reviewed_date}</span>
+    </div>
   </div>
 
   <article class="prose max-w-none mb-8">

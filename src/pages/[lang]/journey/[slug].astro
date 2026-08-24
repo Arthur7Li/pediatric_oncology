@@ -7,8 +7,6 @@ export async function getStaticPaths() {
   const allJourneySteps = await getCollection("journey");
 
   return allJourneySteps.map((step) => {
-    // Slugify the id to get a clean url
-    // id looks like: "en/1-diagnosis.md"
     const [lang, filename] = step.id.split("/");
     const slug = filename.replace(".md", "");
 
@@ -41,9 +39,39 @@ const getUrl = (s: any) => {
   const [lang, filename] = s.id.split("/");
   return `${basePath}/${lang}/journey/${filename.replace(".md", "")}`;
 };
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: step.data.title,
+  description: `Step ${step.data.step} of the pediatric cancer treatment journey in Canada: ${step.data.title}.`,
+  inLanguage: step.data.lang,
+  dateModified: step.data.last_medically_reviewed_date || "2026-08-23",
+  lastReviewed: step.data.last_medically_reviewed_date || "2026-08-23",
+  reviewedBy: {
+    "@type": "MedicalOrganization",
+    name: "Canadian Pediatric Oncology Medical Review Team",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Canadian Pediatric Oncology Educational Platform",
+    url: "https://canadian-pediatric-oncology.github.io/pediatric_oncology/",
+  },
+  audience: {
+    "@type": "MedicalAudience",
+    audienceType: "Patient & Family",
+  },
+};
 ---
 
-<Layout title={step.data.title} lang={step.data.lang}>
+<Layout
+  title={step.data.title}
+  lang={step.data.lang}
+  type="article"
+  description={`Step ${step.data.step} of ${allStepsInLang.length}: ${step.data.title}. Medically verified roadmap for Canadian families.`}
+  modifiedTime={step.data.last_medically_reviewed_date || "2026-08-23"}
+  structuredData={structuredData}
+>
   <div class="mb-8">
     <span class="text-sm font-semibold text-primary uppercase tracking-wider"
       >Step {step.data.step} of {allStepsInLang.length}</span

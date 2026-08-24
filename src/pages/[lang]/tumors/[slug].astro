@@ -20,9 +20,40 @@ export async function getStaticPaths() {
 const { tumor } = Astro.props;
 const { Content } = await render(tumor);
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: tumor.data.title,
+  description: `Medically verified Canadian clinical guide for pediatric ${tumor.data.title} (${tumor.data.incidence}).`,
+  inLanguage: tumor.data.lang,
+  dateModified: tumor.data.last_medically_reviewed_date || "2026-08-23",
+  lastReviewed: tumor.data.last_medically_reviewed_date || "2026-08-23",
+  reviewedBy: {
+    "@type": "MedicalOrganization",
+    name: "Canadian Pediatric Oncology Medical Review Team",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Canadian Pediatric Oncology Educational Platform",
+    url: "https://canadian-pediatric-oncology.github.io/pediatric_oncology/",
+  },
+  about: {
+    "@type": "MedicalCondition",
+    name: tumor.data.title,
+  },
+  citation: tumor.data.authoritative_sources || [],
+};
 ---
 
-<Layout title={tumor.data.title} lang={tumor.data.lang}>
+<Layout
+  title={tumor.data.title}
+  lang={tumor.data.lang}
+  type="article"
+  description={`Pediatric clinical guide for ${tumor.data.title}. Incidence: ${tumor.data.incidence}. Authoritative Canadian cancer information.`}
+  modifiedTime={tumor.data.last_medically_reviewed_date}
+  structuredData={structuredData}
+>
   <div class="mb-8 border-b pb-6">
     <div class="flex items-center gap-3 mb-2">
       <span class="text-sm font-semibold text-primary uppercase tracking-wider"

@@ -1,0 +1,285 @@
+---
+import { translations, type Locale } from "../i18n/translations";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "en" } = Astro.props;
+const t = translations[lang] || translations.en;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<div class="search-widget-wrapper">
+  <!-- Single Responsive Search Trigger Button -->
+  <button
+    type="button"
+    class="open-search-modal-btn flex items-center gap-2 px-3 py-1.5 min-h-[40px] text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer"
+    aria-label={t.search.buttonLabel}
+    aria-haspopup="dialog"
+  >
+    <svg
+      class="w-4 h-4 text-gray-700"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+    </svg>
+    <span class="hidden sm:inline text-xs font-semibold text-gray-700"
+      >{t.search.placeholder}</span
+    >
+    <span class="sm:hidden text-xs font-semibold text-gray-800"
+      >{t.search.buttonLabel}</span
+    >
+    <kbd
+      class="hidden lg:inline-flex items-center px-1.5 py-0.5 text-[10px] font-bold text-gray-700 bg-white border border-gray-300 rounded shadow-xs ml-2"
+      >{t.search.shortcut}</kbd
+    >
+  </button>
+
+  <!-- Accessible Modal Backdrop & Dialog -->
+  <dialog
+    id="search-dialog"
+    class="fixed inset-0 z-50 p-4 sm:p-6 md:p-12 w-full max-w-3xl backdrop:bg-gray-900/60 backdrop:backdrop-blur-xs rounded-2xl bg-white shadow-2xl border border-gray-200 open:flex flex-col m-auto overflow-hidden max-h-[85vh]"
+    aria-labelledby="search-modal-title"
+  >
+    <div
+      class="flex items-center justify-between pb-3 mb-3 border-b border-gray-200"
+    >
+      <div class="flex items-center gap-2">
+        <svg
+          class="w-5 h-5 text-primary"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <h2 id="search-modal-title" class="text-base font-bold text-gray-900">
+          {t.search.modalTitle}
+        </h2>
+      </div>
+      <button
+        id="close-search-modal"
+        type="button"
+        class="p-1.5 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"
+        aria-label={t.search.closeLabel}
+      >
+        <span class="sr-only">{t.search.closeLabel}</span>
+        <svg
+          class="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Pagefind Search Element Container -->
+    <div id="pagefind-search-container" class="overflow-y-auto flex-grow pr-1">
+    </div>
+
+    <div
+      class="pt-3 mt-3 border-t border-gray-100 text-xs text-gray-600 flex justify-between items-center"
+    >
+      <span class="font-medium">{t.brandName}</span>
+      <span
+        >Press <kbd
+          class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded font-mono text-[10px] text-gray-700 font-bold"
+          >ESC</kbd
+        > to exit</span
+      >
+    </div>
+  </dialog>
+</div>
+
+<style is:global>
+  /* Custom modern accessible theme for Pagefind UI */
+  #pagefind-search-container {
+    --pagefind-ui-scale: 0.9;
+    --pagefind-ui-primary: #0284c7;
+    --pagefind-ui-text: #1e293b;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #cbd5e1;
+    --pagefind-ui-tag: #f0f9ff;
+    --pagefind-ui-border-radius: 0.5rem;
+    --pagefind-ui-font: inherit;
+  }
+
+  #pagefind-search-container .pagefind-ui__search-input {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #0f172a;
+    border-color: #94a3b8;
+    background-color: #f8fafc;
+  }
+
+  #pagefind-search-container .pagefind-ui__search-input:focus {
+    outline: 2px solid #0284c7;
+    border-color: #0284c7;
+    background-color: #ffffff;
+  }
+
+  #pagefind-search-container .pagefind-ui__result-link {
+    color: #0369a1;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  #pagefind-search-container .pagefind-ui__result-link:hover {
+    text-decoration: underline;
+  }
+
+  #pagefind-search-container .pagefind-ui__result-excerpt {
+    color: #334155;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  #pagefind-search-container mark {
+    background-color: #fef08a;
+    color: #713f12;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.2rem;
+    font-weight: 700;
+  }
+</style>
+
+<script is:inline define:vars={{ basePath, placeholder: t.search.placeholder }}>
+  let pagefindLoaded = false;
+
+  function loadPagefindAssets() {
+    if (pagefindLoaded) return Promise.resolve();
+
+    const cssHref = `${basePath}/pagefind/pagefind-ui.css`;
+    const jsSrc = `${basePath}/pagefind/pagefind-ui.js`;
+
+    if (!document.querySelector(`link[href="${cssHref}"]`)) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = cssHref;
+      document.head.appendChild(link);
+    }
+
+    return new Promise((resolve) => {
+      if (window.PagefindUI) {
+        pagefindLoaded = true;
+        resolve();
+        return;
+      }
+      if (document.querySelector(`script[src="${jsSrc}"]`)) {
+        resolve();
+        return;
+      }
+      const script = document.createElement("script");
+      script.src = jsSrc;
+      script.onload = () => {
+        pagefindLoaded = true;
+        resolve();
+      };
+      script.onerror = () => {
+        console.info(
+          "Pagefind assets not found in dev mode (run build to generate search index)",
+        );
+        resolve();
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  function initSearchBar() {
+    const triggerButtons = document.querySelectorAll(".open-search-modal-btn");
+    const closeBtn = document.getElementById("close-search-modal");
+    const dialog = document.getElementById("search-dialog");
+    const container = document.getElementById("pagefind-search-container");
+
+    if (!dialog || !container || triggerButtons.length === 0) return;
+
+    let pagefindInstance = null;
+
+    async function openModal() {
+      dialog.showModal();
+      await loadPagefindAssets();
+
+      if (
+        window.PagefindUI &&
+        !pagefindInstance &&
+        container.children.length === 0
+      ) {
+        pagefindInstance = new window.PagefindUI({
+          element: "#pagefind-search-container",
+          bundlePath: `${basePath}/pagefind/`,
+          showImages: false,
+          showSubResults: true,
+          autofocus: true,
+          translations: {
+            placeholder: placeholder,
+          },
+        });
+      }
+
+      setTimeout(() => {
+        const input = container.querySelector("input");
+        if (input) input.focus();
+      }, 50);
+    }
+
+    function closeModal() {
+      dialog.close();
+    }
+
+    triggerButtons.forEach((btn) => {
+      btn.onclick = openModal;
+    });
+
+    if (closeBtn) closeBtn.onclick = closeModal;
+
+    // Close on click outside modal
+    dialog.onclick = (e) => {
+      if (e.target === dialog) closeModal();
+    };
+
+    // Keyboard shortcuts (Cmd+K / Ctrl+K / Escape)
+    window.onkeydown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        if (dialog.open) {
+          closeModal();
+        } else {
+          openModal();
+        }
+      }
+      if (e.key === "Escape" && dialog.open) {
+        closeModal();
+      }
+    };
+  }
+
+  document.addEventListener("astro:page-load", initSearchBar);
+  if (document.readyState !== "loading") {
+    initSearchBar();
+  } else {
+    document.addEventListener("DOMContentLoaded", initSearchBar);
+  }
+</script>

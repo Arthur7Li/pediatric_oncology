@@ -16,7 +16,11 @@ const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;
 ---
 
-<Layout title={t.financial.title} lang={currentLang}>
+<Layout
+  title={t.financial.title}
+  lang={currentLang}
+  description={t.financial.subtitle}
+>
   <div class="mb-8 border-b pb-6">
     <h1
       class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl"

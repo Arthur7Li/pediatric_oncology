@@ -10,6 +10,14 @@ export const translations = {
       hospitals: "Hospitals",
       financial: "Financial Support",
     },
+    search: {
+      placeholder: "Search tumors, symptoms, journey...",
+      buttonLabel: "Search",
+      modalTitle: "Search Educational Resources",
+      closeLabel: "Close search",
+      shortcut: "⌘K",
+      noResults: "No results found for",
+    },
     home: {
       title: "A Guided Path Forward",
       subtitle:
@@ -83,6 +91,14 @@ export const translations = {
       symptoms: "Symptômes",
       hospitals: "Hôpitaux",
       financial: "Soutien financier",
+    },
+    search: {
+      placeholder: "Rechercher tumeurs, symptômes, parcours...",
+      buttonLabel: "Rechercher",
+      modalTitle: "Rechercher dans les ressources",
+      closeLabel: "Fermer la recherche",
+      shortcut: "⌘K",
+      noResults: "Aucun résultat trouvé pour",
     },
     home: {
       title: "Un chemin guidé avec bienveillance",
@@ -158,6 +174,14 @@ export const translations = {
       symptoms: "症状管理",
       hospitals: "专科医院",
       financial: "财务与福利",
+    },
+    search: {
+      placeholder: "搜索疾病、肿瘤指南、症状护理...",
+      buttonLabel: "搜索",
+      modalTitle: "搜索科普与护理资源",
+      closeLabel: "关闭搜索",
+      shortcut: "⌘K",
+      noResults: "未找到相关结果：",
     },
     home: {
       title: "为患儿家庭点亮前行之路",
