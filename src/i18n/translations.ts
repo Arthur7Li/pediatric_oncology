@@ -10,6 +10,9 @@ export const translations = {
       symptoms: "Symptoms",
       hospitals: "Hospitals",
       financial: "Financial Support",
+      skipToMain: "Skip to main content",
+      definitionOf: "Definition of",
+      medicalDisclaimer: "Medical Disclaimer",
     },
     search: {
       placeholder: "Search tumors, symptoms, journey...",
@@ -18,6 +21,7 @@ export const translations = {
       closeLabel: "Close search",
       shortcut: "⌘K",
       noResults: "No results found for",
+      pressEsc: "Press ESC to exit",
     },
     home: {
       title: "A Guided Path Forward",
@@ -34,6 +38,11 @@ export const translations = {
         "Comprehensive, compassionate, and medically verified clinical guides for families navigating pediatric oncology in Canada.",
       readGuide: "Read comprehensive guide →",
       incidence: "Incidence",
+      guideBadge: "Pediatric Oncology Guide",
+      reviewedBy: "Reviewed by:",
+      lastReviewed: "Last Reviewed:",
+      sources: "Authoritative & Clinical Sources",
+      back: "Back to Tumor Guides",
     },
     symptoms: {
       title: "At-Home Symptom Management",
@@ -41,6 +50,11 @@ export const translations = {
         "Actionable, medically-verified guidance for managing common side effects during treatment.",
       readGuide: "Read guide →",
       severity: "Severity",
+      guideBadge: "Symptom Management",
+      reviewedBy: "Reviewed by:",
+      lastReviewed: "Last Reviewed:",
+      sources: "Authoritative & Clinical Sources",
+      back: "Back to Symptom Guides",
     },
     financial: {
       title: "Financial & Logistical Support",
@@ -66,6 +80,22 @@ export const translations = {
       hospitalsHeading: "Top Specialized Hospitals & Care Centers",
       financialHeading: "Financial & Drug Coverage Programs",
       notesHeading: "Note on Out-of-Province & Specialized Care:",
+      selectedResources: " Resources",
+      provinces: {
+        "Alberta": "Alberta",
+        "British Columbia": "British Columbia",
+        "Manitoba": "Manitoba",
+        "New Brunswick": "New Brunswick",
+        "Newfoundland and Labrador": "Newfoundland and Labrador",
+        "Northwest Territories": "Northwest Territories",
+        "Nova Scotia": "Nova Scotia",
+        "Nunavut": "Nunavut",
+        "Ontario": "Ontario",
+        "Prince Edward Island": "Prince Edward Island",
+        "Quebec": "Quebec",
+        "Saskatchewan": "Saskatchewan",
+        "Yukon": "Yukon"
+      }
     },
     footer: {
       emergencyTitle: "Medical Emergency & Crisis Support in Canada",
@@ -111,6 +141,9 @@ export const translations = {
       symptoms: "Symptômes",
       hospitals: "Hôpitaux",
       financial: "Soutien financier",
+      skipToMain: "Aller au contenu principal",
+      definitionOf: "Définition de",
+      medicalDisclaimer: "Avis médical",
     },
     search: {
       placeholder: "Rechercher tumeurs, symptômes, parcours...",
@@ -119,6 +152,7 @@ export const translations = {
       closeLabel: "Fermer la recherche",
       shortcut: "⌘K",
       noResults: "Aucun résultat trouvé pour",
+      pressEsc: "Appuyez sur Échap pour quitter",
     },
     home: {
       title: "Un chemin guidé avec bienveillance",
@@ -135,6 +169,11 @@ export const translations = {
         "Des guides cliniques complets, bienveillants et vérifiés médicalement pour les familles confrontées au cancer infantile au Canada.",
       readGuide: "Lire le guide complet →",
       incidence: "Incidence",
+      guideBadge: "Guide d'oncologie pédiatrique",
+      reviewedBy: "Révisé par :",
+      lastReviewed: "Dernière révision :",
+      sources: "Sources cliniques et faisant autorité",
+      back: "Retour aux guides des tumeurs",
     },
     symptoms: {
       title: "Gestion des symptômes à domicile",
@@ -142,6 +181,11 @@ export const translations = {
         "Conseils pratiques et validés sur le plan médical pour gérer les effets secondaires courants tout au long du traitement.",
       readGuide: "Consulter la fiche →",
       severity: "Gravité",
+      guideBadge: "Gestion des symptômes",
+      reviewedBy: "Révisé par :",
+      lastReviewed: "Dernière révision :",
+      sources: "Sources cliniques",
+      back: "Retour à la gestion des symptômes",
     },
     financial: {
       title: "Soutien financier et logistique",
@@ -168,6 +212,22 @@ export const translations = {
       hospitalsHeading: "Centres hospitaliers et de soins spécialisés",
       financialHeading: "Programmes financiers et couverture des médicaments",
       notesHeading: "Précision sur les soins hors province :",
+      selectedResources: " - Ressources",
+      provinces: {
+        "Alberta": "Alberta",
+        "British Columbia": "Colombie-Britannique (British Columbia)",
+        "Manitoba": "Manitoba",
+        "New Brunswick": "Nouveau-Brunswick (New Brunswick)",
+        "Newfoundland and Labrador": "Terre-Neuve-et-Labrador (Newfoundland and Labrador)",
+        "Northwest Territories": "Territoires du Nord-Ouest (Northwest Territories)",
+        "Nova Scotia": "Nouvelle-Écosse (Nova Scotia)",
+        "Nunavut": "Nunavut",
+        "Ontario": "Ontario",
+        "Prince Edward Island": "Île-du-Prince-Édouard (Prince Edward Island)",
+        "Quebec": "Québec (Quebec)",
+        "Saskatchewan": "Saskatchewan",
+        "Yukon": "Yukon"
+      }
     },
     footer: {
       emergencyTitle: "Urgences médicales et soutien en cas de crise au Canada",
@@ -213,6 +273,9 @@ export const translations = {
       symptoms: "症状管理",
       hospitals: "专科医院",
       financial: "财务与福利",
+      skipToMain: "跳至主要内容",
+      definitionOf: "定义：",
+      medicalDisclaimer: "医疗免责声明",
     },
     search: {
       placeholder: "搜索疾病、肿瘤指南、症状护理...",
@@ -221,6 +284,7 @@ export const translations = {
       closeLabel: "关闭搜索",
       shortcut: "⌘K",
       noResults: "未找到相关结果：",
+      pressEsc: "按 ESC 键退出",
     },
     home: {
       title: "为患儿家庭点亮前行之路",
@@ -236,6 +300,11 @@ export const translations = {
         "针对在加拿大接受治疗的患儿家庭，提供全面、易懂且经过权威医学审核的儿童肿瘤科普指南。",
       readGuide: "阅读详细指南 →",
       incidence: "发病率",
+      guideBadge: "儿童肿瘤指南",
+      reviewedBy: "审核专家：",
+      lastReviewed: "最后审核：",
+      sources: "权威临床来源",
+      back: "返回肿瘤指南列表",
     },
     symptoms: {
       title: "居家症状与副作用管理",
@@ -243,6 +312,11 @@ export const translations = {
         "提供切实可行、经临床验证的居家护理指导，帮助孩子平稳应对治疗过程中的常见副作用。",
       readGuide: "查看护理要点 →",
       severity: "紧急程度",
+      guideBadge: "症状管理",
+      reviewedBy: "审核专家：",
+      lastReviewed: "最后审核：",
+      sources: "权威临床来源",
+      back: "返回症状护理列表",
     },
     financial: {
       title: "加拿大医疗财务与后勤支持",
@@ -268,6 +342,22 @@ export const translations = {
       hospitalsHeading: "重点专科医院与儿童治疗中心",
       financialHeading: "省级药物与家庭经济资助项目",
       notesHeading: "跨省转诊与偏远地区就医说明：",
+      selectedResources: " 资源",
+      provinces: {
+        "Alberta": "阿尔伯塔省 (Alberta)",
+        "British Columbia": "不列颠哥伦比亚省 (British Columbia)",
+        "Manitoba": "曼尼托巴省 (Manitoba)",
+        "New Brunswick": "新不伦瑞克省 (New Brunswick)",
+        "Newfoundland and Labrador": "纽芬兰与拉布拉多省 (Newfoundland and Labrador)",
+        "Northwest Territories": "西北地区 (Northwest Territories)",
+        "Nova Scotia": "新斯科舍省 (Nova Scotia)",
+        "Nunavut": "努纳武特地区 (Nunavut)",
+        "Ontario": "安大略省 (Ontario)",
+        "Prince Edward Island": "爱德华王子岛 (Prince Edward Island)",
+        "Quebec": "魁北克省 (Quebec)",
+        "Saskatchewan": "萨斯喀彻温省 (Saskatchewan)",
+        "Yukon": "育空地区 (Yukon)"
+      }
     },
     footer: {
       emergencyTitle: "加拿大紧急就医与24小时危机援助",

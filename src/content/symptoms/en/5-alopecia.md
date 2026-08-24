@@ -11,7 +11,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-# Managing Hair Loss (Alopecia)
 
 Hair loss, medically known as alopecia, is one of the most visible and emotionally distressing side effects of cancer treatment. While it does not cause physical harm, it fundamentally changes how a child looks and, often, how they feel about themselves.
 

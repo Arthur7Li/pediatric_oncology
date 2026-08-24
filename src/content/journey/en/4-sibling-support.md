@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Mental Health & Sibling Support: Caring for the "Glass Children"
 
 When a child is diagnosed with cancer, the entire family is diagnosed. While the primary focus rightfully shifts to medical treatments, hospital stays, and the physical well-being of the patient, the psychological toll on the rest of the family—especially healthy siblings—is profound.
 

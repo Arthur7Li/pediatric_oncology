@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Neutropénie et fièvre : Une urgence médicale
 
 La neutropénie survient lorsqu'un enfant présente un nombre anormalement bas de neutrophiles, un type de globule blanc essentiel pour combattre les infections bactériennes. Pendant la chimiothérapie, le nombre de globules blancs peut chuter de manière significative, rendant l'organisme extrêmement vulnérable.
 

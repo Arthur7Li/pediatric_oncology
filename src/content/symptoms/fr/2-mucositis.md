@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Mucite (Lésions buccales)
 
 La mucite désigne l'inflammation et l'ulcération des muqueuses tapissant la bouche, la gorge et le tractus gastro-intestinal. C'est un effet secondaire courant et douloureux de certains médicaments de chimiothérapie et de la radiothérapie.
 

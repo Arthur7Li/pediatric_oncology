@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Mucositis (Mouth Sores)
 
 Mucositis refers to the inflammation and ulceration of the mucous membranes lining the mouth, throat, and gastrointestinal tract. It is a common and painful side effect of certain chemotherapy drugs and radiation therapy.
 

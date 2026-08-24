@@ -13,7 +13,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Comprendre le neuroblastome chez l'enfant
 
 L'annonce d'un diagnostic de neuroblastome est une épreuve bouleversante. Le neuroblastome est une tumeur complexe du système nerveux en développement qui évolue de manière très différente selon l'âge de l'enfant, le profil génétique de la tumeur et son stade d'extension. Chez certains nourrissons, la tumeur peut régresser spontanément ou mûrir d'elle-même ; chez les enfants plus âgés, une prise en charge multimodale intensive est requise.
 

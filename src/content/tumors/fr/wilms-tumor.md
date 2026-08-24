@@ -13,7 +13,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Comprendre la tumeur de Wilms (Néphroblastome)
 
 Découvrir une masse dans l'abdomen de son jeune enfant est une source d'angoisse majeure. La tumeur de Wilms (ou néphroblastome) est le cancer du rein le plus fréquent chez l'enfant. Grâce aux progrès continus de la recherche médicale et aux protocoles coopératifs, le taux global de guérison dépasse aujourd'hui les 90 % pour la très grande majorité des jeunes patients.
 

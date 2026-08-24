@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Navigating Relapse: Understanding Second-Line Options and Maintaining Hope
 
 Hearing the words "the cancer has returned" or that a tumor is refractory (not responding as expected to initial therapy) is one of the most heartbreaking moments a family can endure. You may feel shock, numbness, anger, and immense fatigue.
 

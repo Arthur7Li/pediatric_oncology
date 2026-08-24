@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Chemo-Induced Nausea & Vomiting (CINV)
 
 Chemotherapy-induced nausea and vomiting (CINV) are among the most common and distressing side effects of pediatric cancer treatment. Managing CINV usually requires a multidisciplinary approach, combining prescription medications (anti-emetics) with supportive, non-pharmacological care at home.
 

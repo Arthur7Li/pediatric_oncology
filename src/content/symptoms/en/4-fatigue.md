@@ -13,7 +13,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-# Managing Cancer-Related Fatigue & Anemia
 
 Seeing your child utterly exhausted is one of the most difficult parts of cancer treatment. Cancer-related fatigue is not like normal tiredness; it is a profound, whole-body exhaustion that doesn't always get better with sleep.
 

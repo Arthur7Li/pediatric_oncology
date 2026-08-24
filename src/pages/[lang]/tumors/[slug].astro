@@ -72,12 +72,12 @@ const structuredData = {
   <div class="mb-8 border-b pb-6">
     <div class="flex items-center gap-3 mb-2">
       <span class="text-sm font-semibold text-primary uppercase tracking-wider"
-        >Pediatric Oncology Guide</span
+        >{t.tumors.guideBadge}</span
       >
       <span
         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-800"
       >
-        Incidence: {tumor.data.incidence}
+        {t.tumors.incidence}: {tumor.data.incidence}
       </span>
     </div>
     <h1
@@ -86,9 +86,9 @@ const structuredData = {
       {tumor.data.title}
     </h1>
     <div class="mt-3 text-xs text-gray-500 flex flex-wrap items-center gap-4">
-      <span>Reviewed by: {tumor.data.author}</span>
+      <span>{t.tumors.reviewedBy} {tumor.data.author}</span>
       <span>•</span>
-      <span>Last Reviewed: {tumor.data.last_medically_reviewed_date}</span>
+      <span>{t.tumors.lastReviewed} {tumor.data.last_medically_reviewed_date}</span>
     </div>
   </div>
 
@@ -101,7 +101,7 @@ const structuredData = {
       tumor.data.authoritative_sources.length > 0 && (
         <div class="my-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
           <h3 class="text-sm font-bold text-gray-700 uppercase tracking-wider mb-2">
-            Authoritative & Clinical Sources
+            {t.tumors.sources}
           </h3>
           <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
             {tumor.data.authoritative_sources.map((source: string) => (
@@ -119,13 +119,7 @@ const structuredData = {
       href={`${basePath}/${tumor.data.lang}/tumors`}
       class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
     >
-      &larr; {
-        tumor.data.lang === "fr"
-          ? "Retour aux guides des tumeurs"
-          : tumor.data.lang === "zh"
-            ? "返回肿瘤指南列表"
-            : "Back to Tumor Guides"
-      }
+      &larr; {t.tumors.back}
     </a>
   </div>
 </Layout>

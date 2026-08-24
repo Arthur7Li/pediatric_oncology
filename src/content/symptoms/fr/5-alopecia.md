@@ -11,7 +11,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-# Gérer la perte de cheveux (Alopécie)
 
 La perte de cheveux, médicalement connue sous le nom d'alopécie, est l'un des effets secondaires les plus visibles et les plus éprouvants sur le plan émotionnel du traitement contre le cancer. Bien qu'elle ne cause aucun dommage physique, elle modifie fondamentalement l'apparence d'un enfant et, souvent, la façon dont il se perçoit.
 

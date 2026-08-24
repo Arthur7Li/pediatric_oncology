@@ -71,12 +71,12 @@ const structuredData = {
   <div class="mb-8 border-b pb-6">
     <div class="flex items-center gap-3 mb-2">
       <span class="text-sm font-semibold text-primary uppercase tracking-wider"
-        >Symptom Management</span
+        >{t.symptoms.guideBadge}</span
       >
       <span
-        class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${step.data.severity.toLowerCase().includes("high") || step.data.severity.toLowerCase().includes("emergency") || step.data.severity.toLowerCase().includes("urgent") ? "bg-red-100 text-red-800" : "bg-yellow-100 text-yellow-800"}`}
+        class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${step.data.severity.toLowerCase().includes("high") || step.data.severity.toLowerCase().includes("emergency") || step.data.severity.toLowerCase().includes("urgent") || step.data.severity.toLowerCase().includes("élevée") || step.data.severity.includes("高") ? "bg-red-100 text-red-800" : "bg-yellow-100 text-yellow-800"}`}
       >
-        Severity: {step.data.severity}
+        {t.symptoms.severity}: {step.data.severity}
       </span>
     </div>
     <h1
@@ -85,9 +85,9 @@ const structuredData = {
       {step.data.title}
     </h1>
     <div class="mt-3 text-xs text-gray-500 flex flex-wrap items-center gap-4">
-      <span>Reviewed by: {step.data.author}</span>
+      <span>{t.symptoms.reviewedBy} {step.data.author}</span>
       <span>•</span>
-      <span>Last Reviewed: {step.data.last_medically_reviewed_date}</span>
+      <span>{t.symptoms.lastReviewed} {step.data.last_medically_reviewed_date}</span>
     </div>
   </div>
 
@@ -102,13 +102,7 @@ const structuredData = {
       href={`${basePath}/${step.data.lang}/symptoms`}
       class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
     >
-      &larr; {
-        step.data.lang === "fr"
-          ? "Retour aux fiches de symptômes"
-          : step.data.lang === "zh"
-            ? "返回症状管理列表"
-            : "Back to Symptoms"
-      }
+      &larr; {t.symptoms.back}
     </a>
   </div>
 </Layout>

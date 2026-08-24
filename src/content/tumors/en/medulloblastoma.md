@@ -13,7 +13,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Understanding Medulloblastoma
 
 When you hear the word "medulloblastoma," it can be overwhelming. As the most common type of cancerous (malignant) brain tumor in children, it’s natural to feel anxious. However, decades of collaborative research by institutions like **St. Jude Children's Research Hospital**, the **Children's Oncology Group (COG)**, and the **National Cancer Institute (NCI)** have radically changed how we understand and treat this disease, leading to vastly improved outcomes.
 

@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Understanding Pediatric Acute Lymphoblastic Leukemia (ALL)
 
 Receiving a diagnosis of Acute Lymphoblastic Leukemia (ALL) is terrifying for any family. However, pediatric ALL is one of the greatest success stories in modern medicine: over the past five decades, collaborative clinical research in Canada and internationally has elevated five-year survival rates from under 10% to greater than 90%.
 

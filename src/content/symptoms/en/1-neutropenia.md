@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Neutropenia & Fever: A Medical Emergency
 
 Neutropenia occurs when a child has an abnormally low number of neutrophils, a type of white blood cell essential for fighting off bacterial infections. During chemotherapy, white blood cell counts can drop significantly, leaving the body highly vulnerable.
 

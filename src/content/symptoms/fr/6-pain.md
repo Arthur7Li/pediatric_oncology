@@ -11,7 +11,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-# Gérer la douleur pendant le traitement du cancer
 
 Le cancer et ses traitements peuvent causer une douleur importante chez les enfants. C'est un droit fondamental de chaque enfant de voir sa douleur reconnue et traitée efficacement. Dans les centres d'oncologie pédiatrique canadiens, la gestion de la douleur est une priorité absolue, et les équipes médicales disposent d'outils avancés pour assurer le confort de votre enfant.
 

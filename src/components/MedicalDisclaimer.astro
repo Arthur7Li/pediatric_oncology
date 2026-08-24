@@ -14,18 +14,21 @@ const disclaimers: Record<
     body: "This resource is created for educational purposes to support families navigating the Canadian pediatric healthcare system. It does not constitute formal medical advice, diagnosis, or personalized treatment planning. Always consult your child's primary pediatric oncology team for specific medical care.",
     emergency:
       "In a medical emergency (such as a fever during neutropenia), call 911 or visit your nearest Emergency Department immediately.",
+    aria: "Medical Disclaimer",
   },
   fr: {
     title: "Avis médical et éducatif",
     body: "Cette ressource est conçue à des fins éducatives pour accompagner les familles au sein du réseau de santé pédiatrique canadien. Elle ne remplace en aucun cas un avis médical professionnel, un diagnostic ou un plan de traitement personnalisé. Consultez toujours directement l'équipe d'oncologie pédiatrique de votre enfant.",
     emergency:
       "En cas d'urgence médicale (ex. fièvre en période de neutropénie), composez le 911 ou rendez-vous immédiatement aux urgences les plus proches.",
+    aria: "Avis médical",
   },
   zh: {
     title: "医学与教育免责声明",
     body: "本平台旨在为在加拿大医疗体系中应对儿童肿瘤的家庭提供科普与教育支持，不构成任何形式的正式医疗诊断、处方或个体化治疗方案。涉及孩子的具体病情与诊疗决策，请务必咨询您的主管儿童肿瘤专科医疗团队。",
     emergency:
       "如遇紧急医疗情况（如中性粒细胞减少期突发发热），请立即拨打 911 或前往最近的医院急诊部！",
+    aria: "医学免责声明",
   },
 };
 
@@ -33,8 +36,9 @@ const content = disclaimers[lang] || disclaimers.en;
 ---
 
 <aside
-  class="my-8 p-5 bg-sky-50/80 border border-sky-200 rounded-lg text-sky-950 text-sm shadow-sm"
-  aria-label="Medical Disclaimer"
+  class="my-8 bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg text-sm text-gray-700"
+  role="region"
+  aria-label={content.aria}
 >
   <div class="flex items-start gap-3">
     <div class="flex-shrink-0 mt-0.5 text-primary text-xl" aria-hidden="true">

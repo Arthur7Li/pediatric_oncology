@@ -13,7 +13,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Comprendre le médulloblastome
 
 Lorsqu'on entend le mot « médulloblastome », cela peut être accablant. S'agissant du type de tumeur cérébrale cancéreuse (maligne) le plus courant chez les enfants, il est naturel de ressentir de l'anxiété. Cependant, des décennies de recherche collaborative par des institutions telles que l'**Hôpital de recherche pour enfants St. Jude**, le **Children's Oncology Group (COG)** et l'**Institut national du cancer (NCI)** ont radicalement changé notre façon de comprendre et de traiter cette maladie, conduisant à des résultats considérablement améliorés.
 

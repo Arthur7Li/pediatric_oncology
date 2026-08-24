@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Faire face à la récidive : Comprendre les options de deuxième intention et préserver l'espoir
 
 Entendre que la maladie est de retour (récidive) ou qu'elle ne répond pas comme prévu au premier traitement (maladie réfractaire) est un moment d'une violence inouïe pour les parents. Vous pouvez ressentir un état de choc, de la colère, un épuisement profond ou un sentiment d'injustice.
 

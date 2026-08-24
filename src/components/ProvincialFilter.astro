@@ -25,7 +25,10 @@ const t = translations[currentLang] || translations.en;
     <option value="" disabled selected>{t.filter.placeholder}</option>
     {
       resources.map((res: any) => (
-        <option value={res.province}>{res.province}</option>
+        <option value={res.province}>
+          {/* @ts-ignore - Indexing dynamically */}
+          {t.filter.provinces[res.province] || res.province}
+        </option>
       ))
     }
   </select>
@@ -36,22 +39,22 @@ const t = translations[currentLang] || translations.en;
     aria-live="polite"
     aria-atomic="true"
   >
-    <h3 id="display-province" class="text-xl font-bold text-primary mb-3">
+    <h2 id="display-province" class="text-xl font-bold text-primary mb-3">
       {t.filter.selectedHeading}
-    </h3>
+    </h2>
 
     <div class="mb-4">
-      <h4 class="font-semibold text-gray-800 border-b pb-1 mb-2">
+      <h3 class="font-semibold text-gray-800 border-b pb-1 mb-2">
         {t.filter.hospitalsHeading}
-      </h4>
+      </h3>
       <ul id="display-hospitals" class="list-disc pl-5 text-gray-700 space-y-1">
       </ul>
     </div>
 
     <div class="mb-4">
-      <h4 class="font-semibold text-gray-800 border-b pb-1 mb-2">
+      <h3 class="font-semibold text-gray-800 border-b pb-1 mb-2">
         {t.filter.financialHeading}
-      </h4>
+      </h3>
       <ul id="display-financial" class="list-disc pl-5 text-gray-700 space-y-1">
       </ul>
     </div>
@@ -65,7 +68,12 @@ const t = translations[currentLang] || translations.en;
   </div>
 </div>
 
-<script is:inline define:vars={{ resources }}>
+<script is:inline define:vars={{
+  resources,
+  selectedResourcesStr: t.filter.selectedResources,
+  notesHeading: t.filter.notesHeading,
+  provinces: t.filter.provinces
+}}>
   function initProvincialFilter() {
     const select = document.getElementById("province-select");
     const display = document.getElementById("resource-display");
@@ -85,7 +93,8 @@ const t = translations[currentLang] || translations.en;
 
       if (data) {
         display.classList.remove("hidden");
-        displayProvince.textContent = data.province + " Resources";
+        const locName = provinces[data.province] || data.province;
+        displayProvince.textContent = locName + selectedResourcesStr;
 
         displayHospitals.innerHTML = data.hospitals
           .map((h) => `<li>${h}</li>`)
@@ -96,7 +105,7 @@ const t = translations[currentLang] || translations.en;
 
         if (data.notes && data.notes.trim() !== "") {
           displayNotesContainer.classList.remove("hidden");
-          displayNotes.innerHTML = `<strong>Note on Care Coordination:</strong> ${data.notes}`;
+          displayNotes.innerHTML = `<strong>${notesHeading}</strong> ${data.notes}`;
         } else {
           displayNotesContainer.classList.add("hidden");
         }

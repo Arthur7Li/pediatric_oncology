@@ -13,7 +13,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Comprendre la tumeur rhabdoïde/tératoïde atypique (ATRT)
 
 Le diagnostic d'une tumeur rhabdoïde/tératoïde atypique (ATRT) est incroyablement difficile à assimiler. L'ATRT est une tumeur du cerveau et de la moelle épinière extrêmement rare, à croissance rapide et agressive. Elle touche principalement les nourrissons et les tout-petits de moins de 3 ans, bien qu'elle puisse occasionnellement survenir chez des enfants plus âgés.
 

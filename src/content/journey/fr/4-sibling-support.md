@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Santé mentale et soutien aux frères et sœurs : Prendre soin des « Enfants de Verre »
 
 Lorsqu'un enfant reçoit un diagnostic de cancer, c'est toute la famille qui est touchée par ce diagnostic. Bien que l'attention principale se porte légitimement sur les traitements médicaux, les séjours à l'hôpital et le bien-être physique du patient, le fardeau psychologique sur le reste de la famille — en particulier les frères et sœurs en bonne santé — est profond.
 

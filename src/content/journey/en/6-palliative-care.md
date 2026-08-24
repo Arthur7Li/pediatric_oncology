@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Compassionate Care: Pediatric Palliative & Quality of Life Support
 
 The words "palliative care" can sound frightening to parents, often evoking deep grief and fear. However, in modern Canadian pediatric oncology, **palliative care is not about giving up hope or stopping treatment**. Instead, it is an extra layer of compassionate, specialized support designed to maximize your child’s comfort, alleviate pain, protect dignity, and support your entire family from the earliest days of diagnosis through every phase of illness.
 

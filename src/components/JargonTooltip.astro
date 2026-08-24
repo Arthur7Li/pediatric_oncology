@@ -11,13 +11,12 @@ const tooltipId =
   `tooltip-${term.toLowerCase().replace(/[^a-z0-9]/g, "-")}-${Math.random().toString(36).substring(2, 7)}`;
 ---
 
-<span
-  class="group relative inline-block cursor-help border-b border-dashed border-primary text-primary focus-within:outline-none"
-  tabindex="0"
-  role="button"
-  aria-describedby={tooltipId}
-  aria-label={`Definition of ${term}`}
->
+  <span
+    class="relative inline-block border-b-2 border-dotted border-primary cursor-help focus-within:outline-none focus-within:ring-2 focus-within:ring-primary rounded"
+    role="button"
+    tabindex="0"
+    aria-label={`${t.nav.definitionOf} ${term}`}
+  >
   {term}
   <span
     id={tooltipId}

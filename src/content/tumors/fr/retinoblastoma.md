@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-# Comprendre le rétinoblastome
 
 Apprendre que votre enfant est atteint d'un cancer de l'œil est une expérience particulièrement effrayante. Le rétinoblastome est un cancer infantile rare qui prend naissance dans la rétine, la membrane sensible à la lumière située au fond de l'œil. Bien que le diagnostic soit intimidant, le rétinoblastome est hautement guérissable lorsqu'il est détecté tôt.
 

@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-# Comprendre les lymphomes pédiatriques
 
 Apprendre que votre enfant est atteint d'un lymphome est une expérience incroyablement bouleversante. Le lymphome est un cancer du système lymphatique, qui est un élément crucial du système immunitaire de l'organisme. Heureusement, les lymphomes pédiatriques sont hautement traitables et, grâce à la recherche collaborative dans les centres canadiens et internationaux, les taux de survie sont excellents.
 

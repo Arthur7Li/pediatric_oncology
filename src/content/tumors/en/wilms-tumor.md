@@ -13,7 +13,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Understanding Wilms Tumor (Nephroblastoma)
 
 Discovering a lump in your young child's abdomen is an alarming experience. Wilms tumor (also known as nephroblastoma) is the most common kidney cancer affecting children. Thanks to decades of clinical trials and multi-institutional cooperation, Wilms tumor has an overall cure rate exceeding 90% for most children.
 

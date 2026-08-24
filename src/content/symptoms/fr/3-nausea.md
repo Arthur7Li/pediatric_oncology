@@ -12,7 +12,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Nausées et vomissements induits par la chimiothérapie (NVIC)
 
 Les nausées et les vomissements induits par la chimiothérapie (NVIC) font partie des effets secondaires les plus courants et les plus éprouvants du traitement du cancer pédiatrique. La gestion des NVIC nécessite généralement une approche multidisciplinaire, combinant des médicaments sur ordonnance (antiémétiques) et des soins de soutien non pharmacologiques à domicile.
 

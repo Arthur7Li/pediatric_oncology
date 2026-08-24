@@ -13,7 +13,6 @@ authoritative_sources:
 lang: "en"
 ---
 
-# Understanding Atypical Teratoid/Rhabdoid Tumor (ATRT)
 
 A diagnosis of an Atypical Teratoid/Rhabdoid Tumor (ATRT) is incredibly difficult to process. ATRT is an extremely rare, fast-growing, and aggressive brain and spinal cord tumor. It primarily affects infants and toddlers under the age of 3, though it can occasionally occur in older children.
 

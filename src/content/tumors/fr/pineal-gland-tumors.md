@@ -13,7 +13,6 @@ authoritative_sources:
 lang: "fr"
 ---
 
-# Comprendre les tumeurs pédiatriques de la glande pinéale
 
 Apprendre que votre enfant est atteint d'une tumeur cérébrale est une épreuve bouleversante. Ce guide a été conçu pour vous aider à comprendre les tumeurs de la glande pinéale, en traduisant les termes médicaux complexes en explications claires et bienveillantes.
 
