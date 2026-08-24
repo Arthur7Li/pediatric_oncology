@@ -1,0 +1,161 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { translations } from "../i18n/translations";
+
+const t = translations.en;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Layout
+  title={`${t.notFound.title} - ${t.brandName}`}
+  lang="en"
+  description={t.notFound.subtitle}
+>
+  <div class="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+    <span
+      class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-sky-100 text-sky-900 mb-4"
+    >
+      Error 404
+    </span>
+
+    <h1
+      class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"
+    >
+      {t.notFound.title}
+    </h1>
+
+    <p class="mt-4 text-xl font-medium text-gray-700 max-w-2xl mx-auto">
+      {t.notFound.subtitle}
+    </p>
+
+    <p class="mt-2 text-base text-gray-600 max-w-xl mx-auto">
+      {t.notFound.description}
+    </p>
+
+    <!-- Language Quick Links -->
+    <div
+      class="mt-6 inline-flex flex-wrap items-center justify-center gap-3 p-2 bg-gray-50 rounded-lg border border-gray-200 text-sm text-gray-700"
+    >
+      <span class="font-medium text-gray-800">Language options:</span>
+      <a
+        href={`${basePath}/`}
+        class="font-semibold text-primary hover:underline px-2 py-0.5 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+      >
+        English
+      </a>
+      <span class="text-gray-400" aria-hidden="true">•</span>
+      <a
+        href={`${basePath}/fr`}
+        class="font-semibold text-primary hover:underline px-2 py-0.5 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+      >
+        Français
+      </a>
+      <span class="text-gray-400" aria-hidden="true">•</span>
+      <a
+        href={`${basePath}/zh`}
+        class="font-semibold text-primary hover:underline px-2 py-0.5 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+      >
+        简体中文
+      </a>
+    </div>
+
+    <!-- Quick Navigation Cards Grid -->
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-left">
+      <a
+        href={`${basePath}/`}
+        class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-primary transition-all group no-underline"
+      >
+        <div class="text-2xl mb-2" aria-hidden="true">🏠</div>
+        <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary">
+          {t.notFound.homeBtn}
+        </h2>
+        <p class="mt-1 text-xs text-gray-600">
+          Return to the main overview and introduction to the platform.
+        </p>
+      </a>
+
+      <a
+        href={`${basePath}/en/journey/1-diagnosis`}
+        class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-primary transition-all group no-underline"
+      >
+        <div class="text-2xl mb-2" aria-hidden="true">🗺️</div>
+        <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary">
+          {t.notFound.journeyBtn}
+        </h2>
+        <p class="mt-1 text-xs text-gray-600">
+          6-step guided roadmap from diagnosis through survivorship and care.
+        </p>
+      </a>
+
+      <a
+        href={`${basePath}/en/tumors`}
+        class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-primary transition-all group no-underline"
+      >
+        <div class="text-2xl mb-2" aria-hidden="true">🔬</div>
+        <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary">
+          {t.notFound.tumorsBtn}
+        </h2>
+        <p class="mt-1 text-xs text-gray-600">
+          Clinical guides for ALL, neuroblastoma, Wilms, and brain tumors.
+        </p>
+      </a>
+
+      <a
+        href={`${basePath}/en/symptoms`}
+        class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-primary transition-all group no-underline"
+      >
+        <div class="text-2xl mb-2" aria-hidden="true">🩺</div>
+        <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary">
+          {t.notFound.symptomsBtn}
+        </h2>
+        <p class="mt-1 text-xs text-gray-600">
+          At-home protocols for neutropenia, mucositis, and nausea.
+        </p>
+      </a>
+
+      <a
+        href={`${basePath}/en/financial`}
+        class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-primary transition-all group no-underline"
+      >
+        <div class="text-2xl mb-2" aria-hidden="true">🍁</div>
+        <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary">
+          {t.notFound.financialBtn}
+        </h2>
+        <p class="mt-1 text-xs text-gray-600">
+          Provincial drug plans, EI caregiver benefits, NIHB, and charity
+          grants.
+        </p>
+      </a>
+
+      <a
+        href={`${basePath}/en/resources`}
+        class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-primary transition-all group no-underline"
+      >
+        <div class="text-2xl mb-2" aria-hidden="true">🏥</div>
+        <h2 class="text-lg font-bold text-gray-900 group-hover:text-primary">
+          {t.notFound.resourcesBtn}
+        </h2>
+        <p class="mt-1 text-xs text-gray-600">
+          Tertiary pediatric oncology centers across Canada.
+        </p>
+      </a>
+    </div>
+
+    <!-- Emergency Support Callout -->
+    <div
+      class="mt-10 p-6 bg-red-50 border-l-4 border-red-600 rounded-r-lg text-left"
+    >
+      <h2 class="text-base font-bold text-red-900">
+        {t.notFound.emergencyHelp}
+      </h2>
+      <p class="mt-1 text-sm text-red-800">
+        {t.notFound.emergencyNote}
+      </p>
+      <div class="mt-4 flex flex-wrap gap-4 text-xs font-semibold text-red-900">
+        <span>🚑 <strong>Emergency:</strong> 911</span>
+        <span>📞 <strong>Kids Help Phone:</strong> 1-800-668-6868</span>
+        <span>🎗️ <strong>Canadian Cancer Society:</strong> 1-888-939-3333</span>
+      </div>
+    </div>
+  </div>
+</Layout>

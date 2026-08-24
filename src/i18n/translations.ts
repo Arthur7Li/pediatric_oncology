@@ -83,6 +83,22 @@ export const translations = {
       copyright:
         "Canadian Pediatric Oncology Educational Platform. Built with care for Canadian families.",
     },
+    notFound: {
+      title: "Page Not Found",
+      subtitle:
+        "We couldn't find that page, but we're here to help you navigate.",
+      description:
+        "The page you are looking for may have been moved, renamed, or is temporarily unavailable. Explore our core clinical guides or use the search bar above.",
+      homeBtn: "Return to Home",
+      journeyBtn: "The Treatment Journey",
+      tumorsBtn: "Tumor Guides",
+      symptomsBtn: "Symptom Management",
+      financialBtn: "Financial Support Guide",
+      resourcesBtn: "Specialized Hospitals",
+      emergencyHelp: "Need Immediate Medical Support?",
+      emergencyNote:
+        "If your child is experiencing an urgent medical emergency, call 911 or visit your nearest pediatric emergency department immediately.",
+    },
   },
   fr: {
     brandName: "Ressource canadienne en oncologie pédiatrique",
@@ -167,6 +183,22 @@ export const translations = {
       copyright:
         "Plateforme éducative canadienne en oncologie pédiatrique. Conçue avec bienveillance pour les familles canadiennes.",
     },
+    notFound: {
+      title: "Page non trouvée",
+      subtitle:
+        "Nous n'avons pas trouvé cette page, mais nous sommes là pour vous guider.",
+      description:
+        "La page que vous recherchez a peut-être été déplacée ou n'existe pas. Explorez nos guides cliniques ci-dessous ou utilisez la recherche.",
+      homeBtn: "Retour à l'accueil",
+      journeyBtn: "Le Parcours de soins",
+      tumorsBtn: "Guides des tumeurs",
+      symptomsBtn: "Gestion des symptômes",
+      financialBtn: "Soutien financier",
+      resourcesBtn: "Hôpitaux spécialisés",
+      emergencyHelp: "Besoin d'aide médicale immédiate ?",
+      emergencyNote:
+        "Si votre enfant vit une urgence médicale ou une fièvre en neutropénie, composez le 911 ou rendez-vous immédiatement aux urgences pédiatriques les plus proches.",
+    },
   },
   zh: {
     brandName: "加拿大儿童肿瘤教育与支持平台",
@@ -248,6 +280,21 @@ export const translations = {
       disclaimer:
         "本平台内容仅供医学科普与教育参考，不构成正式医疗诊断或个体化治疗方案。涉及孩子的具体诊疗，请始终以主管医疗团队指导为准。",
       copyright: "加拿大儿童肿瘤教育平台。倾心陪伴每一个坚强的加拿大患儿家庭。",
+    },
+    notFound: {
+      title: "页面未找到",
+      subtitle: "未能找到该页面，但我们随时为您提供指引与支持。",
+      description:
+        "您访问的页面可能已移动、重命名或不存在。请浏览下方核心临床指南，或使用顶部的搜索功能。",
+      homeBtn: "返回首页",
+      journeyBtn: "全流程治疗旅程",
+      tumorsBtn: "儿童肿瘤指南",
+      symptomsBtn: "居家症状护理",
+      financialBtn: "财务与福利支持",
+      resourcesBtn: "全国儿童专科医院",
+      emergencyHelp: "需要紧急医疗帮助？",
+      emergencyNote:
+        "如果您的孩子在治疗期间突发高热或出现紧急状况，请立即拨打 911 或前往最近的儿童医院急诊室。",
     },
   },
 } as const;

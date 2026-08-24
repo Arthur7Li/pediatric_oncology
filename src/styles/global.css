@@ -55,3 +55,70 @@
 .prose a:not([class*="text-"]) {
   @apply text-primary hover:text-primary-dark underline;
 }
+
+@media print {
+  /* Hide interactive web chrome: header, footer, navigation, search dialogs, skip links, and interactive buttons */
+  header,
+  footer,
+  nav,
+  #search-dialog,
+  #search-trigger,
+  .skip-link,
+  button,
+  [data-pagefind-ignore] {
+    display: none !important;
+  }
+
+  /* Reset layout, backgrounds, and shadows for clean A4 paper printing */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  main {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Optimize prose typography and prevent awkward pagination breaks */
+  .prose {
+    max-width: 100% !important;
+    color: #000000 !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #000000 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  article,
+  blockquote,
+  .bg-white,
+  .bg-gray-50,
+  .border {
+    box-shadow: none !important;
+    border-color: #d1d5db !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Display full URLs after external/content links for offline parent reference */
+  a[href^="http"]:not([href*="localhost"])::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #4b5563;
+    word-break: break-all;
+  }
+}

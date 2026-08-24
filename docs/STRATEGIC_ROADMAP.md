@@ -28,7 +28,7 @@ Each improvement area below is self-contained with:
 | --- | --------------------------------------------------------------------- | ------ | ----------------- | ----------------- |
 | 1   | [Search & SEO](#area-1-search--seo)                                   | Medium | Gemini 3.7 Flash  | `[x]` Completed   |
 | 2   | [Breadcrumb Navigation](#area-2-breadcrumb-navigation)                | Low    | Gemini 3.7 Flash  | `[x]` Completed   |
-| 3   | [404 Page & Print Styles](#area-3-404-page--print-styles)             | Low    | Gemini 3.7 Flash  | `[ ]` Not started |
+| 3   | [404 Page & Print Styles](#area-3-404-page--print-styles)             | Low    | Gemini 3.7 Flash  | `[x]` Completed   |
 | 4   | [Expand Cancer Coverage](#area-4-expand-cancer-type-coverage)         | High   | Gemini 3.1 Pro    | `[ ]` Not started |
 | 5   | [Expand Symptom Guides](#area-5-expand-symptom-management-guides)     | High   | Gemini 3.1 Pro    | `[ ]` Not started |
 | 6   | [Visual & Emotional Design](#area-6-visual--emotional-design-upgrade) | Medium | Gemini 3.7 Flash  | `[ ]` Not started |
