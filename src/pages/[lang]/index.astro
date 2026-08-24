@@ -19,44 +19,66 @@ const langPrefix = `${basePath}/${currentLang}`;
 
 <Layout title={t.home.title} lang={currentLang} description={t.home.subtitle}>
   <div class="text-center py-12 flex flex-col items-center">
-    <!-- Gentle, abstract illustration -->
-    <svg
-      class="w-48 h-48 mb-8 text-sky-100"
-      viewBox="0 0 200 200"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path
-        fill="currentColor"
-        d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.3,-46.3C90.8,-33.5,96.8,-17.9,95.5,-3.1C94.2,11.8,85.6,25.9,76,38.8C66.4,51.7,55.8,63.4,42.8,71.4C29.8,79.4,14.9,83.7,0.1,83.4C-14.6,83.2,-29.3,78.5,-41.4,70C-53.5,61.5,-63.1,49.2,-72.1,35.9C-81.1,22.6,-89.6,8.3,-90.1,-6.3C-90.6,-20.9,-83.1,-35.8,-72.4,-47.5C-61.7,-59.2,-47.8,-67.7,-33.6,-74.6C-19.4,-81.5,-4.9,-86.8,9.1,-86.4C23,-85.9,46,-79.7,44.7,-76.4Z"
-        transform="translate(100 100) scale(1.1)"></path>
-      <path
-        fill="#026aa2"
-        opacity="0.8"
-        d="M37.3,-58.3C49.9,-46.5,62.8,-36.5,70.9,-23.1C79,-9.7,82.3,7,78.3,21.7C74.3,36.4,63,49.1,49.5,58.3C36,67.5,20.3,73.2,4.8,65.1C-10.7,57,-26,35.1,-39.6,22.2C-53.2,9.3,-65.1,5.4,-67.5,-1.3C-69.9,-8,-62.8,-17.5,-55,-26C-47.2,-34.5,-38.7,-42,-28.9,-51.7C-19.1,-61.4,-8,-73.3,2.8,-78C13.6,-82.7,24.7,-70.1,37.3,-58.3Z"
-        transform="translate(100 100) scale(0.9)"></path>
-      <circle cx="100" cy="100" r="20" fill="#ffffff" opacity="0.9"></circle>
-    </svg>
+    <!-- Warm, family-friendly illustration -->
+    <div class="relative w-40 h-40 mb-8">
+      <div class="absolute inset-0 bg-accent-light rounded-full opacity-60">
+      </div>
+      <div
+        class="absolute inset-4 bg-red-100 rounded-full flex items-center justify-center"
+      >
+        <svg
+          class="w-16 h-16 text-accent"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+          ></path>
+        </svg>
+      </div>
+    </div>
 
     <h1
-      class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl"
+      class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl text-balance"
     >
       {t.home.title}
     </h1>
-    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+    <p
+      class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed text-balance"
+    >
       {t.home.subtitle}
     </p>
+
+    <div
+      class="mt-5 inline-flex items-center justify-center gap-2 bg-gray-50/80 border border-gray-200 rounded-full px-5 py-2.5 text-sm text-gray-700 shadow-sm text-balance"
+    >
+      <svg
+        class="w-5 h-5 text-accent shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+        ></path></svg
+      >
+      <span class="font-medium">{(t.home as any).trustBadge}</span>
+    </div>
+
     <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
       <a
         href={`${langPrefix}/journey/1-diagnosis`}
-        class="rounded-md bg-primary px-8 py-4 text-lg font-semibold text-white shadow-md hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary no-underline transition-colors"
+        class="rounded-full bg-primary px-8 py-4 text-lg font-semibold text-white shadow-md hover:bg-primary-dark hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg transition-all duration-300 no-underline"
       >
         {t.home.startJourneyBtn}
       </a>
       <a
         href={`${langPrefix}/financial`}
-        class="rounded-md bg-white px-8 py-4 text-lg font-semibold text-gray-900 shadow-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary no-underline transition-colors"
+        class="rounded-full bg-white px-8 py-4 text-lg font-semibold text-accent shadow-md border border-accent-light hover:bg-accent-light hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg transition-all duration-300 no-underline"
       >
         {t.home.financialBtn}
       </a>

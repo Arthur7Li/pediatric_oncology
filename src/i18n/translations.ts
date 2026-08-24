@@ -23,6 +23,8 @@ export const translations = {
       title: "A Guided Path Forward",
       subtitle:
         "Navigating a pediatric oncology diagnosis can be overwhelming. We provide a step-by-step roadmap tailored for families in the Canadian healthcare system.",
+      trustBadge:
+        "Developed using guidelines from leading Canadian pediatric oncology centers.",
       startJourneyBtn: "Start The Journey",
       financialBtn: "Financial Support Guide",
     },
@@ -122,6 +124,8 @@ export const translations = {
       title: "Un chemin guidé avec bienveillance",
       subtitle:
         "Recevoir un diagnostic d'oncologie pédiatrique est une épreuve bouleversante. Nous offrons une feuille de route étape par étape conçue spécifiquement pour les familles au sein du système de santé canadien.",
+      trustBadge:
+        "Développé à l'aide des directives des principaux centres d'oncologie pédiatrique canadiens.",
       startJourneyBtn: "Commencer le parcours",
       financialBtn: "Guide du soutien financier",
     },
@@ -222,6 +226,7 @@ export const translations = {
       title: "为患儿家庭点亮前行之路",
       subtitle:
         "面对儿童肿瘤的确诊往往令人不知所措。我们专为在加拿大医疗体系中的家庭提供循序渐进、充满关怀且经医学验证的指南与支持。",
+      trustBadge: "参照加拿大顶尖儿童肿瘤中心的指南开发。",
       startJourneyBtn: "开启治疗旅程",
       financialBtn: "财务与福利指南",
     },

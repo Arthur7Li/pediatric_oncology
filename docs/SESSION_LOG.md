@@ -80,3 +80,16 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Implemented trilingual translations (English, French, Simplified Chinese) across all 3 guides.
   - Ensured clear, scannable emergency red flags and empathetic tone for sleep-deprived parents.
   - Verified local build and QA suites (`npm run format && npm test && npm run ci` + 81 total static pages compiled successfully).
+
+## 2026-08-23
+
+**[22:05] Area 6: Visual & Emotional Design Upgrade**
+
+- **Action:** Upgraded the visual warmth of the platform to be more child-friendly and emotionally supportive.
+- **Details:**
+  - Added `--color-accent` (Rose 600) and `--color-accent-light` (Rose 50) to the Tailwind theme in `global.css`, ensuring WCAG 2.1 AA text contrast.
+  - Redesigned the homepage hero with a warmer, heart-centered illustration and added a Canadian clinical guidelines trust badge.
+  - Integrated tasteful section-specific SVG icons (cell/microscope for tumors, shield for symptoms, heart-in-hands for resources, home/leaf for financial) across the trilingual landing pages.
+  - Implemented smooth card hover effects (`hover:scale-[1.02] hover:-translate-y-1`) for a modern, tactile feel.
+  - Applied `text-balance` to all major headers to ensure proper layout and prevent orphans in English, French, and Chinese.
+- **Status:** Verified with `npm run build` and CI suite (passed).
