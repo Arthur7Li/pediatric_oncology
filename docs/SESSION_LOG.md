@@ -190,3 +190,13 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Added `.animate-fade-in` utility class in `global.css` (UX-23).
   - Expanded `.pa11yci` configuration to audit all 81 static routes for 100% WCAG 2.1 AA automated test coverage (A11Y-19).
   - Verified with `npm run check` (0 errors, 0 warnings), `npm run format`, `npm run build` (81 pages), and `npm run test:e2e` (5/5 passed).
+
+**[14:20] Sprint 4 Medical Content Expansion Execution**
+
+- **Action:** Created highly specialized tumor and symptom management guides in three languages (English, French, Simplified Chinese) and added newly verified regional hospitals.
+- **Details:**
+  - Authored comprehensive clinical guides for Acute Myeloid Leukemia (AML), Osteosarcoma, and Ewing Sarcoma (`MED-06`).
+  - Authored at-home symptom care guides for Constipation and Thrombocytopenia (`MED-07`), ensuring strict adherence to Canadian safety protocols (e.g., advising against rectal thermometers/enemas without medical consent and warning against NSAIDs during thrombocytopenia).
+  - Maintained rigorous medical accuracy, empathetic tone, and trilingual consistency (EN, FR, ZH).
+  - Appended Kingston Health Sciences Centre (ON) and CIUSSS de l'Estrie - CHU de Sherbrooke (QC) to `src/data/provincial_resources.json` (`MED-08`).
+  - Verified local build and QA suites: `npm run check` (0 errors) and `npm run build` generated 96 static pages.

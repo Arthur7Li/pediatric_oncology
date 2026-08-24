@@ -51,7 +51,8 @@
       "The Hospital for Sick Children (SickKids - Toronto)",
       "Children's Hospital of Eastern Ontario (CHEO - Ottawa)",
       "McMaster Children's Hospital (Hamilton)",
-      "Children's Hospital at London Health Sciences Centre (London)"
+      "Children's Hospital at London Health Sciences Centre (London)",
+      "Kingston Health Sciences Centre (Kingston)"
     ],
     "financial": [
       "OHIP+ (Children & Youth Pharmacare)",
@@ -67,7 +68,8 @@
     "hospitals": [
       "CHU Sainte-Justine (Montréal)",
       "The Montreal Children's Hospital (Montréal)",
-      "CHU de Québec-Université Laval (Québec)"
+      "CHU de Québec-Université Laval (Québec)",
+      "CIUSSS de l'Estrie - CHU de Sherbrooke (Sherbrooke)"
     ],
     "financial": [
       "RAMQ Public Prescription Drug Plan",
