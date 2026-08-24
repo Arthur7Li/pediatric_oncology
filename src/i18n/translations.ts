@@ -82,20 +82,20 @@ export const translations = {
       notesHeading: "Note on Out-of-Province & Specialized Care:",
       selectedResources: " Resources",
       provinces: {
-        "Alberta": "Alberta",
+        Alberta: "Alberta",
         "British Columbia": "British Columbia",
-        "Manitoba": "Manitoba",
+        Manitoba: "Manitoba",
         "New Brunswick": "New Brunswick",
         "Newfoundland and Labrador": "Newfoundland and Labrador",
         "Northwest Territories": "Northwest Territories",
         "Nova Scotia": "Nova Scotia",
-        "Nunavut": "Nunavut",
-        "Ontario": "Ontario",
+        Nunavut: "Nunavut",
+        Ontario: "Ontario",
         "Prince Edward Island": "Prince Edward Island",
-        "Quebec": "Quebec",
-        "Saskatchewan": "Saskatchewan",
-        "Yukon": "Yukon"
-      }
+        Quebec: "Quebec",
+        Saskatchewan: "Saskatchewan",
+        Yukon: "Yukon",
+      },
     },
     footer: {
       emergencyTitle: "Medical Emergency & Crisis Support in Canada",
@@ -214,20 +214,22 @@ export const translations = {
       notesHeading: "Précision sur les soins hors province :",
       selectedResources: " - Ressources",
       provinces: {
-        "Alberta": "Alberta",
+        Alberta: "Alberta",
         "British Columbia": "Colombie-Britannique (British Columbia)",
-        "Manitoba": "Manitoba",
+        Manitoba: "Manitoba",
         "New Brunswick": "Nouveau-Brunswick (New Brunswick)",
-        "Newfoundland and Labrador": "Terre-Neuve-et-Labrador (Newfoundland and Labrador)",
-        "Northwest Territories": "Territoires du Nord-Ouest (Northwest Territories)",
+        "Newfoundland and Labrador":
+          "Terre-Neuve-et-Labrador (Newfoundland and Labrador)",
+        "Northwest Territories":
+          "Territoires du Nord-Ouest (Northwest Territories)",
         "Nova Scotia": "Nouvelle-Écosse (Nova Scotia)",
-        "Nunavut": "Nunavut",
-        "Ontario": "Ontario",
+        Nunavut: "Nunavut",
+        Ontario: "Ontario",
         "Prince Edward Island": "Île-du-Prince-Édouard (Prince Edward Island)",
-        "Quebec": "Québec (Quebec)",
-        "Saskatchewan": "Saskatchewan",
-        "Yukon": "Yukon"
-      }
+        Quebec: "Québec (Quebec)",
+        Saskatchewan: "Saskatchewan",
+        Yukon: "Yukon",
+      },
     },
     footer: {
       emergencyTitle: "Urgences médicales et soutien en cas de crise au Canada",
@@ -344,20 +346,21 @@ export const translations = {
       notesHeading: "跨省转诊与偏远地区就医说明：",
       selectedResources: " 资源",
       provinces: {
-        "Alberta": "阿尔伯塔省 (Alberta)",
+        Alberta: "阿尔伯塔省 (Alberta)",
         "British Columbia": "不列颠哥伦比亚省 (British Columbia)",
-        "Manitoba": "曼尼托巴省 (Manitoba)",
+        Manitoba: "曼尼托巴省 (Manitoba)",
         "New Brunswick": "新不伦瑞克省 (New Brunswick)",
-        "Newfoundland and Labrador": "纽芬兰与拉布拉多省 (Newfoundland and Labrador)",
+        "Newfoundland and Labrador":
+          "纽芬兰与拉布拉多省 (Newfoundland and Labrador)",
         "Northwest Territories": "西北地区 (Northwest Territories)",
         "Nova Scotia": "新斯科舍省 (Nova Scotia)",
-        "Nunavut": "努纳武特地区 (Nunavut)",
-        "Ontario": "安大略省 (Ontario)",
+        Nunavut: "努纳武特地区 (Nunavut)",
+        Ontario: "安大略省 (Ontario)",
         "Prince Edward Island": "爱德华王子岛 (Prince Edward Island)",
-        "Quebec": "魁北克省 (Quebec)",
-        "Saskatchewan": "萨斯喀彻温省 (Saskatchewan)",
-        "Yukon": "育空地区 (Yukon)"
-      }
+        Quebec: "魁北克省 (Quebec)",
+        Saskatchewan: "萨斯喀彻温省 (Saskatchewan)",
+        Yukon: "育空地区 (Yukon)",
+      },
     },
     footer: {
       emergencyTitle: "加拿大紧急就医与24小时危机援助",

@@ -13,7 +13,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Seeing your child utterly exhausted is one of the most difficult parts of cancer treatment. Cancer-related fatigue is not like normal tiredness; it is a profound, whole-body exhaustion that doesn't always get better with sleep.
 
 Often, this fatigue is directly tied to **anemia**—a condition where the body does not have enough red blood cells to carry oxygen to its tissues.

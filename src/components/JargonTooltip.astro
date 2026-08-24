@@ -1,27 +1,33 @@
 ---
+import { translations, type Locale } from "../i18n/translations";
+
 interface Props {
   term: string;
   definition: string;
   id?: string;
+  lang?: Locale | string;
 }
 
-const { term, definition, id } = Astro.props;
+const { term, definition, id, lang = "en" } = Astro.props;
+const currentLang = (lang as Locale) || "en";
+const t = translations[currentLang] || translations.en;
 const tooltipId =
   id ||
   `tooltip-${term.toLowerCase().replace(/[^a-z0-9]/g, "-")}-${Math.random().toString(36).substring(2, 7)}`;
 ---
 
-  <span
-    class="relative inline-block border-b-2 border-dotted border-primary cursor-help focus-within:outline-none focus-within:ring-2 focus-within:ring-primary rounded"
-    role="button"
-    tabindex="0"
-    aria-label={`${t.nav.definitionOf} ${term}`}
-  >
+<span
+  class="jargon-tooltip-wrapper group relative inline-block border-b-2 border-dotted border-primary cursor-help focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+  role="button"
+  tabindex="0"
+  aria-describedby={tooltipId}
+  aria-label={`${t.nav.definitionOf} ${term}`}
+>
   {term}
   <span
     id={tooltipId}
     role="tooltip"
-    class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 w-64 max-w-[calc(100vw-2rem)] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100 group-focus-within:opacity-100 bg-gray-900 text-white text-xs sm:text-sm rounded-md px-3 py-2 text-center shadow-lg leading-snug"
+    class="tooltip-popup pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 w-64 max-w-[calc(100vw-2rem)] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100 group-focus-within:opacity-100 bg-gray-900 text-white text-xs sm:text-sm rounded-md px-3 py-2 text-center shadow-lg leading-snug"
   >
     {definition}
     <!-- Arrow -->
@@ -30,3 +36,25 @@ const tooltipId =
       aria-hidden="true"></span>
   </span>
 </span>
+
+<script>
+  function initTooltips() {
+    const tooltips = document.querySelectorAll<HTMLElement>(
+      ".jargon-tooltip-wrapper",
+    );
+    tooltips.forEach((el) => {
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          el.blur();
+        }
+      });
+    });
+  }
+
+  document.addEventListener("astro:page-load", initTooltips);
+  if (document.readyState !== "loading") {
+    initTooltips();
+  } else {
+    document.addEventListener("DOMContentLoaded", initTooltips);
+  }
+</script>

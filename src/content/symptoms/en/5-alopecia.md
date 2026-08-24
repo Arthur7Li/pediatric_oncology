@@ -11,7 +11,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Hair loss, medically known as alopecia, is one of the most visible and emotionally distressing side effects of cancer treatment. While it does not cause physical harm, it fundamentally changes how a child looks and, often, how they feel about themselves.
 
 It is important to remember—and to remind your child—that hair loss is temporary. It is a sign that the medicine is working hard to fight the fast-growing cancer cells.

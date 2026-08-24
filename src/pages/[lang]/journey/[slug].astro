@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import MedicalDisclaimer from "../../../components/MedicalDisclaimer.astro";
+import Prose from "../../../components/Prose.astro";
 import { translations, type Locale } from "../../../i18n/translations";
 
 export async function getStaticPaths() {
@@ -121,14 +122,16 @@ const structuredData = {
     </div>
   </div>
 
-  <article class="prose max-w-none mb-8">
+  <Prose>
     <Content />
-  </article>
+  </Prose>
 
   <MedicalDisclaimer lang={step.data.lang} />
 
   <!-- Wizard Navigation -->
-  <div class="border-t border-gray-200 pt-8 flex justify-between items-center">
+  <div
+    class="border-t border-gray-200 pt-8 flex justify-between items-center print:hidden"
+  >
     <div>
       {
         prevStep ? (

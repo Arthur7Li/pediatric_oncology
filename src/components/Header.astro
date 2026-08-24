@@ -156,6 +156,7 @@ function formatNavName(name: string, lang: Locale) {
         <!-- Desktop Language Switcher -->
         <div
           class="hidden md:flex ml-2 pl-2 border-l border-gray-200 items-center gap-1"
+          role="group"
           aria-label="Language Selector"
         >
           <a
@@ -194,23 +195,30 @@ function formatNavName(name: string, lang: Locale) {
         </div>
 
         <!-- Mobile Language Toggle and Hamburger Button -->
-        <div class="flex items-center gap-1 md:hidden">
+        <div
+          class="flex items-center gap-1 md:hidden"
+          role="group"
+          aria-label="Language Selector"
+        >
           <a
             href={getLangUrl("en")}
             hreflang="en"
             class={`flex items-center justify-center min-h-[36px] min-w-[36px] px-2.5 py-1.5 text-xs font-bold rounded ${currentLang === "en" ? "bg-primary text-white" : "text-gray-700 bg-gray-100"}`}
+            aria-current={currentLang === "en" ? "page" : undefined}
             aria-label="EN">EN</a
           >
           <a
             href={getLangUrl("fr")}
             hreflang="fr"
             class={`flex items-center justify-center min-h-[36px] min-w-[36px] px-2.5 py-1.5 text-xs font-bold rounded ${currentLang === "fr" ? "bg-primary text-white" : "text-gray-700 bg-gray-100"}`}
+            aria-current={currentLang === "fr" ? "page" : undefined}
             aria-label="FR">FR</a
           >
           <a
             href={getLangUrl("zh")}
             hreflang="zh"
             class={`flex items-center justify-center min-h-[36px] min-w-[36px] px-2.5 py-1.5 text-xs font-bold rounded ${currentLang === "zh" ? "bg-primary text-white" : "text-gray-700 bg-gray-100"}`}
+            aria-current={currentLang === "zh" ? "page" : undefined}
             aria-label="中文">中</a
           >
 
@@ -256,8 +264,9 @@ function formatNavName(name: string, lang: Locale) {
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div
+    <nav
       id="mobile-menu"
+      aria-label="Mobile Navigation"
       class="hidden md:hidden pt-4 pb-3 border-t border-gray-200 mt-3 space-y-1"
     >
       {
@@ -275,7 +284,7 @@ function formatNavName(name: string, lang: Locale) {
           </a>
         ))
       }
-    </div>
+    </nav>
   </div>
 </header>
 

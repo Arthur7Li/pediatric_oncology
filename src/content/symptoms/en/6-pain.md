@@ -11,7 +11,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Cancer and its treatments can cause significant pain for children. It is a fundamental right of every child to have their pain recognized and treated effectively. In Canadian pediatric oncology centers, pain management is a top priority, and medical teams have advanced tools to keep your child comfortable.
 
 ## Understanding Pediatric Pain

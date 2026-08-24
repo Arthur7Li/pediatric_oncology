@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 Apprendre que votre enfant est atteint d'un cancer de l'œil est une expérience particulièrement effrayante. Le rétinoblastome est un cancer infantile rare qui prend naissance dans la rétine, la membrane sensible à la lumière située au fond de l'œil. Bien que le diagnostic soit intimidant, le rétinoblastome est hautement guérissable lorsqu'il est détecté tôt.
 
 Aujourd'hui, le traitement vise non seulement à sauver la vie de l'enfant, mais aussi à préserver l'œil et à maximiser la vision. Le Canada est un leader mondial dans la recherche et le traitement du rétinoblastome, offrant des soins de classe mondiale aux familles touchées.

@@ -14,7 +14,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 A diagnosis of neuroblastoma can feel dizzying and terrifying. Neuroblastoma is a complex cancer of the developing nervous system that behaves very differently depending on a child's age, the tumor's genetic profile, and its stage. In some infants, tumors may mature or resolve on their own; in older children, aggressive multimodal therapy is required.
 
 This guide provides clear, empathetic, and medically accurate information on neuroblastoma, Canadian treatment standards, and what families can expect.

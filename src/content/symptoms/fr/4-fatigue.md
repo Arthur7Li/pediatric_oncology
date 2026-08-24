@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 Voir votre enfant complètement épuisé est l'un des aspects les plus difficiles du traitement contre le cancer. La fatigue liée au cancer n'est pas comme une fatigue normale ; c'est un épuisement profond de tout le corps qui ne s'améliore pas toujours avec le sommeil.
 
 Souvent, cette fatigue est directement liée à l'**anémie**, une condition où le corps n'a pas assez de globules rouges pour transporter l'oxygène vers ses tissus.

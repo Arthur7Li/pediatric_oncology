@@ -106,5 +106,15 @@ const ogLocale =
       <slot />
     </main>
     <Footer />
+    <script is:inline>
+      document.addEventListener("astro:page-load", () => {
+        if (!window.location.hash) {
+          const main = document.getElementById("main-content");
+          if (main) {
+            main.setAttribute("tabindex", "-1");
+          }
+        }
+      });
+    </script>
   </body>
 </html>

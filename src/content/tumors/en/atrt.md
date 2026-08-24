@@ -14,7 +14,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 A diagnosis of an Atypical Teratoid/Rhabdoid Tumor (ATRT) is incredibly difficult to process. ATRT is an extremely rare, fast-growing, and aggressive brain and spinal cord tumor. It primarily affects infants and toddlers under the age of 3, though it can occasionally occur in older children.
 
 Because of its rarity and complexity, treating ATRT requires highly specialized care. The world’s leading pediatric cancer institutions, such as **St. Jude Children's Research Hospital**, the **National Cancer Institute (NCI)**, and the **Children's Oncology Group (COG)**, are continuously collaborating to study this disease and develop more effective, targeted therapies.

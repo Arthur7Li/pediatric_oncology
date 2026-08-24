@@ -11,113 +11,135 @@ const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;
 ---
 
-<div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 my-8">
-  <label
-    for="province-select"
-    class="block text-lg font-bold text-gray-900 mb-4"
-  >
-    {t.filter.label}
-  </label>
-  <select
-    id="province-select"
-    class="block w-full max-w-sm pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md bg-gray-50 border"
-  >
-    <option value="" disabled selected>{t.filter.placeholder}</option>
-    {
-      resources.map((res: any) => (
-        <option value={res.province}>
-          {/* @ts-ignore - Indexing dynamically */}
-          {t.filter.provinces[res.province] || res.province}
-        </option>
-      ))
-    }
-  </select>
-
-  <div
-    id="resource-display"
-    class="mt-6 hidden"
-    aria-live="polite"
-    aria-atomic="true"
-  >
-    <h2 id="display-province" class="text-xl font-bold text-primary mb-3">
-      {t.filter.selectedHeading}
-    </h2>
-
-    <div class="mb-4">
-      <h3 class="font-semibold text-gray-800 border-b pb-1 mb-2">
-        {t.filter.hospitalsHeading}
-      </h3>
-      <ul id="display-hospitals" class="list-disc pl-5 text-gray-700 space-y-1">
-      </ul>
-    </div>
-
-    <div class="mb-4">
-      <h3 class="font-semibold text-gray-800 border-b pb-1 mb-2">
-        {t.filter.financialHeading}
-      </h3>
-      <ul id="display-financial" class="list-disc pl-5 text-gray-700 space-y-1">
-      </ul>
-    </div>
+<provincial-filter
+  data-resources={JSON.stringify(resources)}
+  data-selected-resources-str={t.filter.selectedResources}
+  data-notes-heading={t.filter.notesHeading}
+  data-provinces={JSON.stringify(t.filter.provinces)}
+  class="block"
+>
+  <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 my-8">
+    <label
+      for="province-select"
+      class="block text-lg font-bold text-gray-900 mb-4"
+    >
+      {t.filter.label}
+    </label>
+    <select
+      id="province-select"
+      class="block w-full max-w-sm pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md bg-gray-50 border"
+    >
+      <option value="" disabled selected>{t.filter.placeholder}</option>
+      {
+        resources.map((res: any) => (
+          <option value={res.province}>
+            {/* @ts-ignore - Indexing dynamically */}
+            {t.filter.provinces[res.province] || res.province}
+          </option>
+        ))
+      }
+    </select>
 
     <div
-      id="display-notes-container"
-      class="mt-4 p-4 bg-amber-50 border-l-4 border-amber-400 text-amber-800 text-sm italic hidden rounded-r"
+      id="resource-display"
+      class="mt-6 hidden"
+      aria-live="polite"
+      aria-atomic="true"
     >
-      <span id="display-notes"></span>
+      <h2 id="display-province" class="text-xl font-bold text-primary mb-3">
+        {t.filter.selectedHeading}
+      </h2>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-gray-800 border-b pb-1 mb-2">
+          {t.filter.hospitalsHeading}
+        </h3>
+        <ul
+          id="display-hospitals"
+          class="list-disc pl-5 text-gray-700 space-y-1"
+        >
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <h3 class="font-semibold text-gray-800 border-b pb-1 mb-2">
+          {t.filter.financialHeading}
+        </h3>
+        <ul
+          id="display-financial"
+          class="list-disc pl-5 text-gray-700 space-y-1"
+        >
+        </ul>
+      </div>
+
+      <div
+        id="display-notes-container"
+        class="mt-4 p-4 bg-amber-50 border-l-4 border-amber-400 text-amber-800 text-sm italic hidden rounded-r"
+      >
+        <span id="display-notes"></span>
+      </div>
     </div>
   </div>
-</div>
+</provincial-filter>
 
-<script is:inline define:vars={{
-  resources,
-  selectedResourcesStr: t.filter.selectedResources,
-  notesHeading: t.filter.notesHeading,
-  provinces: t.filter.provinces
-}}>
-  function initProvincialFilter() {
-    const select = document.getElementById("province-select");
-    const display = document.getElementById("resource-display");
-    const displayProvince = document.getElementById("display-province");
-    const displayHospitals = document.getElementById("display-hospitals");
-    const displayFinancial = document.getElementById("display-financial");
-    const displayNotesContainer = document.getElementById(
-      "display-notes-container",
-    );
-    const displayNotes = document.getElementById("display-notes");
+<script>
+  class ProvincialFilter extends HTMLElement {
+    connectedCallback() {
+      const select = this.querySelector<HTMLSelectElement>("#province-select");
+      const display = this.querySelector("#resource-display");
+      const displayProvince = this.querySelector("#display-province");
+      const displayHospitals = this.querySelector("#display-hospitals");
+      const displayFinancial = this.querySelector("#display-financial");
+      const displayNotesContainer = this.querySelector(
+        "#display-notes-container",
+      );
+      const displayNotes = this.querySelector("#display-notes");
 
-    if (!select || !display) return;
+      if (!select || !display) return;
 
-    select.addEventListener("change", (e) => {
-      const selectedProv = e.target.value;
-      const data = resources.find((r) => r.province === selectedProv);
+      const resources = JSON.parse(this.dataset.resources || "[]");
+      const selectedResourcesStr = this.dataset.selectedResourcesStr || "";
+      const notesHeading = this.dataset.notesHeading || "";
+      const provinces = JSON.parse(this.dataset.provinces || "{}");
 
-      if (data) {
-        display.classList.remove("hidden");
-        const locName = provinces[data.province] || data.province;
-        displayProvince.textContent = locName + selectedResourcesStr;
+      select.addEventListener("change", (e) => {
+        const target = e.target as HTMLSelectElement;
+        const selectedProv = target.value;
+        const data = resources.find((r: any) => r.province === selectedProv);
 
-        displayHospitals.innerHTML = data.hospitals
-          .map((h) => `<li>${h}</li>`)
-          .join("");
-        displayFinancial.innerHTML = data.financial
-          .map((f) => `<li>${f}</li>`)
-          .join("");
+        if (data) {
+          display.classList.remove("hidden");
+          const locName = provinces[data.province] || data.province;
+          if (displayProvince) {
+            displayProvince.textContent = locName + selectedResourcesStr;
+          }
 
-        if (data.notes && data.notes.trim() !== "") {
-          displayNotesContainer.classList.remove("hidden");
-          displayNotes.innerHTML = `<strong>${notesHeading}</strong> ${data.notes}`;
-        } else {
-          displayNotesContainer.classList.add("hidden");
+          if (displayHospitals) {
+            displayHospitals.innerHTML = data.hospitals
+              .map((h: string) => `<li>${h}</li>`)
+              .join("");
+          }
+
+          if (displayFinancial) {
+            displayFinancial.innerHTML = data.financial
+              .map((f: string) => `<li>${f}</li>`)
+              .join("");
+          }
+
+          if (displayNotesContainer && displayNotes) {
+            if (data.notes && data.notes.trim() !== "") {
+              displayNotesContainer.classList.remove("hidden");
+              displayNotes.innerHTML = `<strong>${notesHeading}</strong> ${data.notes}`;
+            } else {
+              displayNotesContainer.classList.add("hidden");
+            }
+          }
         }
-      }
-    });
+      });
+    }
   }
 
-  // Support direct load and Astro View Transitions (ClientRouter)
-  document.addEventListener("astro:page-load", initProvincialFilter);
-  if (document.readyState !== "loading") {
-    initProvincialFilter();
-  } else {
-    document.addEventListener("DOMContentLoaded", initProvincialFilter);
+  if (!customElements.get("provincial-filter")) {
+    customElements.define("provincial-filter", ProvincialFilter);
   }
 </script>

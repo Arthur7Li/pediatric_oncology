@@ -14,7 +14,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Hearing that your child has a brain tumor is overwhelming, and it's completely normal to feel frightened or confused by the medical terminology. This guide is designed to help you understand tumors of the pineal gland, translating complex clinical data into clear, accessible language.
 
 ## What is the Pineal Gland?

@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 L'expression « soins palliatifs » peut susciter une vive inquiétude chez les parents, évoquant souvent la fin de vie ou la perte d'espoir. Cependant, dans la pratique moderne de l'oncologie pédiatrique canadienne, **les soins palliatifs ne signifient en aucun cas l'abandon des traitements curatifs**. Ils représentent un accompagnement global, spécialisé et profondément humain, destiné à soulager la douleur, préserver le confort et soutenir l'enfant et sa famille à chaque étape de la maladie.
 
 ---

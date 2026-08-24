@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 Entendre que la maladie est de retour (récidive) ou qu'elle ne répond pas comme prévu au premier traitement (maladie réfractaire) est un moment d'une violence inouïe pour les parents. Vous pouvez ressentir un état de choc, de la colère, un épuisement profond ou un sentiment d'injustice.
 
 Il est tout à fait légitime de vivre ce deuil et ces émotions. En même temps, il est essentiel de savoir qu'une récidive ne signifie aucunement la fin du chemin. Les avancées majeures en oncologie pédiatrique ont mis au point des traitements novateurs de deuxième ligne, des thérapies cellulaires et des protocoles d'immunothérapie accessibles partout au Canada.

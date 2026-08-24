@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import { translations, type Locale } from "../i18n/translations";
 
-
 const lang = "en";
 const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;
@@ -204,6 +203,7 @@ const usHospitals = [
                 class="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
               >
                 <span>{hospital.linkText}</span>
+                <span class="sr-only">(opens in a new tab)</span>
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
@@ -241,6 +241,7 @@ const usHospitals = [
                 class="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
               >
                 <span>{hospital.linkText}</span>
+                <span class="sr-only">(opens in a new tab)</span>
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </div>

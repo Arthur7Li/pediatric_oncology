@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 Recevoir un diagnostic de leucémie aiguë lymphoblastique (LAL) est un choc immense pour toute la famille. Cependant, la LAL pédiatrique représente l'une des plus grandes réussites de la médecine moderne : au cours des cinq dernières décennies, la recherche clinique concertée au Canada et à l'échelle internationale a fait passer le taux de survie à 5 ans de moins de 10 % à plus de 90 %.
 
 Ce guide a pour but de vous expliquer ce qu'est la LAL, comment les équipes médicales canadiennes évaluent le niveau de risque et à quoi vous attendre à chaque étape du traitement, dans un langage clair et bienveillant.

@@ -12,7 +12,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Hearing that your child has cancer in their eye is a uniquely frightening experience. Retinoblastoma is a rare childhood cancer that starts in the retina, the light-sensitive lining at the back of the eye. While the diagnosis is daunting, retinoblastoma is highly curable when caught early.
 
 Today, treatment focuses not only on saving the child's life but also on preserving the eye and maximizing vision. Canada is a global leader in retinoblastoma research and treatment, offering world-class care to affected families.

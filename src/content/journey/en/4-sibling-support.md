@@ -13,7 +13,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 When a child is diagnosed with cancer, the entire family is diagnosed. While the primary focus rightfully shifts to medical treatments, hospital stays, and the physical well-being of the patient, the psychological toll on the rest of the family—especially healthy siblings—is profound.
 
 In pediatric healthcare, healthy siblings of chronically ill children are sometimes referred to as **"Glass Children."**

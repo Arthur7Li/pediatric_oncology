@@ -13,7 +13,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Mucositis refers to the inflammation and ulceration of the mucous membranes lining the mouth, throat, and gastrointestinal tract. It is a common and painful side effect of certain chemotherapy drugs and radiation therapy.
 
 While mucositis can cause significant discomfort, there are several empathetic and actionable ways to help your child manage symptoms at home.

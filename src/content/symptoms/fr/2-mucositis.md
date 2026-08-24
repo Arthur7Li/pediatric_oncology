@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 La mucite désigne l'inflammation et l'ulcération des muqueuses tapissant la bouche, la gorge et le tractus gastro-intestinal. C'est un effet secondaire courant et douloureux de certains médicaments de chimiothérapie et de la radiothérapie.
 
 Bien que la mucite puisse causer un inconfort important, il existe plusieurs moyens concrets et bienveillants d'aider votre enfant à gérer ces symptômes à la maison.

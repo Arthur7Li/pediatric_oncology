@@ -11,7 +11,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 La perte de cheveux, médicalement connue sous le nom d'alopécie, est l'un des effets secondaires les plus visibles et les plus éprouvants sur le plan émotionnel du traitement contre le cancer. Bien qu'elle ne cause aucun dommage physique, elle modifie fondamentalement l'apparence d'un enfant et, souvent, la façon dont il se perçoit.
 
 Il est important de se rappeler — et de rappeler à votre enfant — que la perte de cheveux est temporaire. C'est le signe que le médicament travaille fort pour combattre les cellules cancéreuses à croissance rapide.

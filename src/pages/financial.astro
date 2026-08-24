@@ -4,7 +4,6 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import ProvincialFilter from "../components/ProvincialFilter.astro";
 import { translations, type Locale } from "../i18n/translations";
 
-
 const lang = "en";
 const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;

@@ -12,7 +12,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Receiving a diagnosis of lymphoma for your child is incredibly overwhelming. Lymphoma is a cancer of the lymphatic system, which is a crucial part of the body's immune system. Fortunately, pediatric lymphomas are highly treatable, and thanks to collaborative research across Canadian and international centers, survival rates are excellent.
 
 This guide explains the different types of pediatric lymphoma, how they are diagnosed and staged, and the standard treatment protocols used in Canada, all in compassionate and accessible terms.

@@ -13,7 +13,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Neutropenia occurs when a child has an abnormally low number of neutrophils, a type of white blood cell essential for fighting off bacterial infections. During chemotherapy, white blood cell counts can drop significantly, leaving the body highly vulnerable.
 
 When a child with neutropenia develops a fever (typically defined as a single oral temperature of 101°F / 38.3°C or higher, or a sustained temperature of 100.4°F / 38.0°C for more than one hour), it is considered **a medical emergency**.

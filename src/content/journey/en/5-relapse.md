@@ -13,7 +13,6 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-
 Hearing the words "the cancer has returned" or that a tumor is refractory (not responding as expected to initial therapy) is one of the most heartbreaking moments a family can endure. You may feel shock, numbness, anger, and immense fatigue.
 
 It is completely valid to grieve this setback. At the same time, it is vital to know that a relapse is not the end of the road. Pediatric oncology research has advanced tremendously, bringing forward powerful second-line therapies, innovative immunotherapies, and clinical trials across Canada.

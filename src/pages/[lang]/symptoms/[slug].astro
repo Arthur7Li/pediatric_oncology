@@ -3,6 +3,8 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import MedicalDisclaimer from "../../../components/MedicalDisclaimer.astro";
+import Badge from "../../../components/Badge.astro";
+import Prose from "../../../components/Prose.astro";
 import { translations, type Locale } from "../../../i18n/translations";
 
 export async function getStaticPaths() {
@@ -73,11 +75,11 @@ const structuredData = {
       <span class="text-sm font-semibold text-primary uppercase tracking-wider"
         >{t.symptoms.guideBadge}</span
       >
-      <span
-        class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${step.data.severity.toLowerCase().includes("high") || step.data.severity.toLowerCase().includes("emergency") || step.data.severity.toLowerCase().includes("urgent") || step.data.severity.toLowerCase().includes("élevée") || step.data.severity.includes("高") ? "bg-red-100 text-red-800" : "bg-yellow-100 text-yellow-800"}`}
-      >
-        {t.symptoms.severity}: {step.data.severity}
-      </span>
+      <Badge
+        variant="severity"
+        label={t.symptoms.severity}
+        value={step.data.severity}
+      />
     </div>
     <h1
       class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
@@ -87,13 +89,16 @@ const structuredData = {
     <div class="mt-3 text-xs text-gray-500 flex flex-wrap items-center gap-4">
       <span>{t.symptoms.reviewedBy} {step.data.author}</span>
       <span>•</span>
-      <span>{t.symptoms.lastReviewed} {step.data.last_medically_reviewed_date}</span>
+      <span
+        >{t.symptoms.lastReviewed}
+        {step.data.last_medically_reviewed_date}</span
+      >
     </div>
   </div>
 
-  <article class="prose max-w-none mb-8">
+  <Prose>
     <Content />
-  </article>
+  </Prose>
 
   <MedicalDisclaimer lang={step.data.lang} />
 

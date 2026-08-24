@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 Lorsqu'un enfant reçoit un diagnostic de cancer, c'est toute la famille qui est touchée par ce diagnostic. Bien que l'attention principale se porte légitimement sur les traitements médicaux, les séjours à l'hôpital et le bien-être physique du patient, le fardeau psychologique sur le reste de la famille — en particulier les frères et sœurs en bonne santé — est profond.
 
 En soins de santé pédiatriques, les frères et sœurs en bonne santé d'enfants atteints d'une maladie chronique sont parfois appelés les **« enfants de verre »** (Glass Children).

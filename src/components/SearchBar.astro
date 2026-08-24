@@ -10,7 +10,7 @@ const t = translations[lang] || translations.en;
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
-<div class="search-widget-wrapper">
+<div class="search-widget-wrapper" role="search">
   <!-- Single Responsive Search Trigger Button -->
   <button
     type="button"
@@ -25,6 +25,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
       viewBox="0 0 24 24"
       stroke="currentColor"
       aria-hidden="true"
+      focusable="false"
     >
       <path
         stroke-linecap="round"
@@ -61,6 +62,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
           viewBox="0 0 24 24"
           stroke="currentColor"
           aria-hidden="true"
+          focusable="false"
         >
           <path
             stroke-linecap="round"
@@ -86,6 +88,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
           viewBox="0 0 24 24"
           stroke="currentColor"
           aria-hidden="true"
+          focusable="false"
         >
           <path
             stroke-linecap="round"
@@ -105,7 +108,10 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
     >
       <span class="font-medium">{t.brandName}</span>
       <span class="flex items-center gap-1.5 text-gray-500">
-        <kbd class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded font-mono text-[10px] text-gray-700 font-bold shadow-sm">ESC</kbd>
+        <kbd
+          class="px-1.5 py-0.5 bg-gray-100 border border-gray-300 rounded font-mono text-[10px] text-gray-700 font-bold shadow-sm"
+          >ESC</kbd
+        >
         <span>{t.search.pressEsc}</span>
       </span>
     </div>
@@ -113,10 +119,10 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 </div>
 
 <style is:global>
-  /* Custom modern accessible theme for Pagefind UI */
+  /* Custom modern accessible theme for Pagefind UI aligned with design tokens */
   #pagefind-search-container {
     --pagefind-ui-scale: 0.9;
-    --pagefind-ui-primary: #0284c7;
+    --pagefind-ui-primary: var(--color-primary, #026aa2);
     --pagefind-ui-text: #1e293b;
     --pagefind-ui-background: #ffffff;
     --pagefind-ui-border: #cbd5e1;
@@ -134,19 +140,20 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
   }
 
   #pagefind-search-container .pagefind-ui__search-input:focus {
-    outline: 2px solid #0284c7;
-    border-color: #0284c7;
+    outline: 2px solid var(--color-primary, #026aa2);
+    border-color: var(--color-primary, #026aa2);
     background-color: #ffffff;
   }
 
   #pagefind-search-container .pagefind-ui__result-link {
-    color: #0369a1;
+    color: var(--color-primary, #026aa2);
     font-weight: 700;
     text-decoration: none;
   }
 
   #pagefind-search-container .pagefind-ui__result-link:hover {
     text-decoration: underline;
+    color: var(--color-primary-dark, #004e7c);
   }
 
   #pagefind-search-container .pagefind-ui__result-excerpt {
@@ -164,11 +171,20 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
   }
 </style>
 
-<script is:inline define:vars={{ basePath, placeholder: t.search.placeholder }}>
+<script
+  is:inline
+  define:vars={{
+    basePath,
+    placeholder: t.search.placeholder,
+    zeroResults: t.search.noResults,
+  }}
+>
   let pagefindLoaded = false;
+  let pagefindPromise = null;
 
   function loadPagefindAssets() {
-    if (pagefindLoaded) return Promise.resolve();
+    if (pagefindLoaded && window.PagefindUI) return Promise.resolve();
+    if (pagefindPromise) return pagefindPromise;
 
     const cssHref = `${basePath}/pagefind/pagefind-ui.css`;
     const jsSrc = `${basePath}/pagefind/pagefind-ui.js`;
@@ -180,19 +196,32 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
       document.head.appendChild(link);
     }
 
-    return new Promise((resolve) => {
+    pagefindPromise = new Promise((resolve) => {
       if (window.PagefindUI) {
         pagefindLoaded = true;
         resolve();
         return;
       }
-      if (document.querySelector(`script[src="${jsSrc}"]`)) {
-        resolve();
+
+      const existingScript = document.querySelector(`script[src="${jsSrc}"]`);
+      if (existingScript) {
+        if (existingScript.dataset.loaded === "true") {
+          pagefindLoaded = true;
+          resolve();
+        } else {
+          existingScript.addEventListener("load", () => {
+            pagefindLoaded = true;
+            resolve();
+          });
+          existingScript.addEventListener("error", () => resolve());
+        }
         return;
       }
+
       const script = document.createElement("script");
       script.src = jsSrc;
       script.onload = () => {
+        script.dataset.loaded = "true";
         pagefindLoaded = true;
         resolve();
       };
@@ -204,6 +233,8 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
       };
       document.head.appendChild(script);
     });
+
+    return pagefindPromise;
   }
 
   function initSearchBar() {
@@ -215,8 +246,10 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
     if (!dialog || !container || triggerButtons.length === 0) return;
 
     let pagefindInstance = null;
+    let lastActiveElement = null;
 
     async function openModal() {
+      lastActiveElement = document.activeElement;
       dialog.showModal();
       await loadPagefindAssets();
 
@@ -233,6 +266,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
           autofocus: true,
           translations: {
             placeholder: placeholder,
+            zero_results: zeroResults,
           },
         });
       }
@@ -245,6 +279,9 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 
     function closeModal() {
       dialog.close();
+      if (lastActiveElement && typeof lastActiveElement.focus === "function") {
+        lastActiveElement.focus();
+      }
     }
 
     triggerButtons.forEach((btn) => {
@@ -258,8 +295,8 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
       if (e.target === dialog) closeModal();
     };
 
-    // Keyboard shortcuts (Cmd+K / Ctrl+K / Escape)
-    window.onkeydown = (e) => {
+    // Keyboard shortcuts (Cmd+K / Ctrl+K / Escape) with idempotent listener registration
+    const handleKeydown = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         if (dialog.open) {
@@ -272,6 +309,12 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
         closeModal();
       }
     };
+
+    if (window._searchKeydownHandler) {
+      window.removeEventListener("keydown", window._searchKeydownHandler);
+    }
+    window._searchKeydownHandler = handleKeydown;
+    window.addEventListener("keydown", handleKeydown);
   }
 
   document.addEventListener("astro:page-load", initSearchBar);

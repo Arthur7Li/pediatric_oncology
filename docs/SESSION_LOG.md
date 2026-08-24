@@ -173,3 +173,20 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Resolved 404 page title duplication and added `lang`/`hreflang` attributes to language links (A11Y-18).
   - Injected explicit `medical_disclaimer: true` into the frontmatter of all 42 older content modules (MED-05).
   - Verified build and E2E test suite (5/5 passing) and committed (`1319a69`).
+
+**[14:13] Sprint 3 Architecture, Accessibility & Quality Execution**
+
+- **Action:** Executed component refactoring, search lifecycle fixes, landmark accessibility improvements, and expanded CI test suite.
+- **Details:**
+  - Created polymorphic `<Badge.astro>` component encapsulating trilingual severity (`High` / `Urgent` / `Élevée` / `高` -> red; `Moderate` / `Modérée` / `中` -> amber) and incidence badges across all clinical templates (ARCH-02).
+  - Created standardized `<Prose.astro>` layout component unifying markdown typography (ARCH-03).
+  - Refactored `ProvincialFilter.astro` into an encapsulated Astro Custom Element (`<provincial-support-filter>`) eliminating script variable leaks and view transition lifecycle bugs (ARCH-01, UX-15).
+  - Aligned Pagefind search theme with site CSS variables, localized `zero_results` text, fixed keydown listener memory leaks, and added focus restoration to search modal trigger on close (UX-18, A11Y-17, UX-24).
+  - Enhanced Header semantics with `<nav aria-label="Mobile Navigation">`, `role="group"` on language selectors, and `aria-current` on active mobile language buttons (A11Y-12).
+  - Upgraded `JargonTooltip.astro` with visible focus indicators, `translations` imports, and Escape key dismissal (A11Y-16).
+  - Added screen reader notifications (`opens in a new tab`) to external hospital links in `resources.astro` (A11Y-20).
+  - Added accessible View Transition focus management in `Layout.astro` (A11Y-21).
+  - Added `print:hidden` to wizard navigation footer in `journey/[slug].astro` (UX-22).
+  - Added `.animate-fade-in` utility class in `global.css` (UX-23).
+  - Expanded `.pa11yci` configuration to audit all 81 static routes for 100% WCAG 2.1 AA automated test coverage (A11Y-19).
+  - Verified with `npm run check` (0 errors, 0 warnings), `npm run format`, `npm run build` (81 pages), and `npm run test:e2e` (5/5 passed).

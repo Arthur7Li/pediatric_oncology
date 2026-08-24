@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { translations, type Locale } from "../i18n/translations";
 
-
 const lang = "en";
 const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;

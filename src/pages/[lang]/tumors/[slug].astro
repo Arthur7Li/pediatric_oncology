@@ -3,6 +3,8 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
 import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import MedicalDisclaimer from "../../../components/MedicalDisclaimer.astro";
+import Badge from "../../../components/Badge.astro";
+import Prose from "../../../components/Prose.astro";
 import { translations, type Locale } from "../../../i18n/translations";
 
 export async function getStaticPaths() {
@@ -74,11 +76,11 @@ const structuredData = {
       <span class="text-sm font-semibold text-primary uppercase tracking-wider"
         >{t.tumors.guideBadge}</span
       >
-      <span
-        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-sky-100 text-sky-800"
-      >
-        {t.tumors.incidence}: {tumor.data.incidence}
-      </span>
+      <Badge
+        variant="incidence"
+        label={t.tumors.incidence}
+        value={tumor.data.incidence}
+      />
     </div>
     <h1
       class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
@@ -88,13 +90,15 @@ const structuredData = {
     <div class="mt-3 text-xs text-gray-500 flex flex-wrap items-center gap-4">
       <span>{t.tumors.reviewedBy} {tumor.data.author}</span>
       <span>•</span>
-      <span>{t.tumors.lastReviewed} {tumor.data.last_medically_reviewed_date}</span>
+      <span
+        >{t.tumors.lastReviewed} {tumor.data.last_medically_reviewed_date}</span
+      >
     </div>
   </div>
 
-  <article class="prose max-w-none mb-8">
+  <Prose>
     <Content />
-  </article>
+  </Prose>
 
   {
     tumor.data.authoritative_sources &&

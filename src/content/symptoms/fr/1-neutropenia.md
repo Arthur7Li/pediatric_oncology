@@ -13,7 +13,6 @@ lang: "fr"
 medical_disclaimer: true
 ---
 
-
 La neutropénie survient lorsqu'un enfant présente un nombre anormalement bas de neutrophiles, un type de globule blanc essentiel pour combattre les infections bactériennes. Pendant la chimiothérapie, le nombre de globules blancs peut chuter de manière significative, rendant l'organisme extrêmement vulnérable.
 
 Lorsqu'un enfant atteint de neutropénie développe une fièvre (généralement définie comme une température buccale unique de 38,3 °C / 101 °F ou plus, ou une température soutenue de 38,0 °C / 100,4 °F pendant plus d'une heure), cela est considéré comme **une urgence médicale**.
