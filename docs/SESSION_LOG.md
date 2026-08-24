@@ -93,3 +93,11 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Implemented smooth card hover effects (`hover:scale-[1.02] hover:-translate-y-1`) for a modern, tactile feel.
   - Applied `text-balance` to all major headers to ensure proper layout and prevent orphans in English, French, and Chinese.
 - **Status:** Verified with `npm run build` and CI suite (passed).
+
+**[22:40] GitHub Actions CI & QA Pipeline Fix**
+- **Issue:** GitHub Actions CI job `link-checker` (Lychee) failed on `https://www.crrab.ca/` in `retinoblastoma.md` due to an unresolvable external domain DNS record.
+- **Fix:** 
+  - Replaced dead `crrab.ca` links in `src/content/tumors/en/retinoblastoma.md` and `zh/retinoblastoma.md` with official partner `https://www.chusj.org/`.
+  - Focused `.github/workflows/ci.yml` Lychee scanner to exclude `./docs` directory to avoid scanning historical session changelog URLs.
+  - Verified 100% of external links across all source templates and markdown guides pass.
+- **Status:** GitHub Actions Pipeline Run `32690785165` and GitHub Pages Deployment Run `32690785131` both passed with 100% green status across all jobs (`link-checker`, `quality-assurance`, and `accessibility-audit`).
