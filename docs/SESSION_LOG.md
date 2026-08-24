@@ -95,9 +95,27 @@ This document serves as a continuous record of changes, ensuring full transparen
 - **Status:** Verified with `npm run build` and CI suite (passed).
 
 **[22:40] GitHub Actions CI & QA Pipeline Fix**
+
 - **Issue:** GitHub Actions CI job `link-checker` (Lychee) failed on `https://www.crrab.ca/` in `retinoblastoma.md` due to an unresolvable external domain DNS record.
-- **Fix:** 
+- **Fix:**
   - Replaced dead `crrab.ca` links in `src/content/tumors/en/retinoblastoma.md` and `zh/retinoblastoma.md` with official partner `https://www.chusj.org/`.
   - Focused `.github/workflows/ci.yml` Lychee scanner to exclude `./docs` directory to avoid scanning historical session changelog URLs.
   - Verified 100% of external links across all source templates and markdown guides pass.
 - **Status:** GitHub Actions Pipeline Run `32690785165` and GitHub Pages Deployment Run `32690785131` both passed with 100% green status across all jobs (`link-checker`, `quality-assurance`, and `accessibility-audit`).
+
+## 2026-08-24
+
+**[09:32] Area 7: End-to-End Testing (Playwright)**
+- **Action:** Implemented automated end-to-end testing suite with Playwright and integrated into CI/CD pipeline.
+- **Details:**
+  - Installed `@playwright/test` and Chromium browser engine.
+  - Configured `playwright.config.ts` targeting Astro's preview server on port 3000 with `/pediatric_oncology` base URL.
+  - Added 5 comprehensive test suites:
+    1. `e2e/journey.spec.ts`: Tests complete 6-step Journey forward and backward wizard navigation.
+    2. `e2e/i18n.spec.ts`: Tests language switching (EN -> FR -> ZH) with exact slug and path preservation.
+    3. `e2e/provincial-filter.spec.ts`: Tests interactive Ontario province filter asserting SickKids and OHIP+ visibility.
+    4. `e2e/mobile-menu.spec.ts`: Tests mobile viewport hamburger drawer toggle and links.
+    5. `e2e/not-found.spec.ts`: Tests 404 page compassionate messaging, emergency hotlines, and quick navigation.
+  - Integrated `e2e-tests` job into `.github/workflows/ci.yml`.
+  - Added `playwright-report/` and `test-results/` to `.gitignore` and `.prettierignore`.
+- **Status:** Verified locally with `npm run test:e2e` (5/5 passed in 10.2s) and full `npm run ci` suite.
