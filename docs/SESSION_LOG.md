@@ -120,3 +120,13 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Integrated `e2e-tests` job into `.github/workflows/ci.yml`.
   - Added `playwright-report/` and `test-results/` to `.gitignore` and `.prettierignore`.
 - **Status:** Verified locally with `npm run test:e2e` (5/5 passed in 10.2s) and full `npm run ci` suite.
+
+**[09:44] Area 8: Content Freshness Dashboard**
+
+- **Action:** Created automated content freshness dashboard and integrated with QA audit workflow.
+- **Details:**
+  - Created `scripts/generate-content-status.cjs` to audit all 60 medical markdown modules, computing time-to-expiry against the 365-day review requirement.
+  - Generated initial report at `docs/CONTENT_STATUS.md` categorizing modules into 🟢 Fresh (< 6mo: 60/60, 100%), 🟡 Review Soon (6–10mo: 0), and 🔴 Action Required (> 10mo: 0).
+  - Added `"content-status": "node scripts/generate-content-status.cjs"` script to `package.json`.
+  - Updated `.agents/skills/qa-audit/SKILL.md` to invoke `npm run content-status` and review `docs/CONTENT_STATUS.md` during audits.
+- **Status:** Verified locally (`npm run content-status`, `npm run test:e2e`, and `npm run ci` all passing).

@@ -17,6 +17,7 @@
     "test": "npm run qa",
     "test:a11y": "pa11y-ci --config .pa11yci",
     "test:e2e": "playwright test",
+    "content-status": "node scripts/generate-content-status.cjs",
     "ci": "npm run qa && npm run build"
   },
   "dependencies": {

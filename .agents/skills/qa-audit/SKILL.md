@@ -15,11 +15,12 @@ produces a dated report in `docs/qa/`.
 
 ## Prerequisites
 
-1. Ensure the project builds cleanly before auditing:
+1. Ensure the project builds cleanly and content freshness is updated before auditing:
    ```bash
    npm run build
+   npm run content-status
    ```
-2. Review the most recent audit report in `docs/qa/` to understand what was
+2. Review the most recent audit report in `docs/qa/` and the updated `docs/CONTENT_STATUS.md` to understand what was
    previously flagged and what has been resolved.
 
 ## Step 1: Define & Dispatch Parallel Audit Subagents
@@ -35,6 +36,7 @@ Spin up **three specialized subagents** to run concurrently:
 - **Checks:** Zero medical hallucinations, Canadian-first institutional
   context, empathetic tone, content completeness (missing cancer types or
   journey phases), translation accuracy, source citations, medical disclaimers,
+  clinical review freshness (referencing `docs/CONTENT_STATUS.md`),
   and Zod schema adequacy in `src/content.config.ts`.
 - **Tools:** Use web search to verify any uncertain medical claims against
   NCI, COG, SickKids, and C17 Council.
