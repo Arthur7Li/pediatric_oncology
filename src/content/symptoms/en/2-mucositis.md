@@ -10,6 +10,7 @@ authoritative_sources:
   - "Multinational Association of Supportive Care in Cancer (MASCC/ISOO)"
   - "National Cancer Institute (NCI)"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

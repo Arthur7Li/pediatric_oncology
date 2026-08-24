@@ -9,6 +9,7 @@ authoritative_sources:
   - "BC Children's Hospital - Long-Term Follow-Up Program"
   - "Children's Oncology Group (COG) - Long-Term Follow-Up Guidelines"
 lang: "en"
+medical_disclaimer: true
 ---
 
 Finishing active treatment is a major milestone, but the medical journey transitions into a new phase rather than completely ending.

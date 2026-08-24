@@ -9,6 +9,7 @@ authoritative_sources:
   - "C17 Council - Pediatric Oncology Research Network"
   - "National Cancer Institute (NCI) - Childhood Cancers Overview"
 lang: "en"
+medical_disclaimer: true
 ---
 
 The journey often begins when parents notice persistent, unusual symptoms—such as unexplained pain, lingering fevers, unusual bruising, or new lumps—and seek medical care.

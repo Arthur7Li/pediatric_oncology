@@ -10,6 +10,7 @@ authoritative_sources:
   - "Association canadienne de soins palliatifs (ACSP)"
   - "Maison Roger Neilson (CHEO)"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 

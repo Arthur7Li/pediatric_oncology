@@ -10,6 +10,7 @@ authoritative_sources:
   - "加拿大儿童安宁疗护中心 (Canuck Place Children's Hospice)"
   - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine) - 姑息关怀科"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 

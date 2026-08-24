@@ -11,6 +11,7 @@ authoritative_sources:
   - "National Cancer Institute (NCI)"
   - "Children's Oncology Group (COG)"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

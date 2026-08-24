@@ -9,6 +9,7 @@ authoritative_sources:
   - "CHU Sainte-Justine - Clinique de suivi à long terme"
   - "Children's Oncology Group (COG) - Lignes directrices de suivi"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 Terminer le traitement actif est une étape majeure, mais le parcours médical fait la transition vers une nouvelle phase plutôt que de se terminer complètement.

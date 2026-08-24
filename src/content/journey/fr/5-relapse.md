@@ -10,6 +10,7 @@ authoritative_sources:
   - "Pediatric Oncology Group of Ontario (POGO)"
   - "Children's Oncology Group (COG)"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 

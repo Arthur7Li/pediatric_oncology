@@ -11,6 +11,7 @@ authoritative_sources:
   - "北美儿童肿瘤协作组 (COG) - 神经母细胞瘤方案"
   - "美国国家癌症研究所 (NCI)"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 

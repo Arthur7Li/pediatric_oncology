@@ -11,6 +11,7 @@ authoritative_sources:
   - "Société Internationale d'Oncologie Pédiatrique (SIOP)"
   - "National Cancer Institute (NCI) - Tumeur de Wilms chez l'enfant"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 

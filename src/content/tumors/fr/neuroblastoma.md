@@ -11,6 +11,7 @@ authoritative_sources:
   - "Children's Oncology Group (COG)"
   - "National Cancer Institute (NCI) - Neuroblastome pédiatrique"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 

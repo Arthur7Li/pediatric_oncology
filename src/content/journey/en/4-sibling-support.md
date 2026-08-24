@@ -10,6 +10,7 @@ authoritative_sources:
   - "SuperSibs (Alex's Lemonade Stand Foundation)"
   - "Association of Child Life Professionals (ACLP)"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

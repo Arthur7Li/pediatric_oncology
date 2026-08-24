@@ -11,6 +11,7 @@ authoritative_sources:
   - "美国国家癌症研究所 (NCI)"
   - "圣裘德儿童研究医院 (St. Jude)"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 

@@ -9,6 +9,7 @@ authoritative_sources:
   - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine)"
   - "北美儿童肿瘤协作组 (COG)"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 一旦明确了诊断和分期，一个多学科的医疗团队（包括小儿肿瘤学家、外科医生和护士）将为孩子制定个性化的治疗方案。该方案可能包括以下一种或多种方式的组合：

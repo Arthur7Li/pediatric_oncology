@@ -11,6 +11,7 @@ authoritative_sources:
   - "Hôpital de recherche pour enfants St. Jude"
   - "Institut national du cancer (NCI)"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 

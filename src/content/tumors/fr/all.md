@@ -10,6 +10,7 @@ authoritative_sources:
   - "Children's Oncology Group (COG)"
   - "National Cancer Institute (NCI) - Traitement de la LAL chez l'enfant"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 

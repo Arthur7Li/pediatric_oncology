@@ -10,6 +10,7 @@ authoritative_sources:
   - "北美儿童肿瘤协作组 (COG) - ALL治疗指南"
   - "美国国家癌症研究所 (NCI) - 儿童ALL规范"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 

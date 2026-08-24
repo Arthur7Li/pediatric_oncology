@@ -9,6 +9,7 @@ authoritative_sources:
   - "CHU Sainte-Justine - Charles-Bruneau Oncology Centre"
   - "Children's Oncology Group (COG) - Treatment Standards"
 lang: "en"
+medical_disclaimer: true
 ---
 
 Once the diagnosis and stage are clear, a multidisciplinary medical team (which includes pediatric oncologists, surgeons, and nurses) will create a personalized treatment plan. The plan may involve one or a combination of the following:

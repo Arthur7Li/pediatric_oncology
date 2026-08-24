@@ -9,6 +9,7 @@ authoritative_sources:
   - "加拿大C17儿童肿瘤理事会 (C17 Council)"
   - "美国国家癌症研究所 (NCI)"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 这段旅程往往始于父母注意到孩子出现持续的、异常的症状——例如不明原因的疼痛、持续发热、异常淤青或新出现的肿块——并寻求医疗帮助。

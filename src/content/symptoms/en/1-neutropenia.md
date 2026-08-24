@@ -10,6 +10,7 @@ authoritative_sources:
   - "Children's Oncology Group (COG) - Supportive Care Guidelines"
   - "National Cancer Institute (NCI)"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

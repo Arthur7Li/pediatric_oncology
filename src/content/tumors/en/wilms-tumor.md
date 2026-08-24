@@ -11,6 +11,7 @@ authoritative_sources:
   - "International Society of Paediatric Oncology (SIOP) - Renal Tumour Study Group"
   - "National Cancer Institute (NCI) - Wilms Tumor Treatment"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

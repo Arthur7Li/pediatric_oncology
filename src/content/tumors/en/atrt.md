@@ -11,6 +11,7 @@ authoritative_sources:
   - "St. Jude Children's Research Hospital"
   - "National Cancer Institute (NCI)"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

@@ -9,6 +9,7 @@ authoritative_sources:
   - "圣朱斯蒂娜大学医院中心 (CHU Sainte-Justine) 随访门诊"
   - "北美儿童肿瘤协作组 (COG) - 远期效应随访指南"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 完成积极的治疗是一个重要的里程碑，但这标志着医疗旅程进入了一个新的阶段，而不是完全结束。

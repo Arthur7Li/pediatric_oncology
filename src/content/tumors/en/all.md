@@ -10,6 +10,7 @@ authoritative_sources:
   - "Children's Oncology Group (COG)"
   - "National Cancer Institute (NCI) - Childhood ALL Treatment"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

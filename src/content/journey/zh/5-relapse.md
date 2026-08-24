@@ -10,6 +10,7 @@ authoritative_sources:
   - "安大略省儿童肿瘤协作组 (POGO)"
   - "北美儿童肿瘤协作组 (COG)"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 

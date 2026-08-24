@@ -9,6 +9,7 @@ authoritative_sources:
   - "Conseil C17 pour la recherche en oncologie pédiatrique"
   - "National Cancer Institute (NCI)"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 Le parcours commence souvent lorsque les parents remarquent des symptômes persistants et inhabituels — tels que des douleurs inexpliquées, des fièvres qui durent, des ecchymoses (bleus) inhabituelles ou de nouvelles grosseurs — et consultent un médecin.

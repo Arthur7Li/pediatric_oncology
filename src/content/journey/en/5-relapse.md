@@ -10,6 +10,7 @@ authoritative_sources:
   - "Pediatric Oncology Group of Ontario (POGO)"
   - "Children's Oncology Group (COG) - Relapse Protocols"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

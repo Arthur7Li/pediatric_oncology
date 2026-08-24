@@ -106,14 +106,13 @@ const langPrefix = `${basePath}/${currentLang}`;
     </div>
 
     <div
-      class="pt-8 border-t border-gray-200 text-center text-xs text-gray-500 space-y-2"
+      class="pt-8 border-t border-gray-200 text-center text-xs text-gray-600 space-y-2"
     >
       <p>
         {t.footer.disclaimer}
       </p>
       <p>
-        © {new Date().getFullYear()}
-        {t.footer.copyright}
+        © {new Date().getFullYear()}{" "}{t.footer.copyright}
       </p>
     </div>
   </div>

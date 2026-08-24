@@ -10,6 +10,7 @@ authoritative_sources:
   - "Children's Oncology Group (COG)"
   - "Institut national du cancer (NCI)"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 

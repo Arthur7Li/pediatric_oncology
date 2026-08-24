@@ -10,6 +10,7 @@ authoritative_sources:
   - "Canuck Place Children's Hospice (BC Children's)"
   - "CHU Sainte-Justine - Unité de soins palliatifs pédiatriques"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

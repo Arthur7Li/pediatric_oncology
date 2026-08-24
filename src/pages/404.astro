@@ -7,7 +7,7 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout
-  title={`${t.notFound.title} - ${t.brandName}`}
+  title={t.notFound.title}
   lang="en"
   description={t.notFound.subtitle}
 >
@@ -39,6 +39,8 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
       <span class="font-medium text-gray-800">Language options:</span>
       <a
         href={`${basePath}/`}
+        lang="en"
+        hreflang="en"
         class="font-semibold text-primary hover:underline px-2 py-0.5 rounded focus:outline-none focus:ring-2 focus:ring-primary"
       >
         English
@@ -46,6 +48,8 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
       <span class="text-gray-400" aria-hidden="true">•</span>
       <a
         href={`${basePath}/fr`}
+        lang="fr"
+        hreflang="fr"
         class="font-semibold text-primary hover:underline px-2 py-0.5 rounded focus:outline-none focus:ring-2 focus:ring-primary"
       >
         Français
@@ -53,6 +57,8 @@ const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
       <span class="text-gray-400" aria-hidden="true">•</span>
       <a
         href={`${basePath}/zh`}
+        lang="zh-Hans"
+        hreflang="zh-Hans"
         class="font-semibold text-primary hover:underline px-2 py-0.5 rounded focus:outline-none focus:ring-2 focus:ring-primary"
       >
         简体中文

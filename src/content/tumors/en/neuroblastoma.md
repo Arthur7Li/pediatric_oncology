@@ -11,6 +11,7 @@ authoritative_sources:
   - "Children's Oncology Group (COG) - Neuroblastoma Protocols"
   - "National Cancer Institute (NCI) - Neuroblastoma Treatment"
 lang: "en"
+medical_disclaimer: true
 ---
 
 

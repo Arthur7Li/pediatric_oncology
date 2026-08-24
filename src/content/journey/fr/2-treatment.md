@@ -9,6 +9,7 @@ authoritative_sources:
   - "CHU Sainte-Justine - Centre Charles-Bruneau"
   - "Children's Oncology Group (COG)"
 lang: "fr"
+medical_disclaimer: true
 ---
 
 Une fois le diagnostic et le stade clairs, une équipe médicale multidisciplinaire (qui comprend des oncologues pédiatriques, des chirurgiens et des infirmières) créera un plan de traitement personnalisé. Le plan peut impliquer un ou une combinaison des éléments suivants :

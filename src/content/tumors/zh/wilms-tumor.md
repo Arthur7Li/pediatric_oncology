@@ -11,6 +11,7 @@ authoritative_sources:
   - "国际小儿肿瘤学会 (SIOP) - 肾肿瘤研究组"
   - "美国国家癌症研究所 (NCI) - 儿童肾母细胞瘤指南"
 lang: "zh"
+medical_disclaimer: true
 ---
 
 
