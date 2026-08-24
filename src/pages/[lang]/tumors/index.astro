@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import { getCollection } from "astro:content";
 import { translations, type Locale } from "../../../i18n/translations";
 
@@ -15,6 +16,13 @@ const { lang } = Astro.params;
 const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const homeUrl =
+  currentLang === "en" ? `${basePath}/` : `${basePath}/${currentLang}`;
+
+const breadcrumbs = [
+  { label: t.nav.home, href: homeUrl },
+  { label: t.nav.tumors },
+];
 
 const allTumors = await getCollection("tumors", (tumor) =>
   tumor.id.startsWith(`${currentLang}/`),
@@ -26,6 +34,8 @@ const allTumors = await getCollection("tumors", (tumor) =>
   lang={currentLang}
   description={t.tumors.subtitle}
 >
+  <Breadcrumbs crumbs={breadcrumbs} lang={currentLang} />
+
   <div class="mb-8 border-b pb-6">
     <h1
       class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl"

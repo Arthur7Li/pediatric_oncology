@@ -1,7 +1,9 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
 import MedicalDisclaimer from "../../../components/MedicalDisclaimer.astro";
+import { translations, type Locale } from "../../../i18n/translations";
 
 export async function getStaticPaths() {
   const allJourneySteps = await getCollection("journey");
@@ -20,6 +22,11 @@ export async function getStaticPaths() {
 const { step } = Astro.props;
 const { Content } = await render(step);
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const currentLang = (step.data.lang as Locale) || "en";
+const t = translations[currentLang] || translations.en;
+const homeUrl =
+  currentLang === "en" ? `${basePath}/` : `${basePath}/${currentLang}`;
+const langPrefix = `${basePath}/${currentLang}`;
 
 // To figure out next and previous, we query the same language collection
 const allStepsInLang = await getCollection("journey", (s) =>
@@ -39,6 +46,12 @@ const getUrl = (s: any) => {
   const [lang, filename] = s.id.split("/");
   return `${basePath}/${lang}/journey/${filename.replace(".md", "")}`;
 };
+
+const breadcrumbs = [
+  { label: t.nav.home, href: homeUrl },
+  { label: t.nav.journey, href: `${langPrefix}/journey/1-diagnosis` },
+  { label: step.data.title },
+];
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -72,6 +85,8 @@ const structuredData = {
   modifiedTime={step.data.last_medically_reviewed_date || "2026-08-23"}
   structuredData={structuredData}
 >
+  <Breadcrumbs crumbs={breadcrumbs} lang={currentLang} />
+
   <div class="mb-8">
     <span class="text-sm font-semibold text-primary uppercase tracking-wider"
       >Step {step.data.step} of {allStepsInLang.length}</span
@@ -107,11 +122,7 @@ const structuredData = {
           </a>
         ) : (
           <a
-            href={
-              step.data.lang === "en"
-                ? `${basePath}/`
-                : `${basePath}/${step.data.lang}`
-            }
+            href={homeUrl}
             class="inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
           >
             &larr;{" "}

@@ -58,3 +58,8 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Added rich `schema.org` `MedicalWebPage`, `MedicalCondition`, and `MedicalSignOrSymptom` JSON-LD structured data across all clinical templates (`journey/[slug].astro`, `tumors/[slug].astro`, `symptoms/[slug].astro`).
   - Added `@astrojs/sitemap` integration to `astro.config.mjs` generating `sitemap-index.xml` and localized `sitemap-0.xml`.
   - Verified local build and test suites (`npm run format && npm test && npm run ci` + Pa11y a11y audit across 24 routes passing 100% with 0 errors).
+- **[18:40]**: Executed **Area 2: Breadcrumb Navigation**:
+  - Created accessible, responsive `src/components/Breadcrumbs.astro` with `<nav aria-label="Breadcrumb">`, `<ol>` list hierarchy, and embedded `BreadcrumbList` schema.org JSON-LD structured data.
+  - Added `home` localized labels (`"Home"`, `"Accueil"`, `"首页"`) to `src/i18n/translations.ts`.
+  - Integrated breadcrumb navigation across all deep clinical templates (`journey/[slug].astro`, `tumors/[slug].astro`, `symptoms/[slug].astro`), section listing templates (`tumors/index.astro`, `symptoms/index.astro`, `financial.astro`, `resources.astro`), and root fallback pages.
+  - Verified local build and QA suites (`npm run format && npm test && npm run ci` + Pa11y accessibility audit across 24 routes passing 100% with 0 errors).

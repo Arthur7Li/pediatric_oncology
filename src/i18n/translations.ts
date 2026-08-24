@@ -4,6 +4,7 @@ export const translations = {
   en: {
     brandName: "Canadian Pediatric Oncology Resource",
     nav: {
+      home: "Home",
       journey: "The Journey",
       tumors: "Tumor Guides",
       symptoms: "Symptoms",
@@ -86,6 +87,7 @@ export const translations = {
   fr: {
     brandName: "Ressource canadienne en oncologie pédiatrique",
     nav: {
+      home: "Accueil",
       journey: "Le Parcours",
       tumors: "Guides des tumeurs",
       symptoms: "Symptômes",
@@ -169,6 +171,7 @@ export const translations = {
   zh: {
     brandName: "加拿大儿童肿瘤教育与支持平台",
     nav: {
+      home: "首页",
       journey: "治疗旅程",
       tumors: "肿瘤指南",
       symptoms: "症状管理",

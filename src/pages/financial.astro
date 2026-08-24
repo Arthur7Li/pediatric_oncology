@@ -1,12 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import ProvincialFilter from "../components/ProvincialFilter.astro";
 import { translations } from "../i18n/translations";
 
 const t = translations.en;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const breadcrumbs = [
+  { label: t.nav.home, href: `${basePath}/` },
+  { label: t.nav.financial },
+];
 ---
 
-<Layout title={t.financial.title} lang="en">
+<Layout title={t.financial.title} lang="en" description={t.financial.subtitle}>
+  <Breadcrumbs crumbs={breadcrumbs} lang="en" />
+
   <div class="mb-8 border-b pb-6">
     <h1
       class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl"

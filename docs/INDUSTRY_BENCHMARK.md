@@ -29,7 +29,7 @@ Our platform's unique value proposition is the **combination** of trilingual Can
 | **User Personalization**        | ❌                    | ❌                         | Partial              | ❌                         | Future consideration                                                               |
 | **SEO / Open Graph**            | ✅                    | ✅                         | ✅                   | ✅ **OG, Cards & JSON-LD** | Dynamic Open Graph, Twitter cards, and MedicalWebPage schema.org structured data   |
 | **404 Error Page**              | ✅                    | ✅                         | ✅                   | ❌ Missing                 | Quick win                                                                          |
-| **Breadcrumb Navigation**       | ✅                    | ✅                         | ✅                   | ❌ Missing                 | Important for deep pages                                                           |
+| **Breadcrumb Navigation**       | ✅                    | ✅                         | ✅                   | ✅ **WCAG + JSON-LD**      | Trilingual breadcrumb nav on all pages with schema.org BreadcrumbList              |
 | **E2E Testing**                 | ✅ (internal)         | ✅ (internal)              | ✅ (internal)        | ❌ Missing                 | Important for regression prevention                                                |
 
 ## Our Unique Strengths 🍁
