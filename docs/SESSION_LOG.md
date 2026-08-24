@@ -150,3 +150,26 @@ This document serves as a continuous record of changes, ensuring full transparen
   2. **Heading hierarchy violations** — 3 issues: dual `<h1>` in markdown + template (51 pages), skipped levels in symptom index and footer/filter components.
   3. **Root vs `[lang]` page divergence** — root English pages missed the visual design upgrade.
 - **Report:** Saved to `docs/qa/qa_audit_report_2026-08-24.md` with 4 prioritized remediation sprints.
+
+**[11:05] Sprint 1 Remediation Execution**
+
+- **Action:** Executed high-priority heading hierarchy normalization, missing translation keys, and province localization.
+- **Details:**
+  - Stripped redundant leading `# Title` lines across all 51 markdown content files, resolving dual `<h1>` accessibility violations (A11Y-09).
+  - Promoted symptom card headings from `<h3>` to `<h2>` with flex container utilities on index pages (A11Y-10).
+  - Promoted heading levels in `Footer.astro` and `ProvincialFilter.astro` (A11Y-11).
+  - Added centralized translation strings for `skipToMain`, `definitionOf`, `medicalDisclaimer`, `pressEsc`, `guideBadge`, `reviewedBy`, `lastReviewed`, `sources`, `back`, and official localized Canadian province/territory names (A11Y-13, UX-14, UX-15).
+  - Verified 100% test pass with `npm run test:e2e` and committed (`f5c1ab7`).
+
+**[11:41] Sprint 2 Remediation Execution**
+
+- **Action:** Executed root page visual design synchronization, accessibility contrast/touch target fixes, and frontmatter auditability.
+- **Details:**
+  - Synchronized root pages (`/`, `/tumors`, `/symptoms`, `/financial`, `/resources`) with the modern visual design, warm illustrations, and micro-interactions of `[lang]` routes (UX-13).
+  - Added `aria-hidden="true"` and `focusable="false"` to decorative SVGs across all pages (A11Y-14).
+  - Corrected footer contrast (`text-gray-600`) and homepage CTA button hover contrast (`hover:bg-accent hover:text-white`) (A11Y-15).
+  - Expanded mobile language switcher touch targets to compliant 36x36px minimum dimensions (UX-16).
+  - Fixed spacing in footer copyright year output (UX-20).
+  - Resolved 404 page title duplication and added `lang`/`hreflang` attributes to language links (A11Y-18).
+  - Injected explicit `medical_disclaimer: true` into the frontmatter of all 42 older content modules (MED-05).
+  - Verified build and E2E test suite (5/5 passing) and committed (`1319a69`).
