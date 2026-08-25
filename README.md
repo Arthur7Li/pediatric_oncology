@@ -113,3 +113,16 @@ All commands are run from the repository root:
 ## Medical Disclaimer
 
 _This platform is designed strictly for educational purposes to assist families navigating the Canadian pediatric healthcare system. It does not provide medical diagnoses, treatment plans, or individual medical advice. Always consult your child's primary pediatric oncology team for specific medical care. In a medical emergency (such as a fever during neutropenia), call 911 or visit your nearest Emergency Department immediately._
+
+---
+
+## License
+
+This project and its educational content are licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+
+You are free to share (copy and redistribute the material in any medium or format) and adapt (remix, transform, and build upon the material) under the following terms:
+
+- **Attribution:** You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- **NonCommercial:** You may **not** use the material for commercial purposes.
+
+See the [LICENSE](./LICENSE) file for more details.

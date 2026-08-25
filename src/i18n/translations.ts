@@ -114,6 +114,8 @@ export const translations = {
         "This platform is strictly for educational purposes and does not provide formal medical advice, diagnosis, or treatment planning. Always consult your child's pediatric oncology team.",
       copyright:
         "Canadian Pediatric Oncology Educational Platform. Built with care for Canadian families.",
+      licenseInfo:
+        "Licensed under CC BY-NC 4.0. You may share and adapt this content for non-commercial purposes.",
     },
     notFound: {
       title: "Page Not Found",
@@ -248,6 +250,8 @@ export const translations = {
         "Cette plateforme est strictement éducative et ne remplace pas un avis médical, un diagnostic ou un plan de traitement. Consultez toujours l'équipe soignante de votre enfant.",
       copyright:
         "Plateforme éducative canadienne en oncologie pédiatrique. Conçue avec bienveillance pour les familles canadiennes.",
+      licenseInfo:
+        "Sous licence CC BY-NC 4.0. Vous pouvez partager et adapter ce contenu à des fins non commerciales.",
     },
     notFound: {
       title: "Page non trouvée",
@@ -378,6 +382,8 @@ export const translations = {
       disclaimer:
         "本平台内容仅供医学科普与教育参考，不构成正式医疗诊断或个体化治疗方案。涉及孩子的具体诊疗，请始终以主管医疗团队指导为准。",
       copyright: "加拿大儿童肿瘤教育平台。倾心陪伴每一个坚强的加拿大患儿家庭。",
+      licenseInfo:
+        "本平台内容采用 CC BY-NC 4.0 协议授权。您可以出于非商业目的分享和改编本内容。",
     },
     notFound: {
       title: "页面未找到",
