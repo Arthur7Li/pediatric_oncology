@@ -11,7 +11,7 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-Thrombocytopenia means having an abnormally low number of platelets in the blood. Platelets are the tiny cells responsible for helping blood clot and stop bleeding. 
+Thrombocytopenia means having an abnormally low number of platelets in the blood. Platelets are the tiny cells responsible for helping blood clot and stop bleeding.
 
 Both the cancer itself (especially leukemias) and chemotherapy treatments suppress the bone marrow's ability to produce platelets. When platelet counts fall too low, the risk of spontaneous or severe bleeding increases significantly.
 
@@ -37,8 +37,9 @@ When your child's oncology team informs you that their platelets are low, you mu
 
 If the platelet count drops below a specific threshold (often 10-20 x 10^9/L, though this varies based on protocols and active bleeding), your child may require a platelet transfusion. This is a common and relatively quick outpatient procedure (often taking about an hour) that temporarily replenishes their clotting ability.
 
-> **When to Seek Immediate Emergency Care:** 
+> **When to Seek Immediate Emergency Care:**
 > Go to the emergency room or contact your oncology team immediately if your child experiences:
+>
 > - A nosebleed that does not stop after 15-20 minutes of firm pressure.
 > - Any head injury or hard bump to the head.
 > - Blood in the urine or stool, or coughing/vomiting blood.

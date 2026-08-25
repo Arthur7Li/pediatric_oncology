@@ -22,6 +22,7 @@ Au Canada, les centres d'oncologie pédiatrique travaillent en étroite collabor
 Dans une moelle osseuse saine, les cellules souches se développent en cellules sanguines matures. Dans la LMA, la moelle osseuse produit trop de globules blancs anormaux et immatures appelés **myéloblastes**.
 
 Ces cellules leucémiques supplantent rapidement les cellules sanguines saines et fonctionnelles, entraînant une pénurie de :
+
 - **Globules rouges :** provoquant une anémie.
 - **Plaquettes :** provoquant des saignements et des ecchymoses.
 - **Globules blancs normaux :** rendant le corps vulnérable aux infections graves.
@@ -35,6 +36,7 @@ Bien que ce soient toutes deux des leucémies, elles proviennent de différents 
 ## Symptômes courants
 
 Les symptômes de la LMA apparaissent souvent rapidement et imitent les maladies infantiles courantes, mais ils ne s'améliorent pas avec des soins standard :
+
 - **Fatigue et faiblesse :** En raison d'un faible taux de globules rouges (anémie).
 - **Ecchymoses et saignements faciles :** Saignements de nez fréquents, saignement des gencives ou petites taches rouges sur la peau (pétéchies) en raison de plaquettes basses.
 - **Fièvre et infections fréquentes :** En raison d'un manque de globules blancs sains combattant les infections.

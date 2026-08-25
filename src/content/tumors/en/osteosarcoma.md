@@ -11,7 +11,7 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-Osteosarcoma is a type of bone cancer that typically develops during periods of rapid growth, which is why it is most frequently diagnosed in teenagers and young adults. 
+Osteosarcoma is a type of bone cancer that typically develops during periods of rapid growth, which is why it is most frequently diagnosed in teenagers and young adults.
 
 In Canada, the management of osteosarcoma requires a highly specialized, multidisciplinary approach involving pediatric oncologists, orthopedic oncology surgeons, and rehabilitation specialists.
 

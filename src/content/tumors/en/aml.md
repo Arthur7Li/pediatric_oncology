@@ -11,7 +11,7 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-Acute Myeloid Leukemia (AML) is a fast-growing cancer of the blood and bone marrow. While less common than Acute Lymphoblastic Leukemia (ALL), it requires a distinct and very intense approach to treatment. 
+Acute Myeloid Leukemia (AML) is a fast-growing cancer of the blood and bone marrow. While less common than Acute Lymphoblastic Leukemia (ALL), it requires a distinct and very intense approach to treatment.
 
 In Canada, pediatric oncology centers work closely together through the **C17 Council** to ensure that children with AML receive the most advanced and effective treatments available.
 
@@ -19,9 +19,10 @@ In Canada, pediatric oncology centers work closely together through the **C17 Co
 
 ## What is Acute Myeloid Leukemia?
 
-In healthy bone marrow, stem cells develop into mature blood cells. In AML, the bone marrow produces too many abnormal, immature white blood cells called **myeloblasts**. 
+In healthy bone marrow, stem cells develop into mature blood cells. In AML, the bone marrow produces too many abnormal, immature white blood cells called **myeloblasts**.
 
 These leukemic cells quickly crowd out healthy, functioning blood cells, leading to a shortage of:
+
 - **Red blood cells:** causing anemia.
 - **Platelets:** causing bleeding and bruising.
 - **Normal white blood cells:** leaving the body vulnerable to serious infections.
@@ -35,6 +36,7 @@ While both are leukemias, they originate from different types of cells. AML tend
 ## Common Symptoms
 
 Symptoms of AML often appear quickly and mimic common childhood illnesses, but they do not improve with standard care:
+
 - **Fatigue and Weakness:** Due to low red blood cells (anemia).
 - **Easy Bruising and Bleeding:** Frequent nosebleeds, bleeding gums, or tiny red spots on the skin (petechiae) due to low platelets.
 - **Fever and Frequent Infections:** Due to a lack of healthy, infection-fighting white blood cells.
@@ -45,7 +47,7 @@ Symptoms of AML often appear quickly and mimic common childhood illnesses, but t
 
 ## The Treatment Roadmap
 
-Treatment for AML in Canada is generally divided into two main phases and is characterized by very intensive chemotherapy regimens. 
+Treatment for AML in Canada is generally divided into two main phases and is characterized by very intensive chemotherapy regimens.
 
 ### 1. Induction Therapy
 

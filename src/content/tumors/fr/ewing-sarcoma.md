@@ -21,7 +21,7 @@ Le traitement du sarcome d'Ewing nécessite une approche globale, combinant l'ex
 
 Le sarcome d'Ewing peut se développer dans n'importe quel os, mais il affecte le plus souvent le bassin (os de la hanche), l'os de la cuisse (fémur), la jambe inférieure (tibia ou péroné) ou les côtes.
 
-Au niveau cellulaire, presque tous les sarcomes d'Ewing partagent une altération génétique spécifique (une translocation impliquant le gène *EWSR1*) qui est unique à ce cancer. Ce marqueur génétique aide les médecins à confirmer définitivement le diagnostic.
+Au niveau cellulaire, presque tous les sarcomes d'Ewing partagent une altération génétique spécifique (une translocation impliquant le gène _EWSR1_) qui est unique à ce cancer. Ce marqueur génétique aide les médecins à confirmer définitivement le diagnostic.
 
 ---
 

@@ -19,9 +19,9 @@ Treatment for Ewing Sarcoma requires a comprehensive approach, combining the exp
 
 ## What is Ewing Sarcoma?
 
-Ewing Sarcoma can develop in any bone, but it most commonly affects the pelvis (hip bones), the thigh bone (femur), the lower leg (tibia or fibula), or the ribs. 
+Ewing Sarcoma can develop in any bone, but it most commonly affects the pelvis (hip bones), the thigh bone (femur), the lower leg (tibia or fibula), or the ribs.
 
-At the cellular level, almost all Ewing Sarcomas share a specific genetic change (a translocation involving the *EWSR1* gene) that is unique to this cancer. This genetic marker helps doctors confirm the diagnosis definitively.
+At the cellular level, almost all Ewing Sarcomas share a specific genetic change (a translocation involving the _EWSR1_ gene) that is unique to this cancer. This genetic marker helps doctors confirm the diagnosis definitively.
 
 ---
 

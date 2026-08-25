@@ -39,6 +39,7 @@ Si le nombre de plaquettes tombe en dessous d'un seuil spécifique (souvent 10-2
 
 > **Quand consulter d'urgence :**
 > Allez aux urgences ou contactez immédiatement votre équipe d'oncologie si votre enfant éprouve :
+>
 > - Un saignement de nez qui ne s'arrête pas après 15 à 20 minutes de pression ferme.
 > - Toute blessure à la tête ou un coup dur à la tête.
 > - Sang dans l'urine ou les selles, ou toux/vomissements de sang.

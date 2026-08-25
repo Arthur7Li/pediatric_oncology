@@ -10,7 +10,7 @@ lang: "en"
 medical_disclaimer: true
 ---
 
-Constipation is a very common, uncomfortable, and sometimes painful side effect of cancer treatment in children. 
+Constipation is a very common, uncomfortable, and sometimes painful side effect of cancer treatment in children.
 
 It occurs when stool moves too slowly through the digestive tract, becoming hard, dry, and difficult to pass. If left untreated, severe constipation can lead to complications such as bowel blockages or fissures.
 
@@ -25,6 +25,7 @@ During pediatric oncology treatment, multiple factors often combine to cause con
 ## Signs to Watch For
 
 Your child may be constipated if they experience:
+
 - Less frequent bowel movements than what is normal for them (e.g., no stool for more than 2-3 days).
 - Stools that are hard, dry, or resemble small pellets.
 - Pain, straining, or crying when trying to have a bowel movement.
@@ -40,5 +41,5 @@ Your child may be constipated if they experience:
 4. **Dietary Adjustments:** Offer high-fiber foods like whole grains, fruits (especially pears, peaches, and plums), and vegetables, if tolerated.
 5. **Use Prescribed Laxatives:** **Do not use over-the-counter enemas or suppositories** without explicit permission from your oncology team, as these can introduce bacteria and cause serious infections if your child has neutropenia. Use oral laxatives (like PEG 3350 / RestoraLAX / lax-a-day, or Senokot) exactly as prescribed by your medical team to maintain regular, soft stools, especially when taking Vincristine or opioids.
 
-> **When to Call the Hospital:** 
+> **When to Call the Hospital:**
 > Contact your oncology team immediately if your child has severe abdominal pain, has a swollen or hard belly, is vomiting green/yellow fluid, or has not had a bowel movement in more than 3 days despite taking laxatives.

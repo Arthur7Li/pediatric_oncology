@@ -25,6 +25,7 @@ Pendant le traitement en oncologie pédiatrique, de multiples facteurs se combin
 ## Signes à surveiller
 
 Votre enfant peut être constipé s'il présente :
+
 - Des selles moins fréquentes que ce qui est normal pour lui (ex: pas de selles pendant plus de 2-3 jours).
 - Des selles dures, sèches ou ressemblant à de petites boulettes.
 - Douleur, effort ou pleurs lors de la tentative d'aller à la selle.
