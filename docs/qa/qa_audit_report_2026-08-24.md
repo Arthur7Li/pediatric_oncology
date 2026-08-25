@@ -221,46 +221,46 @@ No **Critical** severity issues were found. The platform is functional, accessib
 
 ## Recommended Remediation Sprints
 
-### Sprint 1 — Heading & i18n Fix (High Impact, ~2-3 hours)
+### Sprint 1 — Heading & i18n Fix (Completed)
 
 **Model:** Gemini 3.7 Flash
 
-1. Strip leading `# Title` from all 51 markdown files → fixes **A11Y-09** across all pages
-2. Fix `<h3>` → `<h2>` on symptom index cards → fixes **A11Y-10**
-3. Fix heading levels in ProvincialFilter and Footer → fixes **A11Y-11**
-4. Localize all hardcoded English strings (badges, labels, ARIA, filter script) → fixes **A11Y-13, UX-15, UX-14**
-5. Fix severity badge color check for FR/ZH → part of **A11Y-13**
+1. Strip leading `# Title` from all 51 markdown files → fixes **A11Y-09** across all pages ✅
+2. Fix `<h3>` → `<h2>` on symptom index cards → fixes **A11Y-10** ✅
+3. Fix heading levels in ProvincialFilter and Footer → fixes **A11Y-11** ✅
+4. Localize all hardcoded English strings (badges, labels, ARIA, filter script) → fixes **A11Y-13, UX-15, UX-14** ✅
+5. Fix severity badge color check for FR/ZH → part of **A11Y-13** ✅
 
-### Sprint 2 — Root Page Sync & Polish (~1-2 hours)
-
-**Model:** Gemini 3.7 Flash
-
-1. Sync root pages with `[lang]` visual design → fixes **UX-13**
-2. Add `aria-hidden="true"` to decorative SVGs → fixes **A11Y-14**
-3. Fix footer contrast (`text-gray-600`) and button hover → fixes **A11Y-15**
-4. Fix mobile lang toggle touch targets → fixes **UX-16**
-5. Fix footer copyright spacing → fixes **UX-20**
-6. Fix 404 title duplication → fixes **A11Y-18**
-7. Add `medical_disclaimer: true` to 42 older frontmatter blocks → fixes **MED-05**
-
-### Sprint 3 — Search, Print & CI Polish (~1 hour)
+### Sprint 2 — Root Page Sync & Polish (Completed)
 
 **Model:** Gemini 3.7 Flash
 
-1. Align SearchBar colors with design tokens, pass i18n to Pagefind → fixes **UX-18**
-2. Fix SearchBar focus restoration, use `addEventListener`, add `role="search"` → fixes **A11Y-17**
-3. Add `print:hidden` to wizard nav → fixes **UX-22**
-4. Wrap mobile menu in `<nav>`, add `role="group"` to lang container → fixes **A11Y-12**
-5. Add `(opens in new tab)` to external links → fixes **A11Y-20**
-6. Expand `.pa11yci` to cover all 81 routes → fixes **A11Y-19**
-7. Clean up unused CSS and script race condition → fixes **UX-23, UX-24**
-8. Add View Transition focus management → fixes **A11Y-21**
-9. Fix JargonTooltip focus/keyboard → fixes **A11Y-16**
+1. Sync root pages with `[lang]` visual design → fixes **UX-13** ✅
+2. Add `aria-hidden="true"` to decorative SVGs → fixes **A11Y-14** ✅
+3. Fix footer contrast (`text-gray-600`) and button hover → fixes **A11Y-15** ✅
+4. Fix mobile lang toggle touch targets → fixes **UX-16** ✅
+5. Fix footer copyright spacing → fixes **UX-20** ✅
+6. Fix 404 title duplication → fixes **A11Y-18** ✅
+7. Add `medical_disclaimer: true` to 42 older frontmatter blocks → fixes **MED-05** ✅
 
-### Sprint 4 — Content Expansion (Ongoing)
+### Sprint 3 — Search, Print & CI Polish (Completed)
+
+**Model:** Gemini 3.7 Flash
+
+1. Align SearchBar colors with design tokens, pass i18n to Pagefind → fixes **UX-18** ✅
+2. Fix SearchBar focus restoration, use `addEventListener`, add `role="search"` → fixes **A11Y-17** ✅
+3. Add `print:hidden` to wizard nav → fixes **UX-22** ✅
+4. Wrap mobile menu in `<nav>`, add `role="group"` to lang container → fixes **A11Y-12** ✅
+5. Add `(opens in new tab)` to external links → fixes **A11Y-20** ✅
+6. Expand `.pa11yci` to cover all 81 routes → fixes **A11Y-19** ✅
+7. Clean up unused CSS and script race condition → fixes **UX-23, UX-24** ✅
+8. Add View Transition focus management → fixes **A11Y-21** ✅
+9. Fix JargonTooltip focus/keyboard → fixes **A11Y-16** ✅
+
+### Sprint 4 — Content Expansion (Completed)
 
 **Model:** Gemini 3.1 Pro (requires web search for medical verification)
 
-1. Add AML and bone tumors (Osteosarcoma, Ewing) → addresses **MED-06**
-2. Add Constipation and Thrombocytopenia symptom guides → addresses **MED-07**
-3. Add missing provincial hospitals → addresses **MED-08**
+1. Add AML and bone tumors (Osteosarcoma, Ewing) → addresses **MED-06** ✅
+2. Add Constipation and Thrombocytopenia symptom guides → addresses **MED-07** ✅
+3. Add missing provincial hospitals → addresses **MED-08** ✅

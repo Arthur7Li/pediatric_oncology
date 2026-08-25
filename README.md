@@ -18,17 +18,19 @@ To provide a compassionate, medically verified, and trilingual (English, French,
 ## Key Features
 
 1. **Trilingual Architecture & In-Place Language Toggle (EN / FR / ZH):**
-   - Seamless, persistent language switching across all 65 static pages without loss of context.
+   - Seamless, persistent language switching across all 96 static pages without loss of context.
    - Fully localized navigation, emergency crisis banners, medical disclaimers, and disease guides.
 
 2. **Pediatric Tumor & Malignancy Guides:**
-   - Deep-dive clinical guides for **6 major pediatric cancers**:
-     - _Acute Lymphoblastic Leukemia (ALL)_
+   - Deep-dive clinical guides for **11 major pediatric cancers**:
+     - _Acute Lymphoblastic Leukemia (ALL)_ & _Acute Myeloid Leukemia (AML)_
      - _Neuroblastoma_
      - _Wilms Tumor (Nephroblastoma)_
+     - _Pediatric Lymphoma (Hodgkin & Non-Hodgkin)_
+     - _Retinoblastoma_
+     - _Osteosarcoma_ & _Ewing Sarcoma_
      - _Pineal Gland Tumors (Pineoblastoma, Pineocytoma, Germ Cell)_
-     - _Medulloblastoma_
-     - _Atypical Teratoid/Rhabdoid Tumor (ATRT)_
+     - _Medulloblastoma_ & _Atypical Teratoid/Rhabdoid Tumor (ATRT)_
    - Covers risk stratification, molecular diagnostics, standard protocols, cellular therapies (CAR-T, Blinatumomab), and at-home care.
 
 3. **6-Phase Treatment Journey Roadmap:**
@@ -40,7 +42,7 @@ To provide a compassionate, medically verified, and trilingual (English, French,
    - **Phase 6:** Compassionate Care & Pediatric Palliative Support (Concurrent care, symptom management, hospice respite)
 
 4. **At-Home Symptom Management:**
-   - Medical protocols for _Febrile Neutropenia_ (Urgent emergency guidance), _Mucositis_ (Oral mouthwash recipes and soft diet), and _Chemotherapy-Induced Nausea and Vomiting (CINV)_.
+   - Medical protocols for _Febrile Neutropenia_ (Urgent emergency guidance), _Mucositis_ (Oral mouthwash recipes and soft diet), _Chemotherapy-Induced Nausea and Vomiting (CINV)_, _Fatigue & Anemia_, _Alopecia_, _Pain Management_, _Constipation_, and _Thrombocytopenia (Low Platelets)_.
 
 5. **Financial, Provincial & Indigenous Health Logistics:**
    - Provincial Healthcare breakdowns (OHIP+, RAMQ, Fair PharmaCare).
@@ -97,7 +99,7 @@ All commands are run from the repository root:
 | :-------------------------------------- | :---------------------------------------------------------------------- |
 | `npm install`                           | Install all project dependencies                                        |
 | `npm run dev`                           | Start Astro development server (`http://localhost:4321`)                |
-| `npm run build`                         | Build 65 static production pages to `./dist/`                           |
+| `npm run build`                         | Build 96 static production pages to `./dist/`                           |
 | `npm run preview`                       | Preview production build locally                                        |
 | `npm run check`                         | Run Astro type and component diagnostics                                |
 | `npm run format`                        | Auto-format codebase using Prettier                                     |
