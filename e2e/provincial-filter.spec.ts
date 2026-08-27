@@ -4,7 +4,7 @@ test.describe("Provincial Support Filter", () => {
   test("filters resources for Ontario and displays SickKids and OHIP+", async ({
     page,
   }) => {
-    await page.goto("en/financial");
+    await page.goto("en/support");
 
     const select = page.locator("#province-select");
     await expect(select).toBeVisible();

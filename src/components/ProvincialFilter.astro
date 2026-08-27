@@ -1,6 +1,6 @@
 ---
-import resources from "../data/provincial_resources.json";
 import { translations, type Locale } from "../i18n/translations";
+import { getCollection } from "astro:content";
 
 interface Props {
   lang?: string;
@@ -9,13 +9,29 @@ interface Props {
 const { lang = "en" } = Astro.props;
 const currentLang = (lang as Locale) || "en";
 const t = translations[currentLang] || translations.en;
+
+// Fetch all provinces for the current language
+const provincesContent = await getCollection("provinces", ({ data }) => {
+  return data.lang === currentLang;
+});
+
+// Sort alphabetically by title
+provincesContent.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Serialize to pass to the web component
+const serializedProvinces = provincesContent.map((p) => ({
+  id: p.data.province_key,
+  title: p.data.title,
+  hospitals: p.data.hospitals,
+  financial: p.data.financial,
+  notes: p.body,
+}));
 ---
 
 <provincial-filter
-  data-resources={JSON.stringify(resources)}
+  data-resources={JSON.stringify(serializedProvinces)}
   data-selected-resources-str={t.filter.selectedResources}
   data-notes-heading={t.filter.notesHeading}
-  data-provinces={JSON.stringify(t.filter.provinces)}
   class="block"
 >
   <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 my-8">
@@ -31,11 +47,8 @@ const t = translations[currentLang] || translations.en;
     >
       <option value="" disabled selected>{t.filter.placeholder}</option>
       {
-        resources.map((res: any) => (
-          <option value={res.province}>
-            {/* @ts-ignore - Indexing dynamically */}
-            {t.filter.provinces[res.province] || res.province}
-          </option>
+        serializedProvinces.map((res) => (
+          <option value={res.id}>{res.title}</option>
         ))
       }
     </select>
@@ -50,15 +63,13 @@ const t = translations[currentLang] || translations.en;
         {t.filter.selectedHeading}
       </h2>
 
-      <div class="mb-4">
-        <h3 class="font-semibold text-gray-800 border-b pb-1 mb-2">
+      <div class="mb-6">
+        <h3 class="font-semibold text-gray-800 border-b pb-1 mb-4">
           {t.filter.hospitalsHeading}
         </h3>
-        <ul
-          id="display-hospitals"
-          class="list-disc pl-5 text-gray-700 space-y-1"
-        >
-        </ul>
+        <div id="display-hospitals" class="grid gap-4 md:grid-cols-2">
+          <!-- Dynamically populated -->
+        </div>
       </div>
 
       <div class="mb-4">
@@ -69,6 +80,7 @@ const t = translations[currentLang] || translations.en;
           id="display-financial"
           class="list-disc pl-5 text-gray-700 space-y-1"
         >
+          <!-- Dynamically populated -->
         </ul>
       </div>
 
@@ -100,23 +112,31 @@ const t = translations[currentLang] || translations.en;
       const resources = JSON.parse(this.dataset.resources || "[]");
       const selectedResourcesStr = this.dataset.selectedResourcesStr || "";
       const notesHeading = this.dataset.notesHeading || "";
-      const provinces = JSON.parse(this.dataset.provinces || "{}");
 
       select.addEventListener("change", (e) => {
         const target = e.target as HTMLSelectElement;
         const selectedProv = target.value;
-        const data = resources.find((r: any) => r.province === selectedProv);
+        const data = resources.find((r: any) => r.id === selectedProv);
 
         if (data) {
           display.classList.remove("hidden");
-          const locName = provinces[data.province] || data.province;
           if (displayProvince) {
-            displayProvince.textContent = locName + selectedResourcesStr;
+            displayProvince.textContent = data.title + selectedResourcesStr;
           }
 
           if (displayHospitals) {
             displayHospitals.innerHTML = data.hospitals
-              .map((h: string) => `<li>${h}</li>`)
+              .map(
+                (h: any) => `
+              <div class="p-4 bg-gray-50 rounded border border-gray-200">
+                <h4 class="font-bold text-gray-900 mb-1">${h.name}</h4>
+                <p class="text-xs text-gray-600 mb-2">${h.desc}</p>
+                <a href="${h.linkUrl}" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-primary hover:underline">
+                  ${h.linkText} &rarr;
+                </a>
+              </div>
+            `,
+              )
               .join("");
           }
 

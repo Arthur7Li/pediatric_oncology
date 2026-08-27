@@ -8,8 +8,7 @@ export const translations = {
       journey: "The Journey",
       tumors: "Tumor Guides",
       symptoms: "Symptoms",
-      hospitals: "Hospitals",
-      financial: "Financial Support",
+      support: "Local Care & Support",
       skipToMain: "Skip to main content",
       definitionOf: "Definition of",
       medicalDisclaimer: "Medical Disclaimer",
@@ -30,7 +29,7 @@ export const translations = {
       trustBadge:
         "Developed using guidelines from leading Canadian pediatric oncology centers.",
       startJourneyBtn: "Start The Journey",
-      financialBtn: "Financial Support Guide",
+      supportBtn: "Local Care & Support",
     },
     tumors: {
       title: "Pediatric Tumor & Cancer Guides",
@@ -56,22 +55,13 @@ export const translations = {
       sources: "Authoritative & Clinical Sources",
       back: "Back to Symptom Guides",
     },
-    financial: {
-      title: "Financial & Logistical Support",
+    support: {
+      title: "Provincial Care & Financial Support",
       subtitle:
-        "Verified information on provincial healthcare, government benefits, and charity grants across Canada.",
-    },
-    resources: {
-      title: "Specialized Pediatric Oncology Hospitals & Family Resources",
-      subtitle:
-        "When navigating a pediatric cancer diagnosis, finding the right specialized care and educational resources is paramount for families.",
-      canadianTitle: "Top-Ranked Pediatric Oncology Hospitals in Canada",
-      canadianSubtitle:
-        "Canada has several world-class children's hospitals that lead the way in pediatric oncology research and treatment.",
-      usTitle: "Specialized International Clinical Centers & Resources",
-      usSubtitle:
-        "While our focus is Canadian, these institutions offer invaluable educational platforms available to all families.",
-      visitWebsite: "Visit Family Resource Center →",
+        "Select your province or territory to find specialized pediatric oncology centers and financial assistance programs.",
+      nationalTitle: "National & International Fallback Resources",
+      nationalSubtitle:
+        "These programs and institutions provide care and financial benefits applicable across Canada.",
     },
     filter: {
       label: "Select your Province or Territory to see localized support:",
@@ -81,21 +71,6 @@ export const translations = {
       financialHeading: "Financial & Drug Coverage Programs",
       notesHeading: "Note on Out-of-Province & Specialized Care:",
       selectedResources: " Resources",
-      provinces: {
-        Alberta: "Alberta",
-        "British Columbia": "British Columbia",
-        Manitoba: "Manitoba",
-        "New Brunswick": "New Brunswick",
-        "Newfoundland and Labrador": "Newfoundland and Labrador",
-        "Northwest Territories": "Northwest Territories",
-        "Nova Scotia": "Nova Scotia",
-        Nunavut: "Nunavut",
-        Ontario: "Ontario",
-        "Prince Edward Island": "Prince Edward Island",
-        Quebec: "Quebec",
-        Saskatchewan: "Saskatchewan",
-        Yukon: "Yukon",
-      },
     },
     footer: {
       emergencyTitle: "Medical Emergency & Crisis Support in Canada",
@@ -127,8 +102,7 @@ export const translations = {
       journeyBtn: "The Treatment Journey",
       tumorsBtn: "Tumor Guides",
       symptomsBtn: "Symptom Management",
-      financialBtn: "Financial Support Guide",
-      resourcesBtn: "Specialized Hospitals",
+      supportBtn: "Local Care & Support",
       emergencyHelp: "Need Immediate Medical Support?",
       emergencyNote:
         "If your child is experiencing an urgent medical emergency, call 911 or visit your nearest pediatric emergency department immediately.",
@@ -141,8 +115,7 @@ export const translations = {
       journey: "Le Parcours",
       tumors: "Guides des tumeurs",
       symptoms: "Symptômes",
-      hospitals: "Hôpitaux",
-      financial: "Soutien financier",
+      support: "Soins et soutien locaux",
       skipToMain: "Aller au contenu principal",
       definitionOf: "Définition de",
       medicalDisclaimer: "Avis médical",
@@ -163,7 +136,7 @@ export const translations = {
       trustBadge:
         "Développé à l'aide des directives des principaux centres d'oncologie pédiatrique canadiens.",
       startJourneyBtn: "Commencer le parcours",
-      financialBtn: "Guide du soutien financier",
+      supportBtn: "Soins et soutien locaux",
     },
     tumors: {
       title: "Guides des tumeurs et cancers pédiatriques",
@@ -189,22 +162,13 @@ export const translations = {
       sources: "Sources cliniques",
       back: "Retour à la gestion des symptômes",
     },
-    financial: {
-      title: "Soutien financier et logistique",
+    support: {
+      title: "Soins provinciaux et soutien financier",
       subtitle:
-        "Informations vérifiées sur les régimes provinciaux, les prestations gouvernementales et les subventions d'organismes de bienfaisance au Canada.",
-    },
-    resources: {
-      title: "Hôpitaux spécialisés en oncologie pédiatrique et ressources",
-      subtitle:
-        "Trouver les centres de soins de pointe et les ressources éducatives adaptées est essentiel pour accompagner votre enfant.",
-      canadianTitle: "Principaux centres d'oncologie pédiatrique au Canada",
-      canadianSubtitle:
-        "Le Canada compte plusieurs centres hospitaliers universitaires de calibre mondial à l'avant-garde des soins et de la recherche.",
-      usTitle: "Centres hospitaliers internationaux de référence",
-      usSubtitle:
-        "Bien que notre priorité soit le réseau canadien, ces institutions offrent des plateformes éducatives de premier plan pour toutes les familles.",
-      visitWebsite: "Accéder au centre de ressources pour familles →",
+        "Sélectionnez votre province ou territoire pour trouver des centres d'oncologie pédiatrique spécialisés et des programmes d'aide financière.",
+      nationalTitle: "Ressources nationales et internationales",
+      nationalSubtitle:
+        "Ces programmes et institutions offrent des soins et des avantages financiers applicables dans tout le Canada.",
     },
     filter: {
       label:
@@ -215,23 +179,6 @@ export const translations = {
       financialHeading: "Programmes financiers et couverture des médicaments",
       notesHeading: "Précision sur les soins hors province :",
       selectedResources: " - Ressources",
-      provinces: {
-        Alberta: "Alberta",
-        "British Columbia": "Colombie-Britannique (British Columbia)",
-        Manitoba: "Manitoba",
-        "New Brunswick": "Nouveau-Brunswick (New Brunswick)",
-        "Newfoundland and Labrador":
-          "Terre-Neuve-et-Labrador (Newfoundland and Labrador)",
-        "Northwest Territories":
-          "Territoires du Nord-Ouest (Northwest Territories)",
-        "Nova Scotia": "Nouvelle-Écosse (Nova Scotia)",
-        Nunavut: "Nunavut",
-        Ontario: "Ontario",
-        "Prince Edward Island": "Île-du-Prince-Édouard (Prince Edward Island)",
-        Quebec: "Québec (Quebec)",
-        Saskatchewan: "Saskatchewan",
-        Yukon: "Yukon",
-      },
     },
     footer: {
       emergencyTitle: "Urgences médicales et soutien en cas de crise au Canada",
@@ -263,8 +210,7 @@ export const translations = {
       journeyBtn: "Le Parcours de soins",
       tumorsBtn: "Guides des tumeurs",
       symptomsBtn: "Gestion des symptômes",
-      financialBtn: "Soutien financier",
-      resourcesBtn: "Hôpitaux spécialisés",
+      supportBtn: "Soins et soutien locaux",
       emergencyHelp: "Besoin d'aide médicale immédiate ?",
       emergencyNote:
         "Si votre enfant vit une urgence médicale ou une fièvre en neutropénie, composez le 911 ou rendez-vous immédiatement aux urgences pédiatriques les plus proches.",
@@ -277,8 +223,7 @@ export const translations = {
       journey: "治疗旅程",
       tumors: "肿瘤指南",
       symptoms: "症状管理",
-      hospitals: "专科医院",
-      financial: "财务与福利",
+      support: "本地医疗与支持",
       skipToMain: "跳至主要内容",
       definitionOf: "定义：",
       medicalDisclaimer: "医疗免责声明",
@@ -298,7 +243,7 @@ export const translations = {
         "面对儿童肿瘤的确诊往往令人不知所措。我们专为在加拿大医疗体系中的家庭提供循序渐进、充满关怀且经医学验证的指南与支持。",
       trustBadge: "参照加拿大顶尖儿童肿瘤中心的指南开发。",
       startJourneyBtn: "开启治疗旅程",
-      financialBtn: "财务与福利指南",
+      supportBtn: "本地医疗与支持",
     },
     tumors: {
       title: "儿童肿瘤与恶性疾病指南",
@@ -324,22 +269,12 @@ export const translations = {
       sources: "权威临床来源",
       back: "返回症状护理列表",
     },
-    financial: {
-      title: "加拿大医疗财务与后勤支持",
+    support: {
+      title: "各省医疗与财务支持",
       subtitle:
-        "汇集加拿大各省医疗保险、联邦看护津贴、非处方药计划及慈善救助基金的权威信息。",
-    },
-    resources: {
-      title: "加拿大儿童肿瘤专科医院与家庭资源",
-      subtitle:
-        "确诊后找到对口的顶级专科医院与权威教育资源至关重要。以下为您梳理加拿大及国际知名的儿童肿瘤医疗中心。",
-      canadianTitle: "加拿大顶尖儿童肿瘤专科医院",
-      canadianSubtitle:
-        "加拿大拥有多所享誉全球的儿童医院，在儿童肿瘤临床治疗、细胞疗法和前沿科研方面处于领先地位。",
-      usTitle: "国际权威儿童肿瘤中心与资源",
-      usSubtitle:
-        "虽然本平台立足加拿大，但这些国际顶级机构为全球家庭提供了极具价值的权威科普与心理支持平台。",
-      visitWebsite: "访问患儿家庭教育中心 →",
+        "请选择您所在的省份或地区，查找专门的儿童肿瘤中心和财务援助项目。",
+      nationalTitle: "全国与国际备用资源",
+      nationalSubtitle: "这些项目和机构提供适用于全加拿大的医疗和福利支持。",
     },
     filter: {
       label: "选择您所在的省份或地区，查看针对性的医疗与资金支持：",
@@ -349,22 +284,6 @@ export const translations = {
       financialHeading: "省级药物与家庭经济资助项目",
       notesHeading: "跨省转诊与偏远地区就医说明：",
       selectedResources: " 资源",
-      provinces: {
-        Alberta: "阿尔伯塔省 (Alberta)",
-        "British Columbia": "不列颠哥伦比亚省 (British Columbia)",
-        Manitoba: "曼尼托巴省 (Manitoba)",
-        "New Brunswick": "新不伦瑞克省 (New Brunswick)",
-        "Newfoundland and Labrador":
-          "纽芬兰与拉布拉多省 (Newfoundland and Labrador)",
-        "Northwest Territories": "西北地区 (Northwest Territories)",
-        "Nova Scotia": "新斯科舍省 (Nova Scotia)",
-        Nunavut: "努纳武特地区 (Nunavut)",
-        Ontario: "安大略省 (Ontario)",
-        "Prince Edward Island": "爱德华王子岛 (Prince Edward Island)",
-        Quebec: "魁北克省 (Quebec)",
-        Saskatchewan: "萨斯喀彻温省 (Saskatchewan)",
-        Yukon: "育空地区 (Yukon)",
-      },
     },
     footer: {
       emergencyTitle: "加拿大紧急就医与24小时危机援助",
@@ -394,8 +313,7 @@ export const translations = {
       journeyBtn: "全流程治疗旅程",
       tumorsBtn: "儿童肿瘤指南",
       symptomsBtn: "居家症状护理",
-      financialBtn: "财务与福利支持",
-      resourcesBtn: "全国儿童专科医院",
+      supportBtn: "本地医疗与支持",
       emergencyHelp: "需要紧急医疗帮助？",
       emergencyNote:
         "如果您的孩子在治疗期间突发高热或出现紧急状况，请立即拨打 911 或前往最近的儿童医院急诊室。",

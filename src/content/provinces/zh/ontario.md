@@ -1,0 +1,34 @@
+---
+province_key: "Ontario"
+title: "安大略省"
+hospitals:
+  - name: "多伦多病童医院 (SickKids - 多伦多, 安大略省)"
+    desc: "加拿大科研实力最雄厚、规模最大的顶尖儿童医院，在白血病、神经肿瘤和 CAR-T 细胞疗法领域处于国际领先地位。"
+    linkText: "AboutKidsHealth"
+    linkUrl: "https://www.aboutkidshealth.ca/cancer"
+  - name: "东安大略儿童医院 (CHEO - 渥太华, 安大略省)"
+    desc: "双语儿童肿瘤中心，重点服务安省东部、魁省部分地区及努纳武特地区的因纽特患儿家庭。"
+    linkText: "CHEO Oncology"
+    linkUrl: "https://www.cheo.on.ca/"
+  - name: "麦克马斯特儿童医院 (McMaster Children's Hospital - 汉密尔顿, 安省)"
+    desc: "服务安大略省中南部的主要儿童三级医疗中心。"
+    linkText: "McMaster Oncology"
+    linkUrl: "https://www.hamiltonhealthsciences.ca/mcmaster-childrens-hospital/"
+  - name: "伦敦健康科学中心儿童医院 (London, 安省)"
+    desc: "安大略省西南部的专门儿童中心。"
+    linkText: "LHSC Oncology"
+    linkUrl: "https://www.lhsc.on.ca/childrens-hospital"
+  - name: "金斯顿健康科学中心 (Kingston, 安省)"
+    desc: "为安大略省东南部提供儿童肿瘤服务。"
+    linkText: "KHSC Pediatrics"
+    linkUrl: "https://kingstonhsc.ca/"
+financial:
+  - "OHIP+ (儿童及青年药物计划)"
+  - "Trillium 药物计划"
+  - "POGO 财务援助计划 (POFAP)"
+  - "北部健康旅行补助金 (NHTG)"
+  - "非医保健康福利 (NIHB)"
+lang: "zh"
+---
+
+庞大的省级医疗网络。CHEO 提供专门的因纽特和原住民导航员，支持努纳武特和安大略省北部的患者。

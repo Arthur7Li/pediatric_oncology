@@ -47,8 +47,7 @@ const homeUrl =
 const isJourney = cleanPath.includes("/journey");
 const isTumors = cleanPath.includes("/tumors");
 const isSymptoms = cleanPath.includes("/symptoms");
-const isResources = cleanPath.includes("/resources");
-const isFinancial = cleanPath.includes("/financial");
+const isSupport = cleanPath.includes("/support");
 
 const navItems = [
   {
@@ -67,14 +66,9 @@ const navItems = [
     active: isSymptoms,
   },
   {
-    name: t.nav.hospitals,
-    href: `${langPrefix}/resources`,
-    active: isResources,
-  },
-  {
-    name: t.nav.financial,
-    href: `${langPrefix}/financial`,
-    active: isFinancial,
+    name: t.nav.support,
+    href: `${langPrefix}/support`,
+    active: isSupport,
   },
 ];
 
@@ -83,8 +77,7 @@ function formatNavName(name: string, lang: Locale) {
   if (name === "治疗旅程") return { parts: ["治疗", "旅程"] };
   if (name === "肿瘤指南") return { parts: ["肿瘤", "指南"] };
   if (name === "症状管理") return { parts: ["症状", "管理"] };
-  if (name === "专科医院") return { parts: ["专科", "医院"] };
-  if (name === "财务与福利") return { parts: ["财务与", "福利"] };
+  if (name === "本地医疗与支持") return { parts: ["本地医疗", "与支持"] };
   return { parts: [name] };
 }
 ---

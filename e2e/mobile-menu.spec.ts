@@ -29,7 +29,7 @@ test.describe("Mobile Navigation Menu", () => {
       mobileMenu.getByRole("link", { name: "Symptoms" }),
     ).toBeVisible();
     await expect(
-      mobileMenu.getByRole("link", { name: "Financial Support" }),
+      mobileMenu.getByRole("link", { name: "Local Care & Support" }),
     ).toBeVisible();
 
     // Close mobile menu

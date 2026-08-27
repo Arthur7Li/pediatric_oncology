@@ -200,3 +200,13 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Maintained rigorous medical accuracy, empathetic tone, and trilingual consistency (EN, FR, ZH).
   - Appended Kingston Health Sciences Centre (ON) and CIUSSS de l'Estrie - CHU de Sherbrooke (QC) to `src/data/provincial_resources.json` (`MED-08`).
   - Verified local build and QA suites: `npm run check` (0 errors) and `npm run build` generated 96 static pages.
+
+**[19:15] Unified Provincial Support Route Consolidation**
+
+- **Action:** Migrated legacy Hospitals and Financial Support routes into a single, unified localized `/support` route powered by an Astro Content Collection.
+- **Details:**
+  - Designed and executed an Astro Content Collection migration mapping 13 provinces across 3 languages (39 markdown files) to solve the i18n architectural flaw where `provincial_resources.json` was entirely hardcoded in English.
+  - Refactored `ProvincialFilter.astro` custom element to map client-side filtering via JSON serialized collection data, injecting semantic DOM nodes.
+  - Consolidated `src/pages/[lang]/financial.astro` and `src/pages/[lang]/resources.astro` into `src/pages/[lang]/support.astro`, updating routing components including `Header.astro`, `Footer.astro`, root `index.astro`, and `404.astro`.
+  - Added redirect mappings in `astro.config.mjs` for existing bookmarks or external SEO equity.
+  - Verified CI/QA local pipeline passing: `npm run ci` output 0 errors, 92 generated static pages, 5/5 Playwright tests (with `mobile-menu` and `provincial-filter` updated).

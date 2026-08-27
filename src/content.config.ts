@@ -44,8 +44,27 @@ const symptomsCollection = defineCollection({
   }),
 });
 
+const provincesCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/provinces" }),
+  schema: z.object({
+    province_key: z.string(),
+    title: z.string(),
+    hospitals: z.array(
+      z.object({
+        name: z.string(),
+        desc: z.string(),
+        linkText: z.string(),
+        linkUrl: z.string(),
+      }),
+    ),
+    financial: z.array(z.string()),
+    lang: z.enum(["en", "fr", "zh"]),
+  }),
+});
+
 export const collections = {
   journey: journeyCollection,
   tumors: tumorsCollection,
   symptoms: symptomsCollection,
+  provinces: provincesCollection,
 };
