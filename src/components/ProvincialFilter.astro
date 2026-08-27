@@ -120,6 +120,13 @@ const serializedProvinces = provincesContent.map((p) => ({
 
         if (data) {
           display.classList.remove("hidden");
+          const nationalSection = document.getElementById(
+            "national-fallback-section",
+          );
+          if (nationalSection) {
+            nationalSection.classList.add("hidden");
+          }
+
           if (displayProvince) {
             displayProvince.textContent = data.title + selectedResourcesStr;
           }

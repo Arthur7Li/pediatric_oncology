@@ -210,3 +210,9 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Consolidated `src/pages/[lang]/financial.astro` and `src/pages/[lang]/resources.astro` into `src/pages/[lang]/support.astro`, updating routing components including `Header.astro`, `Footer.astro`, root `index.astro`, and `404.astro`.
   - Added redirect mappings in `astro.config.mjs` for existing bookmarks or external SEO equity.
   - Verified CI/QA local pipeline passing: `npm run ci` output 0 errors, 92 generated static pages, 5/5 Playwright tests (with `mobile-menu` and `provincial-filter` updated).
+
+**[19:25] Hotfix: Unified Provincial Support Route Toggle**
+
+- **Action:** Fixed a UX issue where the National Fallback section was not hidden upon selecting a province.
+- **Details:** 
+  - Assigned an ID to the fallback section and modified the `ProvincialFilter` web component's `connectedCallback` to correctly hide the fallback resources when the UI "switches" to displaying the selected province's specific resources.
