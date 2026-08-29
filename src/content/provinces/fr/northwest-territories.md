@@ -7,9 +7,15 @@ hospitals:
     linkText: "Santé T.N.-O."
     linkUrl: "https://www.nthssa.ca/"
 financial:
-  - "Services de déplacements pour raisons médicales des T.N.-O."
-  - "Services de santé non assurés (SSNA)"
-  - "Société des enfants atteints de cancer (Edmonton)"
+  - name: "Services de déplacements pour raisons médicales des T.N.-O."
+    desc: "Programme de soutien financier: Services de déplacements pour raisons médicales des T.N.-O."
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
+  - name: "Société des enfants atteints de cancer (Edmonton)"
+    desc: "Programme de soutien financier: Société des enfants atteints de cancer (Edmonton)"
+    url: ""
 lang: "fr"
 ---
 

@@ -19,7 +19,7 @@ test.describe("Language Switching & I18n", () => {
     await expect(page.locator("h1")).toContainText(
       "Phase 1 : Premiers symptômes et diagnostic",
     );
-    await expect(page.getByText(/Étape 1 de 6/i)).toBeVisible();
+    await expect(page.getByText(/Étape 1 de 7/i)).toBeVisible();
 
     // Click Chinese language toggle in desktop header
     const zhToggle = page.locator('header a[hreflang="zh"]').first();

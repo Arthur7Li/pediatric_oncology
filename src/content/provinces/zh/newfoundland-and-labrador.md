@@ -7,10 +7,18 @@ hospitals:
     linkText: "Janeway Oncology"
     linkUrl: "https://easternhealth.ca/"
 financial:
-  - "纽芬兰与拉布拉多处方药计划 (NLPDP)"
-  - "纽芬兰点烛人慈善"
-  - "Dr. Jack Hand 基金会"
-  - "非医保健康福利 (NIHB)"
+  - name: "纽芬兰与拉布拉多处方药计划 (NLPDP)"
+    desc: "财务支持计划：纽芬兰与拉布拉多处方药计划 (NLPDP)"
+    url: ""
+  - name: "纽芬兰点烛人慈善"
+    desc: "财务支持计划：纽芬兰点烛人慈善"
+    url: ""
+  - name: "Dr. Jack Hand 基金会"
+    desc: "财务支持计划：Dr. Jack Hand 基金会"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

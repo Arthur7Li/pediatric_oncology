@@ -7,9 +7,15 @@ hospitals:
     linkText: "Health PEI"
     linkUrl: "https://www.princeedwardisland.ca/en/topic/health-pei"
 financial:
-  - "PEI Pharmacare Catastrophic Drug Program"
-  - "IWK Foundation"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "PEI Pharmacare Catastrophic Drug Program"
+    desc: "Financial support program: PEI Pharmacare Catastrophic Drug Program"
+    url: ""
+  - name: "IWK Foundation"
+    desc: "IWK hospital family comfort fund"
+    url: "https://iwkfoundation.org/"
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

@@ -7,9 +7,15 @@ hospitals:
     linkText: "Health PEI"
     linkUrl: "https://www.princeedwardisland.ca/en/topic/health-pei"
 financial:
-  - "PEI 大病药物计划"
-  - "IWK 基金会"
-  - "非医保健康福利 (NIHB)"
+  - name: "PEI 大病药物计划"
+    desc: "财务支持计划：PEI 大病药物计划"
+    url: ""
+  - name: "IWK 基金会"
+    desc: "财务支持计划：IWK 基金会"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

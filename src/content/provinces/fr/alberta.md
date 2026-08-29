@@ -11,10 +11,18 @@ hospitals:
     linkText: "ACH Oncology"
     linkUrl: "https://www.albertahealthservices.ca/ach/ach.aspx"
 financial:
-  - "Société des enfants atteints de cancer"
-  - "Prestation de santé pour enfants de l'Alberta"
-  - "Helping Families Handle Cancer"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Société des enfants atteints de cancer"
+    desc: "Programme de soutien financier: Société des enfants atteints de cancer"
+    url: ""
+  - name: "Prestation de santé pour enfants de l'Alberta"
+    desc: "Programme de soutien financier: Prestation de santé pour enfants de l'Alberta"
+    url: ""
+  - name: "Helping Families Handle Cancer"
+    desc: "Programme de soutien financier: Helping Families Handle Cancer"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

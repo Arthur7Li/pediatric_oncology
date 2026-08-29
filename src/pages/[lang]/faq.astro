@@ -1,0 +1,311 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "zh" } },
+  ];
+}
+
+const { lang } = Astro.params;
+
+const allFaqs = await getCollection("faq", (entry) => entry.data.lang === lang);
+
+const headers = {
+  en: {
+    title: "Frequently Asked Questions",
+    subtitle:
+      "Compassionate, evidence-based answers to the questions families ask most.",
+  },
+  fr: {
+    title: "Questions fréquentes",
+    subtitle:
+      "Des réponses bienveillantes et fondées sur des données probantes aux questions les plus posées par les familles.",
+  },
+  zh: {
+    title: "常见问题",
+    subtitle: "为患儿家庭最常提出的问题提供有据可依、充满关怀的解答。",
+  },
+};
+
+const categoryNames = {
+  en: {
+    diagnosis: "Diagnosis & Early Days",
+    treatment: "Treatment & Procedures",
+    "side-effects": "Side Effects & Daily Life",
+    financial: "Financial & Practical",
+    emotional: "Emotional & Family",
+    misconceptions: "Common Misconceptions",
+  },
+  fr: {
+    diagnosis: "Diagnostic et premiers jours",
+    treatment: "Traitement et procédures",
+    "side-effects": "Effets secondaires et vie quotidienne",
+    financial: "Finances et aspects pratiques",
+    emotional: "Émotions et famille",
+    misconceptions: "Idées reçues",
+  },
+  zh: {
+    diagnosis: "诊断与初期",
+    treatment: "治疗与手术",
+    "side-effects": "副作用与日常生活",
+    financial: "经济与实际问题",
+    emotional: "情感与家庭",
+    misconceptions: "常见误解",
+  },
+};
+
+const labels = {
+  en: {
+    myth: "Myth",
+    fact: "Fact",
+    expandAll: "Expand All",
+    collapseAll: "Collapse All",
+  },
+  fr: {
+    myth: "Mythe",
+    fact: "Réalité",
+    expandAll: "Tout déplier",
+    collapseAll: "Tout replier",
+  },
+  zh: {
+    myth: "误解",
+    fact: "事实",
+    expandAll: "全部展开",
+    collapseAll: "全部收起",
+  },
+};
+
+const pageHeader = headers[lang as keyof typeof headers];
+const catNames = categoryNames[lang as keyof typeof categoryNames];
+const currentLabels = labels[lang as keyof typeof labels];
+
+// Sort faq collections based on a specific order
+const order = [
+  "diagnosis",
+  "treatment",
+  "side-effects",
+  "financial",
+  "emotional",
+  "misconceptions",
+];
+allFaqs.sort(
+  (a, b) => order.indexOf(a.data.category) - order.indexOf(b.data.category),
+);
+
+// Prepare JSON-LD schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: allFaqs.flatMap((cat) =>
+    cat.data.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  ),
+};
+---
+
+<Layout title={pageHeader.title} lang={lang}>
+  <head>
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(faqSchema)}
+    />
+  </head>
+
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Breadcrumbs
+      crumbs={[{ label: pageHeader.title, href: `/${lang}/faq` }]}
+      lang={lang}
+    />
+
+    <header class="mb-10 text-center">
+      <h1 class="text-4xl font-bold mb-4">{pageHeader.title}</h1>
+      <p class="text-xl text-gray-600">{pageHeader.subtitle}</p>
+    </header>
+
+    <div
+      class="mb-8 flex flex-col md:flex-row justify-between items-center gap-4"
+    >
+      <div class="w-full md:w-1/2 relative">
+        <input
+          type="text"
+          id="faq-search"
+          placeholder="Search..."
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+        />
+      </div>
+      <div class="flex gap-4">
+        <button
+          id="expand-all"
+          class="text-sm px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded text-gray-700 transition"
+        >
+          {currentLabels.expandAll}
+        </button>
+        <button
+          id="collapse-all"
+          class="text-sm px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded text-gray-700 transition"
+        >
+          {currentLabels.collapseAll}
+        </button>
+      </div>
+    </div>
+
+    <main data-pagefind-body class="space-y-12">
+      {
+        allFaqs.map((section) => (
+          <section class="faq-section" data-category={section.data.category}>
+            <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2 border-b pb-2">
+              <span class="text-3xl">{section.data.category_icon}</span>
+              {catNames[section.data.category as keyof typeof catNames]}
+            </h2>
+
+            <div class="space-y-4">
+              {section.data.items.map((item) => {
+                const isMisconception =
+                  section.data.category === "misconceptions";
+                return (
+                  <details class="faq-item group bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 hover:bg-gray-50 transition-colors">
+                      {isMisconception ? (
+                        <div class="flex items-start gap-3">
+                          <span class="inline-block mt-0.5 px-2 py-0.5 border border-red-500 text-red-600 text-xs font-bold rounded uppercase tracking-wider shrink-0">
+                            {currentLabels.myth}
+                          </span>
+                          <span class="text-lg faq-question">
+                            {item.question.replace(
+                              /^Myth:\s*|^Mythe\s*:\s*|^误解：\s*/i,
+                              "",
+                            )}
+                          </span>
+                        </div>
+                      ) : (
+                        <span class="text-lg faq-question">
+                          {item.question}
+                        </span>
+                      )}
+                      <span class="transition group-open:rotate-180 ml-4 shrink-0">
+                        <svg
+                          fill="none"
+                          height="24"
+                          shape-rendering="geometricPrecision"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                          viewBox="0 0 24 24"
+                          width="24"
+                        >
+                          <path d="M6 9l6 6 6-6" />
+                        </svg>
+                      </span>
+                    </summary>
+
+                    {isMisconception ? (
+                      <div class="p-4 pt-2 border-t border-gray-100">
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r">
+                          <p class="font-bold text-green-800 mb-1">
+                            {currentLabels.fact}
+                          </p>
+                          <p class="text-green-900 faq-answer leading-relaxed">
+                            {item.answer}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div class="p-4 pt-2 text-gray-700 faq-answer border-t border-gray-100 leading-relaxed">
+                        {item.answer}
+                      </div>
+                    )}
+                  </details>
+                );
+              })}
+            </div>
+          </section>
+        ))
+      }
+    </main>
+
+    <div class="mt-16 p-6 bg-blue-50 text-blue-800 rounded-lg text-sm">
+      <p class="font-semibold mb-2">Medical Disclaimer</p>
+      <p>
+        The information provided on this page is for educational purposes only
+        and is not a substitute for professional medical advice, diagnosis, or
+        treatment. Always seek the advice of your physician or other qualified
+        health provider with any questions you may have regarding a medical
+        condition.
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById(
+      "faq-search",
+    ) as HTMLInputElement;
+    const expandAllBtn = document.getElementById("expand-all");
+    const collapseAllBtn = document.getElementById("collapse-all");
+    const detailsElements = document.querySelectorAll("details.faq-item");
+
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        const query = (e.target as HTMLInputElement).value.toLowerCase();
+
+        detailsElements.forEach((el) => {
+          const details = el as HTMLElement;
+          const question =
+            details
+              .querySelector(".faq-question")
+              ?.textContent?.toLowerCase() || "";
+          const answer =
+            details.querySelector(".faq-answer")?.textContent?.toLowerCase() ||
+            "";
+          const section = details.closest(".faq-section") as HTMLElement;
+
+          if (question.includes(query) || answer.includes(query)) {
+            details.style.display = "";
+          } else {
+            details.style.display = "none";
+          }
+
+          // Show/hide sections based on whether they have visible children
+          if (section) {
+            const visibleItems = section.querySelectorAll(
+              "details.faq-item:not([style*='display: none'])",
+            );
+            section.style.display = visibleItems.length > 0 ? "" : "none";
+          }
+        });
+      });
+    }
+
+    if (expandAllBtn) {
+      expandAllBtn.addEventListener("click", () => {
+        detailsElements.forEach((el) => {
+          const details = el as HTMLElement;
+          details.setAttribute("open", "");
+        });
+      });
+    }
+
+    if (collapseAllBtn) {
+      collapseAllBtn.addEventListener("click", () => {
+        detailsElements.forEach((el) => {
+          const details = el as HTMLElement;
+          details.removeAttribute("open");
+        });
+      });
+    }
+  });
+</script>

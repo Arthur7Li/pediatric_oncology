@@ -19,9 +19,15 @@ hospitals:
     linkText: "CHU de Sherbrooke"
     linkUrl: "https://www.santeestrie.qc.ca/"
 financial:
-  - "RAMQ 公共处方药计划"
-  - "Leucan 财务与家庭服务"
-  - "非医保健康福利 (NIHB)"
+  - name: "RAMQ 公共处方药计划"
+    desc: "财务支持计划：RAMQ 公共处方药计划"
+    url: ""
+  - name: "Leucan 财务与家庭服务"
+    desc: "财务支持计划：Leucan 财务与家庭服务"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

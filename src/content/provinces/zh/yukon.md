@@ -7,9 +7,15 @@ hospitals:
     linkText: "Yukon Hospitals"
     linkUrl: "https://yukonhospitals.ca/"
 financial:
-  - "育空地区医疗旅行计划"
-  - "育空药物计划"
-  - "非医保健康福利 (NIHB)"
+  - name: "育空地区医疗旅行计划"
+    desc: "财务支持计划：育空地区医疗旅行计划"
+    url: ""
+  - name: "育空药物计划"
+    desc: "财务支持计划：育空药物计划"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

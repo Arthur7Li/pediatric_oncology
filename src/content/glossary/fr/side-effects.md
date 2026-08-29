@@ -1,0 +1,21 @@
+---
+category: "side-effects"
+terms:
+  - term: "Fièvre neutropénique"
+    definition: "Lorsqu'un enfant a de la fièvre alors que ses globules blancs qui combattent les infections (PNN) sont bas. C'est une urgence médicale."
+  - term: "Mucosite"
+    definition: "Inflammation douloureuse et plaies dans la bouche, la gorge ou le tube digestif causées par la chimiothérapie."
+  - term: "Alopécie"
+    definition: "Le terme médical pour la perte de cheveux, un effet secondaire courant et généralement temporaire de nombreux médicaments de chimiothérapie."
+  - term: "Nausées et vomissements"
+    definition: "Les termes médicaux pour le fait de se sentir mal à l'estomac. Les médecins disposent d'excellents médicaments anti-nauséeux pour aider à prévenir cela."
+  - term: "Neuropathie"
+    definition: "Lésion nerveuse qui peut causer des picotements, un engourdissement ou des douleurs, généralement dans les mains ou les pieds."
+  - term: "Syndrome de lyse tumorale"
+    definition: "Une condition qui survient lorsque de nombreuses cellules cancéreuses meurent rapidement et libèrent leur contenu dans le sang. Cela peut fatiguer les reins."
+  - term: "Maladie du greffon contre l'hôte (GVHD)"
+    definition: "Une complication après une greffe de cellules souches allogéniques où les cellules immunitaires du donneur attaquent le corps du patient."
+  - term: "Sepsis"
+    definition: "Une réponse sévère et potentiellement mortelle du corps entier à une infection. Traitée de manière agressive chez les enfants sous chimio."
+lang: "fr"
+---

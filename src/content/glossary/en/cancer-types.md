@@ -1,0 +1,21 @@
+---
+category: "cancer-types"
+terms:
+  - term: "Leukemia"
+    definition: "A cancer of the blood and bone marrow, and the most common type of childhood cancer. The two most common pediatric types are ALL and AML."
+  - term: "Lymphoma"
+    definition: "A cancer that starts in the lymphatic system, part of the body's immune system. Hodgkin and Non-Hodgkin are the two main types in children."
+  - term: "Sarcoma"
+    definition: "A type of cancer that grows in bones or soft tissues like muscle, fat, or cartilage. Osteosarcoma and Ewing sarcoma are common in older children and teens."
+  - term: "Blastoma"
+    definition: "A type of cancer caused by malignancies in developing cells, commonly seen in children. Examples include neuroblastoma, nephroblastoma/Wilms tumor, and medulloblastoma."
+  - term: "Malignant"
+    definition: "The medical term for cancerous tumors that can grow aggressively and spread to other parts of the body."
+  - term: "Benign"
+    definition: "A tumor that is not cancerous and generally will not spread. However, benign tumors in the brain can still cause serious problems."
+  - term: "Metastasis"
+    definition: "The spread of cancer cells from where they first started to new areas of the body."
+  - term: "Remission"
+    definition: "A period when all signs of the cancer are gone from tests and scans. It is the primary goal of initial cancer treatment."
+lang: "en"
+---

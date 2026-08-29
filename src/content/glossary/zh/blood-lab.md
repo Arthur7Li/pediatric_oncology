@@ -1,0 +1,21 @@
+---
+category: "blood-lab"
+terms:
+  - term: "全血细胞计数 (CBC)"
+    definition: "一种非常常见的血液检测，用于计算红细胞、白细胞和血小板的数量。治疗期间会经常听到这个检测。"
+  - term: "血红蛋白 (Hemoglobin, Hb)"
+    definition: "红细胞中负责在全身输送氧气的蛋白质。血红蛋白偏低会使孩子感到非常疲倦或脸色苍白。"
+  - term: "血小板 (Platelets)"
+    definition: "帮助血液凝固止血的微小细胞碎片。如果血小板低，您的孩子可能容易出现瘀伤或流鼻血。"
+  - term: "白细胞 (White Blood Cells, WBC)"
+    definition: "抵抗感染的身体防御系统细胞。治疗通常会降低白细胞数量，使孩子更容易生病。"
+  - term: "绝对中性粒细胞计数 (ANC)"
+    definition: "抵抗细菌感染的特定白细胞（中性粒细胞）的测量值。如果ANC很低，孩子感染严重疾病的风险会高得多。"
+  - term: "中性粒细胞减少症 (Neutropenia)"
+    definition: "中性粒细胞数量处于危险低水平的情况。在此期间，即使是轻微发烧也会被视为医疗紧急情况处理。"
+  - term: "血小板减少症 (Thrombocytopenia)"
+    definition: "表示血小板计数低的医学术语，意味着血液不能很好地凝固，您的孩子可能需要输注血小板。"
+  - term: "贫血 (Anemia)"
+    definition: "由红细胞数量少或血红蛋白低引起的情况，通常需要输血以帮助孩子恢复活力。"
+lang: "zh"
+---

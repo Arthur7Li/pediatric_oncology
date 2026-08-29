@@ -7,9 +7,15 @@ hospitals:
     linkText: "JPCH Oncology"
     linkUrl: "https://pattisonchildrens.ca/"
 financial:
-  - "萨斯喀彻温省家庭健康福利"
-  - "CIBC 儿童肿瘤家庭慰问基金"
-  - "非医保健康福利 (NIHB)"
+  - name: "萨斯喀彻温省家庭健康福利"
+    desc: "财务支持计划：萨斯喀彻温省家庭健康福利"
+    url: ""
+  - name: "CIBC 儿童肿瘤家庭慰问基金"
+    desc: "财务支持计划：CIBC 儿童肿瘤家庭慰问基金"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

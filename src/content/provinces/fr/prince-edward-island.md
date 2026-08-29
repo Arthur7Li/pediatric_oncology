@@ -7,9 +7,15 @@ hospitals:
     linkText: "Santé Î.-P.-É."
     linkUrl: "https://www.princeedwardisland.ca/fr/sujet/sante-i-p-e"
 financial:
-  - "Programme de médicaments pour maladies catastrophiques de l'Î.-P.-É."
-  - "Fondation IWK"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Programme de médicaments pour maladies catastrophiques de l'Î.-P.-É."
+    desc: "Programme de soutien financier: Programme de médicaments pour maladies catastrophiques de l'Î.-P.-É."
+    url: ""
+  - name: "Fondation IWK"
+    desc: "Programme de soutien financier: Fondation IWK"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

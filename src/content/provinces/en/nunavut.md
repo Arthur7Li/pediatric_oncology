@@ -7,8 +7,12 @@ hospitals:
     linkText: "QGH Health"
     linkUrl: "https://www.gov.nu.ca/"
 financial:
-  - "Nunavut Medical Travel Program"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "Nunavut Medical Travel Program"
+    desc: "Financial support program: Nunavut Medical Travel Program"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

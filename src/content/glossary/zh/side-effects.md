@@ -1,0 +1,21 @@
+---
+category: "side-effects"
+terms:
+  - term: "中性粒细胞减少性发热 (Neutropenic Fever)"
+    definition: "当孩子发烧且抗感染白细胞（ANC）偏低时的情况。这是医疗急症，需立即去医院接受静脉抗生素治疗。"
+  - term: "黏膜炎 (Mucositis)"
+    definition: "由化疗引起的口腔、咽喉或消化道的疼痛性炎症和溃疡，可能导致饮食困难。"
+  - term: "脱发 (Alopecia)"
+    definition: "脱发的医学术语，这是许多化疗药物和放疗常见且通常是暂时的副作用。"
+  - term: "恶心和呕吐 (Nausea and Emesis)"
+    definition: "感到胃部不适和呕吐的医学术语。医生有极好的止吐药物来帮助预防这种情况。"
+  - term: "神经病变 (Neuropathy)"
+    definition: "神经损伤可能导致通常在手或脚部的刺痛、麻木或疼痛。在儿童中，这也可能引起便秘或使行走困难。"
+  - term: "肿瘤溶解综合征 (Tumor Lysis Syndrome, TLS)"
+    definition: "当大量癌细胞迅速死亡并将其内容物释放到血液中时发生的情况，它会对肾脏造成负担，因此会给孩子注射大量静脉输液。"
+  - term: "移植物抗宿主病 (GVHD)"
+    definition: "异基因干细胞移植后的并发症，捐献者的免疫细胞攻击患者身体，可能影响皮肤、肝脏或肠道。"
+  - term: "败血症 (Sepsis)"
+    definition: "对感染产生的严重、危及生命的全身性反应。因为化疗期间儿童免疫系统较弱，医生会积极治疗任何感染迹象。"
+lang: "zh"
+---

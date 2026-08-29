@@ -1,0 +1,21 @@
+---
+category: "cancer-types"
+terms:
+  - term: "Leucémie"
+    definition: "Un cancer du sang et de la moelle osseuse, et le type de cancer infantile le plus courant (ex: LAL et LMA)."
+  - term: "Lymphome"
+    definition: "Un cancer qui commence dans le système lymphatique, une partie du système immunitaire du corps (Hodgkin et non-hodgkinien)."
+  - term: "Sarcome"
+    definition: "Un type de cancer qui se développe dans les os ou les tissus mous comme les muscles, la graisse ou le cartilage."
+  - term: "Blastome"
+    definition: "Un type de cancer causé par des tumeurs malignes dans les cellules en développement, fréquemment observé chez les enfants (ex: neuroblastome)."
+  - term: "Malin"
+    definition: "Terme médical pour les tumeurs cancéreuses qui peuvent se développer de manière agressive et se propager à d'autres parties du corps."
+  - term: "Bénin"
+    definition: "Une tumeur qui n'est pas cancéreuse et qui, généralement, ne se propagera pas. Toutefois, dans le cerveau, elles peuvent causer de graves problèmes."
+  - term: "Métastase"
+    definition: "La propagation de cellules cancéreuses de l'endroit où elles ont commencé à de nouvelles zones du corps."
+  - term: "Rémission"
+    definition: "Période au cours de laquelle tous les signes du cancer ont disparu des examens et des scans. C'est l'objectif principal du traitement initial."
+lang: "fr"
+---

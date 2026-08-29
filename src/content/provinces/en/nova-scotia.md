@@ -7,9 +7,15 @@ hospitals:
     linkText: "IWK Health Oncology Program"
     linkUrl: "https://www.iwk.nshealth.ca/"
 financial:
-  - "Nova Scotia Family Pharmacare"
-  - "IWK Foundation Family Comfort Fund"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "Nova Scotia Family Pharmacare"
+    desc: "Financial support program: Nova Scotia Family Pharmacare"
+    url: ""
+  - name: "IWK Foundation Family Comfort Fund"
+    desc: "Financial support program: IWK Foundation Family Comfort Fund"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

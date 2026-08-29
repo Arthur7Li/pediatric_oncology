@@ -7,9 +7,15 @@ hospitals:
     linkText: "NWT Health"
     linkUrl: "https://www.nthssa.ca/"
 financial:
-  - "西北地区医疗旅行服务"
-  - "非医保健康福利 (NIHB)"
-  - "癌症儿童协会 (埃德蒙顿)"
+  - name: "西北地区医疗旅行服务"
+    desc: "财务支持计划：西北地区医疗旅行服务"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
+  - name: "癌症儿童协会 (埃德蒙顿)"
+    desc: "财务支持计划：癌症儿童协会 (埃德蒙顿)"
+    url: ""
 lang: "zh"
 ---
 

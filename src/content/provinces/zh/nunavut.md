@@ -7,8 +7,12 @@ hospitals:
     linkText: "QGH Health"
     linkUrl: "https://www.gov.nu.ca/"
 financial:
-  - "努纳武特医疗旅行计划"
-  - "非医保健康福利 (NIHB)"
+  - name: "努纳武特医疗旅行计划"
+    desc: "财务支持计划：努纳武特医疗旅行计划"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

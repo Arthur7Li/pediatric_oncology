@@ -1,0 +1,21 @@
+---
+category: "blood-lab"
+terms:
+  - term: "Complete Blood Count (CBC)"
+    definition: "A very common blood test that counts the number of red blood cells, white blood cells, and platelets. You will hear about this test frequently during treatment."
+  - term: "Hemoglobin (Hb)"
+    definition: "The protein in red blood cells that carries oxygen around the body. Low hemoglobin can make your child feel very tired or look pale."
+  - term: "Platelets"
+    definition: "Tiny cell fragments that help the blood clot to stop bleeding. If platelets are low, your child may bruise easily or get nosebleeds."
+  - term: "White Blood Cells (WBC)"
+    definition: "The body's defense system cells that fight off infections. Treatment often lowers WBCs, making kids more vulnerable to getting sick."
+  - term: "Absolute Neutrophil Count (ANC)"
+    definition: "A measure of the specific white blood cells (neutrophils) that fight bacterial infections. If the ANC is low, your child is at a much higher risk of catching a serious infection."
+  - term: "Neutropenia"
+    definition: "A condition where the number of neutrophils is dangerously low. During neutropenia, even a mild fever is treated as a medical emergency."
+  - term: "Thrombocytopenia"
+    definition: "A medical term for having a low platelet count. It means the blood cannot clot well, and your child might need a platelet transfusion."
+  - term: "Anemia"
+    definition: "A condition caused by a low number of red blood cells or low hemoglobin. It often requires a blood transfusion to help your child feel energetic again."
+lang: "en"
+---

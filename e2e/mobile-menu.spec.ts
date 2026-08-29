@@ -26,7 +26,7 @@ test.describe("Mobile Navigation Menu", () => {
       mobileMenu.getByRole("link", { name: "Tumor Guides" }),
     ).toBeVisible();
     await expect(
-      mobileMenu.getByRole("link", { name: "Symptoms" }),
+      mobileMenu.getByRole("link", { name: "Symptom Care" }),
     ).toBeVisible();
     await expect(
       mobileMenu.getByRole("link", { name: "Local Care & Support" }),

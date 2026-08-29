@@ -7,9 +7,15 @@ hospitals:
     linkText: "Programme d'oncologie IWK"
     linkUrl: "https://www.iwk.nshealth.ca/"
 financial:
-  - "Régime d'assurance-médicaments familial de la Nouvelle-Écosse"
-  - "Fonds de réconfort familial de la Fondation IWK"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Régime d'assurance-médicaments familial de la Nouvelle-Écosse"
+    desc: "Programme de soutien financier: Régime d'assurance-médicaments familial de la Nouvelle-Écosse"
+    url: ""
+  - name: "Fonds de réconfort familial de la Fondation IWK"
+    desc: "Programme de soutien financier: Fonds de réconfort familial de la Fondation IWK"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

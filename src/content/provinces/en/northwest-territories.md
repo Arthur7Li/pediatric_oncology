@@ -7,9 +7,15 @@ hospitals:
     linkText: "NWT Health"
     linkUrl: "https://www.nthssa.ca/"
 financial:
-  - "NWT Medical Travel Service"
-  - "Non-Insured Health Benefits (NIHB)"
-  - "Kids with Cancer Society (Edmonton)"
+  - name: "NWT Medical Travel Service"
+    desc: "Financial support program: NWT Medical Travel Service"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
+  - name: "Kids with Cancer Society (Edmonton)"
+    desc: "Financial support program: Kids with Cancer Society (Edmonton)"
+    url: ""
 lang: "en"
 ---
 

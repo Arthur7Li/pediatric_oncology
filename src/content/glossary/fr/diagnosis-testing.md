@@ -1,0 +1,21 @@
+---
+category: "diagnosis-testing"
+terms:
+  - term: "Biopsie"
+    definition: "Une procédure où un minuscule morceau de tissu est prélevé pour être examiné au microscope. C'est souvent le meilleur moyen de savoir avec certitude si une grosseur ou une masse est un cancer."
+  - term: "Stadification"
+    definition: "Le processus pour déterminer la quantité de cancer dans le corps et s'il s'est propagé. Les médecins utilisent ces informations pour planifier le traitement le plus sûr et le plus efficace."
+  - term: "Aspiration de la moelle osseuse"
+    definition: "Un test où une petite quantité de moelle osseuse liquide est prélevée, généralement dans l'os de la hanche, à l'aide d'une aiguille. Il aide les médecins à voir s'il y a des cellules cancéreuses à l'intérieur de la moelle osseuse."
+  - term: "Ponction lombaire"
+    definition: "Une procédure où une fine aiguille est placée dans le bas du dos pour prélever le liquide céphalo-rachidien (LCR). Elle vérifie si les cellules cancéreuses se sont propagées au liquide entourant le cerveau et la moelle épinière."
+  - term: "IRM (Imagerie par Résonance Magnétique)"
+    definition: "Un scan qui utilise des aimants puissants et des ondes radio pour créer des images détaillées de l'intérieur du corps. Il n'utilise pas de rayonnement."
+  - term: "Tomodensitométrie (Scanner CT)"
+    definition: "Un scan qui prend de nombreuses images aux rayons X sous différents angles pour créer des images en coupe du corps."
+  - term: "Tomographie par Émission de Positons (TEP)"
+    definition: "Un scan qui utilise une petite quantité de sucre radioactif pour trouver les cellules cancéreuses, qui ont tendance à absorber plus de sucre que les cellules normales."
+  - term: "Pathologie"
+    definition: "L'étude des maladies en examinant les tissus et les cellules au microscope. Un pathologiste est le médecin spécialisé qui examine la biopsie de votre enfant."
+lang: "fr"
+---

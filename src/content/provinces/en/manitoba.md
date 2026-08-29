@@ -7,10 +7,18 @@ hospitals:
     linkText: "CancerCare MB"
     linkUrl: "https://www.cancercare.mb.ca/"
 financial:
-  - "Manitoba Pharmacare"
-  - "Manitoba Candlelighters Benevolent Fund"
-  - "Variety Manitoba"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "Manitoba Pharmacare"
+    desc: "MB income-based drug coverage"
+    url: "https://www.gov.mb.ca/health/pharmacare/"
+  - name: "Manitoba Candlelighters Benevolent Fund"
+    desc: "Financial support program: Manitoba Candlelighters Benevolent Fund"
+    url: ""
+  - name: "Variety Manitoba"
+    desc: "Financial support program: Variety Manitoba"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

@@ -19,9 +19,15 @@ hospitals:
     linkText: "CHU de Sherbrooke"
     linkUrl: "https://www.santeestrie.qc.ca/"
 financial:
-  - "Régime public d'assurance-médicaments de la RAMQ"
-  - "Services financiers et familiaux de Leucan"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Régime public d'assurance-médicaments de la RAMQ"
+    desc: "Programme de soutien financier: Régime public d'assurance-médicaments de la RAMQ"
+    url: ""
+  - name: "Services financiers et familiaux de Leucan"
+    desc: "Programme de soutien financier: Services financiers et familiaux de Leucan"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

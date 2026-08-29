@@ -7,9 +7,15 @@ hospitals:
     linkText: "Hôpitaux du Yukon"
     linkUrl: "https://yukonhospitals.ca/"
 financial:
-  - "Programme de déplacements pour raisons médicales du Yukon"
-  - "Assurance-médicaments du Yukon"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Programme de déplacements pour raisons médicales du Yukon"
+    desc: "Programme de soutien financier: Programme de déplacements pour raisons médicales du Yukon"
+    url: ""
+  - name: "Assurance-médicaments du Yukon"
+    desc: "Programme de soutien financier: Assurance-médicaments du Yukon"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

@@ -11,10 +11,18 @@ hospitals:
     linkText: "ACH Oncology"
     linkUrl: "https://www.albertahealthservices.ca/ach/ach.aspx"
 financial:
-  - "癌症儿童协会"
-  - "阿尔伯塔省儿童健康福利"
-  - "帮助家庭应对癌症基金"
-  - "非医保健康福利 (NIHB)"
+  - name: "癌症儿童协会"
+    desc: "财务支持计划：癌症儿童协会"
+    url: ""
+  - name: "阿尔伯塔省儿童健康福利"
+    desc: "财务支持计划：阿尔伯塔省儿童健康福利"
+    url: ""
+  - name: "帮助家庭应对癌症基金"
+    desc: "财务支持计划：帮助家庭应对癌症基金"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

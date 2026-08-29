@@ -1,0 +1,21 @@
+---
+category: "blood-lab"
+terms:
+  - term: "Hémogramme complet (NFS)"
+    definition: "Un test sanguin très courant qui compte le nombre de globules rouges, de globules blancs et de plaquettes. Vous entendrez souvent parler de ce test."
+  - term: "Hémoglobine (Hb)"
+    definition: "La protéine des globules rouges qui transporte l'oxygène dans tout le corps. Une faible hémoglobine peut rendre votre enfant très fatigué ou pâle."
+  - term: "Plaquettes"
+    definition: "De minuscules fragments cellulaires qui aident le sang à coaguler pour arrêter les saignements. Si les plaquettes sont basses, votre enfant peut avoir des ecchymoses facilement."
+  - term: "Globules blancs (GB)"
+    definition: "Les cellules du système de défense de l'organisme qui combattent les infections. Le traitement abaisse souvent les GB, rendant les enfants plus vulnérables."
+  - term: "Polynucléaires neutrophiles (PNN)"
+    definition: "Une mesure des globules blancs spécifiques (neutrophiles) qui combattent les infections bactériennes. Si les PNN sont bas, votre enfant court un risque accru d'infection."
+  - term: "Neutropénie"
+    definition: "Une condition où le nombre de neutrophiles est dangereusement bas. Pendant la neutropénie, même une légère fièvre est traitée comme une urgence médicale."
+  - term: "Thrombopénie"
+    definition: "Terme médical désignant un faible nombre de plaquettes. Cela signifie que le sang ne peut pas bien coaguler, et votre enfant pourrait avoir besoin d'une transfusion."
+  - term: "Anémie"
+    definition: "Une condition causée par un faible nombre de globules rouges ou une faible hémoglobine. Elle nécessite souvent une transfusion sanguine."
+lang: "fr"
+---

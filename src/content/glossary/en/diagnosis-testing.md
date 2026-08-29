@@ -1,0 +1,21 @@
+---
+category: "diagnosis-testing"
+terms:
+  - term: "Biopsy"
+    definition: "A procedure where a tiny piece of tissue is removed to be checked under a microscope. This is often the best way to know for sure if a lump or mass is cancer."
+  - term: "Staging"
+    definition: "The process of finding out how much cancer is in the body and if it has spread. Doctors use this information to plan the safest and most effective treatment."
+  - term: "Bone Marrow Aspirate"
+    definition: "A test where a small amount of liquid bone marrow is taken, usually from the hip bone, using a needle. It helps doctors see if there are cancer cells inside the bone marrow, often used for leukemia."
+  - term: "Lumbar Puncture (Spinal Tap)"
+    definition: "A procedure where a thin needle is placed in the lower back to collect cerebrospinal fluid (CSF). It checks if cancer cells have spread to the fluid surrounding the brain and spinal cord."
+  - term: "MRI (Magnetic Resonance Imaging)"
+    definition: "A scan that uses strong magnets and radio waves to create detailed pictures of the inside of the body. It does not use radiation and is excellent for looking at the brain and spinal cord."
+  - term: "CT Scan (Computed Tomography)"
+    definition: "A scan that takes many X-ray pictures from different angles to create cross-sectional images of the body. It is often used to get a clear picture of organs and bones quickly."
+  - term: "PET Scan (Positron Emission Tomography)"
+    definition: "A scan that uses a small amount of radioactive sugar to find cancer cells, which tend to take up more sugar than normal cells. It helps show where active cancer is in the body."
+  - term: "Pathology"
+    definition: "The study of diseases by looking at tissues and cells under a microscope. A pathologist is the specialized doctor who examines your child's biopsy to make an exact diagnosis."
+lang: "en"
+---

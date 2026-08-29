@@ -7,10 +7,18 @@ hospitals:
     linkText: "BC Children's Oncology/BMT"
     linkUrl: "http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt"
 financial:
-  - "Fair PharmaCare"
-  - "Fonds de soutien aux familles BCCCPA"
-  - "Avantages en santé de la Régie de la santé des Premières Nations (FNHA)"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Fair PharmaCare"
+    desc: "Couverture de médicaments basée sur le revenu en Colombie-Britannique"
+    url: "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/pharmacare-for-bc-residents/who-we-cover/fair-pharmacare-plan"
+  - name: "Fonds de soutien aux familles BCCCPA"
+    desc: "Programme de soutien financier: Fonds de soutien aux familles BCCCPA"
+    url: ""
+  - name: "Avantages en santé de la Régie de la santé des Premières Nations (FNHA)"
+    desc: "Programme de soutien financier: Avantages en santé de la Régie de la santé des Premières Nations (FNHA)"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

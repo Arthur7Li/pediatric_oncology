@@ -11,10 +11,18 @@ hospitals:
     linkText: "ACH Oncology"
     linkUrl: "https://www.albertahealthservices.ca/ach/ach.aspx"
 financial:
-  - "Kids with Cancer Society"
-  - "Alberta Child Health Benefit"
-  - "Helping Families Handle Cancer"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "Kids with Cancer Society"
+    desc: "Alberta childhood cancer financial support"
+    url: "https://www.kidswithcancer.ca/"
+  - name: "Alberta Child Health Benefit"
+    desc: "Alberta family health benefits"
+    url: "https://www.alberta.ca/child-health-benefit"
+  - name: "Helping Families Handle Cancer"
+    desc: "Financial support program: Helping Families Handle Cancer"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

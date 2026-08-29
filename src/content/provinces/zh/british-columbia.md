@@ -7,10 +7,18 @@ hospitals:
     linkText: "BC Children's Oncology/BMT"
     linkUrl: "http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt"
 financial:
-  - "Fair PharmaCare 公平药物计划"
-  - "卑诗省儿童癌症家长协会 (BCCCPA) 家庭支持基金"
-  - "原住民卫生局 (FNHA) 健康福利"
-  - "非医保健康福利 (NIHB)"
+  - name: "Fair PharmaCare 公平药物计划"
+    desc: "财务支持计划：Fair PharmaCare 公平药物计划"
+    url: ""
+  - name: "卑诗省儿童癌症家长协会 (BCCCPA) 家庭支持基金"
+    desc: "财务支持计划：卑诗省儿童癌症家长协会 (BCCCPA) 家庭支持基金"
+    url: ""
+  - name: "原住民卫生局 (FNHA) 健康福利"
+    desc: "财务支持计划：原住民卫生局 (FNHA) 健康福利"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

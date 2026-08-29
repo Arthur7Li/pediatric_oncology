@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Layout title="Redirecting..." lang="en">
+  <head>
+    <meta http-equiv="refresh" content={`0;url=${basePath}/en/faq`} />
+    <script is:inline define:vars={{ basePath }}>
+      // Attempt to respect browser language preference
+      const lang = navigator.language.split("-")[0];
+      const targetLang = ["en", "fr", "zh"].includes(lang) ? lang : "en";
+      window.location.href = `${basePath}/${targetLang}/faq`;
+    </script>
+  </head>
+  <body class="flex items-center justify-center min-h-screen bg-gray-50">
+    <div class="text-center">
+      <p class="text-gray-500 mb-4">Redirecting you to the FAQ page...</p>
+      <a href={`${basePath}/en/faq`} class="text-primary hover:underline"
+        >Click here if you are not redirected automatically.</a
+      >
+    </div>
+  </body>
+</Layout>

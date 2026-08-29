@@ -86,6 +86,115 @@ const usHospitals = [
 
   <ProvincialFilter lang={currentLang} />
 
+  <section class="mt-12 pt-8 border-t border-gray-200">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">
+      {
+        currentLang === "fr"
+          ? "Organismes de bienfaisance et soutien"
+          : currentLang === "zh"
+            ? "慈善机构与支持"
+            : "Charities & Support"
+      }
+    </h2>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        (await import("astro:content"))
+          .getCollection("charities", ({ data }) => data.lang === currentLang)
+          .then((charities) =>
+            charities.sort((a, b) => {
+              const scopeOrder = {
+                national: 1,
+                provincial: 2,
+                indigenous: 3,
+                international: 4,
+              };
+              return scopeOrder[a.data.scope] - scopeOrder[b.data.scope];
+            }),
+          )
+          .then((charities) =>
+            charities.map((charity) => (
+              <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+                      {charity.data.scope === "national"
+                        ? "🇨🇦 " +
+                          (currentLang === "fr"
+                            ? "National"
+                            : currentLang === "zh"
+                              ? "全国"
+                              : "National")
+                        : ""}
+                      {charity.data.scope === "provincial"
+                        ? "📍 " +
+                          (currentLang === "fr"
+                            ? "Provincial"
+                            : currentLang === "zh"
+                              ? "省/地区"
+                              : "Provincial")
+                        : ""}
+                      {charity.data.scope === "indigenous"
+                        ? "🪶 " +
+                          (currentLang === "fr"
+                            ? "Autochtone"
+                            : currentLang === "zh"
+                              ? "原住民"
+                              : "Indigenous")
+                        : ""}
+                      {charity.data.scope === "international"
+                        ? "🌎 " +
+                          (currentLang === "fr"
+                            ? "International"
+                            : currentLang === "zh"
+                              ? "国际"
+                              : "International")
+                        : ""}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-2">
+                    {charity.data.name}
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-4 line-clamp-3">
+                    {charity.body}
+                  </p>
+                  <ul class="text-xs text-gray-500 mb-4 list-disc pl-4 space-y-1">
+                    {charity.data.services.slice(0, 3).map((service) => (
+                      <li>{service}</li>
+                    ))}
+                    {charity.data.services.length > 3 && (
+                      <li>
+                        +{charity.data.services.length - 3}{" "}
+                        {currentLang === "fr"
+                          ? "plus"
+                          : currentLang === "zh"
+                            ? "更多"
+                            : "more"}
+                      </li>
+                    )}
+                  </ul>
+                </div>
+                <a
+                  href={charity.data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-4 text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
+                >
+                  <span>
+                    {currentLang === "fr"
+                      ? "Visiter le site"
+                      : currentLang === "zh"
+                        ? "访问网站"
+                        : "Visit Website"}
+                  </span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            )),
+          )
+      }
+    </div>
+  </section>
+
   <section
     id="national-fallback-section"
     class="mt-12 pt-8 border-t border-gray-200"

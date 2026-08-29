@@ -7,10 +7,18 @@ hospitals:
     linkText: "CancerCare MB"
     linkUrl: "https://www.cancercare.mb.ca/"
 financial:
-  - "Régime d'assurance-médicaments du Manitoba"
-  - "Fonds de bienfaisance Candlelighters du Manitoba"
-  - "Variety Manitoba"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Régime d'assurance-médicaments du Manitoba"
+    desc: "Programme de soutien financier: Régime d'assurance-médicaments du Manitoba"
+    url: ""
+  - name: "Fonds de bienfaisance Candlelighters du Manitoba"
+    desc: "Programme de soutien financier: Fonds de bienfaisance Candlelighters du Manitoba"
+    url: ""
+  - name: "Variety Manitoba"
+    desc: "Programme de soutien financier: Variety Manitoba"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

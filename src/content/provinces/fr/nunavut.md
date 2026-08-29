@@ -7,8 +7,12 @@ hospitals:
     linkText: "Santé QGH"
     linkUrl: "https://www.gov.nu.ca/"
 financial:
-  - "Programme de déplacements pour raisons médicales du Nunavut"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Programme de déplacements pour raisons médicales du Nunavut"
+    desc: "Programme de soutien financier: Programme de déplacements pour raisons médicales du Nunavut"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

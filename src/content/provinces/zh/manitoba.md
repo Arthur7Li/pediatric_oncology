@@ -7,10 +7,18 @@ hospitals:
     linkText: "CancerCare MB"
     linkUrl: "https://www.cancercare.mb.ca/"
 financial:
-  - "曼尼托巴省药物计划"
-  - "曼省点烛人慈善基金"
-  - "曼省 Variety 基金"
-  - "非医保健康福利 (NIHB)"
+  - name: "曼尼托巴省药物计划"
+    desc: "财务支持计划：曼尼托巴省药物计划"
+    url: ""
+  - name: "曼省点烛人慈善基金"
+    desc: "财务支持计划：曼省点烛人慈善基金"
+    url: ""
+  - name: "曼省 Variety 基金"
+    desc: "财务支持计划：曼省 Variety 基金"
+    url: ""
+  - name: "非医保健康福利 (NIHB)"
+    desc: "财务支持计划：非医保健康福利 (NIHB)"
+    url: ""
 lang: "zh"
 ---
 

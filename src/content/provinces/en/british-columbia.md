@@ -7,10 +7,18 @@ hospitals:
     linkText: "BC Children's Oncology/BMT"
     linkUrl: "http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt"
 financial:
-  - "Fair PharmaCare"
-  - "BC Childhood Cancer Parents Association (BCCCPA) Family Support Fund"
-  - "First Nations Health Authority (FNHA) Health Benefits"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "Fair PharmaCare"
+    desc: "BC income-based drug coverage"
+    url: "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/pharmacare-for-bc-residents/who-we-cover/fair-pharmacare-plan"
+  - name: "BC Childhood Cancer Parents Association (BCCCPA) Family Support Fund"
+    desc: "Financial support program: BC Childhood Cancer Parents Association (BCCCPA) Family Support Fund"
+    url: ""
+  - name: "First Nations Health Authority (FNHA) Health Benefits"
+    desc: "Financial support program: First Nations Health Authority (FNHA) Health Benefits"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

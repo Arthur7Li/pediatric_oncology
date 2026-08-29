@@ -19,9 +19,15 @@ hospitals:
     linkText: "CHU de Sherbrooke"
     linkUrl: "https://www.santeestrie.qc.ca/"
 financial:
-  - "RAMQ Public Prescription Drug Plan"
-  - "Leucan Financial & Family Services"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "RAMQ Public Prescription Drug Plan"
+    desc: "Financial support program: RAMQ Public Prescription Drug Plan"
+    url: ""
+  - name: "Leucan Financial & Family Services"
+    desc: "Financial support program: Leucan Financial & Family Services"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

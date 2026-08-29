@@ -1,0 +1,21 @@
+---
+category: "cancer-types"
+terms:
+  - term: "白血病 (Leukemia)"
+    definition: "血液和骨髓的癌症，是最常见的儿童癌症类型。最常见的两种儿科类型是ALL和AML。"
+  - term: "淋巴瘤 (Lymphoma)"
+    definition: "始于淋巴系统（身体免疫系统一部分）的癌症。霍奇金和非霍奇金是儿童中的两种主要类型。"
+  - term: "肉瘤 (Sarcoma)"
+    definition: "生长在骨骼或软组织（如肌肉、脂肪或软骨）中的一种癌症。骨肉瘤和尤文肉瘤在年龄较大的儿童和青少年中很常见。"
+  - term: "母细胞瘤 (Blastoma)"
+    definition: "由发育细胞中的恶性肿瘤引起的癌症，常见于儿童，例如神经母细胞瘤、肾母细胞瘤/韦尔姆斯瘤和髓母细胞瘤。"
+  - term: "恶性 (Malignant)"
+    definition: "指可能具有侵袭性生长并扩散到身体其他部位的癌性肿瘤的医学术语。"
+  - term: "良性 (Benign)"
+    definition: "非癌性且通常不会扩散的肿瘤，但脑部的良性肿瘤仍可能引起严重问题。"
+  - term: "转移 (Metastasis)"
+    definition: "癌细胞从最初开始的地方扩散到身体的新区域。"
+  - term: "缓解 (Remission)"
+    definition: "通过测试和扫描表明所有癌症迹象都已消失的时期。这是初始癌症治疗的首要目标。"
+lang: "zh"
+---

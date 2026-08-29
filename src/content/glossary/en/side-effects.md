@@ -1,0 +1,21 @@
+---
+category: "side-effects"
+terms:
+  - term: "Neutropenic Fever (Febrile Neutropenia)"
+    definition: "When a child has a fever while their infection-fighting white blood cells (ANC) are low. This is a medical emergency requiring immediate hospital visit for IV antibiotics."
+  - term: "Mucositis"
+    definition: "Painful inflammation and sores in the mouth, throat, or digestive tract caused by chemotherapy. It can make eating and drinking difficult."
+  - term: "Alopecia"
+    definition: "The medical term for hair loss, a common and usually temporary side effect of many chemotherapy drugs and radiation."
+  - term: "Nausea and Emesis"
+    definition: "The medical terms for feeling sick to the stomach and vomiting. Doctors have excellent anti-nausea medications to help prevent this."
+  - term: "Neuropathy"
+    definition: "Nerve damage that can cause tingling, numbness, or pain, usually in the hands or feet. In kids, it might also cause constipation or make it hard to walk."
+  - term: "Tumor Lysis Syndrome (TLS)"
+    definition: "A condition when many cancer cells die quickly and release their contents into the blood. It can strain the kidneys, so kids are given lots of IV fluids."
+  - term: "GVHD (Graft-Versus-Host Disease)"
+    definition: "A complication after an allogeneic stem cell transplant where the donor's immune cells attack the patient's body. It can affect the skin, liver, or gut."
+  - term: "Sepsis"
+    definition: "A severe, life-threatening body-wide response to an infection. Because kids on chemo have weak immune systems, doctors treat any sign of infection aggressively."
+lang: "en"
+---

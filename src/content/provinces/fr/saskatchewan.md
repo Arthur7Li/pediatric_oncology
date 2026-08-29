@@ -7,9 +7,15 @@ hospitals:
     linkText: "JPCH Oncology"
     linkUrl: "https://pattisonchildrens.ca/"
 financial:
-  - "Prestations de santé familiales de la Saskatchewan"
-  - "Fonds de réconfort CIBC pour l'oncologie pédiatrique"
-  - "Services de santé non assurés (SSNA)"
+  - name: "Prestations de santé familiales de la Saskatchewan"
+    desc: "Programme de soutien financier: Prestations de santé familiales de la Saskatchewan"
+    url: ""
+  - name: "Fonds de réconfort CIBC pour l'oncologie pédiatrique"
+    desc: "Programme de soutien financier: Fonds de réconfort CIBC pour l'oncologie pédiatrique"
+    url: ""
+  - name: "Services de santé non assurés (SSNA)"
+    desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
+    url: ""
 lang: "fr"
 ---
 

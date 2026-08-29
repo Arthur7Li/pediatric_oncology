@@ -1,0 +1,317 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { getCollection } from "astro:content";
+import { translations, type Locale } from "../../i18n/translations";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "zh" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const currentLang = (lang as Locale) || "en";
+const t = translations[currentLang] || translations.en;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const homeUrl =
+  currentLang === "en" ? `${basePath}/` : `${basePath}/${currentLang}`;
+
+const breadcrumbLabel =
+  currentLang === "en"
+    ? "Glossary"
+    : currentLang === "fr"
+      ? "Glossaire"
+      : "词汇表";
+const breadcrumbs = [
+  { label: t.nav.home, href: homeUrl },
+  { label: (t.nav as any).glossary || breadcrumbLabel },
+];
+
+const headers = {
+  en: {
+    title: "Medical Terms Explained",
+    subtitle:
+      "A parent-friendly guide to the medical words you may hear during your child's treatment.",
+  },
+  fr: {
+    title: "Termes médicaux expliqués",
+    subtitle:
+      "Un guide accessible pour comprendre les termes médicaux que vous entendrez pendant le traitement de votre enfant.",
+  },
+  zh: {
+    title: "医学术语解读",
+    subtitle: "帮助您理解孩子治疗过程中可能遇到的医学术语。",
+  },
+};
+
+const categoryNames = {
+  en: {
+    "diagnosis-testing": "Diagnosis & Testing",
+    treatment: "Treatment",
+    "blood-lab": "Blood & Lab Results",
+    "side-effects": "Side Effects",
+    "cancer-types": "Cancer Types",
+    "healthcare-team": "Your Care Team",
+    "canadian-system": "Canadian Healthcare",
+  },
+  fr: {
+    "diagnosis-testing": "Diagnostic et examens",
+    treatment: "Traitement",
+    "blood-lab": "Sang et résultats de laboratoire",
+    "side-effects": "Effets secondaires",
+    "cancer-types": "Types de cancer",
+    "healthcare-team": "Votre équipe soignante",
+    "canadian-system": "Système de santé canadien",
+  },
+  zh: {
+    "diagnosis-testing": "诊断与检查",
+    treatment: "治疗",
+    "blood-lab": "血液与化验",
+    "side-effects": "副作用",
+    "cancer-types": "癌症类型",
+    "healthcare-team": "医疗团队",
+    "canadian-system": "加拿大医疗体系",
+  },
+};
+
+const categoryIcons = {
+  "diagnosis-testing": "🔬",
+  treatment: "💊",
+  "blood-lab": "🩸",
+  "side-effects": "⚠️",
+  "cancer-types": "🧬",
+  "healthcare-team": "👨‍⚕️",
+  "canadian-system": "🍁",
+};
+
+const allGlossary = await getCollection(
+  "glossary",
+  (entry) => entry.data.lang === currentLang,
+);
+
+const order = [
+  "diagnosis-testing",
+  "treatment",
+  "blood-lab",
+  "side-effects",
+  "cancer-types",
+  "healthcare-team",
+  "canadian-system",
+];
+
+const glossaryData = order.map((id) => {
+  const entry = allGlossary.find((e) => e.data.category === id);
+  return {
+    id,
+    name: categoryNames[currentLang][id as keyof (typeof categoryNames)["en"]],
+    icon: categoryIcons[id as keyof typeof categoryIcons],
+    terms: entry ? entry.data.terms : [],
+  };
+});
+---
+
+<Layout
+  title={`${headers[currentLang].title} | Canadian Pediatric Oncology`}
+  lang={currentLang}
+>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <Breadcrumbs crumbs={breadcrumbs} lang={lang} />
+
+    <header class="mb-10 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+        {headers[currentLang].title}
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        {headers[currentLang].subtitle}
+      </p>
+    </header>
+
+    <glossary-search>
+      <div class="mb-8">
+        <input
+          type="text"
+          id="search-input"
+          placeholder={currentLang === "en"
+            ? "Search terms..."
+            : currentLang === "fr"
+              ? "Rechercher des termes..."
+              : "搜索术语..."}
+          class="w-full p-4 border border-gray-300 rounded-lg shadow-sm mb-4 text-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+        />
+        <div class="flex flex-wrap gap-2 mb-4" id="category-filters">
+          <button
+            data-category="all"
+            class="px-4 py-2 bg-primary text-white rounded-full transition-colors hover:bg-primary/90 focus:outline-none"
+          >
+            {
+              currentLang === "en"
+                ? "All Categories"
+                : currentLang === "fr"
+                  ? "Toutes les catégories"
+                  : "所有分类"
+            }
+          </button>
+          {
+            glossaryData.map((cat) => (
+              <button
+                data-category={cat.id}
+                class="px-4 py-2 bg-gray-200 text-gray-800 hover:bg-gray-300 rounded-full transition-colors focus:outline-none"
+              >
+                <span class="mr-1">{cat.icon}</span> {cat.name}
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="glossary-content" data-pagefind-body>
+        {
+          glossaryData.map(
+            (cat) =>
+              cat.terms.length > 0 && (
+                <section
+                  id={cat.id}
+                  class="mb-12 category-section"
+                  data-category={cat.id}
+                >
+                  <h2 class="text-2xl font-bold mb-6 border-b pb-2 flex items-center">
+                    <span class="mr-2 text-3xl">{cat.icon}</span>
+                    <span>{cat.name}</span>
+                  </h2>
+                  <dl class="space-y-6">
+                    {cat.terms.map((term) => (
+                      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 term-item transition-all hover:shadow-md">
+                        <dt class="text-xl font-semibold text-primary mb-2 term-title">
+                          {term.term}
+                        </dt>
+                        <dd class="text-gray-700 leading-relaxed term-def">
+                          {term.definition}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </section>
+              ),
+          )
+        }
+
+        <div id="no-results" class="hidden text-center py-12">
+          <p class="text-xl text-gray-500">
+            {
+              currentLang === "en"
+                ? "No terms found matching your search."
+                : currentLang === "fr"
+                  ? "Aucun terme trouvé correspondant à votre recherche."
+                  : "没有找到符合您搜索的术语。"
+            }
+          </p>
+        </div>
+      </div>
+    </glossary-search>
+
+    <div class="mt-16 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+      <h3 class="text-lg font-bold text-blue-800 mb-2">
+        {
+          currentLang === "en"
+            ? "Medical Disclaimer"
+            : currentLang === "fr"
+              ? "Avis médical"
+              : "免责声明"
+        }
+      </h3>
+      <p class="text-blue-900 text-sm">
+        {
+          currentLang === "en"
+            ? "The information provided in this glossary is for educational purposes only and is not intended to replace professional medical advice. Always consult your child's healthcare team with any questions or concerns about their diagnosis or treatment."
+            : currentLang === "fr"
+              ? "Les informations fournies dans ce glossaire sont à but éducatif uniquement et ne sont pas destinées à remplacer l'avis médical d'un professionnel. Consultez toujours l'équipe soignante de votre enfant pour toute question ou préoccupation concernant son diagnostic ou son traitement."
+              : "本词汇表提供的信息仅供教育目的，无意取代专业的医疗建议。如有关于您孩子诊断或治疗的任何问题或疑虑，请务必咨询您孩子的医疗团队。"
+        }
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  class GlossarySearch extends HTMLElement {
+    connectedCallback() {
+      const searchInput = this.querySelector(
+        "#search-input",
+      ) as HTMLInputElement;
+      const filterButtons = this.querySelectorAll("#category-filters button");
+      const sections = this.querySelectorAll(".category-section");
+      const noResults = this.querySelector("#no-results") as HTMLElement;
+
+      let currentCategory = "all";
+      let searchQuery = "";
+
+      const updateView = () => {
+        let totalVisibleTerms = 0;
+
+        sections.forEach((section) => {
+          const categoryId = (section as HTMLElement).dataset.category;
+          let categoryHasVisibleTerms = false;
+
+          const items = section.querySelectorAll(".term-item");
+          items.forEach((item) => {
+            const title =
+              item.querySelector(".term-title")?.textContent?.toLowerCase() ||
+              "";
+            const def =
+              item.querySelector(".term-def")?.textContent?.toLowerCase() || "";
+
+            const matchesSearch =
+              title.includes(searchQuery) || def.includes(searchQuery);
+            const matchesCategory =
+              currentCategory === "all" || currentCategory === categoryId;
+
+            if (matchesSearch && matchesCategory) {
+              (item as HTMLElement).style.display = "block";
+              categoryHasVisibleTerms = true;
+              totalVisibleTerms++;
+            } else {
+              (item as HTMLElement).style.display = "none";
+            }
+          });
+
+          (section as HTMLElement).style.display = categoryHasVisibleTerms
+            ? "block"
+            : "none";
+        });
+
+        if (noResults) {
+          noResults.style.display = totalVisibleTerms === 0 ? "block" : "none";
+        }
+
+        filterButtons.forEach((btn) => {
+          if ((btn as HTMLElement).dataset.category === currentCategory) {
+            btn.classList.remove("bg-gray-200", "text-gray-800");
+            btn.classList.add("bg-primary", "text-white");
+          } else {
+            btn.classList.add("bg-gray-200", "text-gray-800");
+            btn.classList.remove("bg-primary", "text-white");
+          }
+        });
+      };
+
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          searchQuery = (e.target as HTMLInputElement).value.toLowerCase();
+          updateView();
+        });
+      }
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          currentCategory = (btn as HTMLElement).dataset.category || "all";
+          updateView();
+        });
+      });
+    }
+  }
+
+  customElements.define("glossary-search", GlossarySearch);
+</script>

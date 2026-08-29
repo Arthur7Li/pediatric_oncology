@@ -7,10 +7,18 @@ hospitals:
     linkText: "Janeway Oncology"
     linkUrl: "https://easternhealth.ca/"
 financial:
-  - "Newfoundland & Labrador Prescription Drug Program (NLPDP)"
-  - "Candlelighters NL"
-  - "Dr. Jack Hand Legacy Foundation"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "Newfoundland & Labrador Prescription Drug Program (NLPDP)"
+    desc: "Financial support program: Newfoundland & Labrador Prescription Drug Program (NLPDP)"
+    url: ""
+  - name: "Candlelighters NL"
+    desc: "NL childhood cancer support"
+    url: "https://www.candlelightersnl.ca/"
+  - name: "Dr. Jack Hand Legacy Foundation"
+    desc: "Financial support program: Dr. Jack Hand Legacy Foundation"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

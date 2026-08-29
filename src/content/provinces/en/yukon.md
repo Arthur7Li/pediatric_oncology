@@ -7,9 +7,15 @@ hospitals:
     linkText: "Yukon Hospitals"
     linkUrl: "https://yukonhospitals.ca/"
 financial:
-  - "Yukon Medical Travel Program"
-  - "Yukon Pharmacare"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "Yukon Medical Travel Program"
+    desc: "Financial support program: Yukon Medical Travel Program"
+    url: ""
+  - name: "Yukon Pharmacare"
+    desc: "Yukon drug coverage"
+    url: "https://yukon.ca/en/health-and-wellness/health-care-services/get-pharmacare-coverage"
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 

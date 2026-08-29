@@ -11,10 +11,18 @@ hospitals:
     linkText: "Horizon Health"
     linkUrl: "https://en.horizonnb.ca/"
 financial:
-  - "New Brunswick Prescription Drug Program"
-  - "Fuel the Care"
-  - "Canadian Cancer Society Travel Fund"
-  - "Non-Insured Health Benefits (NIHB)"
+  - name: "New Brunswick Prescription Drug Program"
+    desc: "Financial support program: New Brunswick Prescription Drug Program"
+    url: ""
+  - name: "Fuel the Care"
+    desc: "Financial support program: Fuel the Care"
+    url: ""
+  - name: "Canadian Cancer Society Travel Fund"
+    desc: "Financial support program: Canadian Cancer Society Travel Fund"
+    url: ""
+  - name: "Non-Insured Health Benefits (NIHB)"
+    desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
+    url: ""
 lang: "en"
 ---
 
