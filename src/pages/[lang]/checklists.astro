@@ -338,13 +338,16 @@ const crumbs = [
               {
                 d.hospitalBag.childItems.map((item) => (
                   <li class="flex items-start gap-3 group">
-                    <input
-                      type="checkbox"
-                      class="checklist-checkbox w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary mt-0.5 cursor-pointer print:appearance-none print:w-4 print:h-4 print:border-2 print:border-gray-500 shrink-0"
-                    />
-                    <span class="text-gray-700 select-none group-has-[:checked]:line-through group-has-[:checked]:text-gray-400 transition-colors">
-                      {item}
-                    </span>
+                    <label class="flex items-start gap-3 cursor-pointer select-none w-full">
+                      <input
+                        type="checkbox"
+                        aria-label={item}
+                        class="checklist-checkbox w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary mt-0.5 cursor-pointer print:appearance-none print:w-4 print:h-4 print:border-2 print:border-gray-500 shrink-0"
+                      />
+                      <span class="text-gray-700 group-has-[:checked]:line-through group-has-[:checked]:text-gray-400 transition-colors">
+                        {item}
+                      </span>
+                    </label>
                   </li>
                 ))
               }
@@ -357,13 +360,16 @@ const crumbs = [
               {
                 d.hospitalBag.docItems.map((item) => (
                   <li class="flex items-start gap-3 group">
-                    <input
-                      type="checkbox"
-                      class="checklist-checkbox w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary mt-0.5 cursor-pointer print:appearance-none print:w-4 print:h-4 print:border-2 print:border-gray-500 shrink-0"
-                    />
-                    <span class="text-gray-700 select-none group-has-[:checked]:line-through group-has-[:checked]:text-gray-400 transition-colors">
-                      {item}
-                    </span>
+                    <label class="flex items-start gap-3 cursor-pointer select-none w-full">
+                      <input
+                        type="checkbox"
+                        aria-label={item}
+                        class="checklist-checkbox w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary mt-0.5 cursor-pointer print:appearance-none print:w-4 print:h-4 print:border-2 print:border-gray-500 shrink-0"
+                      />
+                      <span class="text-gray-700 group-has-[:checked]:line-through group-has-[:checked]:text-gray-400 transition-colors">
+                        {item}
+                      </span>
+                    </label>
                   </li>
                 ))
               }
@@ -378,13 +384,16 @@ const crumbs = [
               {
                 d.hospitalBag.parentItems.map((item) => (
                   <li class="flex items-start gap-3 group">
-                    <input
-                      type="checkbox"
-                      class="checklist-checkbox w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary mt-0.5 cursor-pointer print:appearance-none print:w-4 print:h-4 print:border-2 print:border-gray-500 shrink-0"
-                    />
-                    <span class="text-gray-700 select-none group-has-[:checked]:line-through group-has-[:checked]:text-gray-400 transition-colors">
-                      {item}
-                    </span>
+                    <label class="flex items-start gap-3 cursor-pointer select-none w-full">
+                      <input
+                        type="checkbox"
+                        aria-label={item}
+                        class="checklist-checkbox w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary mt-0.5 cursor-pointer print:appearance-none print:w-4 print:h-4 print:border-2 print:border-gray-500 shrink-0"
+                      />
+                      <span class="text-gray-700 group-has-[:checked]:line-through group-has-[:checked]:text-gray-400 transition-colors">
+                        {item}
+                      </span>
+                    </label>
                   </li>
                 ))
               }

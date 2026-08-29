@@ -102,14 +102,14 @@ jobs:
           npm ci || npm install --legacy-peer-deps
           npm run build
 
-      - name: Install Puppeteer Chrome
-        run: npx puppeteer browsers install chrome
+      - name: Install Playwright Chromium & Dependencies
+        run: npx playwright install --with-deps chromium
 
       - name: Run Accessibility Audit
         run: |
           npx astro preview --port 3000 --host 0.0.0.0 &
           npx wait-on http://localhost:3000/pediatric_oncology/ --timeout 15000
-          npx pa11y-ci --config .pa11yci
+          npm run test:a11y
 
   e2e-tests:
     runs-on: ubuntu-latest

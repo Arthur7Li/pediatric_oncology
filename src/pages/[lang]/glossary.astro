@@ -132,14 +132,14 @@ const glossaryData = order.map((id) => {
 
     <glossary-search>
       <div class="mb-8">
+        <label for="search-input" class="sr-only"
+          >{t.glossary.searchPlaceholder}</label
+        >
         <input
           type="text"
           id="search-input"
-          placeholder={currentLang === "en"
-            ? "Search terms..."
-            : currentLang === "fr"
-              ? "Rechercher des termes..."
-              : "搜索术语..."}
+          aria-label={t.glossary.searchPlaceholder}
+          placeholder={t.glossary.searchPlaceholder}
           class="w-full p-4 border border-gray-300 rounded-lg shadow-sm mb-4 text-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none"
         />
         <div class="flex flex-wrap gap-2 mb-4" id="category-filters">
