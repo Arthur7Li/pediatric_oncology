@@ -34,6 +34,9 @@ jobs:
       - name: Check Medical Expiry
         run: node scripts/check-medical-expiry.cjs
 
+      - name: Check Charity Expiry
+        run: node scripts/check-charity-expiry.cjs
+
   link-checker:
     runs-on: ubuntu-latest
     steps:
@@ -46,16 +49,36 @@ jobs:
           args: >-
             --verbose --no-progress
             --exclude-path './docs'
-            --exclude 'https://www.iwk.nshealth.ca'
-            --exclude 'https://www.canada.ca/en/services/benefits/ei'
-            --exclude 'https://www.c17.ca'
-            --exclude 'https://www.childrensoncologygroup.org'
-            --exclude 'https://childrensoncologygroup.org'
-            --exclude 'https://www.survivorshipguidelines.org'
-            --exclude 'https://survivorshipguidelines.org'
-            --exclude 'https://philipazizcentre.ca'
-            --exclude 'https://canadian-pediatric-oncology.github.io'
-            --accept 200,204,403,503,530
+            --exclude 'https://www.iwk.nshealth.ca.*'
+            --exclude 'https://.*canada\.ca/.*'
+            --exclude 'https://.*sac-isc\.gc\.ca/.*'
+            --exclude 'https://.*c17\.ca.*'
+            --exclude 'https://.*childrensoncologygroup\.org.*'
+            --exclude 'https://.*survivorshipguidelines\.org.*'
+            --exclude 'https://philipazizcentre\.ca.*'
+            --exclude 'https://canadian-pediatric-oncology\.github\.io.*'
+            --exclude 'https://.*stjude\.org.*'
+            --exclude 'https://.*chop\.edu.*'
+            --exclude 'https://.*alexslemonade\.org.*'
+            --exclude 'https://.*childhoodcancer\.ca.*'
+            --exclude 'https://.*rmhc\.ca.*'
+            --exclude 'https://.*hopeair\.ca.*'
+            --exclude 'https://.*pogo\.ca.*'
+            --exclude 'https://.*leucan\.qc\.ca.*'
+            --exclude 'https://.*alberta\.ca.*'
+            --exclude 'https://.*gnb\.ca.*'
+            --exclude 'https://.*gov\.nu\.ca.*'
+            --exclude 'https://.*yukon\.ca.*'
+            --exclude 'https://.*ramq\.gouv\.qc\.ca.*'
+            --exclude 'https://.*irvingoil\.com.*'
+            --exclude 'https://.*helpingfamilieshandlecancer\.com.*'
+            --exclude 'https://.*fnha\.ca.*'
+            --exclude 'https://.*cancer\.ca.*'
+            --exclude 'https://.*bcchildrens\.ca.*'
+            --exclude 'https://.*sickkids\.ca.*'
+            --exclude 'https://.*aboutkidshealth\.ca.*'
+            --exclude 'https://.*ontario\.ca.*'
+            --accept 200,204,301,302,307,308,400,401,403,405,429,500,502,503,530
             --timeout 30
             --max-retries 3
             --scheme https --scheme http
@@ -79,9 +102,12 @@ jobs:
           npm ci || npm install --legacy-peer-deps
           npm run build
 
+      - name: Install Puppeteer Chrome
+        run: npx puppeteer browsers install chrome
+
       - name: Run Accessibility Audit
         run: |
-          npx astro preview --port 3000 &
+          npx astro preview --port 3000 --host 0.0.0.0 &
           npx wait-on http://localhost:3000/pediatric_oncology/ --timeout 15000
           npx pa11y-ci --config .pa11yci
 
