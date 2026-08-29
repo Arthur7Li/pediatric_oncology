@@ -9,13 +9,13 @@ hospitals:
 financial:
   - name: "西北地区医疗旅行服务"
     desc: "财务支持计划：西北地区医疗旅行服务"
-    url: ""
+    url: "https://www.hss.gov.nt.ca/en/services/medical-travel"
   - name: "非医保健康福利 (NIHB)"
     desc: "财务支持计划：非医保健康福利 (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
   - name: "癌症儿童协会 (埃德蒙顿)"
     desc: "财务支持计划：癌症儿童协会 (埃德蒙顿)"
-    url: ""
+    url: "https://kidswithcancer.ca/"
 lang: "zh"
 ---
 

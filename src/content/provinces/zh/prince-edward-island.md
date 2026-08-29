@@ -9,13 +9,13 @@ hospitals:
 financial:
   - name: "PEI 大病药物计划"
     desc: "财务支持计划：PEI 大病药物计划"
-    url: ""
+    url: "https://www.princeedwardisland.ca/en/information/health-pei/catastrophic-drug-program"
   - name: "IWK 基金会"
     desc: "财务支持计划：IWK 基金会"
-    url: ""
+    url: "https://iwkfoundation.org/"
   - name: "非医保健康福利 (NIHB)"
     desc: "财务支持计划：非医保健康福利 (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "zh"
 ---
 

@@ -9,13 +9,13 @@ hospitals:
 financial:
   - name: "Programme de déplacements pour raisons médicales du Yukon"
     desc: "Programme de soutien financier: Programme de déplacements pour raisons médicales du Yukon"
-    url: ""
+    url: "https://yukon.ca/en/health-and-wellness/health-care/medical-travel"
   - name: "Assurance-médicaments du Yukon"
     desc: "Programme de soutien financier: Assurance-médicaments du Yukon"
-    url: ""
+    url: "https://yukon.ca/en/health-and-wellness/health-care-services/get-pharmacare-coverage"
   - name: "Services de santé non assurés (SSNA)"
     desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "fr"
 ---
 

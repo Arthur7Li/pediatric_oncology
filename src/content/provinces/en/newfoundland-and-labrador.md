@@ -9,16 +9,16 @@ hospitals:
 financial:
   - name: "Newfoundland & Labrador Prescription Drug Program (NLPDP)"
     desc: "Financial support program: Newfoundland & Labrador Prescription Drug Program (NLPDP)"
-    url: ""
+    url: "https://www.gov.nl.ca/hcs/prescription/"
   - name: "Candlelighters NL"
     desc: "NL childhood cancer support"
     url: "https://www.candlelightersnl.ca/"
   - name: "Dr. Jack Hand Legacy Foundation"
     desc: "Financial support program: Dr. Jack Hand Legacy Foundation"
-    url: ""
+    url: "https://jackhand.ca/"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "en"
 ---
 

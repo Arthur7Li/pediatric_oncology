@@ -9,10 +9,10 @@ hospitals:
 financial:
   - name: "Nunavut Medical Travel Program"
     desc: "Financial support program: Nunavut Medical Travel Program"
-    url: ""
+    url: "https://www.gov.nu.ca/en/health/information/medical-travel"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "en"
 ---
 

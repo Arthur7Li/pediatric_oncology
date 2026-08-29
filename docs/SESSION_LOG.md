@@ -240,3 +240,12 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Ensured the "Fallback" EI section is displayed by default, and neatly hidden when a province is selected.
   - Updated E2E test (`provincial-filter.spec.ts`) to match new markup.
 - **Status:** Verified locally. `npm run ci` passing. E2E passing.
+
+**[19:00] Missing URL Enrichment**
+
+- **Action:** Audited and resolved missing direct URLs for provincial financial support programs across all languages.
+- **Details:**
+  - Discovered 25 instances of financial support programs lacking direct URLs in the `provinces` collection (e.g., provincial Pharmacare plans, NIHB, Northern Travel Grants).
+  - Designed a robust cross-language URL injection script that matches the English program names, references a predefined dictionary of verified direct URLs, and synchronously updates the English, French, and Chinese markdown files.
+  - Ensured all resources listed on the platform now have genuine, verified links to direct families to the authoritative source.
+- **Status:** Verified locally. `npm run ci` passing.

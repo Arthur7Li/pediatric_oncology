@@ -21,13 +21,13 @@ hospitals:
 financial:
   - name: "RAMQ Public Prescription Drug Plan"
     desc: "Financial support program: RAMQ Public Prescription Drug Plan"
-    url: ""
+    url: "https://www.ramq.gouv.qc.ca/en/citizens/prescription-drug-insurance"
   - name: "Leucan Financial & Family Services"
     desc: "Financial support program: Leucan Financial & Family Services"
-    url: ""
+    url: "https://www.leucan.qc.ca/en/our-services/financial-assistance/"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "en"
 ---
 

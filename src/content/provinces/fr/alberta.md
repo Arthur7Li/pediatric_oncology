@@ -13,16 +13,16 @@ hospitals:
 financial:
   - name: "Société des enfants atteints de cancer"
     desc: "Programme de soutien financier: Société des enfants atteints de cancer"
-    url: ""
+    url: "https://www.kidswithcancer.ca/"
   - name: "Prestation de santé pour enfants de l'Alberta"
     desc: "Programme de soutien financier: Prestation de santé pour enfants de l'Alberta"
-    url: ""
+    url: "https://www.alberta.ca/child-health-benefit"
   - name: "Helping Families Handle Cancer"
     desc: "Programme de soutien financier: Helping Families Handle Cancer"
-    url: ""
+    url: "https://helpingfamilieshandlecancer.com/"
   - name: "Services de santé non assurés (SSNA)"
     desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "fr"
 ---
 

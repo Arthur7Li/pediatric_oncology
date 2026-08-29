@@ -9,10 +9,10 @@ hospitals:
 financial:
   - name: "努纳武特医疗旅行计划"
     desc: "财务支持计划：努纳武特医疗旅行计划"
-    url: ""
+    url: "https://www.gov.nu.ca/en/health/information/medical-travel"
   - name: "非医保健康福利 (NIHB)"
     desc: "财务支持计划：非医保健康福利 (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "zh"
 ---
 

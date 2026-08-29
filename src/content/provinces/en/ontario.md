@@ -25,19 +25,19 @@ hospitals:
 financial:
   - name: "OHIP+ (Children & Youth Pharmacare)"
     desc: "Financial support program: OHIP+ (Children & Youth Pharmacare)"
-    url: ""
+    url: "https://www.ontario.ca/page/learn-about-ohip-plus"
   - name: "Trillium Drug Program"
     desc: "Helps families with high drug costs"
     url: "https://www.ontario.ca/page/get-help-high-prescription-drug-costs"
   - name: "POGO Financial Assistance Program (POFAP)"
     desc: "Financial support program: POGO Financial Assistance Program (POFAP)"
-    url: ""
+    url: "https://www.pogo.ca/pofap/"
   - name: "Northern Health Travel Grant (NHTG)"
     desc: "Financial support program: Northern Health Travel Grant (NHTG)"
-    url: ""
+    url: "https://www.ontario.ca/page/northern-health-travel-grant-program"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "en"
 ---
 

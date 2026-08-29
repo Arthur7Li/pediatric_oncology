@@ -9,16 +9,16 @@ hospitals:
 financial:
   - name: "纽芬兰与拉布拉多处方药计划 (NLPDP)"
     desc: "财务支持计划：纽芬兰与拉布拉多处方药计划 (NLPDP)"
-    url: ""
+    url: "https://www.gov.nl.ca/hcs/prescription/"
   - name: "纽芬兰点烛人慈善"
     desc: "财务支持计划：纽芬兰点烛人慈善"
-    url: ""
+    url: "https://www.candlelightersnl.ca/"
   - name: "Dr. Jack Hand 基金会"
     desc: "财务支持计划：Dr. Jack Hand 基金会"
-    url: ""
+    url: "https://jackhand.ca/"
   - name: "非医保健康福利 (NIHB)"
     desc: "财务支持计划：非医保健康福利 (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "zh"
 ---
 

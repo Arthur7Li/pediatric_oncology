@@ -9,10 +9,10 @@ hospitals:
 financial:
   - name: "Programme de déplacements pour raisons médicales du Nunavut"
     desc: "Programme de soutien financier: Programme de déplacements pour raisons médicales du Nunavut"
-    url: ""
+    url: "https://www.gov.nu.ca/en/health/information/medical-travel"
   - name: "Services de santé non assurés (SSNA)"
     desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "fr"
 ---
 

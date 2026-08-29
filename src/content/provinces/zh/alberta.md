@@ -13,16 +13,16 @@ hospitals:
 financial:
   - name: "癌症儿童协会"
     desc: "财务支持计划：癌症儿童协会"
-    url: ""
+    url: "https://www.kidswithcancer.ca/"
   - name: "阿尔伯塔省儿童健康福利"
     desc: "财务支持计划：阿尔伯塔省儿童健康福利"
-    url: ""
+    url: "https://www.alberta.ca/child-health-benefit"
   - name: "帮助家庭应对癌症基金"
     desc: "财务支持计划：帮助家庭应对癌症基金"
-    url: ""
+    url: "https://helpingfamilieshandlecancer.com/"
   - name: "非医保健康福利 (NIHB)"
     desc: "财务支持计划：非医保健康福利 (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "zh"
 ---
 

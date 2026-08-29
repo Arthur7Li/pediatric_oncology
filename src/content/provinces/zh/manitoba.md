@@ -9,16 +9,16 @@ hospitals:
 financial:
   - name: "曼尼托巴省药物计划"
     desc: "财务支持计划：曼尼托巴省药物计划"
-    url: ""
+    url: "https://www.gov.mb.ca/health/pharmacare/"
   - name: "曼省点烛人慈善基金"
     desc: "财务支持计划：曼省点烛人慈善基金"
-    url: ""
+    url: "https://www.manitobacandlelighters.org/"
   - name: "曼省 Variety 基金"
     desc: "财务支持计划：曼省 Variety 基金"
-    url: ""
+    url: "https://varietymanitoba.com/"
   - name: "非医保健康福利 (NIHB)"
     desc: "财务支持计划：非医保健康福利 (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "zh"
 ---
 

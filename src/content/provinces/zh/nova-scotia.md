@@ -9,13 +9,13 @@ hospitals:
 financial:
   - name: "新斯科舍省家庭药物计划"
     desc: "财务支持计划：新斯科舍省家庭药物计划"
-    url: ""
+    url: "https://novascotia.ca/dhw/pharmacare/family-pharmacare.asp"
   - name: "IWK 基金会家庭慰问基金"
     desc: "财务支持计划：IWK 基金会家庭慰问基金"
-    url: ""
+    url: "https://iwkfoundation.org/"
   - name: "非医保健康福利 (NIHB)"
     desc: "财务支持计划：非医保健康福利 (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "zh"
 ---
 

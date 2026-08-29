@@ -9,13 +9,13 @@ hospitals:
 financial:
   - name: "Prestations de santé familiales de la Saskatchewan"
     desc: "Programme de soutien financier: Prestations de santé familiales de la Saskatchewan"
-    url: ""
+    url: "https://www.saskatchewan.ca/residents/health/prescription-drug-plans-and-health-coverage/extended-benefits-and-drug-plan/family-health-benefits"
   - name: "Fonds de réconfort CIBC pour l'oncologie pédiatrique"
     desc: "Programme de soutien financier: Fonds de réconfort CIBC pour l'oncologie pédiatrique"
-    url: ""
+    url: "https://pattisonchildrens.ca/"
   - name: "Services de santé non assurés (SSNA)"
     desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "fr"
 ---
 

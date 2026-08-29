@@ -9,13 +9,13 @@ hospitals:
 financial:
   - name: "Yukon Medical Travel Program"
     desc: "Financial support program: Yukon Medical Travel Program"
-    url: ""
+    url: "https://yukon.ca/en/health-and-wellness/health-care/medical-travel"
   - name: "Yukon Pharmacare"
     desc: "Yukon drug coverage"
     url: "https://yukon.ca/en/health-and-wellness/health-care-services/get-pharmacare-coverage"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "en"
 ---
 

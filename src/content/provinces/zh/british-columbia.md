@@ -9,16 +9,16 @@ hospitals:
 financial:
   - name: "Fair PharmaCare 公平药物计划"
     desc: "财务支持计划：Fair PharmaCare 公平药物计划"
-    url: ""
+    url: "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/pharmacare-for-bc-residents/who-we-cover/fair-pharmacare-plan"
   - name: "卑诗省儿童癌症家长协会 (BCCCPA) 家庭支持基金"
     desc: "财务支持计划：卑诗省儿童癌症家长协会 (BCCCPA) 家庭支持基金"
-    url: ""
+    url: "https://bcccpa.org/"
   - name: "原住民卫生局 (FNHA) 健康福利"
     desc: "财务支持计划：原住民卫生局 (FNHA) 健康福利"
-    url: ""
+    url: "https://www.fnha.ca/benefits"
   - name: "非医保健康福利 (NIHB)"
     desc: "财务支持计划：非医保健康福利 (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "zh"
 ---
 

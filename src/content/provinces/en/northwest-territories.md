@@ -9,13 +9,13 @@ hospitals:
 financial:
   - name: "NWT Medical Travel Service"
     desc: "Financial support program: NWT Medical Travel Service"
-    url: ""
+    url: "https://www.hss.gov.nt.ca/en/services/medical-travel"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
   - name: "Kids with Cancer Society (Edmonton)"
     desc: "Financial support program: Kids with Cancer Society (Edmonton)"
-    url: ""
+    url: "https://kidswithcancer.ca/"
 lang: "en"
 ---
 

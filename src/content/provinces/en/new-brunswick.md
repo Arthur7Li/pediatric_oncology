@@ -13,16 +13,16 @@ hospitals:
 financial:
   - name: "New Brunswick Prescription Drug Program"
     desc: "Financial support program: New Brunswick Prescription Drug Program"
-    url: ""
+    url: "https://www2.gnb.ca/content/gnb/en/departments/health/MedicarePrescriptionDrugPlan/NBPDP.html"
   - name: "Fuel the Care"
     desc: "Financial support program: Fuel the Care"
-    url: ""
+    url: "https://www.irvingoil.com/en-CA/community/fuel-the-care"
   - name: "Canadian Cancer Society Travel Fund"
     desc: "Financial support program: Canadian Cancer Society Travel Fund"
-    url: ""
+    url: "https://cancer.ca/en/living-with-cancer/how-we-can-help/transportation"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "en"
 ---
 

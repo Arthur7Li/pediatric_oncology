@@ -9,13 +9,13 @@ hospitals:
 financial:
   - name: "Nova Scotia Family Pharmacare"
     desc: "Financial support program: Nova Scotia Family Pharmacare"
-    url: ""
+    url: "https://novascotia.ca/dhw/pharmacare/family-pharmacare.asp"
   - name: "IWK Foundation Family Comfort Fund"
     desc: "Financial support program: IWK Foundation Family Comfort Fund"
-    url: ""
+    url: "https://iwkfoundation.org/"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "en"
 ---
 

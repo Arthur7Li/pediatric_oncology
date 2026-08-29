@@ -12,13 +12,13 @@ financial:
     url: "https://www.gov.mb.ca/health/pharmacare/"
   - name: "Manitoba Candlelighters Benevolent Fund"
     desc: "Financial support program: Manitoba Candlelighters Benevolent Fund"
-    url: ""
+    url: "https://www.manitobacandlelighters.org/"
   - name: "Variety Manitoba"
     desc: "Financial support program: Variety Manitoba"
-    url: ""
+    url: "https://varietymanitoba.com/"
   - name: "Non-Insured Health Benefits (NIHB)"
     desc: "Financial support program: Non-Insured Health Benefits (NIHB)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "en"
 ---
 

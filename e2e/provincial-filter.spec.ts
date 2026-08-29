@@ -13,7 +13,9 @@ test.describe("Provincial Support Filter", () => {
     await select.selectOption("Ontario");
 
     // Verify Ontario view is now visible
-    const ontarioView = page.locator('.province-view[data-province-id="Ontario"]');
+    const ontarioView = page.locator(
+      '.province-view[data-province-id="Ontario"]',
+    );
     await expect(ontarioView).toBeVisible();
 
     // Verify SickKids appears in hospitals list (it's inside ontarioView)

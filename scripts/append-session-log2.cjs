@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
 const date = new Date();
-const timeString = `[${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}]`;
+const timeString = `[${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}]`;
 
 const entry = `
 **${timeString} Support Page Resource UI Refactoring**
@@ -17,4 +17,4 @@ const entry = `
 - **Status:** Verified locally. \`npm run ci\` passing. E2E passing.
 `;
 
-fs.appendFileSync('docs/SESSION_LOG.md', entry);
+fs.appendFileSync("docs/SESSION_LOG.md", entry);

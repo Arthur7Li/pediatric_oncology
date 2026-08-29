@@ -9,16 +9,16 @@ hospitals:
 financial:
   - name: "Programme de médicaments sur ordonnance de Terre-Neuve-et-Labrador"
     desc: "Programme de soutien financier: Programme de médicaments sur ordonnance de Terre-Neuve-et-Labrador"
-    url: ""
+    url: "https://www.gov.nl.ca/hcs/prescription/"
   - name: "Candlelighters T.-N.-L."
     desc: "Programme de soutien financier: Candlelighters T.-N.-L."
-    url: ""
+    url: "https://www.candlelightersnl.ca/"
   - name: "Fondation Dr. Jack Hand Legacy"
     desc: "Programme de soutien financier: Fondation Dr. Jack Hand Legacy"
-    url: ""
+    url: "https://jackhand.ca/"
   - name: "Services de santé non assurés (SSNA)"
     desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "fr"
 ---
 

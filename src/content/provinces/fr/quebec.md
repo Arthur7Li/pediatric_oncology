@@ -21,13 +21,13 @@ hospitals:
 financial:
   - name: "Régime public d'assurance-médicaments de la RAMQ"
     desc: "Programme de soutien financier: Régime public d'assurance-médicaments de la RAMQ"
-    url: ""
+    url: "https://www.ramq.gouv.qc.ca/en/citizens/prescription-drug-insurance"
   - name: "Services financiers et familiaux de Leucan"
     desc: "Programme de soutien financier: Services financiers et familiaux de Leucan"
-    url: ""
+    url: "https://www.leucan.qc.ca/en/our-services/financial-assistance/"
   - name: "Services de santé non assurés (SSNA)"
     desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "fr"
 ---
 

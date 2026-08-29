@@ -9,16 +9,16 @@ hospitals:
 financial:
   - name: "Régime d'assurance-médicaments du Manitoba"
     desc: "Programme de soutien financier: Régime d'assurance-médicaments du Manitoba"
-    url: ""
+    url: "https://www.gov.mb.ca/health/pharmacare/"
   - name: "Fonds de bienfaisance Candlelighters du Manitoba"
     desc: "Programme de soutien financier: Fonds de bienfaisance Candlelighters du Manitoba"
-    url: ""
+    url: "https://www.manitobacandlelighters.org/"
   - name: "Variety Manitoba"
     desc: "Programme de soutien financier: Variety Manitoba"
-    url: ""
+    url: "https://varietymanitoba.com/"
   - name: "Services de santé non assurés (SSNA)"
     desc: "Programme de soutien financier: Services de santé non assurés (SSNA)"
-    url: ""
+    url: "https://www.canada.ca/en/indigenous-services-canada/services/non-insured-health-benefits-first-nations-inuit.html"
 lang: "fr"
 ---
 
