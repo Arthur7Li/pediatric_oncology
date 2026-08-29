@@ -1,0 +1,88 @@
+---
+interface Props {
+  title: string;
+  desc: string;
+  link?: string;
+  linkText?: string;
+  tags?: string[];
+  services?: string[];
+  lang?: "en" | "fr" | "zh";
+}
+
+const {
+  title,
+  desc,
+  link,
+  linkText,
+  tags = [],
+  services = [],
+  lang = "en",
+} = Astro.props;
+---
+
+<div
+  class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between h-full"
+>
+  <div>
+    {
+      tags.length > 0 && (
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          {tags.map((tag) => (
+            <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
+
+    <h3 class="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+
+    {
+      desc && (
+        <p class="text-sm text-gray-600 mb-4 line-clamp-3" title={desc}>
+          {desc}
+        </p>
+      )
+    }
+
+    {
+      services.length > 0 && (
+        <ul class="text-xs text-gray-500 mb-4 list-disc pl-4 space-y-1">
+          {services.slice(0, 3).map((service) => (
+            <li>{service}</li>
+          ))}
+          {services.length > 3 && (
+            <li>
+              +{services.length - 3}{" "}
+              {lang === "fr" ? "plus" : lang === "zh" ? "更多" : "more"}
+            </li>
+          )}
+        </ul>
+      )
+    }
+  </div>
+
+  {
+    link && (
+      <div class="mt-4">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
+        >
+          <span>
+            {linkText ||
+              (lang === "fr"
+                ? "Visiter le site"
+                : lang === "zh"
+                  ? "访问网站"
+                  : "Visit Website")}
+          </span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    )
+  }
+</div>

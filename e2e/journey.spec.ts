@@ -6,7 +6,9 @@ test.describe("Treatment Journey Wizard", () => {
   }) => {
     // Step 1: Diagnosis
     await page.goto("en/journey/0-first-72-hours");
-    await expect(page.locator("h1")).toContainText("Phase 0: The First 72 Hours");
+    await expect(page.locator("h1")).toContainText(
+      "Phase 0: The First 72 Hours",
+    );
     await expect(page.getByText("Step 0 of 7")).toBeVisible();
     await page.getByRole("link", { name: "Next Phase →" }).click();
     await expect(page).toHaveURL(/.*\/en\/journey\/1-diagnosis/);

@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
 const date = new Date();
-const timeString = `[${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}]`;
+const timeString = `[${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}]`;
 
 const entry = `
 **${timeString} Major Content Expansion (Sprints 1-4)**
@@ -17,4 +17,4 @@ const entry = `
 - **Status:** Verified locally. \`npm run ci\` passing 100% (107 pages generated). \`npm run test:e2e\` 8/8 tests passing.
 `;
 
-fs.appendFileSync('docs/SESSION_LOG.md', entry);
+fs.appendFileSync("docs/SESSION_LOG.md", entry);

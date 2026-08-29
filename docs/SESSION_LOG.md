@@ -228,3 +228,15 @@ This document serves as a continuous record of changes, ensuring full transparen
   - **Checklists & Journey:** Created `src/pages/[lang]/checklists.astro` implementing print-optimized styling for parental care tracking. Authored `src/content/journey/[lang]/0-first-72-hours.md` to serve as the critical Phase 0 roadmap entry point.
   - **Cross-Cutting Integration:** Updated `src/content.config.ts` with 3 new schemas. Injected all requisite string literals into `src/i18n/translations.ts`. Updated global `Header.astro`, `Footer.astro`, and `404.astro` navigation structures. Added comprehensive coverage in Playwright E2E suites (`glossary.spec.ts`, `faq.spec.ts`, `charities.spec.ts`) and `.pa11yci`.
 - **Status:** Verified locally. `npm run ci` passing 100% (107 pages generated). `npm run test:e2e` 8/8 tests passing.
+
+**[18:39] Support Page Resource UI Refactoring**
+
+- **Action:** Refactored the UI architecture of the localized Support page (`/support`) to unify styling and conditionally render resources.
+- **Details:**
+  - Consolidated the styling of Hospitals, Financial, and Charity resources into a single `ResourceCard.astro` component for a uniform, clean interface.
+  - Re-architected filtering logic directly into `support.astro` rather than building DOM nodes in JavaScript (removed `ProvincialFilter.astro`).
+  - Improved UX to ensure that Provincial resources are selectively revealed only when their specific province is chosen in the dropdown.
+  - Maintained National, Indigenous, and International charities as persistently visible since they apply across all Canadian regions.
+  - Ensured the "Fallback" EI section is displayed by default, and neatly hidden when a province is selected.
+  - Updated E2E test (`provincial-filter.spec.ts`) to match new markup.
+- **Status:** Verified locally. `npm run ci` passing. E2E passing.

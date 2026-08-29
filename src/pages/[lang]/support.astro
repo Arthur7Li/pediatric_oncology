@@ -1,8 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
-import ProvincialFilter from "../../components/ProvincialFilter.astro";
+import ResourceCard from "../../components/ResourceCard.astro";
 import { translations, type Locale } from "../../i18n/translations";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   return [
@@ -29,9 +30,9 @@ const usHospitals = [
     name: "St. Jude Children's Research Hospital (Memphis, TN)",
     desc:
       currentLang === "fr"
-        ? "Hôpital de renommée mondiale dédié aux maladies infantiles catastrophiques et auteur de Together by St. Jude™."
+        ? "Hôpital de renommée mondiale dédié aux maladies infantiles catastrophiques..."
         : currentLang === "zh"
-          ? "全球公认的儿童恶性肿瘤顶级科研与治疗机构，开发了享誉全球的 Together by St. Jude™ 患儿家庭教育平台。"
+          ? "全球公认的儿童恶性肿瘤顶级科研与治疗机构..."
           : "Globally recognized leader in catastrophic childhood disease research and creators of Together by St. Jude™.",
     linkText: "Together by St. Jude™ Education Hub",
     linkUrl: "https://together.stjude.org/",
@@ -48,6 +49,55 @@ const usHospitals = [
     linkUrl: "https://www.chop.edu/cancer",
   },
 ];
+
+const provinces = await getCollection(
+  "provinces",
+  ({ data }) => data.lang === currentLang,
+);
+provinces.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const allCharities = await getCollection(
+  "charities",
+  ({ data }) => data.lang === currentLang,
+);
+
+const nationalCharities = allCharities
+  .filter((c) => c.data.scope !== "provincial")
+  .sort((a, b) => {
+    const scopeOrder: Record<string, number> = {
+      national: 1,
+      indigenous: 2,
+      international: 3,
+    };
+    return (scopeOrder[a.data.scope] || 9) - (scopeOrder[b.data.scope] || 9);
+  });
+
+function getScopeTag(scope: string, lang: string) {
+  if (scope === "national")
+    return (
+      "🇨🇦 " + (lang === "fr" ? "National" : lang === "zh" ? "全国" : "National")
+    );
+  if (scope === "provincial")
+    return (
+      "📍 " +
+      (lang === "fr" ? "Provincial" : lang === "zh" ? "省/地区" : "Provincial")
+    );
+  if (scope === "indigenous")
+    return (
+      "🪶 " +
+      (lang === "fr" ? "Autochtone" : lang === "zh" ? "原住民" : "Indigenous")
+    );
+  if (scope === "international")
+    return (
+      "🌎 " +
+      (lang === "fr"
+        ? "International"
+        : lang === "zh"
+          ? "国际"
+          : "International")
+    );
+  return "";
+}
 ---
 
 <Layout
@@ -56,6 +106,7 @@ const usHospitals = [
   description={t.support.subtitle}
 >
   <Breadcrumbs crumbs={breadcrumbs} lang={currentLang} />
+
   <div class="mb-8 border-b pb-6">
     <div class="flex items-center gap-3">
       <div class="p-2 bg-accent-light rounded-lg">
@@ -79,299 +130,372 @@ const usHospitals = [
         {t.support.title}
       </h1>
     </div>
-    <p class="mt-4 text-lg text-gray-600 text-balance">
-      {t.support.subtitle}
-    </p>
+    <p class="mt-4 text-lg text-gray-600 text-balance">{t.support.subtitle}</p>
   </div>
 
-  <ProvincialFilter lang={currentLang} />
-
-  <section class="mt-12 pt-8 border-t border-gray-200">
-    <h2 class="text-2xl font-bold text-gray-900 mb-6">
+  <!-- Unified Filter -->
+  <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 my-8">
+    <label
+      for="province-select"
+      class="block text-lg font-bold text-gray-900 mb-4">{t.filter.label}</label
+    >
+    <select
+      id="province-select"
+      class="block w-full max-w-sm pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md bg-gray-50 border"
+    >
+      <option value="" selected>{t.filter.placeholder}</option>
       {
-        currentLang === "fr"
-          ? "Organismes de bienfaisance et soutien"
-          : currentLang === "zh"
-            ? "慈善机构与支持"
-            : "Charities & Support"
-      }
-    </h2>
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {
-        (await import("astro:content"))
-          .getCollection("charities", ({ data }) => data.lang === currentLang)
-          .then((charities) =>
-            charities.sort((a, b) => {
-              const scopeOrder = {
-                national: 1,
-                provincial: 2,
-                indigenous: 3,
-                international: 4,
-              };
-              return scopeOrder[a.data.scope] - scopeOrder[b.data.scope];
-            }),
-          )
-          .then((charities) =>
-            charities.map((charity) => (
-              <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
-                      {charity.data.scope === "national"
-                        ? "🇨🇦 " +
-                          (currentLang === "fr"
-                            ? "National"
-                            : currentLang === "zh"
-                              ? "全国"
-                              : "National")
-                        : ""}
-                      {charity.data.scope === "provincial"
-                        ? "📍 " +
-                          (currentLang === "fr"
-                            ? "Provincial"
-                            : currentLang === "zh"
-                              ? "省/地区"
-                              : "Provincial")
-                        : ""}
-                      {charity.data.scope === "indigenous"
-                        ? "🪶 " +
-                          (currentLang === "fr"
-                            ? "Autochtone"
-                            : currentLang === "zh"
-                              ? "原住民"
-                              : "Indigenous")
-                        : ""}
-                      {charity.data.scope === "international"
-                        ? "🌎 " +
-                          (currentLang === "fr"
-                            ? "International"
-                            : currentLang === "zh"
-                              ? "国际"
-                              : "International")
-                        : ""}
-                    </span>
-                  </div>
-                  <h3 class="text-lg font-bold text-gray-900 mb-2">
-                    {charity.data.name}
-                  </h3>
-                  <p class="text-sm text-gray-600 mb-4 line-clamp-3">
-                    {charity.body}
-                  </p>
-                  <ul class="text-xs text-gray-500 mb-4 list-disc pl-4 space-y-1">
-                    {charity.data.services.slice(0, 3).map((service) => (
-                      <li>{service}</li>
-                    ))}
-                    {charity.data.services.length > 3 && (
-                      <li>
-                        +{charity.data.services.length - 3}{" "}
-                        {currentLang === "fr"
-                          ? "plus"
-                          : currentLang === "zh"
-                            ? "更多"
-                            : "more"}
-                      </li>
-                    )}
-                  </ul>
-                </div>
-                <a
-                  href={charity.data.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mt-4 text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
-                >
-                  <span>
-                    {currentLang === "fr"
-                      ? "Visiter le site"
-                      : currentLang === "zh"
-                        ? "访问网站"
-                        : "Visit Website"}
-                  </span>
-                  <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            )),
-          )
-      }
-    </div>
-  </section>
-
-  <section
-    id="national-fallback-section"
-    class="mt-12 pt-8 border-t border-gray-200"
-  >
-    <h2 class="text-2xl font-bold text-gray-900 mb-2">
-      {t.support.nationalTitle}
-    </h2>
-    <p class="text-gray-600 mb-6 text-sm sm:text-base">
-      {t.support.nationalSubtitle}
-    </p>
-
-    <article class="prose max-w-none mb-12">
-      {
-        currentLang === "fr" ? (
-          <div>
-            <h2>1. Couverture des régimes provinciaux de santé au Canada</h2>
-            <p>
-              Au Canada, les régimes publics d'assurance maladie (comme la RAMQ
-              au Québec, l'OHIP en Ontario et le MSP en Colombie-Britannique)
-              fonctionnent conformément à la{" "}
-              <em>Loi canadienne sur la santé</em>.{" "}
-              <strong>
-                Tous les soins et séjours hospitaliers médicalement nécessaires
-                sont entièrement pris en charge sans frais directs.
-              </strong>
-            </p>
-            <ul>
-              <li>
-                <strong>Traitements hospitaliers :</strong> Chimiothérapie,
-                radiothérapie, chirurgies et thérapies cellulaires reçues à
-                l'hôpital.
-              </li>
-              <li>
-                <strong>Frais non couverts à prévoir :</strong> Médicaments pris
-                à domicile (ex. antiémétiques oraux), stationnement hospitalier,
-                déplacements et hébergement.
-              </li>
-            </ul>
-
-            <h2>
-              2. Prestation d'assurance-emploi pour proches aidants d'enfants
-            </h2>
-            <p>
-              Le gouvernement du Canada offre la{" "}
-              <strong>Prestation pour proches aidants d'enfants</strong> pour
-              compenser la perte de revenu des parents devant s'absenter du
-              travail afin de soutenir un enfant gravement malade :
-            </p>
-            <ul>
-              <li>
-                <strong>Durée :</strong> Jusqu'à <strong>35 semaines</strong> de
-                prestations partagables entre les parents.
-              </li>
-              <li>
-                <strong>Admissibilité :</strong> Réduction de plus de 40 % du
-                revenu hebdomadaire et 600 heures d'emploi assurable.
-              </li>
-            </ul>
-          </div>
-        ) : currentLang === "zh" ? (
-          <div>
-            <h2>1. 加拿大各省医疗保险 (Medicare) 覆盖范围</h2>
-            <p>
-              在加拿大，《加拿大卫生法》(Canada Health Act)
-              确保所有居民在公立医院内接受的
-              <strong>
-                所有必要医疗服务（包括住院、化疗、手术、放疗及院内处方药）均由省医保100%全额覆盖
-              </strong>
-              。
-            </p>
-            <ul>
-              <li>
-                <strong>医院内全额报销项目：</strong>{" "}
-                肿瘤手术、住院化疗与放疗、专科医生会诊、住院期间所有药物。
-              </li>
-              <li>
-                <strong>可能产生的自费开支：</strong>{" "}
-                出院后带回家的口服药物、医院停车费、跨城市就医的交通与住宿费。
-              </li>
-            </ul>
-
-            <h2>2. 加拿大联邦就业保险 (EI) 儿童看护津贴</h2>
-            <p>
-              为照顾重病患儿而需要暂停工作的父母，可申请加拿大联邦政府提供的
-              <strong>
-                重病儿童看护津贴 (Family Caregiver Benefit for Children)
-              </strong>
-              ：
-            </p>
-            <ul>
-              <li>
-                <strong>津贴周数：</strong> 最多可领取 <strong>35 周</strong>
-                ，可在52周内分段使用。
-              </li>
-              <li>
-                <strong>申请条件：</strong>{" "}
-                每周收入减少40%以上，且在申请前52周内累计至少600小时受保工作时间。
-              </li>
-            </ul>
-          </div>
-        ) : (
-          <div>
-            <h2>1. Provincial Healthcare Coverage: What to Expect</h2>
-            <p>
-              In Canada, provincial healthcare systems operate under the{" "}
-              <em>Canada Health Act</em>. This means that{" "}
-              <strong>
-                medically necessary services provided in a hospital are fully
-                covered
-              </strong>
-              .
-            </p>
-            <ul>
-              <li>
-                <strong>In-Hospital Treatments:</strong> Chemotherapy,
-                radiation, cellular therapies, and surgeries administered while
-                your child is admitted.
-              </li>
-              <li>
-                <strong>Out-of-Pocket Expenses:</strong> Take-home
-                prescriptions, hospital parking, and travel/accommodation.
-              </li>
-            </ul>
-
-            <h2>
-              2. Employment Insurance (EI): Family Caregiver Benefit for
-              Children
-            </h2>
-            <p>
-              The Government of Canada offers the{" "}
-              <strong>Family Caregiver Benefit for Children</strong> to help
-              offset lost income when parents take time away from work:
-            </p>
-            <ul>
-              <li>
-                <strong>Duration:</strong> Up to <strong>35 weeks</strong> of
-                benefits, shareable between eligible caregivers over a 52-week
-                window.
-              </li>
-              <li>
-                <strong>Eligibility:</strong> A reduction of more than 40% in
-                regular weekly earnings and 600 insurable hours accumulated in
-                the preceding 52 weeks.
-              </li>
-            </ul>
-          </div>
-        )
-      }
-    </article>
-
-    <div class="grid gap-6 md:grid-cols-2">
-      {
-        usHospitals.map((hospital) => (
-          <div class="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-sm flex flex-col justify-between">
-            <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-2">
-                {hospital.name}
-              </h3>
-              <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                {hospital.desc}
-              </p>
-            </div>
-            <div>
-              <a
-                href={hospital.linkUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm font-semibold text-primary hover:text-primary-dark inline-flex items-center gap-1"
-              >
-                <span>{hospital.linkText}</span>
-                <span class="sr-only">(opens in a new tab)</span>
-                <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
+        provinces.map((p) => (
+          <option value={p.data.province_key}>{p.data.title}</option>
         ))
       }
-    </div>
-  </section>
+    </select>
+  </div>
+
+  <!-- PROVINCIAL RESOURCES (Hidden by default) -->
+  <div id="provincial-resources-container">
+    {
+      provinces.map((prov) => {
+        const provCharities = allCharities.filter(
+          (c) =>
+            c.data.scope === "provincial" &&
+            c.data.province === prov.data.title,
+        );
+        return (
+          <section
+            class="province-view hidden mt-12"
+            data-province-id={prov.data.province_key}
+          >
+            <h2 class="text-3xl font-bold text-primary mb-6 border-b pb-2">
+              {prov.data.title} {t.filter.selectedResources}
+            </h2>
+
+            {prov.body && (
+              <div class="mb-8 p-4 bg-amber-50 border-l-4 border-amber-400 text-amber-800 text-sm italic rounded-r">
+                <Fragment set:html={prov.body} />
+              </div>
+            )}
+
+            <div class="mb-10">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">
+                {t.filter.hospitalsHeading}
+              </h3>
+              <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {prov.data.hospitals.map((h) => (
+                  <ResourceCard
+                    title={h.name}
+                    desc={h.desc}
+                    link={h.linkUrl}
+                    linkText={h.linkText}
+                    tags={[
+                      "🏥 " +
+                        (currentLang === "fr"
+                          ? "Hôpital"
+                          : currentLang === "zh"
+                            ? "医院"
+                            : "Hospital"),
+                    ]}
+                    lang={currentLang}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div class="mb-10">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">
+                {t.filter.financialHeading}
+              </h3>
+              <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {prov.data.financial.map((f) => (
+                  <ResourceCard
+                    title={f.name}
+                    desc={f.desc}
+                    link={f.url}
+                    tags={[
+                      "💰 " +
+                        (currentLang === "fr"
+                          ? "Finances"
+                          : currentLang === "zh"
+                            ? "财务"
+                            : "Financial"),
+                    ]}
+                    lang={currentLang}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {provCharities.length > 0 && (
+              <div class="mb-10">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">
+                  {currentLang === "fr"
+                    ? "Organismes de bienfaisance provinciaux"
+                    : currentLang === "zh"
+                      ? "省级慈善机构"
+                      : "Provincial Charities & Support"}
+                </h3>
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {provCharities.map((c) => (
+                    <ResourceCard
+                      title={c.data.name}
+                      desc={c.body || ""}
+                      link={c.data.url}
+                      services={c.data.services}
+                      tags={[getScopeTag(c.data.scope, currentLang)]}
+                      lang={currentLang}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
+        );
+      })
+    }
+  </div>
+
+  <!-- NATIONAL / DEFAULT RESOURCES -->
+  <div id="national-view" class="mt-12">
+    <section class="pt-8 border-t border-gray-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">
+        {t.support.nationalTitle}
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-10">
+        {
+          nationalCharities.map((c) => (
+            <ResourceCard
+              title={c.data.name}
+              desc={c.body || ""}
+              link={c.data.url}
+              services={c.data.services}
+              tags={[getScopeTag(c.data.scope, currentLang)]}
+              lang={currentLang}
+            />
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- EI Fallback Section -->
+    <section
+      id="national-fallback-section"
+      class="pt-8 border-t border-gray-200"
+    >
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">
+        {
+          currentLang === "fr"
+            ? "Ressources internationales et de dernier recours"
+            : currentLang === "zh"
+              ? "国际与备用资源"
+              : "International & Fallback Resources"
+        }
+      </h2>
+      <p class="text-gray-600 mb-6 text-sm sm:text-base">
+        {t.support.nationalSubtitle}
+      </p>
+
+      <article class="prose max-w-none mb-12">
+        {
+          currentLang === "fr" ? (
+            <div>
+              <h2>1. Couverture des régimes provinciaux de santé au Canada</h2>
+              <p>
+                Au Canada, les régimes publics d'assurance maladie (comme la
+                RAMQ au Québec, l'OHIP en Ontario et le MSP en
+                Colombie-Britannique) fonctionnent conformément à la{" "}
+                <em>Loi canadienne sur la santé</em>.{" "}
+                <strong>
+                  Tous les soins et séjours hospitaliers médicalement
+                  nécessaires sont entièrement pris en charge sans frais
+                  directs.
+                </strong>
+              </p>
+              <ul>
+                <li>
+                  <strong>Traitements hospitaliers :</strong> Chimiothérapie,
+                  radiothérapie, chirurgies et thérapies cellulaires reçues à
+                  l'hôpital.
+                </li>
+                <li>
+                  <strong>Frais non couverts à prévoir :</strong> Médicaments
+                  pris à domicile (ex. antiémétiques oraux), stationnement
+                  hospitalier, déplacements et hébergement.
+                </li>
+              </ul>
+
+              <h2>
+                2. Prestation d'assurance-emploi pour proches aidants d'enfants
+              </h2>
+              <p>
+                Le gouvernement du Canada offre la{" "}
+                <strong>Prestation pour proches aidants d'enfants</strong> pour
+                compenser la perte de revenu des parents devant s'absenter du
+                travail afin de soutenir un enfant gravement malade :
+              </p>
+              <ul>
+                <li>
+                  <strong>Durée :</strong> Jusqu'à <strong>35 semaines</strong>{" "}
+                  de prestations partagables entre les parents.
+                </li>
+                <li>
+                  <strong>Admissibilité :</strong> Réduction de plus de 40 % du
+                  revenu hebdomadaire et 600 heures d'emploi assurable.
+                </li>
+              </ul>
+            </div>
+          ) : currentLang === "zh" ? (
+            <div>
+              <h2>1. 加拿大各省医疗保险 (Medicare) 覆盖范围</h2>
+              <p>
+                在加拿大，《加拿大卫生法》(Canada Health Act)
+                确保所有居民在公立医院内接受的
+                <strong>
+                  所有必要医疗服务（包括住院、化疗、手术、放疗及院内处方药）均由省医保100%全额覆盖
+                </strong>
+                。
+              </p>
+              <ul>
+                <li>
+                  <strong>医院内全额报销项目：</strong>{" "}
+                  肿瘤手术、住院化疗与放疗、专科医生会诊、住院期间所有药物。
+                </li>
+                <li>
+                  <strong>可能产生的自费开支：</strong>{" "}
+                  出院后带回家的口服药物、医院停车费、跨城市就医的交通与住宿费。
+                </li>
+              </ul>
+
+              <h2>2. 加拿大联邦就业保险 (EI) 儿童看护津贴</h2>
+              <p>
+                为照顾重病患儿而需要暂停工作的父母，可申请加拿大联邦政府提供的
+                <strong>
+                  重病儿童看护津贴 (Family Caregiver Benefit for Children)
+                </strong>
+                ：
+              </p>
+              <ul>
+                <li>
+                  <strong>津贴周数：</strong> 最多可领取 <strong>35 周</strong>
+                  ，可在52周内分段使用。
+                </li>
+                <li>
+                  <strong>申请条件：</strong>{" "}
+                  每周收入减少40%以上，且在申请前52周内累计至少600小时受保工作时间。
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <div>
+              <h2>1. Provincial Healthcare Coverage: What to Expect</h2>
+              <p>
+                In Canada, provincial healthcare systems operate under the{" "}
+                <em>Canada Health Act</em>. This means that{" "}
+                <strong>
+                  medically necessary services provided in a hospital are fully
+                  covered
+                </strong>
+                .
+              </p>
+              <ul>
+                <li>
+                  <strong>In-Hospital Treatments:</strong> Chemotherapy,
+                  radiation, cellular therapies, and surgeries administered
+                  while your child is admitted.
+                </li>
+                <li>
+                  <strong>Out-of-Pocket Expenses:</strong> Take-home
+                  prescriptions, hospital parking, and travel/accommodation.
+                </li>
+              </ul>
+
+              <h2>
+                2. Employment Insurance (EI): Family Caregiver Benefit for
+                Children
+              </h2>
+              <p>
+                The Government of Canada offers the{" "}
+                <strong>Family Caregiver Benefit for Children</strong> to help
+                offset lost income when parents take time away from work:
+              </p>
+              <ul>
+                <li>
+                  <strong>Duration:</strong> Up to <strong>35 weeks</strong> of
+                  benefits, shareable between eligible caregivers over a 52-week
+                  window.
+                </li>
+                <li>
+                  <strong>Eligibility:</strong> A reduction of more than 40% in
+                  regular weekly earnings and 600 insurable hours accumulated in
+                  the preceding 52 weeks.
+                </li>
+              </ul>
+            </div>
+          )
+        }
+      </article>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          usHospitals.map((h) => (
+            <ResourceCard
+              title={h.name}
+              desc={h.desc}
+              link={h.linkUrl}
+              linkText={h.linkText}
+              tags={[
+                "🌎 " +
+                  (currentLang === "fr"
+                    ? "International"
+                    : currentLang === "zh"
+                      ? "国际"
+                      : "International"),
+              ]}
+              lang={currentLang}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </div>
 </Layout>
+
+<script>
+  const select = document.getElementById(
+    "province-select",
+  ) as HTMLSelectElement;
+  const nationalFallbackSection = document.getElementById(
+    "national-fallback-section",
+  );
+  const provinceViews = document.querySelectorAll(".province-view");
+
+  if (select) {
+    select.addEventListener("change", (e) => {
+      const selectedProv = (e.target as HTMLSelectElement).value;
+
+      if (selectedProv) {
+        // Hide fallback EI section when a province is selected
+        if (nationalFallbackSection)
+          nationalFallbackSection.classList.add("hidden");
+
+        // Show only the selected province
+        provinceViews.forEach((view) => {
+          if (view.getAttribute("data-province-id") === selectedProv) {
+            view.classList.remove("hidden");
+            // Add fade in animation
+            view.classList.add("animate-fade-in");
+          } else {
+            view.classList.add("hidden");
+            view.classList.remove("animate-fade-in");
+          }
+        });
+      } else {
+        // Show fallback EI section
+        if (nationalFallbackSection)
+          nationalFallbackSection.classList.remove("hidden");
+
+        // Hide all provinces
+        provinceViews.forEach((view) => view.classList.add("hidden"));
+      }
+    });
+  }
+</script>
