@@ -1,6 +1,6 @@
 ---
 name: "乔丹原则"
-url: "https://www.sac-isc.gc.ca/eng/1568396042341"
+url: "https://www.canada.ca/en/indigenous-services-canada/services/jordans-principle.html"
 scope: "indigenous"
 services:
   - "确保原住民儿童不受管辖权延误而获得必要的健康、社会和教育产品"

@@ -16,7 +16,7 @@ financial:
     url: "https://www.kidswithcancer.ca/"
   - name: "阿尔伯塔省儿童健康福利"
     desc: "财务支持计划：阿尔伯塔省儿童健康福利"
-    url: "https://www.alberta.ca/child-health-benefit"
+    url: "https://www.alberta.ca/alberta-child-health-benefit.aspx"
   - name: "帮助家庭应对癌症基金"
     desc: "财务支持计划：帮助家庭应对癌症基金"
     url: "https://helpingfamilieshandlecancer.com/"

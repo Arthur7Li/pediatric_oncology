@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { getCollection } from "astro:content";
+import { translations, type Locale } from "../../i18n/translations";
 
 export async function getStaticPaths() {
   return [
@@ -12,79 +13,32 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
+const currentLang = (lang as Locale) || "en";
+const t = translations[currentLang] || translations.en;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const homeUrl =
+  currentLang === "en" ? `${basePath}/` : `${basePath}/${currentLang}`;
 
-const allFaqs = await getCollection("faq", (entry) => entry.data.lang === lang);
+const allFaqs = await getCollection(
+  "faq",
+  (entry) => entry.data.lang === currentLang,
+);
 
-const headers = {
-  en: {
-    title: "Frequently Asked Questions",
-    subtitle:
-      "Compassionate, evidence-based answers to the questions families ask most.",
-  },
-  fr: {
-    title: "Questions fréquentes",
-    subtitle:
-      "Des réponses bienveillantes et fondées sur des données probantes aux questions les plus posées par les familles.",
-  },
-  zh: {
-    title: "常见问题",
-    subtitle: "为患儿家庭最常提出的问题提供有据可依、充满关怀的解答。",
-  },
+const breadcrumbs = [
+  { label: t.nav.home, href: homeUrl },
+  { label: t.faq.title },
+];
+
+const categoryIcons: Record<string, string> = {
+  diagnosis: "🔬",
+  treatment: "💊",
+  "side-effects": "⚠️",
+  financial: "💰",
+  emotional: "💙",
+  misconceptions: "🚫",
 };
 
-const categoryNames = {
-  en: {
-    diagnosis: "Diagnosis & Early Days",
-    treatment: "Treatment & Procedures",
-    "side-effects": "Side Effects & Daily Life",
-    financial: "Financial & Practical",
-    emotional: "Emotional & Family",
-    misconceptions: "Common Misconceptions",
-  },
-  fr: {
-    diagnosis: "Diagnostic et premiers jours",
-    treatment: "Traitement et procédures",
-    "side-effects": "Effets secondaires et vie quotidienne",
-    financial: "Finances et aspects pratiques",
-    emotional: "Émotions et famille",
-    misconceptions: "Idées reçues",
-  },
-  zh: {
-    diagnosis: "诊断与初期",
-    treatment: "治疗与手术",
-    "side-effects": "副作用与日常生活",
-    financial: "经济与实际问题",
-    emotional: "情感与家庭",
-    misconceptions: "常见误解",
-  },
-};
-
-const labels = {
-  en: {
-    myth: "Myth",
-    fact: "Fact",
-    expandAll: "Expand All",
-    collapseAll: "Collapse All",
-  },
-  fr: {
-    myth: "Mythe",
-    fact: "Réalité",
-    expandAll: "Tout déplier",
-    collapseAll: "Tout replier",
-  },
-  zh: {
-    myth: "误解",
-    fact: "事实",
-    expandAll: "全部展开",
-    collapseAll: "全部收起",
-  },
-};
-
-const pageHeader = headers[lang as keyof typeof headers];
-const catNames = categoryNames[lang as keyof typeof categoryNames];
-const currentLabels = labels[lang as keyof typeof labels];
-
-// Sort faq collections based on a specific order
+// Sort faq collections based on standard order
 const order = [
   "diagnosis",
   "treatment",
@@ -93,16 +47,35 @@ const order = [
   "emotional",
   "misconceptions",
 ];
-allFaqs.sort(
-  (a, b) => order.indexOf(a.data.category) - order.indexOf(b.data.category),
-);
+
+const sortedFaqs = order
+  .map((catId) => {
+    const entry = allFaqs.find((e) => e.data.category === catId);
+    if (!entry) return null;
+    return {
+      category: catId,
+      name: (t.faq.categories as Record<string, string>)[catId] || catId,
+      icon: categoryIcons[catId] || entry.data.category_icon || "❓",
+      items: entry.data.items,
+    };
+  })
+  .filter(Boolean) as Array<{
+  category: string;
+  name: string;
+  icon: string;
+  items: Array<{
+    question: string;
+    answer: string;
+    needs_medical_review?: boolean;
+  }>;
+}>;
 
 // Prepare JSON-LD schema
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: allFaqs.flatMap((cat) =>
-    cat.data.items.map((item) => ({
+  mainEntity: sortedFaqs.flatMap((cat) =>
+    cat.items.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -112,10 +85,20 @@ const faqSchema = {
     })),
   ),
 };
+
+const disclaimerText = {
+  en: "The information provided on this page is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your pediatric oncology team with any questions you may have regarding a medical condition.",
+  fr: "Les informations fournies sur cette page sont uniquement destinées à des fins éducatives et ne remplacent pas un avis médical professionnel, un diagnostic ou un traitement. Demandez toujours conseil à votre équipe soignante pour toute question relative à l'état de santé de votre enfant.",
+  zh: "本页面提供的信息仅供健康科普与教育参考，不能代替专业的医疗建议、诊断或治疗。对于您孩子的具体健康状况，请始终咨询您的儿童肿瘤主管医疗团队。",
+};
 ---
 
-<Layout title={pageHeader.title} lang={lang}>
-  <head>
+<Layout
+  title={`${t.faq.title} | ${t.brandName}`}
+  lang={currentLang}
+  description={t.faq.subtitle}
+>
+  <head slot="head">
     <script
       type="application/ld+json"
       is:inline
@@ -124,188 +107,280 @@ const faqSchema = {
   </head>
 
   <div class="max-w-4xl mx-auto px-4 py-8">
-    <Breadcrumbs
-      crumbs={[{ label: pageHeader.title, href: `/${lang}/faq` }]}
-      lang={lang}
-    />
+    <Breadcrumbs crumbs={breadcrumbs} lang={currentLang} />
 
     <header class="mb-10 text-center">
-      <h1 class="text-4xl font-bold mb-4">{pageHeader.title}</h1>
-      <p class="text-xl text-gray-600">{pageHeader.subtitle}</p>
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight"
+      >
+        {t.faq.title}
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        {t.faq.subtitle}
+      </p>
     </header>
 
-    <div
-      class="mb-8 flex flex-col md:flex-row justify-between items-center gap-4"
-    >
-      <div class="w-full md:w-1/2 relative">
-        <input
-          type="text"
-          id="faq-search"
-          placeholder="Search..."
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
-        />
-      </div>
-      <div class="flex gap-4">
-        <button
-          id="expand-all"
-          class="text-sm px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded text-gray-700 transition"
+    <faq-accordion>
+      <div class="mb-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-4 mb-4"
         >
-          {currentLabels.expandAll}
-        </button>
-        <button
-          id="collapse-all"
-          class="text-sm px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded text-gray-700 transition"
-        >
-          {currentLabels.collapseAll}
-        </button>
+          <div class="w-full md:w-1/2 relative">
+            <input
+              type="text"
+              id="faq-search"
+              placeholder={t.faq.searchPlaceholder}
+              class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-white shadow-sm"
+            />
+          </div>
+          <div class="flex gap-3 w-full md:w-auto justify-end">
+            <button
+              id="expand-all"
+              type="button"
+              class="text-sm px-4 py-2.5 bg-white border border-gray-300 hover:bg-gray-50 rounded-md font-medium text-gray-700 transition shadow-sm cursor-pointer"
+            >
+              {t.faq.expandAll}
+            </button>
+            <button
+              id="collapse-all"
+              type="button"
+              class="text-sm px-4 py-2.5 bg-white border border-gray-300 hover:bg-gray-50 rounded-md font-medium text-gray-700 transition shadow-sm cursor-pointer"
+            >
+              {t.faq.collapseAll}
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap gap-2 mb-6" id="faq-category-filters">
+          <button
+            type="button"
+            data-category="all"
+            class="px-4 py-2 bg-primary text-white rounded-full text-sm font-semibold transition-colors hover:bg-primary/90 focus:outline-none cursor-pointer"
+          >
+            {
+              currentLang === "fr"
+                ? "Toutes les questions"
+                : currentLang === "zh"
+                  ? "全部问题"
+                  : "All Categories"
+            }
+          </button>
+          {
+            sortedFaqs.map((cat) => (
+              <button
+                type="button"
+                data-category={cat.category}
+                class="px-4 py-2 bg-gray-200 text-gray-800 hover:bg-gray-300 rounded-full text-sm font-semibold transition-colors focus:outline-none cursor-pointer flex items-center gap-1.5"
+              >
+                <span>{cat.icon}</span>
+                <span>{cat.name}</span>
+              </button>
+            ))
+          }
+        </div>
       </div>
-    </div>
 
-    <main data-pagefind-body class="space-y-12">
-      {
-        allFaqs.map((section) => (
-          <section class="faq-section" data-category={section.data.category}>
-            <h2 class="text-2xl font-semibold mb-6 flex items-center gap-2 border-b pb-2">
-              <span class="text-3xl">{section.data.category_icon}</span>
-              {catNames[section.data.category as keyof typeof catNames]}
-            </h2>
+      <div class="faq-content space-y-12" data-pagefind-body>
+        {
+          sortedFaqs.map((section) => (
+            <section class="faq-section" data-category={section.category}>
+              <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2 border-b pb-2">
+                <span class="text-3xl">{section.icon}</span>
+                <span>{section.name}</span>
+              </h2>
 
-            <div class="space-y-4">
-              {section.data.items.map((item) => {
-                const isMisconception =
-                  section.data.category === "misconceptions";
-                return (
-                  <details class="faq-item group bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 hover:bg-gray-50 transition-colors">
+              <div class="space-y-4">
+                {section.items.map((item) => {
+                  const isMisconception = section.category === "misconceptions";
+                  return (
+                    <details class="faq-item group bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                      <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 sm:p-5 hover:bg-gray-50 transition-colors">
+                        {isMisconception ? (
+                          <div class="flex items-start gap-3">
+                            <span class="inline-block mt-0.5 px-2 py-0.5 border border-red-500 bg-red-50 text-red-600 text-xs font-bold rounded uppercase tracking-wider shrink-0">
+                              {t.faq.mythLabel}
+                            </span>
+                            <span class="text-base sm:text-lg font-bold text-gray-900 faq-question">
+                              {item.question.replace(
+                                /^Myth:\s*|^Mythe\s*:\s*|^误解：\s*/i,
+                                "",
+                              )}
+                            </span>
+                          </div>
+                        ) : (
+                          <span class="text-base sm:text-lg font-bold text-gray-900 faq-question">
+                            {item.question}
+                          </span>
+                        )}
+                        <span class="transition-transform duration-200 group-open:rotate-180 ml-4 shrink-0 text-gray-400">
+                          <svg
+                            fill="none"
+                            height="24"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            width="24"
+                          >
+                            <path d="M6 9l6 6 6-6" />
+                          </svg>
+                        </span>
+                      </summary>
+
                       {isMisconception ? (
-                        <div class="flex items-start gap-3">
-                          <span class="inline-block mt-0.5 px-2 py-0.5 border border-red-500 text-red-600 text-xs font-bold rounded uppercase tracking-wider shrink-0">
-                            {currentLabels.myth}
-                          </span>
-                          <span class="text-lg faq-question">
-                            {item.question.replace(
-                              /^Myth:\s*|^Mythe\s*:\s*|^误解：\s*/i,
-                              "",
-                            )}
-                          </span>
+                        <div class="p-4 sm:p-5 pt-0 border-t border-gray-100 mt-2">
+                          <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r">
+                            <p class="font-bold text-green-800 mb-1 flex items-center gap-1.5">
+                              <span>✅</span>
+                              <span>{t.faq.factLabel}</span>
+                            </p>
+                            <p class="text-green-900 faq-answer leading-relaxed text-sm sm:text-base">
+                              {item.answer}
+                            </p>
+                          </div>
                         </div>
                       ) : (
-                        <span class="text-lg faq-question">
-                          {item.question}
-                        </span>
-                      )}
-                      <span class="transition group-open:rotate-180 ml-4 shrink-0">
-                        <svg
-                          fill="none"
-                          height="24"
-                          shape-rendering="geometricPrecision"
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="1.5"
-                          viewBox="0 0 24 24"
-                          width="24"
-                        >
-                          <path d="M6 9l6 6 6-6" />
-                        </svg>
-                      </span>
-                    </summary>
-
-                    {isMisconception ? (
-                      <div class="p-4 pt-2 border-t border-gray-100">
-                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r">
-                          <p class="font-bold text-green-800 mb-1">
-                            {currentLabels.fact}
-                          </p>
-                          <p class="text-green-900 faq-answer leading-relaxed">
-                            {item.answer}
-                          </p>
+                        <div class="p-4 sm:p-5 pt-0 text-gray-700 faq-answer border-t border-gray-100 mt-2 leading-relaxed text-sm sm:text-base">
+                          {item.answer}
                         </div>
-                      </div>
-                    ) : (
-                      <div class="p-4 pt-2 text-gray-700 faq-answer border-t border-gray-100 leading-relaxed">
-                        {item.answer}
-                      </div>
-                    )}
-                  </details>
-                );
-              })}
-            </div>
-          </section>
-        ))
-      }
-    </main>
+                      )}
+                    </details>
+                  );
+                })}
+              </div>
+            </section>
+          ))
+        }
 
-    <div class="mt-16 p-6 bg-blue-50 text-blue-800 rounded-lg text-sm">
-      <p class="font-semibold mb-2">Medical Disclaimer</p>
-      <p>
-        The information provided on this page is for educational purposes only
-        and is not a substitute for professional medical advice, diagnosis, or
-        treatment. Always seek the advice of your physician or other qualified
-        health provider with any questions you may have regarding a medical
-        condition.
+        <div id="faq-no-results" class="hidden text-center py-12">
+          <p class="text-xl text-gray-500">
+            {t.faq.noResults}
+          </p>
+        </div>
+      </div>
+    </faq-accordion>
+
+    <div class="mt-16 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+      <h3 class="text-lg font-bold text-blue-900 mb-2">
+        {t.nav.medicalDisclaimer}
+      </h3>
+      <p class="text-blue-800 text-sm leading-relaxed">
+        {disclaimerText[currentLang] || disclaimerText.en}
       </p>
     </div>
   </div>
 </Layout>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById(
-      "faq-search",
-    ) as HTMLInputElement;
-    const expandAllBtn = document.getElementById("expand-all");
-    const collapseAllBtn = document.getElementById("collapse-all");
-    const detailsElements = document.querySelectorAll("details.faq-item");
+  class FaqAccordion extends HTMLElement {
+    connectedCallback() {
+      const searchInput = this.querySelector("#faq-search") as HTMLInputElement;
+      const expandAllBtn = this.querySelector("#expand-all");
+      const collapseAllBtn = this.querySelector("#collapse-all");
+      const filterButtons = this.querySelectorAll(
+        "#faq-category-filters button",
+      );
+      const sections = this.querySelectorAll(".faq-section");
+      const detailsElements = this.querySelectorAll("details.faq-item");
+      const noResults = this.querySelector("#faq-no-results") as HTMLElement;
 
-    if (searchInput) {
-      searchInput.addEventListener("input", (e) => {
-        const query = (e.target as HTMLInputElement).value.toLowerCase();
+      let currentCategory = "all";
+      let searchQuery = "";
 
-        detailsElements.forEach((el) => {
-          const details = el as HTMLElement;
-          const question =
-            details
-              .querySelector(".faq-question")
-              ?.textContent?.toLowerCase() || "";
-          const answer =
-            details.querySelector(".faq-answer")?.textContent?.toLowerCase() ||
-            "";
-          const section = details.closest(".faq-section") as HTMLElement;
+      const updateFaqView = () => {
+        let totalVisibleItems = 0;
 
-          if (question.includes(query) || answer.includes(query)) {
-            details.style.display = "";
+        sections.forEach((sec) => {
+          const section = sec as HTMLElement;
+          const categoryId = section.dataset.category || "";
+          let sectionHasVisible = false;
+
+          const items = section.querySelectorAll("details.faq-item");
+          items.forEach((it) => {
+            const item = it as HTMLElement;
+            const question =
+              item.querySelector(".faq-question")?.textContent?.toLowerCase() ||
+              "";
+            const answer =
+              item.querySelector(".faq-answer")?.textContent?.toLowerCase() ||
+              "";
+
+            const matchesSearch =
+              !searchQuery ||
+              question.includes(searchQuery) ||
+              answer.includes(searchQuery);
+            const matchesCategory =
+              currentCategory === "all" || currentCategory === categoryId;
+
+            if (matchesSearch && matchesCategory) {
+              item.style.display = "";
+              sectionHasVisible = true;
+              totalVisibleItems++;
+            } else {
+              item.style.display = "none";
+            }
+          });
+
+          section.style.display = sectionHasVisible ? "" : "none";
+        });
+
+        if (noResults) {
+          noResults.style.display = totalVisibleItems === 0 ? "block" : "none";
+        }
+
+        filterButtons.forEach((btn) => {
+          const button = btn as HTMLElement;
+          if (button.dataset.category === currentCategory) {
+            button.classList.remove("bg-gray-200", "text-gray-800");
+            button.classList.add("bg-primary", "text-white");
           } else {
-            details.style.display = "none";
-          }
-
-          // Show/hide sections based on whether they have visible children
-          if (section) {
-            const visibleItems = section.querySelectorAll(
-              "details.faq-item:not([style*='display: none'])",
-            );
-            section.style.display = visibleItems.length > 0 ? "" : "none";
+            button.classList.add("bg-gray-200", "text-gray-800");
+            button.classList.remove("bg-primary", "text-white");
           }
         });
-      });
-    }
+      };
 
-    if (expandAllBtn) {
-      expandAllBtn.addEventListener("click", () => {
-        detailsElements.forEach((el) => {
-          const details = el as HTMLElement;
-          details.setAttribute("open", "");
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          searchQuery = (e.target as HTMLInputElement).value
+            .toLowerCase()
+            .trim();
+          updateFaqView();
+        });
+      }
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          currentCategory = (btn as HTMLElement).dataset.category || "all";
+          updateFaqView();
         });
       });
-    }
 
-    if (collapseAllBtn) {
-      collapseAllBtn.addEventListener("click", () => {
-        detailsElements.forEach((el) => {
-          const details = el as HTMLElement;
-          details.removeAttribute("open");
+      if (expandAllBtn) {
+        expandAllBtn.addEventListener("click", () => {
+          detailsElements.forEach((el) => {
+            const details = el as HTMLDetailsElement;
+            if (details.style.display !== "none") {
+              details.open = true;
+            }
+          });
         });
-      });
+      }
+
+      if (collapseAllBtn) {
+        collapseAllBtn.addEventListener("click", () => {
+          detailsElements.forEach((el) => {
+            const details = el as HTMLDetailsElement;
+            details.open = false;
+          });
+        });
+      }
     }
-  });
+  }
+
+  if (!customElements.get("faq-accordion")) {
+    customElements.define("faq-accordion", FaqAccordion);
+  }
 </script>

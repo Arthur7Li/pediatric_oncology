@@ -5,7 +5,7 @@ hospitals:
   - name: "BC Children's Hospital (Vancouver, BC)"
     desc: "The primary tertiary and quaternary care center serving British Columbia and the Yukon, pioneering genomic medicine."
     linkText: "BC Children's Oncology/BMT"
-    linkUrl: "http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt"
+    linkUrl: "https://www.bcchildrens.ca/our-services/hospital-programs/oncology-hematology-bmt"
 financial:
   - name: "Fair PharmaCare"
     desc: "BC income-based drug coverage"

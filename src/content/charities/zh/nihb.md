@@ -1,6 +1,6 @@
 ---
 name: "非保险健康福利 (NIHB) 计划"
-url: "https://www.sac-isc.gc.ca/eng/1579285435955"
+url: "https://www.sac-isc.gc.ca/eng/1572537103543/1572537135017"
 scope: "indigenous"
 services:
   - "医疗交通（旅行、餐饮、住宿）"

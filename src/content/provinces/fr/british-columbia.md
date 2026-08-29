@@ -5,7 +5,7 @@ hospitals:
   - name: "BC Children's Hospital (Vancouver, C.-B.)"
     desc: "Centre quaternaire de référence pour la Colombie-Britannique et le Yukon, pionnier de la médecine personnalisée pédiatrique."
     linkText: "BC Children's Oncology/BMT"
-    linkUrl: "http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt"
+    linkUrl: "https://www.bcchildrens.ca/our-services/hospital-programs/oncology-hematology-bmt"
 financial:
   - name: "Fair PharmaCare"
     desc: "Couverture de médicaments basée sur le revenu en Colombie-Britannique"

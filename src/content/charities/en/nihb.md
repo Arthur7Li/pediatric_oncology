@@ -1,6 +1,6 @@
 ---
 name: "NIHB (Non-Insured Health Benefits) Program"
-url: "https://www.sac-isc.gc.ca/eng/1579285435955"
+url: "https://www.sac-isc.gc.ca/eng/1572537103543/1572537135017"
 scope: "indigenous"
 services:
   - "Medical transportation (travel, meals, accommodations)"

@@ -1,6 +1,6 @@
 ---
 name: "Vol d'Espoir"
-url: "https://hopeair.org"
+url: "https://hopeair.ca/"
 scope: "national"
 services:
   - "Vols médicaux gratuits pour les patients qui doivent parcourir de longues distances pour recevoir des soins"

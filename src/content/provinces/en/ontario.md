@@ -31,7 +31,7 @@ financial:
     url: "https://www.ontario.ca/page/get-help-high-prescription-drug-costs"
   - name: "POGO Financial Assistance Program (POFAP)"
     desc: "Financial support program: POGO Financial Assistance Program (POFAP)"
-    url: "https://www.pogo.ca/pofap/"
+    url: "https://www.pogo.ca/programs-support/financial-assistance/"
   - name: "Northern Health Travel Grant (NHTG)"
     desc: "Financial support program: Northern Health Travel Grant (NHTG)"
     url: "https://www.ontario.ca/page/northern-health-travel-grant-program"

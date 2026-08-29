@@ -1,6 +1,6 @@
 ---
 name: "希望之翼"
-url: "https://hopeair.org"
+url: "https://hopeair.ca/"
 scope: "national"
 services:
   - "为必须长途旅行接受治疗的患者提供免费医疗航班"

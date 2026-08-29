@@ -1,6 +1,6 @@
 ---
 name: "Hope Air"
-url: "https://hopeair.org"
+url: "https://hopeair.ca/"
 scope: "national"
 services:
   - "Free medical flights for patients who must travel long distances for care"

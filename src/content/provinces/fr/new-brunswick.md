@@ -13,10 +13,10 @@ hospitals:
 financial:
   - name: "Régime de médicaments du Nouveau-Brunswick"
     desc: "Programme de soutien financier: Régime de médicaments du Nouveau-Brunswick"
-    url: "https://www2.gnb.ca/content/gnb/en/departments/health/MedicarePrescriptionDrugPlan/NBPDP.html"
+    url: "https://www2.gnb.ca/content/gnb/en/departments/health/MedicarePrescriptionDrugPlan.html"
   - name: "Pleins gaz pour les soins (Fuel the Care)"
     desc: "Programme de soutien financier: Pleins gaz pour les soins (Fuel the Care)"
-    url: "https://www.irvingoil.com/en-CA/community/fuel-the-care"
+    url: "https://www.irvingoil.com/"
   - name: "Fonds de voyage de la Société canadienne du cancer"
     desc: "Programme de soutien financier: Fonds de voyage de la Société canadienne du cancer"
     url: "https://cancer.ca/en/living-with-cancer/how-we-can-help/transportation"

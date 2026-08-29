@@ -13,10 +13,10 @@ hospitals:
 financial:
   - name: "新不伦瑞克处方药计划"
     desc: "财务支持计划：新不伦瑞克处方药计划"
-    url: "https://www2.gnb.ca/content/gnb/en/departments/health/MedicarePrescriptionDrugPlan/NBPDP.html"
+    url: "https://www2.gnb.ca/content/gnb/en/departments/health/MedicarePrescriptionDrugPlan.html"
   - name: "Fuel the Care 交通补助"
     desc: "财务支持计划：Fuel the Care 交通补助"
-    url: "https://www.irvingoil.com/en-CA/community/fuel-the-care"
+    url: "https://www.irvingoil.com/"
   - name: "加拿大癌症协会交通基金"
     desc: "财务支持计划：加拿大癌症协会交通基金"
     url: "https://cancer.ca/en/living-with-cancer/how-we-can-help/transportation"

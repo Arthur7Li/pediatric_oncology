@@ -31,7 +31,7 @@ financial:
     url: "https://www.ontario.ca/page/get-help-high-prescription-drug-costs"
   - name: "Programme d'aide financière du POGO (POFAP)"
     desc: "Programme de soutien financier: Programme d'aide financière du POGO (POFAP)"
-    url: "https://www.pogo.ca/pofap/"
+    url: "https://www.pogo.ca/programs-support/financial-assistance/"
   - name: "Subventions aux résidents du Nord de l'Ontario pour frais de transport à des fins médicales"
     desc: "Programme de soutien financier: Subventions aux résidents du Nord de l'Ontario pour frais de transport à des fins médicales"
     url: "https://www.ontario.ca/page/northern-health-travel-grant-program"

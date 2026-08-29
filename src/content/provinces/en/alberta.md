@@ -16,7 +16,7 @@ financial:
     url: "https://www.kidswithcancer.ca/"
   - name: "Alberta Child Health Benefit"
     desc: "Alberta family health benefits"
-    url: "https://www.alberta.ca/child-health-benefit"
+    url: "https://www.alberta.ca/alberta-child-health-benefit.aspx"
   - name: "Helping Families Handle Cancer"
     desc: "Financial support program: Helping Families Handle Cancer"
     url: "https://helpingfamilieshandlecancer.com/"

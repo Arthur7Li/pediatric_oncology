@@ -65,5 +65,5 @@ For more detailed information and support, please refer to these trusted pediatr
 - [CHU Sainte-Justine - Charles-Bruneau Oncology Centre](https://www.chusj.org/)
 - [C17 Council - Pediatric Oncology Research Network](https://www.c17.ca/)
 - [St. Jude Children's Research Hospital (Together by St. Jude™)](https://together.stjude.org/)
-- [National Cancer Institute (NCI) - Childhood Brain and Spinal Cord Tumors](https://www.cancer.gov/types/brain/patient/child-brain-treatment-pdq)
+- [National Cancer Institute (NCI) - Childhood Brain and Spinal Cord Tumors](https://www.cancer.gov/types/brain/patient/child-cns-embryonal-treatment-pdq)
 - [Children's Oncology Group (COG)](https://www.childrensoncologygroup.org)

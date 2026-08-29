@@ -1,6 +1,6 @@
 ---
 name: "Principe de Jordan"
-url: "https://www.sac-isc.gc.ca/eng/1568396042341"
+url: "https://www.canada.ca/en/indigenous-services-canada/services/jordans-principle.html"
 scope: "indigenous"
 services:
   - "Garantit que les enfants des Premières Nations ont accès aux produits de santé, sociaux et éducatifs nécessaires sans délais juridictionnels"

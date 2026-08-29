@@ -13,10 +13,10 @@ hospitals:
 financial:
   - name: "New Brunswick Prescription Drug Program"
     desc: "Financial support program: New Brunswick Prescription Drug Program"
-    url: "https://www2.gnb.ca/content/gnb/en/departments/health/MedicarePrescriptionDrugPlan/NBPDP.html"
+    url: "https://www2.gnb.ca/content/gnb/en/departments/health/MedicarePrescriptionDrugPlan.html"
   - name: "Fuel the Care"
     desc: "Financial support program: Fuel the Care"
-    url: "https://www.irvingoil.com/en-CA/community/fuel-the-care"
+    url: "https://www.irvingoil.com/"
   - name: "Canadian Cancer Society Travel Fund"
     desc: "Financial support program: Canadian Cancer Society Travel Fund"
     url: "https://cancer.ca/en/living-with-cancer/how-we-can-help/transportation"

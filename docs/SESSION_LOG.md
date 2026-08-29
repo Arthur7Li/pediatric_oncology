@@ -249,3 +249,15 @@ This document serves as a continuous record of changes, ensuring full transparen
   - Designed a robust cross-language URL injection script that matches the English program names, references a predefined dictionary of verified direct URLs, and synchronously updates the English, French, and Chinese markdown files.
   - Ensured all resources listed on the platform now have genuine, verified links to direct families to the authoritative source.
 - **Status:** Verified locally. `npm run ci` passing.
+
+**[19:33] Platform-Wide Debugging, Link Integrity & UI Lifecycle Hardening**
+
+- **Action:** Conducted a deep debugging and audit run covering all 107 pages, 60 content modules, resource URLs, interactive components, and Astro View Transition lifecycles.
+- **Methodology & Fixes Executed:**
+  1. **Verified External Link Audit & Fixes:** Scanned 94 external links across content collections. Fixed 10 broken/404 URLs across all languages (updated NCI Pineal Tumors URL, BC Children's oncology clinic, Alberta Child Health Benefit, Jordan's Principle, NIHB, Hope Air .ca domain, POGO Financial Assistance, and NB Drug Plan).
+  2. **FAQ UI & Lifecycle Architecture Upgrade:** Refactored `src/pages/[lang]/faq.astro` into an encapsulated Custom Element (`<faq-accordion>`), fixing View Transitions event-binding issues where search and accordion toggles failed on client-side routing. Added category jump filter buttons (Diagnosis, Treatment, Side Effects, Financial, Emotional, Misconceptions). Localized search input placeholders and medical disclaimer cards across EN, FR, and ZH.
+  3. **Checklists Interactivity:** Upgraded `src/pages/[lang]/checklists.astro` with interactive checkboxes connected to `localStorage` so parents can mark packed items live on their mobile devices while preserving pristine print stylesheets (`@media print`).
+  4. **Glossary & Support Hardening:** Fixed page title interpolation to use localized `t.brandName` and wrapped `support.astro` in `<provincial-support-manager>` custom element.
+  5. **i18n Completion:** Injected missing Chinese (`zh`) `glossary` and `faq` translation dictionaries into `src/i18n/translations.ts`.
+  6. **Automated Test Expansion:** Expanded `e2e/faq.spec.ts` and created `e2e/links-audit.spec.ts`, bringing total automated Playwright E2E coverage to 11 passing tests.
+- **Status:** Verified locally. `npm run ci` passing 100% (107 pages built, 0 errors). `npx playwright test` passing 11/11 tests.

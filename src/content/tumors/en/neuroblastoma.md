@@ -100,7 +100,7 @@ Specialized care for high-risk neuroblastoma is coordinated through Canada's **C
 
 ## Authoritative References
 
-- [BC Children's Hospital Oncology & Hematology](http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt)
+- [BC Children's Hospital Oncology & Hematology](https://www.bcchildrens.ca/our-services/hospital-programs/oncology-hematology-bmt)
 - [SickKids Neuroblastoma Care Program](https://www.sickkids.ca/)
 - [AboutKidsHealth - Neuroblastoma in Children](https://www.aboutkidshealth.ca/)
 - [CHU Sainte-Justine Charles-Bruneau Oncology](https://www.chusj.org/)

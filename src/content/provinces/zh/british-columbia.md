@@ -5,7 +5,7 @@ hospitals:
   - name: "卑诗省儿童医院 (BC Children's Hospital - 温哥华, 卑诗省)"
     desc: "卑诗省与育空地区唯一的儿童肿瘤专科中心，在实体瘤个体化靶向治疗及原住民健康支持方面经验丰富。"
     linkText: "BC Children's Oncology/BMT"
-    linkUrl: "http://www.bcchildrens.ca/our-services/clinics/oncology-hematology-bmt"
+    linkUrl: "https://www.bcchildrens.ca/our-services/hospital-programs/oncology-hematology-bmt"
 financial:
   - name: "Fair PharmaCare 公平药物计划"
     desc: "财务支持计划：Fair PharmaCare 公平药物计划"

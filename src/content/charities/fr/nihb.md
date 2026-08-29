@@ -1,6 +1,6 @@
 ---
 name: "Programme des SSNA (Services de santé non assurés)"
-url: "https://www.sac-isc.gc.ca/eng/1579285435955"
+url: "https://www.sac-isc.gc.ca/eng/1572537103543/1572537135017"
 scope: "indigenous"
 services:
   - "Transport médical (déplacements, repas, hébergement)"

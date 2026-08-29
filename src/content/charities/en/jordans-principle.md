@@ -1,6 +1,6 @@
 ---
 name: "Jordan's Principle"
-url: "https://www.sac-isc.gc.ca/eng/1568396042341"
+url: "https://www.canada.ca/en/indigenous-services-canada/services/jordans-principle.html"
 scope: "indigenous"
 services:
   - "Ensures First Nations children access necessary health, social, and educational products without jurisdictional delays"
